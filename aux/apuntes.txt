@@ -1,0 +1,151 @@
+Booking lo hace todo en una sola página con "anclas" a lo largo, puede ser útil para hacerlo más "responsivo"
+
+- Información y precios / Info & prices
+- Instalaciones / Facilidades 
+- Reglamento / House rules
+
+Aclarar que no se implementan medios de pago (pero se podrían poner logos para que quede lindo)
+
+La galería de imágenes la tenía por sectores (habitaciones, lobby, comedor, exteriores)
+
+
+Most popular facilities
+Non-smoking rooms
+WiFi available in all areas
+Desayuno incluido / Breakfast included 
+Traslado al aeropuerto / Airport shuttle / Airport shuttle (additional charge) 
+Cambio de monedas / Currency exchange
+Habitaciones familiares / Family rooms
+Habitaciones superiores accesibles por ascensor / Upper floors accessible by elevator
+
+
+Servicios y comodidades incluidos en la habitación
+Aire acondicionado / Air conditioning
+Ventilador / Fan
+Calefacción / Heating
+Internet
+Netflix / Streaming service (like Netflix)
+Teléfono / Telephone
+Toma cerca de la cama / Socket near the bed 
+Heladera / Refrigerator
+Microondas / Microwave
+Hervidor eléctrico / Electric kettle
+Mesa de desayuno / Dining table
+TV / Flat-screen TV
+Cable / Cable channels
+Armario o ropero /  Wardrobe or closet
+Tendedero / Clothes rack
+Caja Fuerte / Safety deposit box
+Caja de seguridad para laptop / Laptop safe
+Baño privado / Private bathroom
+Artículos de aseo gratuitos / Free toiletries
+Secador de pelo / Hairdryer
+Papel higiénico / Toilet paper
+Bidet / Bidet
+Desinfectante de manos / Hand sanitiser
+Bata de baño / Bathrobe
+Toallas y sábanas / Towels/sheets (extra fee)
+Camas extra largas / Extra long beds (> 2 metres)
+Servicio de despertador / Wake up service/Alarm clock
+Purificador de aire instalado / Air purifiers installed
+Toda la unidad accesible en silla de ruedas / Entire unit wheelchair accessible
+Isonorización / Soundproofing
+
+
+
+Servicios (para poner en Modelo SERVICIOS)
+Habitación
+Solarium
+Gimnasio
+Sauna
+Lavandería
+Servicio de Planchado / Ironing facilities
+Heladera (consumos en habitación)
+Estacionamiento / Parking 
+Restaurante
+Cuidado de mascotas
+
+/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
+
+CONSIDERACIONES
+
+* Debería tener al menos dos idiomas
+
+* Si el usuario se loguea y tiene una reserva debería mostrársela y darle la posibilidad de darla de baja)
+
+* Para hacer una consulta de disponibilidad para reserva debería indicar:
+	Fecha de entrada
+	Fecha de salida
+	Cantidad de personas (se puede poner algo tipo "hasta dos niños menores a tantos años gratis")
+	Cantidad de habitaciones (o por habitación -depende si se complica-)
+
+* La consulta de reserva debería devolver opciones tipo a) habitación estándar, b) económica, c) superior
+
+* Que no se pueda hacer un Check Out si los consumos no están pagados
+
+* En la mensajería debería poder borrar mensajes o la conversación
+
+* El cargo de la habitación lo puedo agregar como un consumo al momento de hacer el Check In.
+
+
+
+/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
+
+PROCESOS
+
+* Navegar el sitio, ver el hotel (no requiere nada)
+* Registrarse
+* Login / Logout
+* Consultar habitaciones disponibles por rango de fechas, para X cantidad de personas (modelo: HABITACIONES, RESERVAS)
+* Hacer reserva (modelo: RESERVAS)
+* Enviar y recibir mensajes de la recepción tipo DM (hacerlo si no se complica, modelo: MENSAJES)
+* Dejar comentarios sobre el servicio del hotel (modelo: COMENTARIOS)
+* Pedir servicios para una habitación (modelo: SERVICIOS, CONSUMOS)
+* Obtener gastos a pagar, marcar como pagados (modelo: CONSUMOS)
+* Check in / Check out (cambiar estado usuario / cambiar estado usuario y ¿borrar reserva?)
+
+/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
+
+MODELOS
+
+* USUARIOS
+ - Idioma de preferencia
+ - Estado (Check In Verdadero o Falso. Para habilitar hacer consumos, mensajes debe estar siempre habilitado)
+
+* HABITACIONES
+ - Capacidad
+ - Tarifa
+
+* RESERVAS
+ - Habitación
+ - Usuario
+ - Desde
+ - Hasta 
+ - Estado (se podría agregar tipo activa/inactiva y mantener un histórico o borrar la reserva en el check out)
+
+* CONSUMOS
+ - Habitación
+ - Usuario
+ - Servicio
+ - Fecha
+ - Monto
+ - Estado (pendiente / cancelado)
+
+* SERVICIOS
+ - Descripción
+ - Tarifa
+
+* MENSAJES
+ - Fecha
+ - Remitente
+ - Destinatario
+ - Texto
+ - Estado (leído / no leído)
+
+* COMENTARIOS
+ - texto
+ - calificación
+
+
+
+
