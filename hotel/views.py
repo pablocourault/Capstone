@@ -1,9 +1,9 @@
+from django.conf import settings
+from django.utils import translation
 from django.shortcuts import render
-
 from django.contrib.auth import authenticate, login, logout
 from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
 from django.urls import reverse
 
 # from .models import User
@@ -12,6 +12,13 @@ from django.urls import reverse
 
 def index(request):
     return render(request, "hotel/index.html")
+
+def language(self, request):
+    language_selected = request.POST["language"]
+    translation.activate(language_selected)
+    request.LANGUAGE_CODE = language_selected
+    return
+    
 
 def login_view(request):
     if request.method == "POST":

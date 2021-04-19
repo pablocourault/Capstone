@@ -1,5 +1,5 @@
 {% extends "hotel/layout.html" %}
-
+{% load i18n %}
 {% block body %}
 
     <h2>Login</h2>
@@ -11,14 +11,15 @@
     <form action="{% url 'login' %}" method="post">
         {% csrf_token %}
         <div class="form-group">
-            <input autofocus class="form-control" type="text" name="username" placeholder="Username">
+            <input autofocus class="form-control" type="text" name="username" placeholder="{% translate 'Username' %}">
         </div>
         <div class="form-group">
-            <input class="form-control" type="password" name="password" placeholder="Password">
+            <input class="form-control" type="password" name="password" placeholder="{% translate 'Password' %}">
         </div>
-        <input class="btn btn-primary" type="submit" value="Login">
+        <input class="btn btn-primary" type="submit" value="{% translate 'Login' %}">
     </form>
 
-    Don't have an account? <a href="{% url 'register' %}">Register here.</a>
+    {% translate "Don't have an account?" %}
+     <a href="{% url 'register' %}">{% translate "Register here." %}</a>
 
 {% endblock %}

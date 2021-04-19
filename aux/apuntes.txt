@@ -1,3 +1,21 @@
+COSAS QUE TUVE QUE INSTALAR Y HAY QUE AVISAR EN EL README O REQUEST
+
+/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
+
+gettext
+apt install gettext
+parado en "/capstone/hotel" hay que correr el comando
+django-admin makemessages -l es
+y crea un archivo para cada idioma
+
+después ejecutar
+
+django-admin compilemessages
+
+
+/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
+
+
 Booking lo hace todo en una sola página con "anclas" a lo largo, puede ser útil para hacerlo más "responsivo"
 
 - Información y precios / Info & prices
