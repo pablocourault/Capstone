@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-18 20:00-0300\n"
+"POT-Creation-Date: 2021-04-19 18:49-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,6 +25,10 @@ msgid ""
 msgstr ""
 "El perro ladró hasta que le alcanzaron un hueso, y se lo comió en el medio "
 "del patio trasero"
+
+#: hotel/templates/hotel/index.html:24
+msgid "Go"
+msgstr "Ir"
 
 #: hotel/templates/hotel/layout.html:14
 msgid "Hotel"

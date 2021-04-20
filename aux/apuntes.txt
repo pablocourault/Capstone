@@ -99,11 +99,14 @@ CONSIDERACIONES
 
 * La consulta de reserva debería devolver opciones tipo a) habitación estándar, b) económica, c) superior
 
-* Que no se pueda hacer un Check Out si los consumos no están pagados
+* Al hacer el auto checkIn se le genera el primer cargo o consumo que es el de la habitación
+  y podría recibir un mensaje de la "recepción" diciendo que puede retirar las llaves
+
+* Que no se pueda hacer un Check Out si los consumos no están pagados.
+  O que al hacer el CheckOut se cierren los consumos y se pueda descargar el pdf.
 
 * En la mensajería debería poder borrar mensajes o la conversación
 
-* El cargo de la habitación lo puedo agregar como un consumo al momento de hacer el Check In.
 
 
 
@@ -139,7 +142,7 @@ MODELOS
  - Usuario
  - Desde
  - Hasta 
- - Estado (se podría agregar tipo activa/inactiva y mantener un histórico o borrar la reserva en el check out)
+ - Estado (se podría agregar tipo activa/inactiva/finalizada y mantener un histórico o borrar la reserva en el check out)
 
 * CONSUMOS
  - Habitación

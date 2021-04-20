@@ -1,1 +1,21 @@
-h2 {color: green}
+body { background-color: #eee !important; }
+
+ol, ul { list-style: none; }
+
+.barraprincipal { padding: 0;
+                  justify-content: space-between;
+                  margin: auto;
+                  align-items: stretch; }
+
+.logo { cursor: pointer;
+        color: #4300D2 }
+
+.autogestion { font-size: 14px;
+               color: red;
+               display: flex;
+               align-items: center;
+               background-color: #EEE;
+               border-bottom-left-radius: 24px;
+               padding: 0px 24px;
+               box-sizing: border-box;
+               height: 48px; }
