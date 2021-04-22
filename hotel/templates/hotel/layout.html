@@ -1,6 +1,10 @@
 {% load static %}
 {% load i18n %}
 
+{% block script %}
+    <script src="{% static 'hotel/common.js' %}"></script>
+{% endblock %}
+
 <!DOCTYPE html lang="en">
 <html>
     <head>
@@ -16,26 +20,19 @@
           
             <div>
               <ul class="navbar-nav mr-auto autogestion">
-                    
-                    <li class="nav-item">
-                  
-                    <form action="{% url 'set_language' %}" method="post">
-                     {% csrf_token %}
-                 
-                     <select name="language">
-                         {% get_current_language as LANGUAGE_CODE %}
-                         {% get_available_languages as LANGUAGES %}
-                         {% for lang in LANGUAGES %}
-                             <option value="{{ lang.0 }}" {% if LANGUAGE_CODE == lang.0 %} selected{% endif %}>
-                             <i class="iconbr"></i> ({{ lang.0 }})
-                             </option>
-                         {% endfor %}
-                 
-                     </select>
-                     <input type="submit" value="{% translate 'Go' %}" />
-                    </form>
-
+                   
+                    <li class="nav-item">   
+                        <img src="/static/hotel/us.svg" class="language" data-language='en'> 
                     </li>
+
+                    <li class="nav-item"> 
+                        <img src="/static/hotel/ar.svg" class="language" data-language='es'> 
+                    </li>
+
+                    <li class="nav-item">   
+                        <img src="/static/hotel/br.svg" class="language" data-language='pt'> 
+                    </li>
+
 
                 {% if user.is_authenticated %}
                     <li class="nav-item">

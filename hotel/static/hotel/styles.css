@@ -36,8 +36,9 @@ ol, ul { list-style: none; }
                  padding-right: .5rem;
                  padding-left: .5rem; }
 
-.iconbr { height: 20px;
-          width: 40px;
-          display: block;
-          background-image: url(/hotel/static/hotel/br.svg);}
+.language { height: 24px;
+            width: 24px;
+            display: block;
+            margin: 8px;
+            cursor: pointer }
 
