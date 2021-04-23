@@ -7,13 +7,12 @@ document.addEventListener('DOMContentLoaded', function() {
 function language(language)
 
         {    
-            fetch('/language', {
+            fetch('language', {
                 method: 'POST',
                 body: JSON.stringify({ languageselected: language })
                 })
             .then(response => {console.log(response.status);
                     return response.json()})
-
-
+            .then(data => { console.log(data)})
 
         }

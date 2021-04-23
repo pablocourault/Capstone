@@ -2,11 +2,14 @@ import json
 from django.conf import settings
 from django.utils import translation
 from django.shortcuts import render
+from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
 from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.http import JsonResponse
-from django.urls import reverse
+
 
 # from .models import User
 
@@ -15,12 +18,17 @@ from django.urls import reverse
 def index(request):
     return render(request, "hotel/index.html")
 
-def language(self, language):
-    language_selected = language
+@csrf_exempt
+def language(request):
+
+    data = json.loads(request.body)
+
+    language_selected = data.get("languageselected","language")
+
     translation.activate(language_selected)
     request.LANGUAGE_CODE = language_selected
 
-    return JsonResponse({'language': language}, status=201)
+    return JsonResponse({'language': language_selected}, status=201)
     
 
 def login_view(request):
