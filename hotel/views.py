@@ -25,8 +25,8 @@ def language(request):
 
     language_selected = data.get("languageselected","language")
 
-    translation.activate(language_selected)
-    request.LANGUAGE_CODE = language_selected
+    # translation.activate(language_selected)
+    # request.LANGUAGE_CODE = language_selected
 
     return JsonResponse({'language': language_selected}, status=201)
     
