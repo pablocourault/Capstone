@@ -1,6 +1,6 @@
 import json
-from django.conf import settings
 from django.utils import translation
+from django.utils.translation import activate
 from django.shortcuts import render
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
@@ -11,25 +11,26 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.http import JsonResponse
 
 
-# from .models import User
+from .models import User
 
 # Create your views here.
 
+@csrf_exempt
 def index(request):
+    
     return render(request, "hotel/index.html")
+
 
 @csrf_exempt
 def language(request):
 
-    data = json.loads(request.body)
+    user_language = request.POST["language"]
+    translation.activate(user_language)  
+    # request.session[translation.LANGUAGE_SESSION_KEY] = user_language
+    response.set_cookie(settings.LANGUAGE_COOKIE_NAME, user_language)
 
-    language_selected = data.get("languageselected","language")
+    return render(request, "hotel/index.html")
 
-    # translation.activate(language_selected)
-    # request.LANGUAGE_CODE = language_selected
-
-    return JsonResponse({'language': language_selected}, status=201)
-    
 
 def login_view(request):
     if request.method == "POST":

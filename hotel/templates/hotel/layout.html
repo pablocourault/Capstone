@@ -11,6 +11,8 @@
         <title>{% block title %}Hotel Mundial{% endblock %}</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="{% static 'hotel/styles.css' %}" rel="stylesheet">
+        <link rel="shortcut icon" href="{% static 'hotel/favicon.ico' %}"/>
+
     </head>
     <body>
 
@@ -19,37 +21,52 @@
             <a class="navbar-brand" href="{% url 'index' %}" ><text class="logo">Hotel Mundial</text></a>
           
             <div>
-              <ul class="navbar-nav mr-auto autogestion">
+              <ul class="navbar-nav mr-auto autogestionbar">
                    
-                    <li class="nav-item">   
-                        <img src="/static/hotel/us.svg" class="language" data-language='en'> 
+                    <li class="nav-item autogestionitem">
+
+                     <form action="{% url 'set_language' %}" method="post" class="language">{% csrf_token %}
+                           <input name="language" type="hidden" value="en">
+                           <input type="image" name="submit" src="/static/hotel/usa.png" />
+                     </form>
+
                     </li>
 
-                    <li class="nav-item"> 
-                        <img src="/static/hotel/ar.svg" class="language" data-language='es'> 
+                    <li class="nav-item autogestionitem"> 
+
+                    <form action="{% url 'set_language' %}" method="post" class="language">{% csrf_token %}
+                            <input name="language" type="hidden" value="es">
+                            <input type="image" name="submit" src="/static/hotel/arg.png" />
+                    </form>
+
                     </li>
 
-                    <li class="nav-item">   
-                        <img src="/static/hotel/br.svg" class="language" data-language='pt'> 
+                    <li class="nav-item autogestionitem">   
+
+                    <form action="{% url 'set_language' %}" method="post" class="language">{% csrf_token %}
+                            <input name="language" type="hidden" value="pt">
+                            <input type="image" name="submit" src="/static/hotel/brz.png" />
+                    </form>
+
                     </li>
 
 
                 {% if user.is_authenticated %}
-                    <li class="nav-item">
+                    <li class="nav-item autogestionitem">
                         <a class="nav-link" href="#"><strong>{{ user.username }}</strong></a>
                     </li>
                 {% endif %}
             
                 {% if user.is_authenticated %}
 
-                    <li class="nav-item">
+                    <li class="nav-item autogestionitem">
                         <a href="{% url 'logout' %}">{% translate 'Logout' %}</a>
                     </li>
                 {% else %}
-                    <li class="nav-item">
+                    <li class="nav-item autogestionitem">
                         <a href="{% url 'login' %}">{% translate 'Login' %}</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item autogestionitem">
                         <a href="{% url 'register' %}">{% translate 'Register' %}</a>
                     </li>
                 {% endif %}
