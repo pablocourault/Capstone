@@ -5,21 +5,21 @@
 
 body { background-color: #eee !important; }
 
-ol, ul { list-style: none; }
+.cabecera { flex-wrap: nowrap; 
+            padding: 0;
+            justify-content: space-between;
+            margin: auto;
+            align-items: stretch; }
 
-.barraprincipal { padding: 0;
-                  justify-content: space-between;
-                  margin: auto;
-                  align-items: stretch; }
 
-.layout { padding-left: 0; }
-
-.logo { padding-left: 32px;
-        font-family: 'Comfortaa', cursive;
+.logo { font-family: 'Comfortaa', cursive;
         font-size: x-large;
         font-weight: bold;
         cursor: pointer;
-        color: #4300D2 }
+        color: #4300D2;
+        white-space: nowrap; }
+
+#divLogo, #divSpace, #divLanguage, #divNameAndActions { background-color: #eee }
 
 .autogestionbar { background-color: #EEE;
                   border-bottom-left-radius: 24px;
@@ -28,8 +28,7 @@ ol, ul { list-style: none; }
                   box-sizing: border-box;
                   height: 48px; }
 
-.autogestionitem { display: flex;
-                   padding: 8px 8px;}
+.autogestionitem { padding: 8px 8px;}
                   
 .autogestionitem a { font-family: 'Rubik', sans-serif;
                      font-size:medium;
@@ -44,5 +43,11 @@ ol, ul { list-style: none; }
             display: block;
             cursor: pointer; }
 
+#divLanguage { height: 48px;
+               display:inline-flex;
+               border-right: solid 1px #cccccc; }
+
+#divNameAndActions { height: 48px;
+                     display:inline-flex; }
 
 

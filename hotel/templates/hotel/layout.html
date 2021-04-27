@@ -9,6 +9,7 @@
 <html>
     <head>
         <title>{% block title %}Hotel Mundial{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="{% static 'hotel/styles.css' %}" rel="stylesheet">
         <link rel="shortcut icon" href="{% static 'hotel/favicon.ico' %}"/>
@@ -16,68 +17,84 @@
     </head>
     <body>
 
+        <div class="container-fluid">
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light barraprincipal">
-            <a class="navbar-brand" href="{% url 'index' %}" ><text class="logo">Hotel Mundial</text></a>
+            <div class="row cabecera">
+
+                <div class="col-lg-2 col-sm-12" id="divLogo">  
+
+                 <a href="{% url 'index' %}" ><text class="logo">Hotel Mundial</text></a>
           
-            <div>
-              <ul class="navbar-nav mr-auto autogestionbar">
+                </div>
+
+                <div class="col-lg-6 col-sm-12" id="divSpace">
+
+                </div>
+
+
+                <div  class="col-lg-2 col-sm-12" id="divLanguage">
                    
-                    <li class="nav-item autogestionitem">
+                    <span class="nav-item autogestionitem">
 
                      <form action="{% url 'set_language' %}" method="post" class="language">{% csrf_token %}
                            <input name="language" type="hidden" value="en">
                            <input type="image" name="submit" src="/static/hotel/usa.png" />
                      </form>
 
-                    </li>
+                    </span>
 
-                    <li class="nav-item autogestionitem"> 
+                    <span class="autogestionitem"> 
 
                     <form action="{% url 'set_language' %}" method="post" class="language">{% csrf_token %}
                             <input name="language" type="hidden" value="es">
                             <input type="image" name="submit" src="/static/hotel/arg.png" />
                     </form>
 
-                    </li>
+                </span>
 
-                    <li class="nav-item autogestionitem">   
+                    <span class="autogestionitem">   
 
                     <form action="{% url 'set_language' %}" method="post" class="language">{% csrf_token %}
                             <input name="language" type="hidden" value="pt">
                             <input type="image" name="submit" src="/static/hotel/brz.png" />
                     </form>
+                        
+                </span>
 
-                    </li>
+                </div>
 
+                <div  class="col-lg-2 col-sm-12" id="divNameAndActions">
 
                 {% if user.is_authenticated %}
-                    <li class="nav-item autogestionitem">
-                        <a class="nav-link" href="#"><strong>{{ user.username }}</strong></a>
-                    </li>
+                    <span class="autogestionitem">
+                        {{ user.username }}
+                    </span>
                 {% endif %}
             
                 {% if user.is_authenticated %}
 
-                    <li class="nav-item autogestionitem">
+                    <span class="autogestionitem">
                         <a href="{% url 'logout' %}">{% translate 'Logout' %}</a>
-                    </li>
+                    </span>
                 {% else %}
-                    <li class="nav-item autogestionitem">
+                    <span class="autogestionitem">
                         <a href="{% url 'login' %}">{% translate 'Login' %}</a>
-                    </li>
-                    <li class="nav-item autogestionitem">
+                    </span>
+                    <span class="autogestionitem">
                         <a href="{% url 'register' %}">{% translate 'Register' %}</a>
-                    </li>
+                    </span>
                 {% endif %}
-              </ul>
+              
             </div>
-          </nav>
+
+        </div> <!-- close row cabecera -->
+        </div> <!-- close div container-fluid -->
         
         <div class="body">
             {% block body %}
             {% endblock %}
         </div>
+
 
     </body>
 </html>

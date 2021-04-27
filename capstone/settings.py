@@ -81,6 +81,10 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL = "hotel.User"
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
