@@ -11,34 +11,36 @@
         <title>{% block title %}Hotel Mundial{% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="{% static 'hotel/styles.css' %}" rel="stylesheet">
         <link rel="shortcut icon" href="{% static 'hotel/favicon.ico' %}"/>
 
     </head>
     <body>
 
-        <div class="container-fluid">
+        <div class="container-fluid" id="div-container-header">
 
             <div class="row cabecera">
 
-                <div class="col-lg-2 col-sm-12" id="divLogo">  
+                <div class="col-lg-3 col-sm-6" id="divLogo">  
 
-                 <a href="{% url 'index' %}" ><text class="logo">Hotel Mundial</text></a>
+                 <a href="{% url 'index' %}" ><i class="material-icons" id="logo">apartment</i>
+                    <text class="logo">Hotel Mundial</text></a>
           
                 </div>
 
-                <div class="col-lg-6 col-sm-12" id="divSpace">
+                <div class="col-lg-4 col-sm-12" id="divSpace">
 
                 </div>
 
 
-                <div  class="col-lg-2 col-sm-12" id="divLanguage">
+                <div  class="col-lg-2 col-sm-6" id="divAutogestionBar">
                    
-                    <span class="nav-item autogestionitem">
+                    <span class="autogestionitem">
 
                      <form action="{% url 'set_language' %}" method="post" class="language">{% csrf_token %}
                            <input name="language" type="hidden" value="en">
-                           <input type="image" name="submit" src="/static/hotel/usa.png" />
+                           <input type="image" name="submit" src="/static/hotel/usc.svg" />
                      </form>
 
                     </span>
@@ -47,23 +49,23 @@
 
                     <form action="{% url 'set_language' %}" method="post" class="language">{% csrf_token %}
                             <input name="language" type="hidden" value="es">
-                            <input type="image" name="submit" src="/static/hotel/arg.png" />
+                            <input type="image" name="submit" src="/static/hotel/esc.svg" />
                     </form>
 
-                </span>
+                    </span>
 
                     <span class="autogestionitem">   
 
                     <form action="{% url 'set_language' %}" method="post" class="language">{% csrf_token %}
                             <input name="language" type="hidden" value="pt">
-                            <input type="image" name="submit" src="/static/hotel/brz.png" />
+                            <input type="image" name="submit" src="/static/hotel/brc.svg" />
                     </form>
                         
-                </span>
+                    </span>
 
                 </div>
 
-                <div  class="col-lg-2 col-sm-12" id="divNameAndActions">
+                <div  class="col-lg-3 col-sm-12" id="divNameAndActions">
 
                 {% if user.is_authenticated %}
                     <span class="autogestionitem">
@@ -77,10 +79,12 @@
                         <a href="{% url 'logout' %}">{% translate 'Logout' %}</a>
                     </span>
                 {% else %}
-                    <span class="autogestionitem">
-                        <a href="{% url 'login' %}">{% translate 'Login' %}</a>
+                    <span class="autogestionitem"> 
+                        <i class="material-icons icono"> person </i>
+                        <a href="{% url 'login' %}"> {% translate 'Login' %} &nbsp;</a>
                     </span>
                     <span class="autogestionitem">
+                        <i class="material-icons icono"> face </i>
                         <a href="{% url 'register' %}">{% translate 'Register' %}</a>
                     </span>
                 {% endif %}
@@ -90,7 +94,7 @@
         </div> <!-- close row cabecera -->
         </div> <!-- close div container-fluid -->
         
-        <div class="body">
+        <div class=" container-fluid body">
             {% block body %}
             {% endblock %}
         </div>
