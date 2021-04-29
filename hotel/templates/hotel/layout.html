@@ -8,35 +8,37 @@
 <!DOCTYPE html lang="en">
 <html>
     <head>
-        <title>{% block title %}Hotel Mundial{% endblock %}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Hotel Mundial{% endblock %}</title> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
         <link href="{% static 'hotel/styles.css' %}" rel="stylesheet">
         <link rel="shortcut icon" href="{% static 'hotel/favicon.ico' %}"/>
 
     </head>
     <body>
 
-        <div class="container-fluid" id="div-container-header">
+        <div class="container-fluid" id="container-header-div">
 
             <div class="row cabecera">
 
-                <div class="col-lg-3 col-sm-6" id="divLogo">  
+                <div class="col-lg-3 col-sm-6" id="logo-div">  
 
-                 <a href="{% url 'index' %}" ><i class="material-icons" id="logo">apartment</i>
+                 <!-- <a href="{% url 'index' %}" ><i class="material-icons" id="logo">apartment</i> -->
+                    <a href="{% url 'index' %}" ><i class="material-icons" id="logo">auto_awesome</i>
                     <text class="logo">Hotel Mundial</text></a>
           
                 </div>
 
-                <div class="col-lg-4 col-sm-12" id="divSpace">
+                <div class="col-lg-4 col-sm-12" id="space-div">
 
                 </div>
 
 
-                <div  class="col-lg-2 col-sm-6" id="divAutogestionBar">
+                <div  class="col-lg-2 col-sm-6" id="autogestion-bar-div">
                    
-                    <span class="autogestionitem">
+                    <span class="autogestion-item">
 
                      <form action="{% url 'set_language' %}" method="post" class="language">{% csrf_token %}
                            <input name="language" type="hidden" value="en">
@@ -45,7 +47,7 @@
 
                     </span>
 
-                    <span class="autogestionitem"> 
+                    <span class="autogestion-item"> 
 
                     <form action="{% url 'set_language' %}" method="post" class="language">{% csrf_token %}
                             <input name="language" type="hidden" value="es">
@@ -54,7 +56,7 @@
 
                     </span>
 
-                    <span class="autogestionitem">   
+                    <span class="autogestion-item">   
 
                     <form action="{% url 'set_language' %}" method="post" class="language">{% csrf_token %}
                             <input name="language" type="hidden" value="pt">
@@ -65,25 +67,25 @@
 
                 </div>
 
-                <div  class="col-lg-3 col-sm-12" id="divNameAndActions">
+                <div  class="col-lg-3 col-sm-12" id="name-actions-div">
 
                 {% if user.is_authenticated %}
-                    <span class="autogestionitem">
+                    <span class="autogestion-item">
                         {{ user.username }}
                     </span>
                 {% endif %}
             
                 {% if user.is_authenticated %}
 
-                    <span class="autogestionitem">
+                    <span class="autogestion-item">
                         <a href="{% url 'logout' %}">{% translate 'Logout' %}</a>
                     </span>
                 {% else %}
-                    <span class="autogestionitem"> 
+                    <span class="autogestion-item"> 
                         <i class="material-icons icono"> person </i>
                         <a href="{% url 'login' %}"> {% translate 'Login' %} &nbsp;</a>
                     </span>
-                    <span class="autogestionitem">
+                    <span class="autogestion-item">
                         <i class="material-icons icono"> face </i>
                         <a href="{% url 'register' %}">{% translate 'Register' %}</a>
                     </span>
@@ -92,9 +94,49 @@
             </div>
 
         </div> <!-- close row cabecera -->
+
+        <div class="row cabecera" id="header-options-row">
+
+            <div class="col-lg-1 col-sm-3 header-options-label"> 
+            </div>
+
+            <div class="col-lg-1 col-sm-3 header-options-label"> 
+            <div class="material-icons-outlined header-options-icons">info</div>
+            <div>Info</div>
+            </div>
+
+
+            <div class="col-lg-1 col-sm-3 header-options-label"> 
+            <div class="material-icons-outlined header-options-icons">hotel</div>
+            <div>Facilities</div>
+            </div>
+
+            <div class="col-lg-1 col-sm-3 header-options-label"> 
+            <div class="material-icons-outlined header-options-icons">rule</div>
+            <div>House Rules</div>
+            </div>
+
+            <div class="col-lg-1 col-sm-3 header-options-label"> 
+            <div class="material-icons-outlined header-options-icons">text_snippet</div>
+            <div>The Final Print</div>
+            </div>
+
+            <div class="col-lg-1 col-sm-3 header-options-label"> 
+            <div class="material-icons-outlined header-options-icons">preview</div>
+            <div>Guests Reviews</div>
+            </div>
+
+
+        </div>
+
+
+
+
+
+
         </div> <!-- close div container-fluid -->
         
-        <div class=" container-fluid body">
+        <div class="container-fluid body">
             {% block body %}
             {% endblock %}
         </div>
