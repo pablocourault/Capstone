@@ -3,39 +3,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 
 
-body { background-color: #eee !important; }
+a:hover { text-decoration:none; }
 
-.cabecera { flex-wrap: nowrap; 
-            padding: 0;
-            justify-content: space-between;
-            margin: auto;
+body { background-color: #FFF !important;
+       padding: 0; }
+
+
+#container-header-div {padding: 0}
+
+
+.cabecera { justify-content:baseline;
+            padding: 0 0 8px;
+            margin: 0;
             align-items: stretch; }
 
 
+#logo { cursor: pointer;
+        color: #4300D2;
+        font-size: 36px;
+        vertical-align:text-bottom }
+
+
 .logo { font-family: 'Comfortaa', cursive;
-        font-size: x-large;
+        font-size: xx-large;
         font-weight: bold;
         cursor: pointer;
-        color: #4300D2;
-        white-space: nowrap; }
+        color: #4300D2; }
 
-#divLogo, #divSpace, #divLanguage, #divNameAndActions { background-color: #eee }
 
-.autogestionbar { background-color: #EEE;
-                  border-bottom-left-radius: 24px;
-                  padding-right: 8px;
-                  padding-left: 16px;
-                  box-sizing: border-box;
-                  height: 48px; }
+#logo-div { text-align: center; }
 
-.autogestionitem { padding: 8px 8px;}
+.icono { vertical-align:text-bottom; }
+
+#logo-div, #space-div, #name-actions-div { padding-top: 8px; }
+
+
+#autogestion-bar-div { background-color: #EEE;
+                       border-bottom-left-radius: 32px;
+                       border-right: solid 1px #cccccc;
+                       padding-right: 8px;
+                       padding-left: 8px;
+                       display: inline-flex;
+                       justify-content: center;
+                       height: 52px; }
+
+#name-actions-div { background-color: #EEE;
+                    display: inline-flex;
+                    justify-content: center;
+                    height: 52px; }
+
+
+
+.autogestion-item { padding: 8px 8px; }
                   
-.autogestionitem a { font-family: 'Rubik', sans-serif;
-                     font-size:medium;
-                     color: #444; }
+.autogestion-item a { font-family: 'Rubik', sans-serif;
+                      font-size:medium;
+                      color: #444; }
 
-.autogestionitem input[type="image"] {padding-right: 16px;
-                                      height: 32px;}
+.autogestion-item input[type="image"] {padding-right: 16px;
+                                       height: 32px;}
 
 
 .language { height: 32px;
@@ -43,11 +69,19 @@ body { background-color: #eee !important; }
             display: block;
             cursor: pointer; }
 
-#divLanguage { height: 48px;
-               display:inline-flex;
-               border-right: solid 1px #cccccc; }
+.header-options-icons { font-size: 32px;
+                        color: dimgray; }
 
-#divNameAndActions { height: 48px;
-                     display:inline-flex; }
+.header-options-label { font-size:large;
+                        font-weight:normal;
+                        display: inline-block;
+                        text-align: center;
+                        color: dimgray }
+
+#header-options-row {padding-top: 16px;}
+
+
+
+
 
 
