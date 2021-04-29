@@ -69,16 +69,24 @@ body { background-color: #FFF !important;
             display: block;
             cursor: pointer; }
 
-.header-options-icons { font-size: 32px;
+#header-options-row {padding-top: 24px;} 
+        
+.header-options-icons { font-size: 24px;
                         color: dimgray; }
 
-.header-options-label { font-size:large;
-                        font-weight:normal;
+.header-options-label { font-size: 14px;
+                        font-weight: normal;
                         display: inline-block;
                         text-align: center;
-                        color: dimgray }
+                        color: dimgray;
+                        padding-bottom: 8px; } /* to best view in mobile mode */
 
-#header-options-row {padding-top: 16px;}
+.header-options-label:hover { cursor: pointer;
+                              font-weight: bold; }
+
+
+
+
 
 
 

@@ -170,9 +170,16 @@ MODELOS
 
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
+ESTILOS
+
+Cuando selecciona un header-label que cambien a color lila el header-label y el header-icon "o sea quedan marcados como seleccionados"
+
+
+/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
+
 PARA EL FINAL
 
 - ver de factorizar el css con SCSS
-- ver que en modo móvil despegar.com deja sólo los íconos en el menú
+- ver que en modo móvil despegar.com deja sólo los íconos en el menú donde está login
 
 
