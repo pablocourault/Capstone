@@ -14,7 +14,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
         <link href="{% static 'hotel/styles.css' %}" rel="stylesheet">
-        <link rel="shortcut icon" href="{% static 'hotel/favicon.ico' %}"/>
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}"/>
 
     </head>
     <body>
@@ -42,7 +42,7 @@
 
                      <form action="{% url 'set_language' %}" method="post" class="language">{% csrf_token %}
                            <input name="language" type="hidden" value="en">
-                           <input type="image" name="submit" src="/static/hotel/usc.svg" />
+                           <input type="image" name="submit" src="/static/images/usc.svg" />
                      </form>
 
                     </span>
@@ -51,7 +51,7 @@
 
                     <form action="{% url 'set_language' %}" method="post" class="language">{% csrf_token %}
                             <input name="language" type="hidden" value="es">
-                            <input type="image" name="submit" src="/static/hotel/esc.svg" />
+                            <input type="image" name="submit" src="/static/images/esc.svg" />
                     </form>
 
                     </span>
@@ -60,7 +60,7 @@
 
                     <form action="{% url 'set_language' %}" method="post" class="language">{% csrf_token %}
                             <input name="language" type="hidden" value="pt">
-                            <input type="image" name="submit" src="/static/hotel/brc.svg" />
+                            <input type="image" name="submit" src="/static/images/brc.svg" />
                     </form>
                         
                     </span>

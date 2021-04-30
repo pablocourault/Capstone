@@ -5,8 +5,23 @@
 
 a:hover { text-decoration:none; }
 
+
 body { background-color: #FFF !important;
        padding: 0; }
+
+
+#login-div, #register-div { width: 40%;
+                            text-align: center;
+                            margin: 64px auto; }
+
+
+#login-div-title, #register-div-title { font-family: 'Comfortaa', cursive;
+                                        font-size: xx-large;
+                                        font-weight: bold;
+                                        color: #4300D2; }
+
+.btn-login { background: #4300D2;
+             border:#4300D2 }
 
 
 #container-header-div {padding: 0}
@@ -63,7 +78,7 @@ body { background-color: #FFF !important;
 .autogestion-item input[type="image"] {padding-right: 16px;
                                        height: 32px;}
 
-#user-authenticated { padding-top: 6px;
+#user-authenticated { padding-top: 4px;
                       font-size: large;
                       color: #FF7A80; }
 

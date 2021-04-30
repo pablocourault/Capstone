@@ -2,7 +2,9 @@
 {% load i18n %}
 {% block body %}
 
-    <h2>Login</h2>
+<div id="login-div">
+
+    <text id="login-div-title">{% translate 'Login' %}</text>
 
     {% if message %}
         <div>{{ message }}</div>
@@ -16,10 +18,12 @@
         <div class="form-group">
             <input class="form-control" type="password" name="password" placeholder="{% translate 'Password' %}">
         </div>
-        <input class="btn btn-primary" type="submit" value="{% translate 'Login' %}">
+        <input class="btn btn-primary btn-login" type="submit" value="{% translate 'Login' %}">
     </form>
 
     {% translate "Don't have an account?" %}
      <a href="{% url 'register' %}">{% translate "Register here." %}</a>
+
+</div>
 
 {% endblock %}

@@ -2,7 +2,9 @@
 {% load i18n %}
 {% block body %}
 
-    <h2>{% translate 'Register' %}</h2>
+    <div id="register-div">
+
+    <text id="register-div-title">{% translate 'Register' %}</text>
 
     {% if message %}
         <div>{{ message }}</div>
@@ -27,5 +29,7 @@
 
     {% trans "Already have an account?" %}
      <a href="{% url 'login' %}">{% translate "Log In here." %}</a>
+
+    </div>
 
 {% endblock %}
