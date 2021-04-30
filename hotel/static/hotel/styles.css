@@ -105,7 +105,26 @@ body { background-color: #FFF !important;
                            font-weight: bold; }
 
                            
-.header-options-col { background-color: #DDD5F5;}
+.header-options-col { background-color: #DDD5F5;
+                      padding: 16px 128px; }
+
+.header-options-col-menu { display: inline-flex; }
+
+.header-options-col-item { font-size: 24px;
+                           font-weight: normal;
+                           color: white;
+                           background-color: #270570;
+                           text-align: center;
+                           padding: 8px 0;
+                           cursor: pointer; }
+
+.header-options-col-item:hover { font-weight: bold; }
+
+#col-item-1 { border-top-left-radius: 8px;
+              border-bottom-left-radius: 8px; }
+
+#col-item-6 { border-top-right-radius: 8px;
+              border-bottom-right-radius: 8px; }
 
 
 

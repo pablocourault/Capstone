@@ -181,5 +181,6 @@ PARA EL FINAL
 
 - ver de factorizar el css con SCSS
 - ver que en modo móvil despegar.com deja sólo los íconos en el menú donde está login
+- poner al pié de página los logos de las redes sociales (como está en despegar.com)
 
 
