@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-19 18:49-0300\n"
+"POT-Creation-Date: 2021-04-29 19:47-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: hotel/templates/hotel/index.html:5
+#: templates/hotel/index.html:8
 msgid ""
 "\"The dog barked until a bone was hit, and he ate it in the middle of the "
 "backyard\""
@@ -26,59 +26,80 @@ msgstr ""
 "El perro ladró hasta que le alcanzaron un hueso, y se lo comió en el medio "
 "del patio trasero"
 
-#: hotel/templates/hotel/index.html:24
-msgid "Go"
-msgstr "Ir"
-
-#: hotel/templates/hotel/layout.html:14
-msgid "Hotel"
-msgstr "Hotel"
-
-#: hotel/templates/hotel/layout.html:24
-msgid "Overview"
-msgstr "Información"
-
-#: hotel/templates/hotel/layout.html:31
+#: templates/hotel/layout.html:81
 msgid "Logout"
 msgstr "Salir"
 
-#: hotel/templates/hotel/layout.html:35 hotel/templates/hotel/login.html:19
+#: templates/hotel/layout.html:86 templates/hotel/login.html:19
 msgid "Login"
 msgstr "Ingresar"
 
-#: hotel/templates/hotel/layout.html:38 hotel/templates/hotel/register.html:5
-#: hotel/templates/hotel/register.html:25
+#: templates/hotel/layout.html:90 templates/hotel/register.html:5
+#: templates/hotel/register.html:25
 msgid "Register"
 msgstr "Registrarse"
 
-#: hotel/templates/hotel/login.html:14 hotel/templates/hotel/register.html:14
+#: templates/hotel/layout.html:102
+msgid "Info"
+msgstr "Info"
+
+#: templates/hotel/layout.html:107
+msgid "Facilities"
+msgstr "Instalaciones"
+
+#: templates/hotel/layout.html:112
+msgid "House Rules"
+msgstr "Reglas del Hotel"
+
+#: templates/hotel/layout.html:117
+msgid "The Final Print"
+msgstr "Consideraciones Finales"
+
+#: templates/hotel/layout.html:122
+msgid "Guests Reviews"
+msgstr "Comentarios"
+
+#: templates/hotel/layout.html:127
+msgid "FAQs"
+msgstr "Preguntas Frecuentes"
+
+#: templates/hotel/login.html:14 templates/hotel/register.html:14
 msgid "Username"
 msgstr "Nombre de usuario"
 
-#: hotel/templates/hotel/login.html:17 hotel/templates/hotel/register.html:20
+#: templates/hotel/login.html:17 templates/hotel/register.html:20
 msgid "Password"
 msgstr "Contraseña"
 
-#: hotel/templates/hotel/login.html:22
+#: templates/hotel/login.html:22
 msgid "Don't have an account?"
 msgstr "¿No tiene una cuenta?"
 
-#: hotel/templates/hotel/login.html:23
+#: templates/hotel/login.html:23
 msgid "Register here."
 msgstr "Registrarse aquí."
 
-#: hotel/templates/hotel/register.html:17
+#: templates/hotel/register.html:17
 msgid "Email"
 msgstr "Correo electrónico"
 
-#: hotel/templates/hotel/register.html:23
+#: templates/hotel/register.html:23
 msgid "Confirm Password"
 msgstr "Confirme la contraseña"
 
-#: hotel/templates/hotel/register.html:28
+#: templates/hotel/register.html:28
 msgid "Already have an account?"
 msgstr "¿Ya tiene una cuenta?"
 
-#: hotel/templates/hotel/register.html:29
+#: templates/hotel/register.html:29
 msgid "Log In here."
 msgstr "Entrar aquí"
+
+#~ msgid "Go"
+#~ msgstr "Ir"
+
+#~ msgid "Hotel"
+#~ msgstr "Hotel"
+
+#~ msgid "Overview"
+#~ msgstr "Información"

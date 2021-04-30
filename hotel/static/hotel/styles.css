@@ -63,26 +63,34 @@ body { background-color: #FFF !important;
 .autogestion-item input[type="image"] {padding-right: 16px;
                                        height: 32px;}
 
+#user-authenticated { padding-top: 6px;
+                      font-size: large;
+                      color: #FF7A80; }
 
 .language { height: 32px;
             width: 32px;
             display: block;
             cursor: pointer; }
 
-#header-options-row {padding-top: 24px;} 
+#header-info-row {padding-top: 8px;} 
         
-.header-options-icons { font-size: 24px;
-                        color: dimgray; }
+.header-info-icons { font-size: 24px;
+                     color: dimgray; }
 
-.header-options-label { font-size: 14px;
-                        font-weight: normal;
-                        display: inline-block;
-                        text-align: center;
-                        color: dimgray;
-                        padding-bottom: 8px; } /* to best view in mobile mode */
+.header-info-label { font-size: 14px;
+                     font-weight: normal;
+                     display: inline-block;
+                     text-align: center;
+                     color: dimgray;
+                     padding-left: 0;
+                     padding-right: 0;
+                     padding-bottom: 8px; } /* to best view in mobile mode */
 
-.header-options-label:hover { cursor: pointer;
-                              font-weight: bold; }
+.header-info-label:hover { cursor: pointer;
+                           font-weight: bold; }
+
+                           
+.header-options-col { background-color: #DDD5F5;}
 
 
 
