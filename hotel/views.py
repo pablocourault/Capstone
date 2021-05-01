@@ -21,6 +21,42 @@ def index(request):
     return render(request, "hotel/index.html")
 
 
+def info(request):
+    
+    return render(request, "hotel/info.html")
+
+
+@csrf_exempt
+def bookings(request):
+    
+    return render(request, "hotel/bookings.html")
+
+
+def facilities(request):
+    
+    return render(request, "hotel/facilities.html")
+
+
+def houserules(request):
+    
+    return render(request, "hotel/houserules.html")
+
+
+def finalprint(request):
+    
+    return render(request, "hotel/finalprint.html")
+
+
+def guestsreviews(request):
+    
+    return render(request, "hotel/guestsreviews.html")
+
+
+def faqs(request):
+    
+    return render(request, "hotel/faqs.html")
+
+
 @csrf_exempt
 def language(request):
 

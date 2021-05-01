@@ -5,6 +5,13 @@ from . import views
 urlpatterns = [
     path("", views.index, name="index"),
     path("language", views.language, name="set_language"),
+    path("info", views.info, name="info"),
+    path("bookings", views.bookings, name="bookings"),
+    path("facilities", views.facilities, name="facilities"),
+    path("houserules", views.houserules, name="houserules"),
+    path("finalprint", views.finalprint, name="finalprint"),
+    path("guestsreviews", views.guestsreviews, name="guestsreviews"),
+    path("faqs", views.faqs, name="faqs"),      
     path("login", views.login_view, name="login"),
     path("logout", views.logout_view, name="logout"),
     path("register", views.register, name="register"),

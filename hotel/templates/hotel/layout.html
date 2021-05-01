@@ -102,37 +102,37 @@
 
             <div class="col-lg-1 col-sm-3 header-info-label"> 
             <div class="material-icons-outlined header-info-icons">info</div>
-            <div>{% translate 'Info' %}</div>
+            <div><a href="{% url 'info' %}">{% translate 'Info' %}</a></div>
             </div>
 
-            <div class="col-lg-1 col-sm-3 header-info-label"> 
+            <div class="col-lg-1 col-sm-3 header-info-label">
             <div class="material-icons-outlined header-info-icons">event</div>
-            <div>{% translate 'Bookings' %}</div>
+            <div><a href="{% url 'bookings' %}">{% translate 'Bookings' %}</a></div>
             </div>
 
             <div class="col-lg-1 col-sm-3 header-info-label"> 
             <div class="material-icons-outlined header-info-icons">hotel</div>
-            <div>{% translate 'Facilities' %}</div>
+            <div><a href="{% url 'facilities' %}">{% translate 'Facilities' %}</a></div>
             </div>
 
             <div class="col-lg-1 col-sm-3 header-info-label"> 
             <div class="material-icons-outlined header-info-icons">rule</div>
-            <div>{% translate 'House Rules' %}</div>
+            <div><a href="{% url 'houserules' %}">{% translate 'House Rules' %}</a></div>
             </div>
 
             <div class="col-lg-1 col-sm-3 header-info-label"> 
             <div class="material-icons-outlined header-info-icons">text_snippet</div>
-            <div>{% translate 'The Final Print' %}</div>
+            <div><a href="{% url 'finalprint' %}">{% translate 'The Final Print' %}</a></div>
             </div>
 
             <div class="col-lg-1 col-sm-3 header-info-label"> 
             <div class="material-icons-outlined header-info-icons">preview</div>
-            <div>{% translate 'Guests Reviews' %}</div>
+            <div><a href="{% url 'guestsreviews' %}">{% translate 'Guests Reviews' %}</a></div>
             </div>
 
             <div class="col-lg-1 col-sm-3 header-info-label"> 
             <div class="material-icons-outlined header-info-icons">question_answer</div>
-            <div>{% translate 'FAQs' %}</div>
+            <div><a href="{% url 'faqs' %}">{% translate 'FAQs' %}</a></div>
             </div>
 
         </div> <!-- close header-info-row-->
@@ -142,14 +142,28 @@
             <div class="col-lg-12 col-sm-12 header-options-col"> 
 
             <div class="col-lg-12 sm-12 header-options-col-menu"></div>
-                <div class="row">
+
+                {% if user.is_authenticated %}
+
+                <div class="row">  
                 <div class="col-lg-2 sm-4 header-options-col-item" id="col-item-1"></div>
                 <div class="col-lg-2 sm-4 header-options-col-item" id="col-item-2"><a>{% translate 'Orders' %}</a></div>
                 <div class="col-lg-2 sm-4 header-options-col-item" id="col-item-3">{% translate 'Invoice' %}</div>
                 <div class="col-lg-2 sm-4 header-options-col-item" id="col-item-4">{% translate 'Messages' %}</div>
-                <div class="col-lg-2 sm-4 header-options-col-item" id="col-item-5">{% translate 'Check In' %}</div>
+                <div class="col-lg-2 sm-4 header-options-col-item" id="col-item-5">{% translate 'My Bookings' %}</div>
                 <div class="col-lg-2 sm-4 header-options-col-item" id="col-item-6"></div>
                 </div>
+
+                {% else %}
+
+                <div class="row">  
+                <div class="col-lg-6 sm-4 header-options-col-item" id="col-item-1"></div>
+                <div class="col-lg-4 sm-4 header-options-col-item" id="col-item-5">{% translate 'Make Your Booking Here' %}</div>
+                <div class="col-lg-2 sm-4 header-options-col-item" id="col-item-6"></div>
+                </div>
+                
+                {% endif %}
+               
             </div>
         </div>
         

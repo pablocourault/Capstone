@@ -78,7 +78,7 @@ body { background-color: #FFF !important;
 .autogestion-item input[type="image"] {padding-right: 16px;
                                        height: 32px;}
 
-#user-authenticated { padding-top: 4px;
+#user-authenticated { padding-top: 6px;
                       font-size: large;
                       color: #FF7A80; }
 
@@ -106,11 +106,11 @@ body { background-color: #FFF !important;
 
                            
 .header-options-col { background-color: #DDD5F5;
-                      padding: 16px 128px; }
+                      padding: 12px 128px; }
 
 .header-options-col-menu { display: inline-flex; }
 
-.header-options-col-item { font-size: 24px;
+.header-options-col-item { font-size: 16px;
                            font-weight: normal;
                            color: white;
                            background-color: #270570;

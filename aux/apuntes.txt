@@ -85,30 +85,58 @@ Cuidado de mascotas
 
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
-CONSIDERACIONES
+CONSIDERACIONES   *** REVEER TODO EL TIEMPO Y MANTENERLO LO MÁS SENCILLO POSIBLE ***
 
 * Debería tener al menos dos idiomas
 
-* Si el usuario se loguea y tiene una reserva debería mostrársela y darle la posibilidad de darla de baja)
+* Opción "My Bookings" (Mis reservas) -el usuario debe estar logueado-
+  - Debe mostrar todas las reservas del usuario y darle la posibilidad de darlas de baja
+  - Si no tiene reservas, sólo informar que no hay reservas a su nombre.
+  - No se debe confundir con "Bookings" que lo lleva a poder hacer una reserva
+    o consultar disponibilidad.
 
-* Para hacer una consulta de disponibilidad para reserva debería indicar:
+
+* Opción "Orders" (revisar traducción)
+  - Le muestra al usuario en una parte de la pantalla las cosas que puede pedir y el precio,
+    y en otra parte le da la posibilidad de hacer pedidos (órdenes).
+
+
+* Opción "Invoice" (revisar traducción, se podría buscar como deuda o débitos, lo que sea más usual)
+  - Le muestra al usuario una lista de sus consumos, con fecha, concepto, importe individual
+    y el total acumulado. Estará vacío si no hizo el Check In.
+  - Si no tiene consumos, solo le informa eso (similar a cuando no tiene reservas).
+  - Le muestra un botón de descargar consumos a pdf si hizo el Check Out,
+    (si no es difícil de implementar).
+
+
+* Opción "Messages"
+  - Si tiene mensajes sin leer le debe aparecer una notificación al lado, por ej el n° sin leer
+  - Debe poder verlos, responder y borrar cada uno de ellos.
+
+
+* Opción "Check In / Check Out"
+  - Si el usuario está logueado y tiene una reserva en fecha debe aparecer el botón "Check In".
+  -  Al hacer el auto Check In se le genera el primer cargo o consumo que es el de la habitación
+     y podría recibir un mensaje de la "recepción" diciendo que puede retirar las llaves por la misma,
+	 indicando cuál es su número de habitación. ¿Poner Un mapa con la ubicación o en FAQs?
+  - Si el usuario está logueado, hizo el Check In y está en fecha de salir, debe mostrarse la opción de Check Out.
+  - Al hacer el Check Out se cierren los consumos y se puede descargar el pdf, poner en la boleta
+    por ejemplo un mensaje que diga "pase por recepción a cancelar su deuda".
+
+
+* Opción "Booking"
+  - Para hacer una consulta de disponibilidad para reserva debería indicar:
 	Fecha de entrada
 	Fecha de salida
 	Cantidad de personas (se puede poner algo tipo "hasta dos niños menores a tantos años gratis")
 	Cantidad de habitaciones (o por habitación -depende si se complica-)
 
-* La consulta de reserva debería devolver opciones tipo a) habitación estándar, b) económica, c) superior
+   - La consulta de reserva debería devolver opciones tipo a) habitación estándar, b) económica, c) superior
 
-* Al hacer el auto checkIn se le genera el primer cargo o consumo que es el de la habitación
-  y podría recibir un mensaje de la "recepción" diciendo que puede retirar las llaves
+   - Si el usuario está logueado le da la posibilidad de hacer la reserva, sino
+     le informa de la disponibilidad (un botón que aparezca o desaparezca).
 
-* Que no se pueda hacer un Check Out si los consumos no están pagados.
-  O que al hacer el CheckOut se cierren los consumos y se pueda descargar el pdf.
-
-* En la mensajería debería poder borrar mensajes o la conversación
-
-
-
+* Opción "Guest Reviews"
 
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
@@ -118,7 +146,7 @@ PROCESOS
 * Registrarse
 * Login / Logout
 * Consultar habitaciones disponibles por rango de fechas, para X cantidad de personas (modelo: HABITACIONES, RESERVAS)
-* Hacer reserva (modelo: RESERVAS)
+* Consultar disponibilidad y hacer reserva (modelo: RESERVAS)
 * Enviar y recibir mensajes de la recepción tipo DM (hacerlo si no se complica, modelo: MENSAJES)
 * Dejar comentarios sobre el servicio del hotel (modelo: COMENTARIOS)
 * Pedir servicios para una habitación (modelo: SERVICIOS, CONSUMOS)
@@ -130,8 +158,12 @@ PROCESOS
 MODELOS
 
 * USUARIOS
- - Idioma de preferencia
- - Estado (Check In Verdadero o Falso. Para habilitar hacer consumos, mensajes debe estar siempre habilitado)
+ - Procedencia (código de país)
+ - Estado (manejado por el Check In/Check Out)
+ 	- 'none' por default, nunca estuvo.
+	- 'in' cuando entra, lo habilita a hacer consumos y mensajes
+	- 'out' cuando sale, lo habilita a hacer comentarios en Guest Reviews
+
 
 * HABITACIONES
  - Capacidad
@@ -166,6 +198,8 @@ MODELOS
 * COMENTARIOS
  - texto
  - calificación
+ - usuario
+ - bandera del país de orígen
 
 
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
@@ -182,5 +216,6 @@ PARA EL FINAL
 - ver de factorizar el css con SCSS
 - ver que en modo móvil despegar.com deja sólo los íconos en el menú donde está login
 - poner al pié de página los logos de las redes sociales (como está en despegar.com)
+- revisar todos los mensajes en inglés porque es lo primero que van a ver.
 
 

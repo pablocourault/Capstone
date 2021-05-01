@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-29 19:47-0300\n"
+"POT-Creation-Date: 2021-04-30 18:45-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,80 +26,96 @@ msgstr ""
 "El perro ladró hasta que le alcanzaron un hueso, y se lo comió en el medio "
 "del patio trasero"
 
-#: templates/hotel/layout.html:81
+#: templates/hotel/layout.html:84
 msgid "Logout"
 msgstr "Salir"
 
-#: templates/hotel/layout.html:86 templates/hotel/login.html:19
+#: templates/hotel/layout.html:89 templates/hotel/login.html:7
+#: templates/hotel/login.html:21
 msgid "Login"
 msgstr "Ingresar"
 
-#: templates/hotel/layout.html:90 templates/hotel/register.html:5
-#: templates/hotel/register.html:25
+#: templates/hotel/layout.html:93 templates/hotel/register.html:7
+#: templates/hotel/register.html:27
 msgid "Register"
 msgstr "Registrarse"
 
-#: templates/hotel/layout.html:102
+#: templates/hotel/layout.html:105
 msgid "Info"
 msgstr "Info"
 
-#: templates/hotel/layout.html:107
+#: templates/hotel/layout.html:110
+msgid "Bookings"
+msgstr ""
+
+#: templates/hotel/layout.html:115
 msgid "Facilities"
 msgstr "Instalaciones"
 
-#: templates/hotel/layout.html:112
+#: templates/hotel/layout.html:120
 msgid "House Rules"
 msgstr "Reglas del Hotel"
 
-#: templates/hotel/layout.html:117
+#: templates/hotel/layout.html:125
 msgid "The Final Print"
 msgstr "Consideraciones Finales"
 
-#: templates/hotel/layout.html:122
+#: templates/hotel/layout.html:130
 msgid "Guests Reviews"
 msgstr "Comentarios"
 
-#: templates/hotel/layout.html:127
+#: templates/hotel/layout.html:135
 msgid "FAQs"
 msgstr "Preguntas Frecuentes"
 
-#: templates/hotel/login.html:14 templates/hotel/register.html:14
+#: templates/hotel/layout.html:150
+msgid "Orders"
+msgstr "Consumos"
+
+#: templates/hotel/layout.html:151
+msgid "Invoice"
+msgstr "Cuenta"
+
+#: templates/hotel/layout.html:152
+msgid "Messages"
+msgstr "Mensajes"
+
+#: templates/hotel/layout.html:153
+msgid "My Bookings"
+msgstr "Sus Reservas"
+
+#: templates/hotel/layout.html:161
+msgid "Make Your Booking Here"
+msgstr "Haga aquí su reserva"
+
+#: templates/hotel/login.html:16 templates/hotel/register.html:16
 msgid "Username"
 msgstr "Nombre de usuario"
 
-#: templates/hotel/login.html:17 templates/hotel/register.html:20
+#: templates/hotel/login.html:19 templates/hotel/register.html:22
 msgid "Password"
 msgstr "Contraseña"
 
-#: templates/hotel/login.html:22
+#: templates/hotel/login.html:24
 msgid "Don't have an account?"
 msgstr "¿No tiene una cuenta?"
 
-#: templates/hotel/login.html:23
+#: templates/hotel/login.html:25
 msgid "Register here."
 msgstr "Registrarse aquí."
 
-#: templates/hotel/register.html:17
+#: templates/hotel/register.html:19
 msgid "Email"
 msgstr "Correo electrónico"
 
-#: templates/hotel/register.html:23
+#: templates/hotel/register.html:25
 msgid "Confirm Password"
 msgstr "Confirme la contraseña"
 
-#: templates/hotel/register.html:28
+#: templates/hotel/register.html:30
 msgid "Already have an account?"
 msgstr "¿Ya tiene una cuenta?"
 
-#: templates/hotel/register.html:29
+#: templates/hotel/register.html:31
 msgid "Log In here."
 msgstr "Entrar aquí"
-
-#~ msgid "Go"
-#~ msgstr "Ir"
-
-#~ msgid "Hotel"
-#~ msgstr "Hotel"
-
-#~ msgid "Overview"
-#~ msgstr "Información"
