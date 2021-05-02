@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-30 18:45-0300\n"
+"POT-Creation-Date: 2021-05-02 11:52-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,13 +18,68 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: templates/hotel/index.html:8
+#: templates/hotel/index.html:16
 msgid ""
-"\"The dog barked until a bone was hit, and he ate it in the middle of the "
-"backyard\""
+"Le Monde offers contemporary orange and white rooms in downtown Buenos "
+"Aires, 2-blocks from 9 de Julho Avenue."
 msgstr ""
-"El perro ladró hasta que le alcanzaron un hueso, y se lo comió en el medio "
-"del patio trasero"
+"Le Monde ofrece habitaciones modernas en tonos naranja y blanco en el "
+"centro de Buenos Aires."
+
+#: templates/hotel/index.html:22
+msgid ""
+"Surrounded by restaurants and boutiques, it is 1 km from the Colon Theatre."
+msgstr ""
+"Se encuentra a 2 calles de la Avenida 9 de Julio y a 1 km del teatro Colón, "
+"rodeado de restaurantes y tiendas."
+
+#: templates/hotel/index.html:28
+msgid ""
+"Rooms at Hotel Mundial have air conditioning and private balconies with city "
+"views. All are equipped with cable TV, free Wi-Fi and a work desk."
+msgstr ""
+"Las habitaciones del Hotel Mundial disponen de aire acondicionado y balcón "
+"privado con vistas a la ciudad.Todas están equipadas con TV por cable, "
+"conexión Wi-Fi gratuita y escritorio."
+
+#: templates/hotel/index.html:35
+msgid ""
+"A breakfast buffet with seasonal fruits, natural juices and fresh pastries "
+"is served daily. Due to its central location, guests can enjoy a variety of "
+"local restaurants, bars and entertainment options."
+msgstr ""
+"Todos los días se sirve un desayuno bufé con fruta de temporada, zumos "
+"naturales y repostería recién hecha.Muy cerca del hotel encontrará variedad "
+"de restaurantes, bares y locales de ocio."
+
+#: templates/hotel/index.html:42
+msgid ""
+"Hotel Mundial is 200 m from Lima Subway Station, and 400 m from Avenida 9 de "
+"Julio. It is also 6-blocks from the iconic Obelisk."
+msgstr ""
+"El Hotel Mundial se encuentra a 200 metros de la estación de subte de Lima y "
+"a 400 metros de la Avenida 9 de Julio.Además, está a 6 calles del famoso "
+"Obelisco."
+
+#: templates/hotel/index.html:49
+msgid ""
+"This is our guests' favourite part of Buenos Aires, according to independent "
+"reviews."
+msgstr ""
+"Nuestros clientes dicen que esta parte de Buenos Aires es su favorita, según "
+"los comentarios independientes."
+
+#: templates/hotel/index.html:55
+msgid ""
+"Couples particularly like the location — they rated it 9.0 for a two-person "
+"trip."
+msgstr ""
+"A las parejas les gusta la ubicación. Le pusieron un puntaje de 9,0 para un "
+"viaje de a dos."
+
+#: templates/hotel/index.html:61
+msgid "We speak your language!"
+msgstr "¡Hablamos tu idioma!"
 
 #: templates/hotel/layout.html:84
 msgid "Logout"
@@ -40,51 +95,51 @@ msgstr "Ingresar"
 msgid "Register"
 msgstr "Registrarse"
 
-#: templates/hotel/layout.html:105
+#: templates/hotel/layout.html:107
 msgid "Info"
 msgstr "Info"
 
-#: templates/hotel/layout.html:110
+#: templates/hotel/layout.html:117
 msgid "Bookings"
-msgstr ""
+msgstr "Reservaciones"
 
-#: templates/hotel/layout.html:115
+#: templates/hotel/layout.html:126
 msgid "Facilities"
 msgstr "Instalaciones"
 
-#: templates/hotel/layout.html:120
+#: templates/hotel/layout.html:135
 msgid "House Rules"
 msgstr "Reglas del Hotel"
 
-#: templates/hotel/layout.html:125
+#: templates/hotel/layout.html:144
 msgid "The Final Print"
 msgstr "Consideraciones Finales"
 
-#: templates/hotel/layout.html:130
+#: templates/hotel/layout.html:153
 msgid "Guests Reviews"
 msgstr "Comentarios"
 
-#: templates/hotel/layout.html:135
+#: templates/hotel/layout.html:162
 msgid "FAQs"
 msgstr "Preguntas Frecuentes"
 
-#: templates/hotel/layout.html:150
+#: templates/hotel/layout.html:179
 msgid "Orders"
 msgstr "Consumos"
 
-#: templates/hotel/layout.html:151
+#: templates/hotel/layout.html:180
 msgid "Invoice"
 msgstr "Cuenta"
 
-#: templates/hotel/layout.html:152
+#: templates/hotel/layout.html:181
 msgid "Messages"
 msgstr "Mensajes"
 
-#: templates/hotel/layout.html:153
+#: templates/hotel/layout.html:182
 msgid "My Bookings"
 msgstr "Sus Reservas"
 
-#: templates/hotel/layout.html:161
+#: templates/hotel/layout.html:190
 msgid "Make Your Booking Here"
 msgstr "Haga aquí su reserva"
 
