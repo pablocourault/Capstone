@@ -100,39 +100,68 @@
 
         <div class="row cabecera" id="header-info-row">
 
-            <div class="col-lg-1 col-sm-3 header-info-label"> 
-            <div class="material-icons-outlined header-info-icons">info</div>
-            <div><a href="{% url 'info' %}">{% translate 'Info' %}</a></div>
+            <div class="col-lg-1 col-sm-3 header-info-col"> 
+                <a href="{% url 'info' %}">
+                <div class="header-info-links">
+                <div class="material-icons-outlined header-info-icons">info</div>
+                <div>{% translate 'Info' %}</div>
+                </div>
+                </a>
             </div>
 
-            <div class="col-lg-1 col-sm-3 header-info-label">
-            <div class="material-icons-outlined header-info-icons">event</div>
-            <div><a href="{% url 'bookings' %}">{% translate 'Bookings' %}</a></div>
+
+            <div class="col-lg-1 col-sm-3 header-info-col"> 
+                <a href="{% url 'bookings' %}">
+                <div class="header-info-links">
+                <div class="material-icons-outlined header-info-icons">event</div>
+                <div>{% translate 'Bookings' %}</div>
+                </div>
+                </a>
             </div>
 
-            <div class="col-lg-1 col-sm-3 header-info-label"> 
-            <div class="material-icons-outlined header-info-icons">hotel</div>
-            <div><a href="{% url 'facilities' %}">{% translate 'Facilities' %}</a></div>
+            <div class="col-lg-1 col-sm-3 header-info-col"> 
+                <a href="{% url 'facilities' %}">
+                <div class="header-info-links">
+                <div class="material-icons-outlined header-info-icons">hotel</div>
+                <div>{% translate 'Facilities' %}</div>
+                </div>
+                </a>
             </div>
 
-            <div class="col-lg-1 col-sm-3 header-info-label"> 
-            <div class="material-icons-outlined header-info-icons">rule</div>
-            <div><a href="{% url 'houserules' %}">{% translate 'House Rules' %}</a></div>
+            <div class="col-lg-1 col-sm-3 header-info-col"> 
+                <a href="{% url 'houserules' %}">
+                <div class="header-info-links">
+                <div class="material-icons-outlined header-info-icons">rule</div>
+                <div>{% translate 'House Rules' %}</div>
+                </div>
+                </a>
             </div>
 
-            <div class="col-lg-1 col-sm-3 header-info-label"> 
-            <div class="material-icons-outlined header-info-icons">text_snippet</div>
-            <div><a href="{% url 'finalprint' %}">{% translate 'The Final Print' %}</a></div>
+            <div class="col-lg-1 col-sm-3 header-info-col"> 
+                <a href="{% url 'finalprint' %}">
+                <div class="header-info-links">
+                <div class="material-icons-outlined header-info-icons">text_snippet</div>
+                <div>{% translate 'The Final Print' %}</div>
+                </div>
+                </a>
             </div>
 
-            <div class="col-lg-1 col-sm-3 header-info-label"> 
-            <div class="material-icons-outlined header-info-icons">preview</div>
-            <div><a href="{% url 'guestsreviews' %}">{% translate 'Guests Reviews' %}</a></div>
+            <div class="col-lg-1 col-sm-3 header-info-col"> 
+                <a href="{% url 'guestsreviews' %}">
+                <div class="header-info-links">
+                <div class="material-icons-outlined header-info-icons">preview</div>
+                <div>{% translate 'Guests Reviews' %}</div>
+                </div>
+                </a>
             </div>
 
-            <div class="col-lg-1 col-sm-3 header-info-label"> 
-            <div class="material-icons-outlined header-info-icons">question_answer</div>
-            <div><a href="{% url 'faqs' %}">{% translate 'FAQs' %}</a></div>
+            <div class="col-lg-1 col-sm-3 header-info-col"> 
+                <a href="{% url 'faqs' %}">
+                <div class="header-info-links">
+                <div class="material-icons-outlined header-info-icons">question_answer</div>
+                <div>{% translate 'FAQs' %}</div>
+                </div>
+                </a>
             </div>
 
         </div> <!-- close header-info-row-->

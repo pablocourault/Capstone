@@ -20,24 +20,20 @@ body { background-color: #FFF !important;
                                         font-weight: bold;
                                         color: #4300D2; }
 
-.btn-login { background: #4300D2;
-             border:#4300D2 }
-
+.btn-login { background: #270570;
+             border:#270570 }
 
 #container-header-div {padding: 0}
-
 
 .cabecera { justify-content:baseline;
             padding: 0 0 8px;
             margin: 0;
             align-items: stretch; }
 
-
 #logo { cursor: pointer;
         color: #4300D2;
         font-size: 36px;
-        vertical-align:text-bottom }
-
+        vertical-align:text-bottom; }
 
 .logo { font-family: 'Comfortaa', cursive;
         font-size: xx-large;
@@ -45,14 +41,13 @@ body { background-color: #FFF !important;
         cursor: pointer;
         color: #4300D2; }
 
-
 #logo-div { text-align: center; }
 
 .icono { vertical-align:text-bottom; }
 
 #logo-div, #space-div, #name-actions-div { padding-top: 8px; }
 
-
+@media only screen and (min-width: 768px) {
 #autogestion-bar-div { background-color: #EEE;
                        border-bottom-left-radius: 32px;
                        border-right: solid 1px #cccccc;
@@ -60,14 +55,21 @@ body { background-color: #FFF !important;
                        padding-left: 8px;
                        display: inline-flex;
                        justify-content: center;
-                       height: 52px; }
+                       height: 52px; }}
+
+@media only screen and (max-width: 768px) {
+ #autogestion-bar-div { background-color: #EEE;
+                        border-right: solid 1px #cccccc;
+                        padding-right: 8px;
+                        padding-left: 8px;
+                        display: inline-flex;
+                        justify-content: center;
+                        height: 52px; }}
 
 #name-actions-div { background-color: #EEE;
                     display: inline-flex;
                     justify-content: center;
                     height: 52px; }
-
-
 
 .autogestion-item { padding: 8px 8px; }
                   
@@ -76,7 +78,7 @@ body { background-color: #FFF !important;
                       color: #444; }
 
 .autogestion-item input[type="image"] {padding-right: 16px;
-                                       height: 32px;}
+                                       height: 32px; }
 
 #user-authenticated { padding-top: 6px;
                       font-size: large;
@@ -87,24 +89,23 @@ body { background-color: #FFF !important;
             display: block;
             cursor: pointer; }
 
-#header-info-row {padding-top: 8px;} 
-        
-.header-info-icons { font-size: 24px;
+#header-info-row { padding-top: 8px; } 
+
+#header-info-col  { padding-left: 0;
+                    padding-right: 0;
+                    padding-bottom: 8px; } /* to best view in mobile mode */
+
+.header-info-links { display:block;
+                     font-size: 14px;
+                     text-align: center;
                      color: dimgray; }
 
-.header-info-label { font-size: 14px;
-                     font-weight: normal;
-                     display: inline-block;
-                     text-align: center;
-                     color: dimgray;
-                     padding-left: 0;
-                     padding-right: 0;
-                     padding-bottom: 8px; } /* to best view in mobile mode */
+.header-info-links:hover { font-weight: bold;
+                           color: #4300D2; }
 
-.header-info-label:hover { cursor: pointer;
-                           font-weight: bold; }
+.header-info-icons { font-size: 24px; }
 
-                           
+              
 .header-options-col { background-color: #DDD5F5;
                       padding: 12px 128px; }
 
@@ -120,11 +121,31 @@ body { background-color: #FFF !important;
 
 .header-options-col-item:hover { font-weight: bold; }
 
-#col-item-1 { border-top-left-radius: 8px;
-              border-bottom-left-radius: 8px; }
+@media only screen and (min-width: 768px)
 
-#col-item-6 { border-top-right-radius: 8px;
-              border-bottom-right-radius: 8px; }
+{ #col-item-1 { border-top-left-radius: 8px;
+                border-bottom-left-radius: 8px; }
+
+  #col-item-6 { border-top-right-radius: 8px;
+                border-bottom-right-radius: 8px; }
+}
+
+.location { font-family: 'Comfortaa', cursive;
+            font-size: small;
+            font-weight: normal;
+            color: midnightblue;
+            display:inline-flex;
+            padding: 8px 0 0 80px; }
+
+#street { padding-top: 4px;
+          padding-left: 4px;}
+
+.info-text { font-family: 'Comfortaa', cursive;
+             font-size: medium;
+             font-weight: normal;
+             color: dimgray;
+             display:inline-flex;
+             padding: 8px 0 0 80px; }
 
 
 
