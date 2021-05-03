@@ -164,12 +164,13 @@ body { background-color: #FFF !important;
              text-align: justify;
              line-height: 1.6; }}
 
-.foto-gallery { padding: 0 64px 0 32px; }
+.foto-gallery { padding: 0 32px 0 80px; }
 
 .fotos { padding: 0 8px;
-         width: 32%;
-         display: inline-flex;
+         display: contents;
          cursor: pointer; }
+
+.fotothumbnail { width: 28%; }
 
 .footer { padding: 64px 0 24px 0;
           text-align: center; }
