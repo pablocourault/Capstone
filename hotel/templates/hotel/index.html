@@ -1,5 +1,6 @@
 {% extends "hotel/layout.html" %}
 {% load i18n %}
+
 {% block body %}
 
   <div class="row">
@@ -67,45 +68,46 @@
 
     <div class="col-lg-6 col-sm-12 foto-gallery">
       
-      <!-- Images used to open the lightbox -->
+    <!-- Images used to open the lightbox -->
+
     <div class="fotos">
-    <img src="/static/images/fotos/foto00.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+    <img src="/static/images/fotos/foto0.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
     </div>
 
     <div class="fotos">
-    <img src="/static/images/fotos/foto01.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
+    <img src="/static/images/fotos/foto1.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
     </div>
 
     <div class="fotos">
-    <img src="/static/images/fotos/foto02.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
+    <img src="/static/images/fotos/foto2.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
     </div>
 
     <div class="fotos">
-    <img src="/static/images/fotos/foto03.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+    <img src="/static/images/fotos/foto3.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
     </div>
 
     <div class="fotos">
-    <img src="/static/images/fotos/foto04.jpg" onclick="openModal();currentSlide(5)" class="hover-shadow">
+    <img src="/static/images/fotos/foto4.jpg" onclick="openModal();currentSlide(5)" class="hover-shadow">
     </div>
 
     <div class="fotos">
-    <img src="/static/images/fotos/foto05.jpg" onclick="openModal();currentSlide(6)" class="hover-shadow">
+    <img src="/static/images/fotos/foto5.jpg" onclick="openModal();currentSlide(6)" class="hover-shadow">
     </div>
 
     <div class="fotos">
-    <img src="/static/images/fotos/foto06.jpg" onclick="openModal();currentSlide(7)" class="hover-shadow">
+    <img src="/static/images/fotos/foto6.jpg" onclick="openModal();currentSlide(7)" class="hover-shadow">
     </div>
 
     <div class="fotos">
-    <img src="/static/images/fotos/foto07.jpg" onclick="openModal();currentSlide(8)" class="hover-shadow">
+    <img src="/static/images/fotos/foto7.jpg" onclick="openModal();currentSlide(8)" class="hover-shadow">
     </div>
 
     <div class="fotos">
-    <img src="/static/images/fotos/foto08.jpg" onclick="openModal();currentSlide(9)" class="hover-shadow">
+    <img src="/static/images/fotos/foto8.jpg" onclick="openModal();currentSlide(9)" class="hover-shadow">
     </div>
  
     <div class="fotos">
-    <img src="/static/images/fotos/foto09.jpg" onclick="openModal();currentSlide(10)" class="hover-shadow">
+    <img src="/static/images/fotos/foto9.jpg" onclick="openModal();currentSlide(10)" class="hover-shadow">
     </div>
       
     <div class="fotos">
@@ -116,6 +118,63 @@
     <img src="/static/images/fotos/foto11.jpg" onclick="openModal();currentSlide(12)" class="hover-shadow">
     </div>
         
+    </div>
+
+<!-- The Modal/Lightbox -->
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    {% for i in n %}
+
+    <div class="mySlides">
+      <div class="numbertext">{{i}} / {{n}}</div>
+      <img src="/static/images/fotos/foto{{ i }}.jpg" style="width:100%">
+    </div>
+
+    {% endfor %}
+
+
+    <!-- Next/previous controls -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+
+    <!-- Thumbnail image controls -->
+    {% for i in n %}
+    <div class="column">
+      <img class="demo" src="/static/images/fotos/foto{{ i }}.jpg" onclick="currentSlide(1)">
+    </div>
+    {% endfor %}
+
+
+  </div>
+</div>
+
+  </div>  <!-- close row line 12 -->
+
+  <div class="row footer">
+ 
+    <div class="col-lg-4">
+    </div>
+
+    <div class="col">
+      <img src="/static/icons/facebook.svg" class="foot-icon">  
+    </div>
+
+    <div class="col">
+      <img src="/static/icons/whatsapp.svg" class="foot-icon">  
+    </div>
+
+    <div class="col">
+      <img src="/static/icons/instagram.svg" class="foot-icon">  
+    </div>
+
+    <div class="col">
+      <img src="/static/icons/twitter.svg" class="foot-icon">  
+    </div>
+
+    <div class="col-lg-4"> 
     </div>
 
   </div>
