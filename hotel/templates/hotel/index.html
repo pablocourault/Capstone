@@ -1,5 +1,8 @@
 {% extends "hotel/layout.html" %}
+
 {% load i18n %}
+
+{% load static %}
 
 {% block body %}
 
@@ -66,59 +69,63 @@
     
     </div>
 
-    <div class="col-lg-6 col-sm-12 foto-gallery">
+    <div class="col-lg-6 col-sm-12">
       
     <!-- Images used to open the lightbox -->
 
+    <div class="foto-gallery">
+
     <div class="fotos">
-    <img src="/static/images/fotos/foto0.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow fotothumbnail">
+    <img src="/static/images/fotos/foto0.jpg" class="hover-shadow fotothumbnail" data-fotoid='0'>
     </div>
 
     <div class="fotos">
-    <img src="/static/images/fotos/foto1.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow fotothumbnail">
+    <img src="/static/images/fotos/foto1.jpg" class="hover-shadow fotothumbnail" data-fotoid='1'>
     </div>
 
     <div class="fotos">
-    <img src="/static/images/fotos/foto2.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow fotothumbnail">
+    <img src="/static/images/fotos/foto2.jpg" class="hover-shadow fotothumbnail" data-fotoid='2'>
     </div>
 
     <div class="fotos">
-    <img src="/static/images/fotos/foto3.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow fotothumbnail">
+    <img src="/static/images/fotos/foto3.jpg" class="hover-shadow fotothumbnail" data-fotoid='3'>
     </div>
 
     <div class="fotos">
-    <img src="/static/images/fotos/foto4.jpg" onclick="openModal();currentSlide(5)" class="hover-shadow fotothumbnail">
+    <img src="/static/images/fotos/foto4.jpg" class="hover-shadow fotothumbnail" data-fotoid='4'>
     </div>
 
     <div class="fotos">
-    <img src="/static/images/fotos/foto5.jpg" onclick="openModal();currentSlide(6)" class="hover-shadow fotothumbnail">
+    <img src="/static/images/fotos/foto5.jpg" class="hover-shadow fotothumbnail" data-fotoid='5'>
     </div>
 
     <div class="fotos">
-    <img src="/static/images/fotos/foto6.jpg" onclick="openModal();currentSlide(7)" class="hover-shadow fotothumbnail">
+    <img src="/static/images/fotos/foto6.jpg" class="hover-shadow fotothumbnail" data-fotoid='6'>
     </div>
 
     <div class="fotos">
-    <img src="/static/images/fotos/foto7.jpg" onclick="openModal();currentSlide(8)" class="hover-shadow fotothumbnail">
+    <img src="/static/images/fotos/foto7.jpg" class="hover-shadow fotothumbnail" data-fotoid='7'>
     </div>
 
     <div class="fotos">
-    <img src="/static/images/fotos/foto8.jpg" onclick="openModal();currentSlide(9)" class="hover-shadow fotothumbnail">
+    <img src="/static/images/fotos/foto8.jpg" class="hover-shadow fotothumbnail" data-fotoid='8'>
     </div>
  
     <div class="fotos">
-    <img src="/static/images/fotos/foto9.jpg" onclick="openModal();currentSlide(10)" class="hover-shadow fotothumbnail">
+    <img src="/static/images/fotos/foto9.jpg" class="hover-shadow fotothumbnail" data-fotoid='9'>
     </div>
       
     <div class="fotos">
-    <img src="/static/images/fotos/foto10.jpg" onclick="openModal();currentSlide(11)" class="hover-shadow fotothumbnail">
+    <img src="/static/images/fotos/foto10.jpg" class="hover-shadow fotothumbnail" data-fotoid='10'>
     </div>
 
     <div class="fotos">
-    <img src="/static/images/fotos/foto11.jpg" onclick="openModal();currentSlide(12)" class="hover-shadow fotothumbnail">
+    <img src="/static/images/fotos/foto11.jpg" class="hover-shadow fotothumbnail" data-fotoid='11'>
     </div>
         
     </div>
+
+  </div>
 
   </div>  <!-- close row line 12 -->
 
@@ -150,7 +157,7 @@
 
   <!-- The Modal/Lightbox -->
 <div id="myModal" class="modal">
-  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <span class="close cursor">&times;</span>
   <div class="modal-content">
 
     {% for i in n %}
@@ -179,5 +186,6 @@
   </div>
 </div>
 
+  
 {% endblock %}
 

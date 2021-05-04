@@ -1,4 +1,11 @@
+document.addEventListener('DOMContentLoaded', function() {
 
+  document.querySelectorAll('img.fotothumbnail').forEach(function(img) {
+
+    img.onclick = function() { openModal();
+                               currentSlide(img.dataset.fotoid); }  });
+
+  document.querySelector('#myModal').addEventListener('click', () => closeModal());
 
 // Open the Modal
 function openModal() {
@@ -12,7 +19,7 @@ function openModal() {
   
   var slideIndex = 1;
   showSlides(slideIndex);
-  
+
   // Next/previous controls
   function plusSlides(n) {
     showSlides(slideIndex += n);
@@ -27,7 +34,6 @@ function openModal() {
     var i;
     var slides = document.getElementsByClassName("mySlides");
     var dots = document.getElementsByClassName("demo");
-    var captionText = document.getElementById("caption");
     if (n > slides.length) {slideIndex = 1}
     if (n < 1) {slideIndex = slides.length}
     for (i = 0; i < slides.length; i++) {
@@ -36,8 +42,8 @@ function openModal() {
     for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
     }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
-    captionText.innerHTML = dots[slideIndex-1].alt;
+    slides[slideIndex].style.display = "block";
+    dots[slideIndex].className += " active";
   }
 
+});
