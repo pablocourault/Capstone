@@ -199,7 +199,7 @@ body { background-color: #FFF !important;
 
 /* The Modal (background) */
 .modal {
-        display: none;
+        /* display: none; */
         position: fixed;
         z-index: 1;
         padding-top: 100px;
@@ -240,7 +240,7 @@ body { background-color: #FFF !important;
       
 /* Hide the slides by default */
 .mySlides {
-        display: none;
+       /* display: none; */
       }
       
 /* Next & previous buttons */
