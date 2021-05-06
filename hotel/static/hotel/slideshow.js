@@ -3,9 +3,14 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('img.fotothumbnail').forEach(function(img) {
 
     img.onclick = function() { openModal();
-                               currentSlide(img.dataset.fotoid); }  });
+                               showSlides(img.dataset.fotoid); }  });
 
-  document.querySelector('#myModal').addEventListener('click', () => closeModal());
+  document.querySelector('#close-modal').addEventListener('click', () => closeModal());
+
+  document.querySelector('.prev').addEventListener('click', () => plusSlides(-1));
+
+  document.querySelector('.next').addEventListener('click', () => plusSlides(1));
+
 
 // Open the Modal
 function openModal() {
@@ -17,34 +22,38 @@ function openModal() {
     document.getElementById("myModal").style.display = "none";
   }
   
+  /*
   var slideIndex = 1;
-  showSlides(slideIndex);
 
-  // Next/previous controls
+  showSlides(slideIndex);
+  */
+
+  //  Next/previous controls
   function plusSlides(n) {
-    showSlides(slideIndex += n);
+    showSlides(n);
   }
   
+  /*
   // Thumbnail image controls
   function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
+    slideIndex = n;
+    showSlides(slideIndex);
+  } */
   
-  function showSlides(n) {
+  function showSlides(slideIndex) {
+    
     var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("demo");
 
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
+    var slides = document.getElementsByClassName("mySlides");
+
+    if ( slideIndex > 36 ) {slideIndex = 1}
+    if ( slideIndex < 1 ) {slideIndex = 36}
+
+     for (i = 1; i < 36; i++) {
       slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace("active", "");
-    }
+    } 
+
     slides[slideIndex].style.display = "block";
-    dots[slideIndex].className += "active";
   }
 
 });

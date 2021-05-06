@@ -4,6 +4,10 @@
 
 {% load static %}
 
+{% block script %}
+    <script src="{% static 'hotel/slideshow.js' %}"></script>
+{% endblock %}
+
 {% block body %}
 
   <div class="row">
@@ -75,11 +79,7 @@
 
     <div class="foto-gallery">
 
-    <div class="fotos">
-    <img src="/static/images/fotos/foto0.jpg" class="hover-shadow fotothumbnail" data-fotoid='0'>
-    </div>
-
-    <div class="fotos">
+       <div class="fotos">
     <img src="/static/images/fotos/foto1.jpg" class="hover-shadow fotothumbnail" data-fotoid='1'>
     </div>
 
@@ -122,6 +122,10 @@
     <div class="fotos">
     <img src="/static/images/fotos/foto11.jpg" class="hover-shadow fotothumbnail" data-fotoid='11'>
     </div>
+
+    <div class="fotos">
+    <img src="/static/images/fotos/foto12.jpg" class="hover-shadow fotothumbnail" data-fotoid='12'>
+    </div>
         
     </div>
 
@@ -157,7 +161,7 @@
 
   <!-- The Modal/Lightbox -->
 <div id="myModal" class="modal">
-  <span class="close cursor">&times;</span>
+  <span class="close cursor" id="close-modal">&times;</span>
   <div class="modal-content">
 
     {% for i in n %}
@@ -169,23 +173,12 @@
 
     {% endfor %}
 
-
     <!-- Next/previous controls -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-
-    <!-- Thumbnail image controls -->
-    {% for i in n %}
-    <div class="col">
-      <img class="demo" src="/static/images/fotos/foto{{ i }}.jpg" onclick="currentSlide(i)">
-    </div>
-    {% endfor %}
-
+    <a class="prev">&#10094;</a>
+    <a class="next">&#10095;</a>
 
   </div>
 </div>
-
   
 {% endblock %}
 

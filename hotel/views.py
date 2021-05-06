@@ -18,7 +18,7 @@ from .models import User
 @csrf_exempt
 def index(request):
     
-    return render(request, "hotel/index.html", {'n' : range(35), 'total': 35 })
+    return render(request, "hotel/index.html", {'n' : range(1, 37), 'total': 36 })
 
 
 def info(request):

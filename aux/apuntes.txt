@@ -217,5 +217,6 @@ PARA EL FINAL
 - ver que en modo móvil despegar.com deja sólo los íconos en el menú donde está login
 - poner al pié de página los logos de las redes sociales (como está en despegar.com)
 - revisar todos los mensajes en inglés porque es lo primero que van a ver.
+- PROBAR CON DISTINTOS NAVEGADORES
 
 
