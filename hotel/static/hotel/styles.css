@@ -205,7 +205,7 @@ body { background-color: #FFF !important;
                      padding-top: 0.8rem; }
 
 .facilities-popular { font-family: 'Comfortaa', cursive;
-                      font-size:medium;
+                      font-size:small;
                       font-weight: normal;
                       color: dimgray;
                       text-align: center;
@@ -213,10 +213,12 @@ body { background-color: #FFF !important;
                       display:flex;
                       justify-content: center; }
 
- .facilities-item { padding: 16px;
-                    vertical-align: bottom; }                
+ .facilities-item { padding: 16px; }                
 
-.facilities-icon { color: #4300D2; }
+.facilities-icon { color: #4300D2;
+                   vertical-align: bottom; }
+
+.facilities-others-icon { vertical-align: bottom; }
 
 /* Styles for gallery */
 /* Styles for gallery */
