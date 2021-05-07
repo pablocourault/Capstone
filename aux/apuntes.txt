@@ -27,47 +27,83 @@ Aclarar que no se implementan medios de pago (pero se podrían poner logos para 
 La galería de imágenes la tenía por sectores (habitaciones, lobby, comedor, exteriores)
 
 
-Most popular facilities
-Non-smoking rooms
-WiFi available in all areas
-Desayuno incluido / Breakfast included 
-Traslado al aeropuerto / Airport shuttle / Airport shuttle (additional charge) 
-Cambio de monedas / Currency exchange
-Habitaciones familiares / Family rooms
-Habitaciones superiores accesibles por ascensor / Upper floors accessible by elevator
+Most popular facilities / Principales Comodidades / Instalações mais populares
+Non-smoking rooms / Habitaciones para no fumadores / Quartos para não fumantes
+Private bathroom / Baño privado / Banheiro privado
+WiFi available in all areas / WiFi en todas las áreas / Acesso Wi-Fi disponível em todas as áreas
+Breakfast included / Desayuno incluido / Café da manhã incluso
+Airport shuttle (additional charge) / Traslado al aeropuerto (con cargo) / Transfer para o aeroporto (Custo adicional)
+Currency exchange / Cambio de monedas / Câmbio monetário 
+Family rooms / Habitaciones familiares / Quartos para famílias
+Parking garage / Estacionamiento Propio / Garagem de Estacionamento 
 
 
 Servicios y comodidades incluidos en la habitación
-Aire acondicionado / Air conditioning
-Ventilador / Fan
-Calefacción / Heating
-Internet
-Netflix / Streaming service (like Netflix)
-Teléfono / Telephone
-Toma cerca de la cama / Socket near the bed 
-Heladera / Refrigerator
-Microondas / Microwave
-Hervidor eléctrico / Electric kettle
-Mesa de desayuno / Dining table
-TV / Flat-screen TV
-Cable / Cable channels
-Armario o ropero /  Wardrobe or closet
-Tendedero / Clothes rack
-Caja Fuerte / Safety deposit box
-Caja de seguridad para laptop / Laptop safe
-Baño privado / Private bathroom
-Artículos de aseo gratuitos / Free toiletries
-Secador de pelo / Hairdryer
-Papel higiénico / Toilet paper
-Bidet / Bidet
-Desinfectante de manos / Hand sanitiser
-Bata de baño / Bathrobe
-Toallas y sábanas / Towels/sheets (extra fee)
-Camas extra largas / Extra long beds (> 2 metres)
-Servicio de despertador / Wake up service/Alarm clock
-Purificador de aire instalado / Air purifiers installed
-Toda la unidad accesible en silla de ruedas / Entire unit wheelchair accessible
-Isonorización / Soundproofing
+
+
+- Bathroom / Baño / Banheiro
+  Free toiletries / Artículos de aseo gratuitos / Produtos de higiene gratuitos 
+  Toilet paper / Papel higiénico / Papel higiênico
+  Bath / Bañera / Banheira
+  Shower / Ducha / Chuveiro
+  Bidet / Bidet / Bidê
+  Hand Sanitiser / Desinfectante de manos / Álcool em gel disponível
+  Towels/Sheets (extra fee) / Toallas y sábanas / Toalhas e lençóis 
+
+- Bedroom / Dormitorio / 
+  Wardrobe or closet / Armario o ropero / Guarda-roupa ou armário 
+
+- Kitchen / Cocina / Cozinha
+  Minibar / Minibar / Minibar
+  Microwave / Microondas / Microondas
+  Dining table / Mesa de desayuno / Mesa de trabalho
+
+- Room Amenities / Habitaciones / Quartos
+  Soundproofing / Isonorización / Insonorização
+  Air conditioning / Aire acondicionado / Ar condicionado
+  Heating / Calefacción / Aquecimento 
+  WiFi 
+  Netflix / Streaming service (like Netflix)
+  TV / 
+  Cable channels / Cable / TV a cabo
+  Telephone / Teléfono / Telefone
+  Socket near the bed  / Toma cerca de la cama / Plugue perto da cama
+
+- Pets / Mascotas / Animais de estimação
+  Pets are not allowed / No se permiten mascotas / Animais de estimação: não permitidos. 
+
+- Reception Services / Servicios de Recepción / Serviços de recepção
+  Wake up service/Alarm clock / Servicio de despertador / Serviço de Alarme 
+  Luggage storage / Guardaequipaje / Depósito de bagagens 
+  24-hour front desk / Recepción 34 horas / Recepção 24 horas
+
+- Cleaning Services / Servicios de limpieza / Serviços de limpeza 
+  Daily housekeeping / Limpieza Diaria / Serviço de limpeza diário 
+  Ironing service (additional charge) / Planchado (con cargo) / Serviço de limpeza diário (Custo adicional)
+  Laundry (additional charge) / Lavandería (con cargo) / Lavanderia (Custo adicional)
+
+- Business facilities / Instalaciones para negocios / Instalações para negócios
+  Fax/Photocopying / Fax/Fotocopiadora / Fax/Fotocópia 
+  Meeting/Banquet facilities (additional charge) / Sala de reuniones/Banquetes (con cargo) / Comodidades para reuniões/banquetes (Custo adicional) 
+
+- Safety & Security / Seguridad / Segurança
+  Safety deposit box / Caja Fuerte / Cofre
+  CCTV in commons areas / CCTV en áreas comunes / CCTV nas áreas comuns 
+  Smoke alarms / Alarmas de humo / Detector de fumaça
+  24-hour security / Seguridad 24 horas / Segurança 24 horas
+
+- Accessibility / Accesibilidad / Acessibilidade
+  Elevator / Ascensor / Elevador 
+  Entire unit wheelchair accessible / Toda la unidad accesible en silla de ruedas / Acessível para cadeiras de rodas 
+  Bathroom emergency cord / Cuerda de emergencia en el baño / Cordão de emergência no banheiro 
+
+- Parking
+  Free Parking / Estacionamiento propio / Estacionamento / Estacionamento
+
+- Languages Spoken / Idiomas Hablados / Idiomas falados
+  English / Inglés / Inglês 
+  Spanish / Español / Espanhol 
+  Portuguese / Porttugues / Português 
 
 
 
@@ -79,9 +115,8 @@ Sauna
 Lavandería
 Servicio de Planchado / Ironing facilities
 Heladera (consumos en habitación)
-Estacionamiento / Parking 
 Restaurante
-Cuidado de mascotas
+
 
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
@@ -208,6 +243,7 @@ ESTILOS
 
 Cuando selecciona un header-label que cambien a color lila el header-label y el header-icon "o sea quedan marcados como seleccionados"
 
+¿ Poner un "Dark Theme" con una medialuna que se corra?
 
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
@@ -215,8 +251,9 @@ PARA EL FINAL
 
 - ver de factorizar el css con SCSS
 - ver que en modo móvil despegar.com deja sólo los íconos en el menú donde está login
-- poner al pié de página los logos de las redes sociales (como está en despegar.com)
+- aclarar en el README de la entrega que los logos de las redes sociales son simbólicos, no es que falta hacer.
 - revisar todos los mensajes en inglés porque es lo primero que van a ver.
 - PROBAR CON DISTINTOS NAVEGADORES
+- Controlar que el diseño responsivo funcione para en las páginas interiores del sitio
 
 

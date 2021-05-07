@@ -3,11 +3,33 @@
 {% block body %}
 
   <div class="row">
-    <div class="col-lg-12 col-sm-12"> 
-    
-Facilities
-   
+    <div class="col-lg-12 col-sm-12 facilities-title"> 
+       {% translate 'Most Popular Facilities And Services' %}
+    </div>
   </div>
+
+  <div class="row">
+    <div class="col-lg-12 col-sm-12 facilities-popular">
+
+      <div class="facilities-item">
+        <i class="material-icons-outlined facilities-icon">wifi</i>
+        &nbsp;{% translate 'WiFi available in all areas' %}
+      </div>
+      <div class="facilities-item">
+       <i class="material-icons-outlined facilities-icon">smoke_free</i>
+       &nbsp;{% translate 'Non-smoking rooms' %}
+      </div>
+      <div class="facilities-item">
+        <i class="material-icons-outlined facilities-icon">bathroom</i>
+        &nbsp;{% translate 'Private bathroom' %}
+       </div>
+
+    </div>
   </div>
+
+
+
+ 
+
 
 {% endblock %}
