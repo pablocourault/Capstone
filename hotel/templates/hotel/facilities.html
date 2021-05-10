@@ -55,26 +55,162 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-lg-4 col-sm-12 facilities-others">
-        <span>
-        <i class="material-icons-outlined facilities-others-icon">bathtub</i>
-        &nbsp;{% translate 'Bathroom' %}
+  <div class="row facilities-others-row">
+    <div class="col-lg-2 col-sm-12 facilities-others">
+    </div>
+
+    <div class="col-lg-3 col-sm-12 facilities-others">
+
+      <span class="facilities-others-ul-title">
+        <i class="material-icons-outlined facilities-others-icon">accessibility</i>
+        &nbsp;{% translate 'Accessibility' %}
+      </span>
+
+      <ul>
+        <li class="facilities-others-li">{% translate 'Bathroom emergency cord' %}</li>
+        <li class="facilities-others-li">{% translate 'Elevator' %}</li>
+        <li class="facilities-others-li">{% translate 'Entire unit wheelchair accessible' %}</li>
+      </ul>
+
+        <span class="facilities-others-ul-title">
+          <i class="material-icons-outlined facilities-others-icon">bathtub</i>
+          &nbsp;{% translate 'Bathroom' %}
         </span>
 
         <ul>
-          <li>{% translate 'Free toiletries' %}</li>
-          <li>{% translate 'Toilet paper' %}</li>
-          <li>{% translate 'Bath' %}</li>
-          <li>{% translate 'Shower' %}</li>
-          <li>{% translate 'Bidet' %}</li>
-          <li>{% translate 'Hand Sanitiser' %}</li>
-          <li>{% translate 'Towels/Sheets (extra fee)' %}</li>
+          <li class="facilities-others-li">{% translate 'Bath' %}</li>
+          <li class="facilities-others-li">{% translate 'Bidet' %}</li>
+          <li class="facilities-others-li">{% translate 'Free toiletries' %}</li>
+          <li class="facilities-others-li">{% translate 'Hand Sanitiser' %}</li>
+          <li class="facilities-others-li">{% translate 'Shower' %}</li>
+          <li class="facilities-others-li">{% translate 'Toilet paper' %}</li>
+          <li class="facilities-others-li">{% translate 'Towels/Sheets' %} </li>
         </ul>
+
+        <span class="facilities-others-ul-title">
+          <i class="material-icons-outlined facilities-others-icon">bed</i>
+          &nbsp;{% translate 'Bedroom' %}
+        </span>
+  
+        <ul>
+          <li class="facilities-others-li">{% translate 'Baby cribs' %}</li>
+          <li class="facilities-others-li">{% translate 'Socket near the bed' %}</li>
+          <li class="facilities-others-li">{% translate 'Wardrobe or closet' %}</li>
+        </ul>
+
+        <span class="facilities-others-ul-title">
+          <i class="material-icons-outlined facilities-others-icon">business_center</i>
+          &nbsp;{% translate 'Business facilities' %}
+        </span>
+  
+        <ul>
+          <li class="facilities-others-li">{% translate 'Fax/Photocopying' %}</li>
+          <li class="facilities-others-li">{% translate 'Interpreter' %}</li>
+          <li class="facilities-others-li">{% translate 'Meeting room' %} <text class="additional-charge-text"> {% translate '(additional charge)' %} </text> </li>
+        </ul>
+
     </div>
-    <div class="col-lg-4 col-sm-12 facilities-others">
+
+    <div class="col-lg-3 col-sm-12 facilities-others">
+
+      <span class="facilities-others-ul-title">
+        <i class="material-icons-outlined facilities-others-icon">cleaning_services</i>
+        &nbsp;{% translate 'Cleaning Services' %}
+      </span>
+
+      <ul>
+        <li class="facilities-others-li">{% translate 'Daily housekeeping' %}</li>
+        <li class="facilities-others-li"> {% translate 'Ironing service' %} <text class="additional-charge-text"> {% translate '(additional charge)' %} </text> </li>
+        <li class="facilities-others-li"> {% translate 'Laundry' %}  <text class="additional-charge-text"> {% translate '(additional charge)' %} </text> </li>
+      </ul>
+
+
+      <span class="facilities-others-ul-title">
+        <i class="material-icons-outlined facilities-others-icon">kitchen</i>
+        &nbsp;{% translate 'Kitchen' %}
+      </span>
+
+      <ul>
+        <li class="facilities-others-li">{% translate 'Dining table' %}</li> 
+        <li class="facilities-others-li">{% translate 'Microwave' %}</li>
+        <li class="facilities-others-li">{% translate 'Minibar' %}</li>
+      </ul>
+
+      <span class="facilities-others-ul-title">
+        <i class="material-icons-outlined facilities-others-icon">language</i>
+        &nbsp;{% translate 'Languages Spoken' %}
+      </span>
+
+      <ul>
+        <li class="facilities-others-li">{% translate 'English' %}</li>
+        <li class="facilities-others-li">{% translate 'Spanish' %}</li>
+        <li class="facilities-others-li">{% translate 'Portuguese' %}</li> 
+      </ul>
+
+      <span class="facilities-others-ul-title">
+        <i class="material-icons-outlined facilities-others-icon">local_parking</i>
+        &nbsp;{% translate 'Parking' %}
+      </span>
+
+      <ul>
+        <li class="facilities-others-li">{% translate 'Free Parking' %}</li>
+      </ul>
+
+      <span class="facilities-others-ul-title">
+        <i class="material-icons-outlined facilities-others-icon">pets</i>
+        &nbsp;{% translate 'Pets' %}
+      </span>
+
+      <ul>
+        <li class="facilities-others-li">{% translate 'Pets are not allowed' %}</li>
+      </ul>
+      
     </div>
-    <div class="col-lg-4 col-sm-12 facilities-others">
+
+    <div class="col-lg-2 col-sm-12 facilities-others">
+
+      <span class="facilities-others-ul-title">
+        <i class="material-icons-outlined facilities-others-icon">insert_emoticon</i>
+        &nbsp;{% translate 'Front desk services' %}
+      </span>
+
+      <ul>
+        <li class="facilities-others-li">{% translate '24-hour front desk' %}</li>
+        <li class="facilities-others-li">{% translate 'Luggage storage' %}</li>
+        <li class="facilities-others-li">{% translate 'Wake up service' %}</li>
+      </ul>
+
+      <span class="facilities-others-ul-title">
+        <i class="material-icons-outlined facilities-others-icon">room_preferences</i>
+        &nbsp;{% translate 'Room Amenities' %}
+      </span>
+
+      <ul>
+        <li class="facilities-others-li">{% translate 'Air conditioning' %}</li>
+        <li class="facilities-others-li">{% translate 'Cable channels' %}</li>
+        <li class="facilities-others-li">{% translate 'Heating' %}</li>
+        <li class="facilities-others-li">{% translate 'Soundproofing' %}</li>
+        <li class="facilities-others-li">{% translate 'Streaming service' %} <text class="additional-charge-text"> {% translate '(like Netflix)' %} </text> </li>
+        <li class="facilities-others-li">{% translate 'Telephone' %}</li>
+        <li class="facilities-others-li">TV</li>
+        <li class="facilities-others-li">WiFi</li>
+      </ul>
+
+      <span class="facilities-others-ul-title">
+        <i class="material-icons-outlined facilities-others-icon">security</i>
+        &nbsp;{% translate 'Safety & Security' %}
+      </span>
+
+      <ul>
+        <li class="facilities-others-li">{% translate '24-hour security' %}</li>
+        <li class="facilities-others-li">{% translate 'CCTV in commons areas' %}</li>
+        <li class="facilities-others-li">{% translate 'Safety deposit box' %}</li>
+        <li class="facilities-others-li">{% translate 'Smoke alarms' %}</li>
+      </ul>
+
+    </div>
+
+    <div class="col-lg-3 col-sm-12 facilities-others">
     </div>
   </div>
 

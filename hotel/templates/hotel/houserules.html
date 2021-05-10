@@ -2,12 +2,201 @@
 {% load i18n %}
 {% block body %}
 
-  <div class="row">
-    <div class="col-lg-12 col-sm-12"> 
+   <div class="row">
+       <div class="col-lg-12 col-sm-12 house-rules-title"> 
+       {% translate 'House Rules' %}
+       </div>
+   </div>
+
+   <div class="row">
+       <div class="col-lg-3 col-sm-12">
+       </div>
+
+       <div class="col-lg-2 col-sm-2 house-rules-col-concept">
+         <div> <i class="material-icons-outlined house-rules-icon">event_available</i> </div>
+         <div class="houses-rules-label"> {% translate 'Check-in' %} </div>
+       </div>
+
+       <div class="col-lg-4 col-sm-4 house-rules-col-description">
+            <div class="timebar">
+            <div class="timebar-base">
+                <span class="timebar-bar" style="left:62.5%; width:38%"></span>
+            </div>
+            </div>
+            
+            <div>
+            <span class="timebar-label-start">15:00 Hs.</span>      
+            <span class="timebar-label-end">00:00 Hs.</span>              
+            </div> 
+
+            <div class="timebar-info"> {% translate 'Guests are required to show a photo ID and credit card at check-in.' %} </div>
+       </div>
+
+       <div class="col-lg-3 col-sm-12">
+       </div>
+   </div>
+
+   <div class="row">
+    <div class="col-lg-3 col-sm-12">
+    </div>
+
+    <div class="col-lg-2 col-sm-2 house-rules-col-concept">
+      <div> <i class="material-icons-outlined house-rules-icon">event_busy</i> </div>
+      <div class="houses-rules-label"> {% translate 'Check-out' %} </div>
+    </div>
+
+    <div class="col-lg-4 col-sm-4 house-rules-col-description">
+         <div class="timebar">
+         <div class="timebar-base">
+             <span class="timebar-bar" style="left:5%; width:46%"></span>
+         </div>
+         </div>
+         
+         <div>
+         <span class="timebar-label-start-2">01:00 Hs.</span>      
+         <span class="timebar-label-end-2">12:00 Hs.</span>              
+         </div> 
+    </div>
+
+    <div class="col-lg-3 col-sm-12">
+    </div>
+   </div>
+
+   <div class="row">
+    <div class="col-lg-3 col-sm-12">
+    </div>
+
+    <div class="col-lg-2 col-sm-2 house-rules-col-concept">
+      <div> <i class="material-icons-outlined house-rules-icon">info</i> </div>
+      <div class="houses-rules-label"> {% translate 'Cancellation' %} </div>
+    </div>
+
+    <div class="col-lg-4 col-sm-4 house-rules-col-description"> 
+        <div class="timebar-info"> {% translate 'Cancellation and prepayment policies vary according to accommodations type.' %} </div>
+    </div>
+
+    <div class="col-lg-3 col-sm-12">
+    </div>
+   </div>
+
+   <div class="row">
+    <div class="col-lg-3 col-sm-12">
+    </div>
+
+    <div class="col-lg-2 col-sm-2 house-rules-col-concept">
+      <div> <i class="material-icons-outlined house-rules-icon">child_care</i> </div>
+      <div class="houses-rules-label"> {% translate 'Children & Beds' %} </div>
+    </div>
+
+    <div class="col-lg-4 col-sm-4 house-rules-col-description"> 
+        <div class="timebar-info"> {% translate 'Children of all ages are welcome.' %} </div>
+        <div class="timebar-info"> {% translate 'Children 6 and above are considered adults at this property.' %} </div>
+        <div class="timebar-info"> {% translate 'To see correct prices and occupancy info, add the number and ages of children in your group to your search.' %} </div>
+        <div class="timebar-info"> {% translate 'The maximum number of cribs allowed depends on the room you choose. Double-check the maximum capacity for the room you selected.' %} </div>
+    </div>
+
+    <div class="col-lg-3 col-sm-12">
+    </div>
+   </div>
+
+   <div class="row">
+    <div class="col-lg-3 col-sm-12">
+    </div>
+
+    <div class="col-lg-2 col-sm-2 house-rules-col-concept">
+      <div> <i class="material-icons-outlined house-rules-icon">person_off</i> </div>
+      <div class="houses-rules-label"> {% translate 'Age restriction' %} </div>
+    </div>
+
+    <div class="col-lg-4 col-sm-4 house-rules-col-description"> 
+        <div class="timebar-info"> {% translate 'The minimum age for check-in is 18.' %} </div>
+    </div>
+
+    <div class="col-lg-3 col-sm-12">
+    </div>
+   </div>
+
+   <div class="row">
+    <div class="col-lg-3 col-sm-12">
+    </div>
+
+    <div class="col-lg-2 col-sm-2 house-rules-col-concept">
+      <div> <i class="material-icons-outlined house-rules-icon">pets</i> </div>
+      <div class="houses-rules-label"> {% translate 'Pets' %} </div>
+    </div>
+
+    <div class="col-lg-4 col-sm-4 house-rules-col-description"> 
+        <div class="timebar-info"> {% translate 'Pets are not allowed.' %} </div>
+    </div>
+
+    <div class="col-lg-3 col-sm-12">
+    </div>
+   </div>
+
+   <div class="row">
+    <div class="col-lg-3 col-sm-12">
+    </div>
+
+    <div class="col-lg-2 col-sm-2 house-rules-col-concept">
+      <div> <i class="material-icons-outlined house-rules-icon">groups</i> </div>
+      <div class="houses-rules-label"> {% translate 'Groups' %} </div>
+    </div>
+
+    <div class="col-lg-4 col-sm-4 house-rules-col-description"> 
+        <div class="timebar-info"> {% translate 'When booking more than 6 rooms, different policies and additional supplements may apply.' %} </div>
+    </div>
+
+    <div class="col-lg-3 col-sm-12">
+    </div>
+   </div>
+
+   <div class="row">
+    <div class="col-lg-3 col-sm-12">
+    </div>
+
+    <div class="col-lg-2 col-sm-2 house-rules-col-concept">
+      <div> <i class="material-icons-outlined house-rules-icon">credit_card</i> </div>
+      <div class="houses-rules-label"> {% translate 'Cards accepted' %} </div>
+    </div>
+
+    <div class="col-lg-4 col-sm-4 house-rules-col-description"> 
+        <img src="/static/icons/credit1.svg" class="creditcard-icon">
+        <img src="/static/icons/credit2.svg" class="creditcard-icon">
+        <img src="/static/icons/credit3.svg" class="creditcard-icon">
+        <img src="/static/icons/credit4.svg" class="creditcard-icon">
+        <img src="/static/icons/credit5.svg" class="creditcard-icon">
+        <img src="/static/icons/credit6.svg" class="creditcard-icon">
+        <img src="/static/icons/credit7.svg" class="creditcard-icon">
+        <img src="/static/icons/credit8.svg" class="creditcard-icon">
     
-House Rules
-   
-  </div>
-  </div>
+        <div class="timebar-info"> {% translate 'Hotel Le Monde accepts these cards and reserves the right to temporarily hold an amount prior to arrival.' %} </div>
+    </div>
+
+    <div class="col-lg-3 col-sm-12">
+    </div>
+   </div>
+
+   <div class="row">
+    <div class="col-lg-3 col-sm-12">
+    </div>
+
+    <div class="col-lg-2 col-sm-2 house-rules-col-concept">
+    </div>
+
+    <div class="col-lg-4 col-sm-4 house-rules-col-description"> 
+    </div>
+
+    <div class="col-lg-3 col-sm-12">
+    </div>
+   </div>
+
+   <div class="row">
+    <div class="col-lg-12 col-sm-12 house-rules-title">
+    </div>
+   </div>
+
+
+
+
 
 {% endblock %}

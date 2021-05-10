@@ -34,7 +34,8 @@ body { background-color: #FFF !important;
 #logo { cursor: pointer;
         color: #4300D2;
         font-size: 36px;
-        vertical-align:text-bottom; }
+        vertical-align:text-bottom;
+        padding: 8px 0 0 8px; }
 
 .logo { font-family: 'Comfortaa', cursive;
         font-size: xx-large;
@@ -42,7 +43,7 @@ body { background-color: #FFF !important;
         cursor: pointer;
         color: #4300D2; }
 
-#logo-div { text-align: center; }
+
 
 .icono { vertical-align:text-bottom; }
 
@@ -75,7 +76,7 @@ body { background-color: #FFF !important;
 .autogestion-item { padding: 8px 8px; }
                   
 .autogestion-item a { font-family: 'Rubik', sans-serif;
-                      font-size:medium;
+                      font-size:0.8rem;
                       color: #444; }
 
 .autogestion-item input[type="image"] { padding-right: 16px;
@@ -97,7 +98,7 @@ body { background-color: #FFF !important;
                     padding-bottom: 8px; } /* to best view in mobile mode */
 
 .header-info-links { display:block;
-                     font-size: 14px;
+                     font-size: 0.7rem;
                      text-align: center;
                      color: dimgray; }
 
@@ -213,12 +214,128 @@ body { background-color: #FFF !important;
                       display:flex;
                       justify-content: center; }
 
- .facilities-item { padding: 16px; }                
+.facilities-item { padding: 16px; }                
 
 .facilities-icon { color: #4300D2;
                    vertical-align: bottom; }
 
+.facilities-others-row { padding-top: 1.6rem;}
+
+.facilities-others-ul-title { font-family: 'Comfortaa', cursive;
+                              font-size: small;
+                              font-weight: normal;
+                              color: black }
+
+.facilities-others-li { font-family: 'Comfortaa', cursive;
+                        font-size: x-small;
+                        font-weight: normal;
+                        color: dimgray; }
+
 .facilities-others-icon { vertical-align: bottom; }
+
+.additional-charge-text { font-size: xx-small; }
+
+
+/* Styles for House Rules */
+/* Styles for House Rules */
+
+.house-rules-title { font-family: 'Comfortaa', cursive;
+                     font-size: large;
+                     font-weight: normal;
+                     color: #4300D2;
+                     text-align: center;
+                     padding-top: 0.8rem;
+                     padding-bottom: 2rem; }
+
+.house-rules-icon { color: #4300D2;
+                    font-size: 2rem;
+                    vertical-align: bottom; }
+
+.house-rules-col-concept { background-color: #EBF3FF;
+                           padding: 1rem 0 0 1rem;
+                           display: flex; }
+
+.house-rules-col-description { background-color: #EBF3FF;
+                               padding: 1.1rem;
+                               display: block; }
+
+.houses-rules-label { font-family: 'Comfortaa', cursive;
+                      font-size: 1.1rem;
+                      font-weight:lighter;
+                      color: #4300D2;
+                      text-align: center;
+                      padding-top: 0.2rem;
+                      padding-left: 0.2rem; }
+                                  
+.timebar { padding-top: 0.8rem;
+           text-align: center; }
+
+.timebar-base { position: relative;
+                width: 360px;
+                height: 16px;
+                border: 1px solid #c2c2c2;
+                background: #ededed;
+                overflow: hidden;
+                border-radius: 8px;
+                margin-left: 10%; }             
+                    
+.timebar-bar { display: block;
+               position: absolute;
+               top: 0;
+               bottom: 0;
+               background: #008009; }
+
+.timebar-label-start { font-size: 0.7rem;
+                       margin-left: 54% ; }
+
+.timebar-label-end { font-size: 0.7rem; 
+                     margin-left: 14% ; }
+                                
+.timebar-label-start-2 { font-size: 0.7rem;
+                         margin-left: 11% ; }
+
+ .timebar-label-end-2 { font-size: 0.7rem; 
+                        margin-left: 24% ; }
+
+.timebar-info { font-family: 'Comfortaa', cursive;
+                font-size: 0.8rem;
+                font-weight:lighter;
+                color: dimgray;
+                padding-top: 0.2rem;
+                padding-left: 0.2rem; }
+
+.creditcard-icon { width: 2.4rem;}
+
+/* Styles for FAQs */
+/* Styles for FAQs */
+
+.faqs-title { font-family: 'Comfortaa', cursive;
+              font-size: large;
+              font-weight: normal;
+              color: #4300D2;
+              text-align: center;
+              padding-top: 0.8rem;
+              padding-bottom: 2rem; }
+
+.faqs-question { background-color: #EBF3FF;
+                 padding: 1rem 0 1rem 1rem;
+                 display: flex; }
+
+.faqs-question-label { font-family: 'Comfortaa', cursive;
+                       font-size: 1.1rem;
+                       font-weight:lighter;
+                       color: #4300D2;
+                       text-align: center; }
+
+.faqs-answer { background-color: lightgrey;
+               padding: 1rem 0 1rem 1rem;
+               display: flex; }
+
+.faqs-answer-label { font-family: 'Comfortaa', cursive;
+                     font-size: 1.1rem;
+                     font-weight:lighter;
+                     color: #444;
+                     text-align: center; }
 
 /* Styles for gallery */
 /* Styles for gallery */

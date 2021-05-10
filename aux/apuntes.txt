@@ -40,6 +40,11 @@ Parking garage / Estacionamiento Propio / Garagem de Estacionamento
 
 Servicios y comodidades incluidos en la habitación
 
+- Accessibility / Accesibilidad / Acessibilidade
+  Elevator / Ascensor / Elevador 
+  Entire unit wheelchair accessible / Toda la unidad accesible en silla de ruedas / Acessível para cadeiras de rodas 
+  Bathroom emergency cord / Cuerda de emergencia en el baño / Cordão de emergência no banheiro 
+
 
 - Bathroom / Baño / Banheiro
   Free toiletries / Artículos de aseo gratuitos / Produtos de higiene gratuitos 
@@ -50,60 +55,66 @@ Servicios y comodidades incluidos en la habitación
   Hand Sanitiser / Desinfectante de manos / Álcool em gel disponível
   Towels/Sheets (extra fee) / Toallas y sábanas / Toalhas e lençóis 
 
-- Bedroom / Dormitorio / 
-  Wardrobe or closet / Armario o ropero / Guarda-roupa ou armário 
+
+- Bedroom / Dormitorio / Dormitório
+  Wardrobe or closet / Armario o ropero / Guarda-roupa ou armário
+  Baby cribs / Cunas para bebés / Berços 
+  Socket near the bed / Toma cerca de la cama / Plugue perto da cama
+
+
+- Business facilities / Instalaciones para negocios / Instalações para negócios
+  Fax/Photocopying / Fax/Fotocopiadora / Fax/Fotocópia 
+  Meeting room (additional charge) / Sala de reuniones (cargo adicional) / Comodidades para reuniões (Custo adicional) 
+  Interpreter / Intérprete / Intérprete 
+
+- Cleaning Services / Servicios de limpieza / Serviços de limpeza 
+  Daily housekeeping / Limpieza Diaria / Serviço de limpeza diário 
+  Ironing service (additional charge) / Planchado (con cargo) / Engomadoria (Custo adicional)
+  Laundry (additional charge) / Lavandería (con cargo) / Lavanderia (Custo adicional)
+
 
 - Kitchen / Cocina / Cozinha
   Minibar / Minibar / Minibar
   Microwave / Microondas / Microondas
-  Dining table / Mesa de desayuno / Mesa de trabalho
+  Dining table / Mesa de desayuno / Mesa de café da manhã
+
+
+- Languages Spoken / Idiomas Hablados / Idiomas falados
+  English / Inglés / Inglês 
+  Spanish / Español / Espanhol 
+  Portuguese / Porttugues / Português 
+
+
+- Parking
+  Free Parking / Estacionamiento propio / Estacionamento próprio 
+
+
+- Pets / Mascotas / Animais de estimação
+  Pets are not allowed / No se permiten mascotas / Não são permitidos animais 
+
+
+- Front desk services / Servicios de recepción / Serviços de recepção
+  Wake up service/Alarm clock / Servicio de despertador / Serviço de Alarme 
+  Luggage storage / Guardaequipaje / Depósito de bagagens 
+  24-hour front desk / Recepción 34 horas / Recepção 24 horas
+
 
 - Room Amenities / Habitaciones / Quartos
   Soundproofing / Isonorización / Insonorização
   Air conditioning / Aire acondicionado / Ar condicionado
   Heating / Calefacción / Aquecimento 
   WiFi 
-  Netflix / Streaming service (like Netflix)
+  Streaming service (like Netflix)
   TV / 
   Cable channels / Cable / TV a cabo
   Telephone / Teléfono / Telefone
-  Socket near the bed  / Toma cerca de la cama / Plugue perto da cama
 
-- Pets / Mascotas / Animais de estimação
-  Pets are not allowed / No se permiten mascotas / Animais de estimação: não permitidos. 
-
-- Reception Services / Servicios de Recepción / Serviços de recepção
-  Wake up service/Alarm clock / Servicio de despertador / Serviço de Alarme 
-  Luggage storage / Guardaequipaje / Depósito de bagagens 
-  24-hour front desk / Recepción 34 horas / Recepção 24 horas
-
-- Cleaning Services / Servicios de limpieza / Serviços de limpeza 
-  Daily housekeeping / Limpieza Diaria / Serviço de limpeza diário 
-  Ironing service (additional charge) / Planchado (con cargo) / Serviço de limpeza diário (Custo adicional)
-  Laundry (additional charge) / Lavandería (con cargo) / Lavanderia (Custo adicional)
-
-- Business facilities / Instalaciones para negocios / Instalações para negócios
-  Fax/Photocopying / Fax/Fotocopiadora / Fax/Fotocópia 
-  Meeting/Banquet facilities (additional charge) / Sala de reuniones/Banquetes (con cargo) / Comodidades para reuniões/banquetes (Custo adicional) 
 
 - Safety & Security / Seguridad / Segurança
-  Safety deposit box / Caja Fuerte / Cofre
+  Safety deposit box / Caja Fuerte / Caixa de segurança 
   CCTV in commons areas / CCTV en áreas comunes / CCTV nas áreas comuns 
   Smoke alarms / Alarmas de humo / Detector de fumaça
   24-hour security / Seguridad 24 horas / Segurança 24 horas
-
-- Accessibility / Accesibilidad / Acessibilidade
-  Elevator / Ascensor / Elevador 
-  Entire unit wheelchair accessible / Toda la unidad accesible en silla de ruedas / Acessível para cadeiras de rodas 
-  Bathroom emergency cord / Cuerda de emergencia en el baño / Cordão de emergência no banheiro 
-
-- Parking
-  Free Parking / Estacionamiento propio / Estacionamento / Estacionamento
-
-- Languages Spoken / Idiomas Hablados / Idiomas falados
-  English / Inglés / Inglês 
-  Spanish / Español / Espanhol 
-  Portuguese / Porttugues / Português 
 
 
 
@@ -157,6 +168,7 @@ CONSIDERACIONES   *** REVEER TODO EL TIEMPO Y MANTENERLO LO MÁS SENCILLO POSIBL
   - Si el usuario está logueado, hizo el Check In y está en fecha de salir, debe mostrarse la opción de Check Out.
   - Al hacer el Check Out se cierren los consumos y se puede descargar el pdf, poner en la boleta
     por ejemplo un mensaje que diga "pase por recepción a cancelar su deuda".
+  - Es al momento de hacer el Check Out que se le brinda al huésped la posibilidad de dejar un comentario o reveiw.
 
 
 * Opción "Booking"
@@ -255,5 +267,6 @@ PARA EL FINAL
 - revisar todos los mensajes en inglés porque es lo primero que van a ver.
 - PROBAR CON DISTINTOS NAVEGADORES
 - Controlar que el diseño responsivo funcione para en las páginas interiores del sitio
+- Revisar todo el enunciado del trabajo final que no me falte nada
 
 
