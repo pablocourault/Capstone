@@ -261,12 +261,13 @@ Cuando selecciona un header-label que cambien a color lila el header-label y el 
 
 PARA EL FINAL
 
-- ver de factorizar el css con SCSS
-- ver que en modo móvil despegar.com deja sólo los íconos en el menú donde está login
-- aclarar en el README de la entrega que los logos de las redes sociales son simbólicos, no es que falta hacer.
-- revisar todos los mensajes en inglés porque es lo primero que van a ver.
+- Ver de factorizar el css con SCSS
+- Ver que en modo móvil despegar.com deja sólo los íconos en el menú donde está login
+- Aclarar en el README de la entrega que los logos de las redes sociales son simbólicos, no es que falta hacer.
+- Revisar todos los mensajes en inglés porque es lo primero que van a ver.
 - PROBAR CON DISTINTOS NAVEGADORES
 - Controlar que el diseño responsivo funcione para en las páginas interiores del sitio
 - Revisar todo el enunciado del trabajo final que no me falte nada
+- Ver que no arroje errores de javascript.
 
 
