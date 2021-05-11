@@ -1,5 +1,12 @@
 {% extends "hotel/layout.html" %}
 {% load i18n %}
+
+{% load static %}
+
+{% block script %}
+    <script src="{% static 'hotel/faqs.js' %}"></script>
+{% endblock %}
+
 {% block body %}
 
   <div class="row">
@@ -13,16 +20,78 @@
   </div>
 
   <div class="col-lg-6 col-sm-12">
+
     <div class="faqs-question">
-    <div class="faqs-question-label"> {% translate 'Can i park a car at Hotel Le Monde?' %} </div>
-    <div> <i class="material-icons-outlined faqs-icon">expand</i> </div>
+      <div class="faqs-question-label"> {% translate 'Can i park a car at Hotel Le Monde?' %} </div>
     </div>
   
     <div class="faqs-answer">
       <div class="faqs-answer-label"> {% translate 'Yes (subject to availability), book in advance.' %} </div>
-      <div> <i class="material-icons-outlined faqs-icon">upgrade</i> </div>
+    </div>
+
+    <div class="faqs-question">
+      <div class="faqs-question-label"> {% translate 'What kind of breakfast is served at Hotel Le Monde?' %} </div>
+      <div class="faqs-icon"> <i class="material-icons-outlined faqs-icon-content"></i> </div>
+    </div>
+    
+    <div class="faqs-answer">
+      <div class="faqs-answer-label"> {% translate 'Breakfast option(s) include: Gluten-free, American and Buffet.' %} </div>
+    </div>
+
+    <div class="faqs-question">
+      <div class="faqs-question-label"> {% translate 'What type of room can i book at Hotel Le Monde' %} </div>
+      <div class="faqs-icon"> <i class="material-icons-outlined faqs-icon-content"></i> </div>
+    </div>
+    
+    <div class="faqs-answer">
+      <div class="faqs-answer-label"> {% translate 'Room options at Hotel Le Monde include: Twin/Double, Triple, Quad, Single, Family' %} </div>
+    </div>
+
+    <div class="faqs-question">
+      <div class="faqs-question-label"> {% translate 'How much does it cost to stay at Hotel Le Monde?' %} </div>
+      <div class="faqs-icon"> <i class="material-icons-outlined faqs-icon-content"></i> </div>
+    </div>
+    
+    <div class="faqs-answer">
+      <div class="faqs-answer-label"> {% translate 'The prices at Hotel Le Monde may vary depending on your stay (e.g. dates, hotel&#39;s policy etc.). To see prices, enter your dates.' %} </div>
+    </div>
+
+    <div class="faqs-question">
+      <div class="faqs-question-label faqs-icon-content"> {% translate 'How far is Hotel Le Monde from the center of the City?' %} </div>
+      <div class="faqs-icon"> <i class="material-icons-outlined faqs-icon-content"></i> </div>
+    </div>
+    
+    <div class="faqs-answer">
+      <div class="faqs-answer-label"> {% translate 'Hotel Le Monde is 700 meters from the city center.' %} </div>
+    </div>
+
+    <div class="faqs-question">
+      <div class="faqs-question-label"> {% translate 'How do I get to Hotel Le Monde from the nearest airport?' %} </div>
+      <div class="faqs-icon"> <i class="material-icons-outlined faqs-icon-content"></i> </div>
+    </div>
+    
+    <div class="faqs-answer">
+      <div class="faqs-answer-label"> {% translate 'From the nearest airport, you can get to Hotel Le Monde by:' %} <br>  {% translate 'Taxi (40 min), Metro (15 min), Bus (60 min)' %} </div>
     </div>
   
+    <div class="faqs-question">
+      <div class="faqs-question-label"> {% translate 'What are the check-in and check-out times at Hotel Le Monde?' %} </div>
+      <div class="faqs-icon"> <i class="material-icons-outlined faqs-icon-content"></i> </div>
+    </div>
+    
+    <div class="faqs-answer">
+      <div class="faqs-answer-label"> {% translate 'Check-in at Hotel Le Monde is from 3:00 PM, and check-out is until 12:00 PM.' %} </div>
+    </div>
+
+    <div class="faqs-question">
+      <div class="faqs-question-label"> {% translate 'Does Hotel Le Monde have a restaurant on site?' %} </div>
+      <div class="faqs-icon"> <i class="material-icons-outlined faqs-icon-content"></i> </div>
+    </div>
+    
+    <div class="faqs-answer">
+      <div class="faqs-answer-label"> {% translate 'Hotel Le Monde has 1 restaurant: OVIDIO' %} </div>
+    </div>
+
   </div>
 
   <div class="col-lg-3 col-sm-12">

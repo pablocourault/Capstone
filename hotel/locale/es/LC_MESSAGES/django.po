@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-09 20:53-0300\n"
+"POT-Creation-Date: 2021-05-10 22:31-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -273,6 +273,88 @@ msgstr "Caja de seguridad"
 msgid "Smoke alarms"
 msgstr "Alarma de humo"
 
+#: templates/hotel/faqs.html:14
+msgid "Frequently Asked Questions"
+msgstr "Preguntas Frecuentes"
+
+#: templates/hotel/faqs.html:25
+msgid "Can i park a car at Hotel Le Monde?"
+msgstr "¿Hay estacionamiento en el Hotel Le Monde?"
+
+#: templates/hotel/faqs.html:29
+msgid "Yes (subject to availability), book in advance."
+msgstr "Si (sujeto a disponibilidad), reservar con anticipación."
+
+#: templates/hotel/faqs.html:33
+msgid "What kind of breakfast is served at Hotel Le Monde?"
+msgstr "¿Qué tipo de desayuno sirven en el Hotel Le Monde?"
+
+#: templates/hotel/faqs.html:38
+msgid "Breakfast option(s) include: Gluten-free, American and Buffet."
+msgstr "Algunas opciones de desayuno son: Sin gluten, Americano, Buffet."
+
+#: templates/hotel/faqs.html:42
+msgid "What type of room can i book at Hotel Le Monde"
+msgstr "¿Qué tipo de habitaciones puedo reservar en el Hotel Le Monde?"
+
+#: templates/hotel/faqs.html:47
+msgid ""
+"Room options at Hotel Le Monde include: Twin/Double, Triple, Quad, Single, "
+"Family"
+msgstr ""
+"Las opciones de habitaciones en Hotel Le Monde son: Doble, Triple, "
+"Cuádruple, Individual y Familiar."
+
+#: templates/hotel/faqs.html:51
+msgid "How much does it cost to stay at Hotel Le Monde?"
+msgstr "¿Cuánto cuesta una estadía en el Hotel Le Monde?"
+
+#: templates/hotel/faqs.html:56
+msgid ""
+"The prices at Hotel Le Monde may vary depending on your stay (e.g. dates, "
+"hotel&#39;s policy etc.). To see prices, enter your dates."
+msgstr ""
+"Los precios en Hotel Le Monde pueden variar según la estadía (por ejemplo, "
+"fechas seleccionadas, política del hotel, etcétera). Ingresá tus fechas para "
+"ver los precios."
+
+#: templates/hotel/faqs.html:60
+msgid "How far is Hotel Le Monde from the center of the City?"
+msgstr "¿A qué distancia está el Hotel Le Monde del centro de la ciudad?"
+
+#: templates/hotel/faqs.html:65
+msgid "Hotel Le Monde is 700 meters from the city center."
+msgstr "Hotel Le Monde está a 700 metros del centro de la ciudad."
+
+#: templates/hotel/faqs.html:69
+msgid "How do I get to Hotel Le Monde from the nearest airport?"
+msgstr "¿Cómo llego desde el aeropuerto hasta el Hotel Le Monde?"
+
+#: templates/hotel/faqs.html:74
+msgid "From the nearest airport, you can get to Hotel Le Monde by:"
+msgstr "Desde el aeropuerto más cercano, podés llegar a Hotel Le Monde en:"
+
+#: templates/hotel/faqs.html:74
+msgid "Taxi (40 min), Metro (15 min), Bus (60 min)"
+msgstr "Taxi (40 min), Metro (15 min), Bus (60 min)"
+
+#: templates/hotel/faqs.html:78
+msgid "What are the check-in and check-out times at Hotel Le Monde?"
+msgstr "¿Cuál es el horario de entrada y salida del Hotel Le Monde?"
+
+#: templates/hotel/faqs.html:83
+msgid ""
+"Check-in at Hotel Le Monde is from 3:00 PM, and check-out is until 12:00 PM."
+msgstr "La entrada es desde las 3:00 PM y la salida hasta las 12:PM."
+
+#: templates/hotel/faqs.html:87
+msgid "Does Hotel Le Monde have a restaurant on site?"
+msgstr "¿El Hotel Le Monde tiene restaurant propio?"
+
+#: templates/hotel/faqs.html:92
+msgid "Hotel Le Monde has 1 restaurant: OVIDIO"
+msgstr "El Hotel Le Monde tiene un restaurant: OVIDIO"
+
 #: templates/hotel/houserules.html:7 templates/hotel/layout.html:135
 msgid "House Rules"
 msgstr "Reglas del Hotel"
@@ -283,7 +365,9 @@ msgstr "Ingreso"
 
 #: templates/hotel/houserules.html:32
 msgid "Guests are required to show a photo ID and credit card at check-in."
-msgstr "Los huéspedes deben mostrar un documento de identidad y una tarjeta de crédito al hacer el registro de entrada."
+msgstr ""
+"Los huéspedes deben mostrar un documento de identidad y una tarjeta de "
+"crédito al hacer el registro de entrada."
 
 #: templates/hotel/houserules.html:45
 msgid "Check-out"
@@ -296,7 +380,8 @@ msgstr "Cancelación"
 #: templates/hotel/houserules.html:75
 msgid ""
 "Cancellation and prepayment policies vary according to accommodations type."
-msgstr "Las políticas de cancelación y prepago varían según el tipo de alojamiento."
+msgstr ""
+"Las políticas de cancelación y prepago varían según el tipo de alojamiento."
 
 #: templates/hotel/houserules.html:88
 msgid "Children & Beds"
@@ -308,19 +393,24 @@ msgstr "Niños de todas las edades son bienvenidos."
 
 #: templates/hotel/houserules.html:93
 msgid "Children 6 and above are considered adults at this property."
-msgstr "En este establecimiento, los niños a partir de 6 años se consideran adultos."
+msgstr ""
+"En este establecimiento, los niños a partir de 6 años se consideran adultos."
 
 #: templates/hotel/houserules.html:94
 msgid ""
 "To see correct prices and occupancy info, add the number and ages of "
 "children in your group to your search."
-msgstr "Para ver los precios correctos y la información de ocupación, agregue el número y las edades de los niños en su grupo a su búsqueda."
+msgstr ""
+"Para ver los precios correctos y la información de ocupación, agregue el "
+"número y las edades de los niños en su grupo a su búsqueda."
 
 #: templates/hotel/houserules.html:95
 msgid ""
 "The maximum number of cribs allowed depends on the room you choose. Double-"
 "check the maximum capacity for the room you selected."
-msgstr "El número máximo de cunas permitidas depende de la habitación que elija. Vuelva a verificar la capacidad máxima de la habitación que seleccionó."
+msgstr ""
+"El número máximo de cunas permitidas depende de la habitación que elija. "
+"Vuelva a verificar la capacidad máxima de la habitación que seleccionó."
 
 #: templates/hotel/houserules.html:108
 msgid "Age restriction"
@@ -344,7 +434,9 @@ msgstr "Grupos"
 msgid ""
 "When booking more than 6 rooms, different policies and additional "
 "supplements may apply."
-msgstr "Al reservar más de 6 habitaciones, se pueden aplicar políticas diferentes y suplementos adicionales."
+msgstr ""
+"Al reservar más de 6 habitaciones, se pueden aplicar políticas diferentes y "
+"suplementos adicionales."
 
 #: templates/hotel/houserules.html:159
 msgid "Cards accepted"
@@ -354,7 +446,9 @@ msgstr "Tarjetas aceptadas"
 msgid ""
 "Hotel Le Monde accepts these cards and reserves the right to temporarily "
 "hold an amount prior to arrival."
-msgstr "Hotel Le Monde acepta estas tarjetas y se reserva el derecho de preautorizar tu tarjeta antes de la entrada."
+msgstr ""
+"Hotel Le Monde acepta estas tarjetas y se reserva el derecho de preautorizar "
+"tu tarjeta antes de la entrada."
 
 #: templates/hotel/index.html:24
 msgid ""
@@ -373,8 +467,8 @@ msgstr ""
 
 #: templates/hotel/index.html:36
 msgid ""
-"Rooms at Hotel Le Monde have air conditioning and private balconies with city "
-"views. All are equipped with cable TV, free Wi-Fi and a work desk."
+"Rooms at Hotel Le Monde have air conditioning and private balconies with "
+"city views. All are equipped with cable TV, free Wi-Fi and a work desk."
 msgstr ""
 "Las habitaciones del Hotel Le Monde disponen de aire acondicionado y balcón "
 "privado con vistas a la ciudad.Todas están equipadas con TV por cable, "
@@ -392,11 +486,11 @@ msgstr ""
 
 #: templates/hotel/index.html:50
 msgid ""
-"Hotel Le Monde is 200 m from Lima Subway Station, and 400 m from Avenida 9 de "
-"Julio. It is also 6-blocks from the iconic Obelisk."
+"Hotel Le Monde is 200 m from Lima Subway Station, and 400 m from Avenida 9 "
+"de Julio. It is also 6-blocks from the iconic Obelisk."
 msgstr ""
-"El Hotel Le Monde se encuentra a 200 metros de la estación de subte de Lima y "
-"a 400 metros de la Avenida 9 de Julio.Además, está a 6 calles del famoso "
+"El Hotel Le Monde se encuentra a 200 metros de la estación de subte de Lima "
+"y a 400 metros de la Avenida 9 de Julio.Además, está a 6 calles del famoso "
 "Obelisco."
 
 #: templates/hotel/index.html:57

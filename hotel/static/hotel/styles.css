@@ -317,22 +317,41 @@ body { background-color: #FFF !important;
               padding-top: 0.8rem;
               padding-bottom: 2rem; }
 
+
 .faqs-question { background-color: #EBF3FF;
                  padding: 1rem 0 1rem 1rem;
-                 display: flex; }
+                 transition: 0.4s; }
+
+.faqs-question:hover { cursor: pointer;
+                       background-color: #EFECFF;}
+
 
 .faqs-question-label { font-family: 'Comfortaa', cursive;
                        font-size: 1.1rem;
                        font-weight:lighter;
                        color: #4300D2;
-                       text-align: center; }
+                       text-align: left; }
 
-.faqs-answer { background-color: lightgrey;
-               padding: 1rem 0 1rem 1rem;
-               display: flex; }
+
+.faqs-question-label::after { content: '\002B';
+                              color: #4300D2;
+                              font-weight: bold;
+                              text-align: right;
+                              float: right;
+                              margin-right: 8px; }
+
+
+.active::after { content: "\2796"; /* Unicode character for "minus" sign (-) */ }
+
+
+.faqs-answer { background-color: #E9FFFB;
+               padding: 2rem 1rem 2rem 1rem;
+               display: none;
+               justify-content: space-between;
+               transition: max-height 0.2s ease-out; }
 
 .faqs-answer-label { font-family: 'Comfortaa', cursive;
-                     font-size: 1.1rem;
+                     font-size: 0.9rem;
                      font-weight:lighter;
                      color: #444;
                      text-align: center; }
