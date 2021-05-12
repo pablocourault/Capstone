@@ -9,7 +9,7 @@ a:hover { text-decoration:none; }
 body { background-color: #FFF !important;
        padding: 0; 
        overflow-x: hidden;
-       overflow-y: scroll; } /* el valor scroll me permitió que no se mueva la página */
+       overflow-y: scroll; } /* el valor scroll me permitió que no se mueva la página en faqs.html */
 
 
 #login-div, #register-div { width: 40%;

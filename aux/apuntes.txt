@@ -18,105 +18,7 @@ django-admin compilemessages
 
 Booking lo hace todo en una sola página con "anclas" a lo largo, puede ser útil para hacerlo más "responsivo"
 
-- Información y precios / Info & prices
-- Instalaciones / Facilidades 
-- Reglamento / House rules
-
 Aclarar que no se implementan medios de pago (pero se podrían poner logos para que quede lindo)
-
-La galería de imágenes la tenía por sectores (habitaciones, lobby, comedor, exteriores)
-
-
-Most popular facilities / Principales Comodidades / Instalações mais populares
-Non-smoking rooms / Habitaciones para no fumadores / Quartos para não fumantes
-Private bathroom / Baño privado / Banheiro privado
-WiFi available in all areas / WiFi en todas las áreas / Acesso Wi-Fi disponível em todas as áreas
-Breakfast included / Desayuno incluido / Café da manhã incluso
-Airport shuttle (additional charge) / Traslado al aeropuerto (con cargo) / Transfer para o aeroporto (Custo adicional)
-Currency exchange / Cambio de monedas / Câmbio monetário 
-Family rooms / Habitaciones familiares / Quartos para famílias
-Parking garage / Estacionamiento Propio / Garagem de Estacionamento 
-
-
-Servicios y comodidades incluidos en la habitación
-
-- Accessibility / Accesibilidad / Acessibilidade
-  Elevator / Ascensor / Elevador 
-  Entire unit wheelchair accessible / Toda la unidad accesible en silla de ruedas / Acessível para cadeiras de rodas 
-  Bathroom emergency cord / Cuerda de emergencia en el baño / Cordão de emergência no banheiro 
-
-
-- Bathroom / Baño / Banheiro
-  Free toiletries / Artículos de aseo gratuitos / Produtos de higiene gratuitos 
-  Toilet paper / Papel higiénico / Papel higiênico
-  Bath / Bañera / Banheira
-  Shower / Ducha / Chuveiro
-  Bidet / Bidet / Bidê
-  Hand Sanitiser / Desinfectante de manos / Álcool em gel disponível
-  Towels/Sheets (extra fee) / Toallas y sábanas / Toalhas e lençóis 
-
-
-- Bedroom / Dormitorio / Dormitório
-  Wardrobe or closet / Armario o ropero / Guarda-roupa ou armário
-  Baby cribs / Cunas para bebés / Berços 
-  Socket near the bed / Toma cerca de la cama / Plugue perto da cama
-
-
-- Business facilities / Instalaciones para negocios / Instalações para negócios
-  Fax/Photocopying / Fax/Fotocopiadora / Fax/Fotocópia 
-  Meeting room (additional charge) / Sala de reuniones (cargo adicional) / Comodidades para reuniões (Custo adicional) 
-  Interpreter / Intérprete / Intérprete 
-
-- Cleaning Services / Servicios de limpieza / Serviços de limpeza 
-  Daily housekeeping / Limpieza Diaria / Serviço de limpeza diário 
-  Ironing service (additional charge) / Planchado (con cargo) / Engomadoria (Custo adicional)
-  Laundry (additional charge) / Lavandería (con cargo) / Lavanderia (Custo adicional)
-
-
-- Kitchen / Cocina / Cozinha
-  Minibar / Minibar / Minibar
-  Microwave / Microondas / Microondas
-  Dining table / Mesa de desayuno / Mesa de café da manhã
-
-
-- Languages Spoken / Idiomas Hablados / Idiomas falados
-  English / Inglés / Inglês 
-  Spanish / Español / Espanhol 
-  Portuguese / Porttugues / Português 
-
-
-- Parking
-  Free Parking / Estacionamiento propio / Estacionamento próprio 
-
-
-- Pets / Mascotas / Animais de estimação
-  Pets are not allowed / No se permiten mascotas / Não são permitidos animais 
-
-
-- Front desk services / Servicios de recepción / Serviços de recepção
-  Wake up service/Alarm clock / Servicio de despertador / Serviço de Alarme 
-  Luggage storage / Guardaequipaje / Depósito de bagagens 
-  24-hour front desk / Recepción 34 horas / Recepção 24 horas
-
-
-- Room Amenities / Habitaciones / Quartos
-  Soundproofing / Isonorización / Insonorização
-  Air conditioning / Aire acondicionado / Ar condicionado
-  Heating / Calefacción / Aquecimento 
-  WiFi 
-  Streaming service (like Netflix)
-  TV / 
-  Cable channels / Cable / TV a cabo
-  Telephone / Teléfono / Telefone
-
-
-- Safety & Security / Seguridad / Segurança
-  Safety deposit box / Caja Fuerte / Caixa de segurança 
-  CCTV in commons areas / CCTV en áreas comunes / CCTV nas áreas comuns 
-  Smoke alarms / Alarmas de humo / Detector de fumaça
-  24-hour security / Seguridad 24 horas / Segurança 24 horas
-
-
 
 Servicios (para poner en Modelo SERVICIOS)
 Habitación
@@ -132,6 +34,7 @@ Restaurante
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
 CONSIDERACIONES   *** REVEER TODO EL TIEMPO Y MANTENERLO LO MÁS SENCILLO POSIBLE ***
+                  *** LO QUE ESTÁ AQUÍ VA A SERVIR PARA EXPLICAR EL PROYECTO EN LA ENTREGA ***
 
 * Debería tener al menos dos idiomas
 
@@ -168,7 +71,7 @@ CONSIDERACIONES   *** REVEER TODO EL TIEMPO Y MANTENERLO LO MÁS SENCILLO POSIBL
   - Si el usuario está logueado, hizo el Check In y está en fecha de salir, debe mostrarse la opción de Check Out.
   - Al hacer el Check Out se cierren los consumos y se puede descargar el pdf, poner en la boleta
     por ejemplo un mensaje que diga "pase por recepción a cancelar su deuda".
-  - Es al momento de hacer el Check Out que se le brinda al huésped la posibilidad de dejar un comentario o reveiw.
+  - Es al momento de hacer el Check Out le avisa que tiene la posibilidad de dejar un comentario o review (estado "out").
 
 
 * Opción "Booking"
@@ -176,7 +79,7 @@ CONSIDERACIONES   *** REVEER TODO EL TIEMPO Y MANTENERLO LO MÁS SENCILLO POSIBL
 	Fecha de entrada
 	Fecha de salida
 	Cantidad de personas (se puede poner algo tipo "hasta dos niños menores a tantos años gratis")
-	Cantidad de habitaciones (o por habitación -depende si se complica-)
+  Niños menores a seis años, no se les cobra pero se calcula como ocupación, para la reserva.
 
    - La consulta de reserva debería devolver opciones tipo a) habitación estándar, b) económica, c) superior
 
@@ -184,14 +87,20 @@ CONSIDERACIONES   *** REVEER TODO EL TIEMPO Y MANTENERLO LO MÁS SENCILLO POSIBL
      le informa de la disponibilidad (un botón que aparezca o desaparezca).
 
 * Opción "Guest Reviews"
+   - Si el usuario logueado hizo el check-out, es decir que tiene el estado "out" puede dejar por cada estadía en el hotel
+     un comentario (luego cambia el estado a "none").
+   - Muestra los comentarios de los huéspedes, ordenados por más recientes, con un paginador.
+   - Los comentarios deberían tener un puntaje y un texto
+   - Debería mostrar en un campo al principio el promedio de puntajes otorgados.
+   - Se podría poner la opción de ordenar por mejores o peores comentarios primero.
 
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
 PROCESOS
 
-* Navegar el sitio, ver el hotel (no requiere nada)
-* Registrarse
-* Login / Logout
+- Navegar el sitio, ver el hotel (no requiere nada)
+- Registrarse
+- Login / Logout
 * Consultar habitaciones disponibles por rango de fechas, para X cantidad de personas (modelo: HABITACIONES, RESERVAS)
 * Consultar disponibilidad y hacer reserva (modelo: RESERVAS)
 * Enviar y recibir mensajes de la recepción tipo DM (hacerlo si no se complica, modelo: MENSAJES)
@@ -205,23 +114,24 @@ PROCESOS
 MODELOS
 
 * USUARIOS
- - Procedencia (código de país)
  - Estado (manejado por el Check In/Check Out)
  	- 'none' por default, nunca estuvo.
 	- 'in' cuando entra, lo habilita a hacer consumos y mensajes
 	- 'out' cuando sale, lo habilita a hacer comentarios en Guest Reviews
+- ¿Reserva? (apunta a modelo reservas, se agrega al momento de hacer el checkin, se borra al momento del checkout )
 
 
 * HABITACIONES
+ - Número
  - Capacidad
  - Tarifa
 
 * RESERVAS
- - Habitación
+ - Habitación (¿o número?)
  - Usuario
  - Desde
- - Hasta 
- - Estado (se podría agregar tipo activa/inactiva/finalizada y mantener un histórico o borrar la reserva en el check out)
+ - Hasta
+ - ¿ Estado ? 
 
 * CONSUMOS
  - Habitación
@@ -251,23 +161,50 @@ MODELOS
 
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
-ESTILOS
+IDEAS DE ESTILOS
 
-Cuando selecciona un header-label que cambien a color lila el header-label y el header-icon "o sea quedan marcados como seleccionados"
+Cuando selecciona un header-label que cambien a color lila el header-label y el header-icon"
+o sea quedan marcados como seleccionados" ¿sería tipo clase "active" de faqs?
 
-¿ Poner un "Dark Theme" con una medialuna que se corra?
+¿ Poner un "Dark Theme" con una medialuna que se corra ?
 
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
 PARA EL FINAL
 
-- Ver de factorizar el css con SCSS
-- Ver que en modo móvil despegar.com deja sólo los íconos en el menú donde está login
-- Aclarar en el README de la entrega que los logos de las redes sociales son simbólicos, no es que falta hacer.
+- Ver de factorizar el css con SCSS.
+- Aclarar en el README de la entrega que los logos de las redes sociales son simbólicos,
+  o ponerlo como un mensaje en el código, no es que falta hacer.
 - Revisar todos los mensajes en inglés porque es lo primero que van a ver.
 - PROBAR CON DISTINTOS NAVEGADORES
-- Controlar que el diseño responsivo funcione para en las páginas interiores del sitio
-- Revisar todo el enunciado del trabajo final que no me falte nada
+- Controlar que el diseño responsivo funcione para las páginas en TODO el sitio.
+- Revisar todo el enunciado del trabajo final que no me falte nada.
 - Ver que no arroje errores de javascript.
 
+/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
+PENDIENTES
+- Ponerle un poquito de animación al desplegable de FAQs.
+
+
+
+/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
+
+
+Algoritmo Reservas: 
+
+OJO EL SISTEMA NO TIENE QUE DECIDIR
+SOLO TIENE QUE MOSTRAR DISPONIBILIDADES
+SEGÚN LA CANTIDAD DE PERSONAS QUE INDICA
+Y ES EL USUARIO EL QUE ELIJE
+
+1	2	3	4
+
+1) Elige las fechas y la cantidad de adultos y niños (niños se tiene en cuenta para facturar)
+2) Se buscan las habitaciones disponibles
+3) Se muestran las habitaciones disponibles (una por cada tipo y la cantidad)
+   Si la cantidad es menor a 5 y directa al tamaño de la habitación, se muestra esa habitación primero
+4) Marca la habitación que necesita y la cantidad
+5) Le muestra antes de confirmar el total de habitaciones, tipo y cantidad de personas
+6) Menores de 6 no pagan pero se cuenta el lugar (los indica sólo para usar al momento de facturar
+7) El límite de menores de 6 años es 2.
