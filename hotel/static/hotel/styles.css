@@ -356,6 +356,20 @@ body { background-color: #FFF !important;
                      text-align: left;
                      display: flex; }
 
+
+/* Styles for bookings */
+/* Styles for bookings */
+
+.bookings-title { font-family: 'Comfortaa', cursive;
+                  font-size: large;
+                  font-weight: normal;
+                  color: #4300D2;
+                  text-align: center;
+                  padding-top: 0.8rem;
+                  padding-bottom: 2rem; }
+
+
+
 /* Styles for gallery */
 /* Styles for gallery */
 
