@@ -168,6 +168,9 @@ o sea quedan marcados como seleccionados" ¿sería tipo clase "active" de faqs?
 
 ¿ Poner un "Dark Theme" con una medialuna que se corra ?
 
+OJO: mirar y prestarle mucha atención a esto: https://www.w3schools.com/bootstrap/default.asp
+OJO: Bootstrap también tiene un conjunto de íconos.
+
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
 PARA EL FINAL
@@ -184,7 +187,11 @@ PARA EL FINAL
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
 PENDIENTES
-- Ponerle un poquito de animación al desplegable de FAQs.
+- Ponerle un poquito de animación al desplegable de FAQs ¿y separación entre las preguntas?
+  También se puede reveer porque hay un bootstrap collapsable:
+  https://www.w3schools.com/bootstrap/bootstrap_collapse.asp
+- La galería de fotos modal se podría reemplazar por la estándar de bootstrap: 
+  https://www.w3schools.com/bootstrap/bootstrap_ref_js_carousel.asp
 
 
 

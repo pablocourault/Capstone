@@ -368,6 +368,20 @@ body { background-color: #FFF !important;
                   padding-top: 0.8rem;
                   padding-bottom: 2rem; }
 
+.booking-info { font-family: 'Comfortaa', cursive; }    
+
+.booking-info-icon {  vertical-align: bottom;
+                      float: left;
+                      padding-right: 0.2rem;}
+
+.booking-info-strong { font-weight: bolder;
+                       font-size: large;}
+
+.booking-info-normal { font-weight:lighter;
+                       font-size: medium;
+                       padding-top: 1rem;
+                       padding-left: 1.4rem;}
+
 
 
 /* Styles for gallery */
