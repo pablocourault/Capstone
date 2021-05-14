@@ -3,7 +3,7 @@
 {% block body %}
 
 <div class="row">
-  <div class="col-lg-12 col-sm-12 bookings-title"> 
+  <div class="col-lg-12 col-sm-12 booking-title"> 
   {% translate 'Bookings' %}
   </div>
 </div>
@@ -20,7 +20,36 @@
             {% translate 'Lock in a great price for your upcoming stay' %} </div>
       <div class="booking-info-normal"> {% translate 'Get instant confirmation with FREE cancellation on most rooms!' %} </div>
     </div>
-    
+
+    <div class="booking-availability-title"> 
+      {% translate 'Availability' %}
+    </div>
+
+    <div class="alert alert-warning border border-warning booking-info">
+      <div class="booking-availability-normal">
+        {% translate 'When would you like to stay at Hotel Le Monde?' %}
+      </div>
+      
+      
+      <form action="" method="post">
+        <div class="booking-form">
+          <div>
+          <span class="booking-form-checkin-label">{% translate 'Check In' %}</span>
+          <input type="date" id="datein" name="datein" min="2021-05-12" placeholder="yyyy-mm-dd" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required>
+         </div>
+
+         <div>
+         <span class="booking-form-checkout-label">{% translate 'Check Out' %}</span>
+         <input type="date" id="dateout" name="dateout" max="2022-05-12"placeholder="yyyy-mm-dd" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required>
+         </div>
+
+         <div>
+         <button type="submit" class="btn btn-primary">{% translate 'Check Availability' %}</button>
+         </div>
+      </div>
+    </form>
+
+    </div>
 
    </div>
 
@@ -31,13 +60,7 @@
   <div class="row">
     <div class="col-lg-12 col-sm-12"> 
     
-      <form action="" method="post">
-
-        <input type="date" id="datein" name="datein" min="2021-05-12" placeholder="yyyy-mm-dd" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required>
-        <input type="date" id="dateout" name="dateout" max="2022-05-12"placeholder="yyyy-mm-dd" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required>
-
-        <input type="submit" value="Submit">
-      </form>
+     
    
   </div>
   </div>

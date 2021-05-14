@@ -6,7 +6,7 @@
 a:hover { text-decoration:none; }
 
 
-body { background-color: #FFF !important;
+body { background-color: #FBFBFB !important;
        padding: 0; 
        overflow-x: hidden;
        overflow-y: scroll; } /* el valor scroll me permitió que no se mueva la página en faqs.html */
@@ -321,7 +321,8 @@ body { background-color: #FFF !important;
 
 .faqs-question { background-color: #EBF3FF;
                  padding: 1rem 0 1rem 1rem;
-                 transition: 0.4s; }
+                 transition: 0.4s;
+                 margin-top: 0.4rem; }
 
 .faqs-question:hover { cursor: pointer;
                        background-color: #C0B5FF;}
@@ -345,7 +346,7 @@ body { background-color: #FFF !important;
 .active::after { content: "\2796"; /* Unicode character for "minus" sign (-) */ }
 
 
-.faqs-answer { background-color: #E9FFFB;
+.faqs-answer { background-color: #EEE;
                padding: 1rem 0rem 1rem 1rem;
                display: none; }
 
@@ -360,13 +361,13 @@ body { background-color: #FFF !important;
 /* Styles for bookings */
 /* Styles for bookings */
 
-.bookings-title { font-family: 'Comfortaa', cursive;
-                  font-size: large;
-                  font-weight: normal;
-                  color: #4300D2;
-                  text-align: center;
-                  padding-top: 0.8rem;
-                  padding-bottom: 2rem; }
+.booking-title { font-family: 'Comfortaa', cursive;
+                 font-size: large;
+                 font-weight: normal;
+                 color: #4300D2;
+                 text-align: center;
+                 padding-top: 0.8rem;
+                 padding-bottom: 2rem; }
 
 .booking-info { font-family: 'Comfortaa', cursive; }    
 
@@ -375,12 +376,36 @@ body { background-color: #FFF !important;
                       padding-right: 0.2rem;}
 
 .booking-info-strong { font-weight: bolder;
-                       font-size: large;}
+                       font-size:medium;}
 
 .booking-info-normal { font-weight:lighter;
-                       font-size: medium;
+                       font-size: small;
                        padding-top: 1rem;
                        padding-left: 1.4rem;}
+
+.booking-availability-title { font-family: 'Comfortaa', cursive;
+                              font-size: medium;
+                              font-weight: bold;
+                              color: black;
+                              text-align: left;
+                              padding-top: 1rem;
+                              padding-bottom: 0.4rem; }
+
+.booking-availability-normal { font-weight:lighter;
+                               font-size: small; }
+
+.booking-form { padding-top: 0.4rem;
+                display: inline-flex; }
+
+.booking-form-checkin-label { font-size: small;
+                              font-weight: bold;
+                              color: black;
+                              margin-left: 20%; }
+
+.booking-form-checkout-label { font-size: small;
+                               font-weight: bold;
+                               color: black;
+                               margin-left: 16%; }
 
 
 

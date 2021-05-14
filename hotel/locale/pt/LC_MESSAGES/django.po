@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-10 22:31-0300\n"
+"POT-Creation-Date: 2021-05-14 12:13-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,39 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/hotel/bookings.html:7 templates/hotel/layout.html:117
+msgid "Bookings"
+msgstr "Reservaciones"
+
+#: templates/hotel/bookings.html:20
+msgid "Lock in a great price for your upcoming stay"
+msgstr "Garanta um ótimo preço para sua próxima estadia"
+
+#: templates/hotel/bookings.html:21
+msgid "Get instant confirmation with FREE cancellation on most rooms!"
+msgstr ""
+"Confirmação na hora e cancelamento GRATUITO para a maioria dos quartos!"
+
+#: templates/hotel/bookings.html:25
+msgid "Availability"
+msgstr "Disponibilidade"
+
+#: templates/hotel/bookings.html:30
+msgid "When would you like to stay at Hotel Le Monde?"
+msgstr "Quando você quer se hospedar no(a) Hotel Le Monde?"
+
+#: templates/hotel/bookings.html:37
+msgid "Check In"
+msgstr "Entrada"
+
+#: templates/hotel/bookings.html:42
+msgid "Check Out"
+msgstr "Saída"
+
+#: templates/hotel/bookings.html:47
+msgid "Check Availability"
+msgstr "Verificar disponibilidade"
 
 #: templates/hotel/facilities.html:7
 msgid "Most Popular Facilities And Services"
@@ -530,10 +563,6 @@ msgstr "Registrarse"
 #: templates/hotel/layout.html:107
 msgid "Info"
 msgstr "Info"
-
-#: templates/hotel/layout.html:117
-msgid "Bookings"
-msgstr "Reservaciones"
 
 #: templates/hotel/layout.html:126
 msgid "Facilities"

@@ -192,6 +192,7 @@ PENDIENTES
   https://www.w3schools.com/bootstrap/bootstrap_collapse.asp
 - La galería de fotos modal se podría reemplazar por la estándar de bootstrap: 
   https://www.w3schools.com/bootstrap/bootstrap_ref_js_carousel.asp
+- Buscar un conjunto de fotos alternativas de derechos libres
 
 
 
