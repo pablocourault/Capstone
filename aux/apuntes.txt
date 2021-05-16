@@ -121,10 +121,15 @@ MODELOS
 - ¿Reserva? (apunta a modelo reservas, se agrega al momento de hacer el checkin, se borra al momento del checkout )
 
 
-* HABITACIONES
- - Número
- - Capacidad
+* TARIFAS
+ - Tipo_Habitación
  - Tarifa
+
+- HABITACIONES
+  - Número
+  - Tipo_Habitación
+  - Capacidad
+  - Cantidad (de habitaciones de ese tipo)
 
 * RESERVAS
  - Habitación (¿o número?)

@@ -30,24 +30,83 @@
         {% translate 'When would you like to stay at Hotel Le Monde?' %}
       </div>
       
-      
-      <form action="" method="post">
-        <div class="booking-form">
+        <div>
+          <form action="" method="post" class="booking-form">
           <div>
           <span class="booking-form-checkin-label">{% translate 'Check In' %}</span>
-          <input type="date" id="datein" name="datein" min="2021-05-12" placeholder="yyyy-mm-dd" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required>
+          <input type="date" id="datein" name="datein" min="2021-05-14" placeholder="yyyy-mm-dd" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required>
          </div>
 
          <div>
          <span class="booking-form-checkout-label">{% translate 'Check Out' %}</span>
-         <input type="date" id="dateout" name="dateout" max="2022-05-12"placeholder="yyyy-mm-dd" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required>
+         <input type="date" id="dateout" name="dateout" min="2021-05-14" max="2022-05-12" placeholder="yyyy-mm-dd" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required>
          </div>
 
          <div>
-         <button type="submit" class="btn btn-primary">{% translate 'Check Availability' %}</button>
+         <button type="submit" class="btn btn-primary booking-btn">{% translate 'Check Availability' %}</button>
          </div>
+        </form>
       </div>
-    </form>
+
+
+    </div>
+
+    <div class="alert alert-info border border-info ">
+
+      <table id="booking-table">
+        <thead>
+          <tr>
+            <th scope="col">{% translate 'Sleeps' %}</th>
+            <th scope="col">{% translate 'Room Type' %}</th>
+            <th scope="col">{% translate 'Prices' %} <br><text class="booking-table-leyend">({% translate 'for one night' %})</text></th>
+            <th scope="col">{% translate 'Select Rooms' %}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> <i class="material-icons booking-table-icon"> person </i></td>
+            <td> {% translate 'Single' %} </td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td> <i class="material-icons booking-table-icon"> person </i>
+                 <i class="material-icons booking-table-icon"> person </i> + 
+                 <i class="material-icons booking-table-icon"> child_care </i> 
+                 <i class="material-icons-outlined booking-table-icon" style="color:orangered;">info </i>
+                </td>
+
+            <td> {% translate 'Double' %} </td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td> <i class="material-icons booking-table-icon"> person </i> 
+                 <i class="material-icons booking-table-icon"> person </i>
+                 <i class="material-icons booking-table-icon"> person </i> + 
+                 <i class="material-icons booking-table-icon"> child_care </i>
+                 <i class="material-icons-outlined booking-table-icon" style="color: orangered;">info </i> </td>
+            <td> {% translate 'Triple' %} </td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td> <i class="material-icons booking-table-icon"> person </i>
+                 <i class="material-icons booking-table-icon"> person </i>
+                 <i class="material-icons booking-table-icon"> person </i>
+                 <i class="material-icons booking-table-icon"> person </i> + 
+                 <i class="material-icons booking-table-icon"> child_care </i>
+                 <i class="material-icons-outlined booking-table-icon" style="color: orangered;">info </i> </td>
+            <td> {% translate 'Quadruple' %} </td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          
+
+
+        </tbody>
+      </table>
 
     </div>
 

@@ -367,7 +367,7 @@ body { background-color: #FBFBFB !important;
                  color: #4300D2;
                  text-align: center;
                  padding-top: 0.8rem;
-                 padding-bottom: 2rem; }
+                 padding-bottom: 1rem; }
 
 .booking-info { font-family: 'Comfortaa', cursive; }    
 
@@ -376,11 +376,11 @@ body { background-color: #FBFBFB !important;
                       padding-right: 0.2rem;}
 
 .booking-info-strong { font-weight: bolder;
-                       font-size:medium;}
+                       font-size:small;}
 
 .booking-info-normal { font-weight:lighter;
-                       font-size: small;
-                       padding-top: 1rem;
+                       font-size: smaller;
+                       padding-top: 0.4rem;
                        padding-left: 1.4rem;}
 
 .booking-availability-title { font-family: 'Comfortaa', cursive;
@@ -388,13 +388,13 @@ body { background-color: #FBFBFB !important;
                               font-weight: bold;
                               color: black;
                               text-align: left;
-                              padding-top: 1rem;
+                              padding-top: 0.8rem;
                               padding-bottom: 0.4rem; }
 
 .booking-availability-normal { font-weight:lighter;
                                font-size: small; }
 
-.booking-form { padding-top: 0.4rem;
+.booking-form { padding-top: 0.1rem;
                 display: inline-flex; }
 
 .booking-form-checkin-label { font-size: small;
@@ -406,6 +406,46 @@ body { background-color: #FBFBFB !important;
                                font-weight: bold;
                                color: black;
                                margin-left: 16%; }
+
+.booking-btn { font-size: small;
+               margin-top: 8px; }
+
+.booking-table-icon { vertical-align:text-bottom;
+                      font-size: 20px; }
+
+.booking-table-leyend { font-size: 0.6rem;}
+
+#booking-table { table-layout:auto;		  
+                 border-style: none;
+                 border-collapse: collapse;
+                 width: 100%; }
+
+#booking-table thead th { font-family: 'Comfortaa', cursive;
+                          font-size: small;
+                          font-weight: normal;
+                          padding: 0.4rem;
+                          border-left: 1px solid royalblue;
+                          text-align: center;
+                          color: white;
+                          background-color:royalblue }
+
+#booking-table tbody td { font-family: 'Comfortaa', cursive;
+                          font-size: small;
+                          font-weight: normal;
+                          padding: 0.4rem;
+                          text-align: center;
+                          color: #444 }
+
+#booking-table tbody tr { border-bottom: 1px solid royalblue; }
+
+#booking-table tbody td:first-child { border-right: 1px solid royalblue;
+                                      text-align: left;
+                                      font-size: smaller;
+                                      padding-right: 0; }
+
+#booking-table tbody td:nth-child(2) { border-right: 1px solid royalblue; }
+#booking-table tbody td:nth-child(3) { border-right: 1px solid royalblue; }
+
 
 
 
