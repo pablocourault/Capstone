@@ -47,8 +47,6 @@
          </div>
         </form>
       </div>
-
-
     </div>
 
     <div class="alert alert-info border border-info ">
@@ -66,18 +64,20 @@
           <tr>
             <td> <i class="material-icons booking-table-icon"> person </i></td>
             <td> {% translate 'Single' %} </td>
-            <td></td>
+            <td> {{ single }} </td>
             <td></td>
           </tr>
           <tr>
             <td> <i class="material-icons booking-table-icon"> person </i>
                  <i class="material-icons booking-table-icon"> person </i> + 
                  <i class="material-icons booking-table-icon"> child_care </i> 
-                 <i class="material-icons-outlined booking-table-icon" style="color:orangered;">info </i>
+                 <div class="booking-tooltip"> <i class="material-icons-outlined booking-table-icon" style="color:orangered;"> info </i>
+                 <span class="tooltiptext">&nbsp;{% translate '3 guests max, with a maximum of 2 adults.' %}&nbsp;</span>
+                 </div>
                 </td>
 
             <td> {% translate 'Double' %} </td>
-            <td></td>
+            <td> {{ double }} </td>
             <td></td>
           </tr>
           <tr>
@@ -85,9 +85,13 @@
                  <i class="material-icons booking-table-icon"> person </i>
                  <i class="material-icons booking-table-icon"> person </i> + 
                  <i class="material-icons booking-table-icon"> child_care </i>
-                 <i class="material-icons-outlined booking-table-icon" style="color: orangered;">info </i> </td>
+                 <div class="booking-tooltip">
+                 <i class="material-icons-outlined booking-table-icon" style="color: orangered;">info </i>
+                 <span class="tooltiptext">&nbsp;{% translate '4 guests max, with a maximum of 3 adults.' %}&nbsp;</span> 
+                </div>
+                </td>
             <td> {% translate 'Triple' %} </td>
-            <td></td>
+            <td> {{ triple }} </td>
             <td></td>
           </tr>
           <tr>
@@ -96,21 +100,39 @@
                  <i class="material-icons booking-table-icon"> person </i>
                  <i class="material-icons booking-table-icon"> person </i> + 
                  <i class="material-icons booking-table-icon"> child_care </i>
-                 <i class="material-icons-outlined booking-table-icon" style="color: orangered;">info </i> </td>
+                 <div class="booking-tooltip">
+                 <i class="material-icons-outlined booking-table-icon" style="color: orangered;">info </i> 
+                 <span class="tooltiptext">&nbsp;{% translate '5 guests max, with a maximum of 4 adults.' %}&nbsp;</span> 
+                </div> 
+                </td>
             <td> {% translate 'Quadruple' %} </td>
-            <td></td>
+            <td> {{ quadruple }} </td>
             <td></td>
           </tr>
 
-          
-
+          <tr>
+            <td colspan="2"> {% translate 'Total for' %} <text>0</text> {% translate 'nights' %}</td>
+            <td id="booking-total"> </td>
+            {% if user.is_authenticated %}
+            <td> <button type="submit" class="btn btn-primary booking-btn-reserve">{% translate 'Reserve' %} </button></td>
+            {% else %}
+            <td> <text class="booking-terms"><i class="material-icons-outlined booking-table-icon">info</i>&nbsp;login to reserve</text></td>
+            {% endif %}
+            
+          </tr>
 
         </tbody>
       </table>
 
     </div>
 
-   </div>
+    <div class="alert alert-danger border border-danger booking-terms">
+      &bull;&nbsp;{% translate 'Confirmation is immediate' %}
+      &nbsp;&bull;&nbsp;{% translate 'Registration required' %}
+      &nbsp;&bull;&nbsp;{% translate 'No booking or credit card fees!' %}
+    </div>
+
+   </div> <!-- Cierre del Col-Lg-6 -->
 
    <div class="col-lg-3 col-sm-12">
    </div>

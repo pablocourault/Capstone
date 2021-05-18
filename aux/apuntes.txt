@@ -54,7 +54,7 @@ CONSIDERACIONES   *** REVEER TODO EL TIEMPO Y MANTENERLO LO MÁS SENCILLO POSIBL
   - Le muestra al usuario una lista de sus consumos, con fecha, concepto, importe individual
     y el total acumulado. Estará vacío si no hizo el Check In.
   - Si no tiene consumos, solo le informa eso (similar a cuando no tiene reservas).
-  - Le muestra un botón de descargar consumos a pdf si hizo el Check Out,
+  - Le muestra un botón visualizar todos los consumos de una booking y marcar que los pagó con el código de pago, como condición para hacer el Check Out,
     (si no es difícil de implementar).
 
 
@@ -87,8 +87,7 @@ CONSIDERACIONES   *** REVEER TODO EL TIEMPO Y MANTENERLO LO MÁS SENCILLO POSIBL
      le informa de la disponibilidad (un botón que aparezca o desaparezca).
 
 * Opción "Guest Reviews"
-   - Si el usuario logueado hizo el check-out, es decir que tiene el estado "out" puede dejar por cada estadía en el hotel
-     un comentario (luego cambia el estado a "none").
+   - Cuando un usuario en la lista GUESTS, logueado hace el check-out, se le brinda la posibilidad de dejar un comentario.
    - Muestra los comentarios de los huéspedes, ordenados por más recientes, con un paginador.
    - Los comentarios deberían tener un puntaje y un texto
    - Debería mostrar en un campo al principio el promedio de puntajes otorgados.
@@ -101,50 +100,58 @@ PROCESOS
 - Navegar el sitio, ver el hotel (no requiere nada)
 - Registrarse
 - Login / Logout
-* Consultar habitaciones disponibles por rango de fechas, para X cantidad de personas (modelo: HABITACIONES, RESERVAS)
-* Consultar disponibilidad y hacer reserva (modelo: RESERVAS)
+* Consultar habitaciones disponibles por rango de fechas (modelos: ROOM, BOOKINGS)
+* Consultar habitaciones disponibles y hacer reserva (modelos: ROOM, BOOKINGS)
 * Enviar y recibir mensajes de la recepción tipo DM (hacerlo si no se complica, modelo: MENSAJES)
 * Dejar comentarios sobre el servicio del hotel (modelo: COMENTARIOS)
 * Pedir servicios para una habitación (modelo: SERVICIOS, CONSUMOS)
-* Obtener gastos a pagar, marcar como pagados (modelo: CONSUMOS)
-* Check in / Check out (cambiar estado usuario / cambiar estado usuario y ¿borrar reserva?)
+* Obtener gastos a pagar, marcar como pagados con el código de pago suministrado (modelo: CONSUMOS)
+* Check in / Check out (agregar usuario a GUESTS, Borrar reserva? / eliminar usuario de GUESTS)
 
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
 MODELOS
 
-* USUARIOS
- - Estado (manejado por el Check In/Check Out)
- 	- 'none' por default, nunca estuvo.
-	- 'in' cuando entra, lo habilita a hacer consumos y mensajes
-	- 'out' cuando sale, lo habilita a hacer comentarios en Guest Reviews
-- ¿Reserva? (apunta a modelo reservas, se agrega al momento de hacer el checkin, se borra al momento del checkout )
+* USERS
+
+* GUESTS
+  - guest (usuario, que si está en este modelo, 
+           es porque hizo el check-in -se lo agrega ahí-, lo habilita a hacer consumos,
+           se borra al hacer el check-out)
+  - booking (tiene una instancia por cada reserva, se borra una instancia por cada check-out)
+
+* ROOM
+ - description
+ - room-type
+ - quantity
+ - rate
 
 
-* TARIFAS
- - Tipo_Habitación
- - Tarifa
 
-- HABITACIONES
-  - Número
-  - Tipo_Habitación
-  - Capacidad
-  - Cantidad (de habitaciones de ese tipo)
+* BOOKINGS (es la reseva, no importa las habitaciones, está bien pensado asi)
+ - user
+ - check-in-date
+ - check-out-date
+ - check-out-code (código necesario para hacer el ckeck-out y que cancela los consumos
+                   hipotéticamente se lo entregarían al huésped al momento de hacer el pago)
+                  (a disponibilidad de reserva se hace contando la cantidad reservadas
+                   para esa fecha por room-type, menos la quantity que hay en ROOM
+                   por room-type.)
+ - amount       (al hacer la reserva, se le guarda el monto total por las habitaciones, es decir:
+                 se le "congela" la tarifa porque después puede cambiar,
+                 OJO, cuando hace el check-in se le inicializan los consumos con este monto.)
 
-* RESERVAS
- - Habitación (¿o número?)
- - Usuario
- - Desde
- - Hasta
- - ¿ Estado ? 
 
 * CONSUMOS
- - Habitación
- - Usuario
+ - guest
+ - booking
  - Servicio
- - Fecha
- - Monto
- - Estado (pendiente / cancelado)
+ - date
+ - amount
+ - Estado (pendiente / cancelado) (El usuario cancelaría todos los consumos correspondientes a un booking.
+                                   al momento de hacer el check-out, con el código de pago que le suministraría
+                                   el administrador o Front End.)
+
 
 * SERVICIOS
  - Descripción
@@ -188,11 +195,12 @@ PARA EL FINAL
 - Controlar que el diseño responsivo funcione para las páginas en TODO el sitio.
 - Revisar todo el enunciado del trabajo final que no me falte nada.
 - Ver que no arroje errores de javascript.
+- Aclarar en el README todo lo que se puede hacer en la parte de Django Admin
 
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
 PENDIENTES
-- Ponerle un poquito de animación al desplegable de FAQs ¿y separación entre las preguntas?
+- Ponerle un poquito de animación al desplegable de FAQs 
   También se puede reveer porque hay un bootstrap collapsable:
   https://www.w3schools.com/bootstrap/bootstrap_collapse.asp
 - La galería de fotos modal se podría reemplazar por la estándar de bootstrap: 
@@ -206,18 +214,14 @@ PENDIENTES
 
 Algoritmo Reservas: 
 
-OJO EL SISTEMA NO TIENE QUE DECIDIR
-SOLO TIENE QUE MOSTRAR DISPONIBILIDADES
-SEGÚN LA CANTIDAD DE PERSONAS QUE INDICA
-Y ES EL USUARIO EL QUE ELIJE
+OJO EL SISTEMA NO DECIDE NADA, SOLO MUESTRA DISPONIBILIDADES
+SEGÚN LAS FECHAS QUE EL USUARIO INDICA,Y ES ÉL QUIEN ELIJE
 
-1	2	3	4
 
-1) Elige las fechas y la cantidad de adultos y niños (niños se tiene en cuenta para facturar)
-2) Se buscan las habitaciones disponibles
-3) Se muestran las habitaciones disponibles (una por cada tipo y la cantidad)
-   Si la cantidad es menor a 5 y directa al tamaño de la habitación, se muestra esa habitación primero
-4) Marca la habitación que necesita y la cantidad
-5) Le muestra antes de confirmar el total de habitaciones, tipo y cantidad de personas
-6) Menores de 6 no pagan pero se cuenta el lugar (los indica sólo para usar al momento de facturar
-7) El límite de menores de 6 años es 2.
+1) Elige las fechas
+2) Se buscan las habitaciones disponibles (ver explicación de cómo en modelo BOOKINGS)
+3) Se muestran las habitaciones disponibles (cantidad por cada tipo)
+4) El usuario indica la cantidad de habitaciones que necesita por cada tipo (en base a la disponibilidad del punto anterior)
+5) Se le muestra antes de confirmar: el total de habitaciones por tipo, cuántas personas puede alojar y el monto total.
+5b) Indicar en el punto anterior la cantidad de niños que puede alojar.
+5c) El punto 5 debería ir a otra página, pero con la posibilidad de volver atrás y modificar.

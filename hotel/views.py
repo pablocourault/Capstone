@@ -11,7 +11,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.http import JsonResponse
 
 
-from .models import User
+from .models import User, Room, Guests
 
 # Create your views here.
 
@@ -28,8 +28,16 @@ def info(request):
 
 @csrf_exempt
 def bookings(request):
+
+    single = Room.objects.get(roomtype='S')
+    double = Room.objects.get(roomtype='D')
+    triple = Room.objects.get(roomtype='T')
+    quadruple = Room.objects.get(roomtype='Q')
     
-    return render(request, "hotel/bookings.html")
+    return render(request, "hotel/bookings.html", {'single': single.rate, 
+                                                   'double': double.rate,
+                                                   'triple': triple.rate,
+                                                   'quadruple': quadruple.rate})
 
 
 def facilities(request):

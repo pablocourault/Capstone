@@ -4,4 +4,19 @@ from django.db import models
 # Create your models here.
 
 class User(AbstractUser):
-   pass
+       def __str__(self):
+        return f"{self.username}"
+
+class Guests(models.Model):
+       guest = models.ForeignKey(User, on_delete=models.CASCADE, blank=False)
+       def __str__(self):
+        return f"{self.guest}"
+
+class Room(models.Model):
+       description = models.CharField(max_length=64, blank=False)
+       roomtype = models.CharField(max_length=1, blank=False)
+       rate = models.DecimalField(blank=False, max_digits=4, decimal_places=2)
+       quantity = models.IntegerField()
+       def __str__(self):
+         return f"{self.description} - Quantity: {self.quantity} -  Rate: {self.rate}"
+

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-14 12:13-0300\n"
+"POT-Creation-Date: 2021-05-16 20:47-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,17 +39,89 @@ msgstr "Disponibilidade"
 msgid "When would you like to stay at Hotel Le Monde?"
 msgstr "Quando você quer se hospedar no(a) Hotel Le Monde?"
 
-#: templates/hotel/bookings.html:37
+#: templates/hotel/bookings.html:36
 msgid "Check In"
 msgstr "Entrada"
 
-#: templates/hotel/bookings.html:42
+#: templates/hotel/bookings.html:41
 msgid "Check Out"
 msgstr "Saída"
 
-#: templates/hotel/bookings.html:47
+#: templates/hotel/bookings.html:46
 msgid "Check Availability"
 msgstr "Verificar disponibilidade"
+
+#: templates/hotel/bookings.html:57
+msgid "Sleeps"
+msgstr "Acomoda"
+
+#: templates/hotel/bookings.html:58
+msgid "Room Type"
+msgstr "Tipo de quarto"
+
+#: templates/hotel/bookings.html:59
+msgid "Prices"
+msgstr "Preços"
+
+#: templates/hotel/bookings.html:59
+msgid "for one night"
+msgstr "por uma noite"
+
+#: templates/hotel/bookings.html:60
+msgid "Select Rooms"
+msgstr "Selecione Quarto"
+
+#: templates/hotel/bookings.html:66
+msgid "Single"
+msgstr "Individual"
+
+#: templates/hotel/bookings.html:75
+msgid "3 guests max, with a maximum of 2 adults."
+msgstr "3 hóspedes en total, 2 adultos no máximo."
+
+#: templates/hotel/bookings.html:79
+msgid "Double"
+msgstr "Duplo"
+
+#: templates/hotel/bookings.html:90
+msgid "4 guests max, with a maximum of 3 adults."
+msgstr "4 hóspedes en total, 3 adultos no máximo."
+
+#: templates/hotel/bookings.html:93
+msgid "Triple"
+msgstr "Triplo"
+
+#: templates/hotel/bookings.html:105
+msgid "5 guests max, with a maximum of 4 adults."
+msgstr "5 hóspedes en total, 4 adultos no máximo."
+
+#: templates/hotel/bookings.html:108
+msgid "Quadruple"
+msgstr "Quádruplo"
+
+#: templates/hotel/bookings.html:114
+msgid "Total for"
+msgstr "Total por"
+
+#: templates/hotel/bookings.html:114
+msgid "nights"
+msgstr "noites"
+
+#: templates/hotel/bookings.html:115
+msgid "USD"
+msgstr "BRS"
+
+#: templates/hotel/bookings.html:125
+msgid "Confirmation is immediate"
+msgstr "Confirmação imediata"
+
+#: templates/hotel/bookings.html:126
+msgid "Registration required"
+msgstr "É necessário ter conta"
+
+#: templates/hotel/bookings.html:127
+msgid "No booking or credit card fees!"
+msgstr "Sem taxas de reserva!"
 
 #: templates/hotel/facilities.html:7
 msgid "Most Popular Facilities And Services"

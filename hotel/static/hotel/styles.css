@@ -410,6 +410,8 @@ body { background-color: #FBFBFB !important;
 .booking-btn { font-size: small;
                margin-top: 8px; }
 
+.booking-btn-reserve { font-size: smaller;}
+
 .booking-table-icon { vertical-align:text-bottom;
                       font-size: 20px; }
 
@@ -421,7 +423,7 @@ body { background-color: #FBFBFB !important;
                  width: 100%; }
 
 #booking-table thead th { font-family: 'Comfortaa', cursive;
-                          font-size: small;
+                          font-size: smaller;
                           font-weight: normal;
                           padding: 0.4rem;
                           border-left: 1px solid royalblue;
@@ -446,6 +448,49 @@ body { background-color: #FBFBFB !important;
 #booking-table tbody td:nth-child(2) { border-right: 1px solid royalblue; }
 #booking-table tbody td:nth-child(3) { border-right: 1px solid royalblue; }
 
+/* last row */
+#booking-table tbody tr:last-child {border-bottom: none; }
+
+#booking-table tbody tr:last-child td:nth-child(1) { border-right: 1px solid royalblue;
+                                                     color: royalblue;
+                                                     font-size:small;
+                                                     font-weight: bold;
+                                                     padding-top: 0.6rem;
+                                                     padding-right: 0.8rem; ;
+                                                     text-align: right; }
+
+#booking-table tbody tr:last-child td:nth-child(2) { border-right: 1px solid royalblue; }
+
+#booking-table tbody tr:last-child td:nth-child(3) { border-right: none; }
+
+.booking-terms { color: #dc3545;
+                 font-size: smaller;
+                 text-align: center; }
+
+
+/* Tooltip container */
+.booking-tooltip { position: relative;
+                   display: inline-block;
+                   cursor: pointer; }
+/* Tooltip text */
+
+.booking-tooltip .tooltiptext { visibility: hidden;
+                                width:max-content;
+                                bottom: 100%;
+                                left: 50%;
+                                margin-left: -60px;
+                                background-color: black;
+                                color: #fff;
+                                text-align: center;
+                                padding: 6px 6px;
+                                border-radius: 6px;
+                                position: absolute; /* Position the tooltip text  */
+                                z-index: 1; }
+
+                               
+      
+/* Show the tooltip text when you mouse over the tooltip container */
+.booking-tooltip:hover .tooltiptext { visibility: visible; }      
 
 
 
