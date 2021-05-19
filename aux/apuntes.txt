@@ -65,9 +65,7 @@ CONSIDERACIONES   *** REVEER TODO EL TIEMPO Y MANTENERLO LO MÁS SENCILLO POSIBL
 
 * Opción "Check In / Check Out"
   - Si el usuario está logueado y tiene una reserva en fecha debe aparecer el botón "Check In".
-  -  Al hacer el auto Check In se le genera el primer cargo o consumo que es el de la habitación
-     y podría recibir un mensaje de la "recepción" diciendo que puede retirar las llaves por la misma,
-	 indicando cuál es su número de habitación. ¿Poner Un mapa con la ubicación o en FAQs?
+  - Al hacer el auto Check In se le genera el primer cargo o consumo que es el de la(s) habitación(es).
   - Si el usuario está logueado, hizo el Check In y está en fecha de salir, debe mostrarse la opción de Check Out.
   - Al hacer el Check Out se cierren los consumos y se puede descargar el pdf, poner en la boleta
     por ejemplo un mensaje que diga "pase por recepción a cancelar su deuda".
@@ -78,18 +76,20 @@ CONSIDERACIONES   *** REVEER TODO EL TIEMPO Y MANTENERLO LO MÁS SENCILLO POSIBL
   - Para hacer una consulta de disponibilidad para reserva debería indicar:
 	Fecha de entrada
 	Fecha de salida
-	Cantidad de personas (se puede poner algo tipo "hasta dos niños menores a tantos años gratis")
+	Cantidad de personas (se indica en cada tipo de habitación que se admite un niño gratis")
   Niños menores a seis años, no se les cobra pero se calcula como ocupación, para la reserva.
 
-   - La consulta de reserva debería devolver opciones tipo a) habitación estándar, b) económica, c) superior
+   - La consulta de reserva devuelve la cantidad disponible de habitaciones por cada tipo.
+      Los tipos de habitaciones son Single, Double, Triple y Quadruple.
 
-   - Si el usuario está logueado le da la posibilidad de hacer la reserva, sino
-     le informa de la disponibilidad (un botón que aparezca o desaparezca).
+   - Si el usuario está logueado le da la posibilidad de hacer la reserva, sino solo le informa
+     de la disponibilidad (un botón que aparezca o desaparezca).
 
 * Opción "Guest Reviews"
    - Cuando un usuario en la lista GUESTS, logueado hace el check-out, se le brinda la posibilidad de dejar un comentario.
+     Si hizo el chek-out, sin dejar un comentario, ya no podrá hacerlo.
    - Muestra los comentarios de los huéspedes, ordenados por más recientes, con un paginador.
-   - Los comentarios deberían tener un puntaje y un texto
+   - Los comentarios tendrán un puntaje y un texto.
    - Debería mostrar en un campo al principio el promedio de puntajes otorgados.
    - Se podría poner la opción de ordenar por mejores o peores comentarios primero.
 
@@ -106,7 +106,8 @@ PROCESOS
 * Dejar comentarios sobre el servicio del hotel (modelo: COMENTARIOS)
 * Pedir servicios para una habitación (modelo: SERVICIOS, CONSUMOS)
 * Obtener gastos a pagar, marcar como pagados con el código de pago suministrado (modelo: CONSUMOS)
-* Check in / Check out (agregar usuario a GUESTS, Borrar reserva? / eliminar usuario de GUESTS)
+* Check In: agregar usuario a GUESTS, agregar amount de BOOKINGS en consumos.
+* Check Out: habilitado con código de reserva, eliminar usuario de GUESTS, guardar comentario (si lo deja)
 
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
@@ -115,10 +116,11 @@ MODELOS
 * USERS
 
 * GUESTS
-  - guest (usuario, que si está en este modelo, 
-           es porque hizo el check-in -se lo agrega ahí-, lo habilita a hacer consumos,
+  - guest (usuario, si está en este modelo, 
+           es porque hizo el check-in -se lo agrega en ese momento-, lo habilita a hacer consumos,
            se borra al hacer el check-out)
   - booking (tiene una instancia por cada reserva, se borra una instancia por cada check-out)
+
 
 * ROOM
  - description
@@ -127,19 +129,19 @@ MODELOS
  - rate
 
 
-
 * BOOKINGS (es la reseva, no importa las habitaciones, está bien pensado asi)
  - user
  - check-in-date
  - check-out-date
  - check-out-code (código necesario para hacer el ckeck-out y que cancela los consumos
                    hipotéticamente se lo entregarían al huésped al momento de hacer el pago)
-                  (a disponibilidad de reserva se hace contando la cantidad reservadas
+                  (la disponibilidad de reserva se hace contando la cantidad reservadas
                    para esa fecha por room-type, menos la quantity que hay en ROOM
                    por room-type.)
  - amount       (al hacer la reserva, se le guarda el monto total por las habitaciones, es decir:
                  se le "congela" la tarifa porque después puede cambiar,
-                 OJO, cuando hace el check-in se le inicializan los consumos con este monto.)
+                 OJO, cuando hace el check-in se le inicializan los consumos con este monto.
+                 Este campo se utiliza solo para eso.)
 
 
 * CONSUMOS
@@ -150,14 +152,15 @@ MODELOS
  - amount
  - Estado (pendiente / cancelado) (El usuario cancelaría todos los consumos correspondientes a un booking.
                                    al momento de hacer el check-out, con el código de pago que le suministraría
-                                   el administrador o Front End.)
+                                   el administrador o Front End; para el ejercicio se puede dejar un código fijo,
+                                   o no controlar, pero dejar indicado como sería el proceso.)
 
 
 * SERVICIOS
  - Descripción
  - Tarifa
 
-* MENSAJES
+* MENSAJES (HACER LO DE MENSAJES SINO SE COMPLICA)
  - Fecha
  - Remitente
  - Destinatario

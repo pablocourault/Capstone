@@ -1,5 +1,12 @@
 {% extends "hotel/layout.html" %}
 {% load i18n %}
+
+{% load static %}
+
+{% block script %}
+    <script src="{% static 'hotel/bookings.js' %}"></script>
+{% endblock %}
+
 {% block body %}
 
 <div class="row">
@@ -31,7 +38,7 @@
       </div>
       
         <div>
-          <form action="" method="post" class="booking-form">
+          <form method="post" id="booking-check-availability-form"class="booking-form">
           <div>
           <span class="booking-form-checkin-label">{% translate 'Check In' %}</span>
           <input type="date" id="datein" name="datein" min="2021-05-14" placeholder="yyyy-mm-dd" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required>
@@ -43,7 +50,7 @@
          </div>
 
          <div>
-         <button type="submit" class="btn btn-primary booking-btn">{% translate 'Check Availability' %}</button>
+         <button type="submit" id="booking-btn-check" class="btn btn-primary booking-btn">{% translate 'Check Availability' %}</button>
          </div>
         </form>
       </div>

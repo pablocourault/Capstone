@@ -16,5 +16,7 @@ urlpatterns = [
     path("logout", views.logout_view, name="logout"),
     path("register", views.register, name="register"),
     path('i18n/', include('django.conf.urls.i18n')),
+    # API Routes
+    path("availability", views.availability, name="availability")
 ]
 

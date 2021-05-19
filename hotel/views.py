@@ -27,6 +27,26 @@ def info(request):
 
 
 @csrf_exempt
+def availability(request):
+
+    # Composing a new post must be via POST
+    if request.method != "POST":
+        return JsonResponse({"error": "POST request required."}, status=400)
+
+    data = json.loads(request.body)
+    checkInDate = data.get("checkindate","")
+    checkOutDate = data.get("checkoutdate","")
+
+    if len(checkInDate) == 0:
+        return JsonResponse({"error": "empty post."}, status=400)
+
+    if len(checkOutDate) == 0:
+        return JsonResponse({"error": "empty post."}, status=400)
+
+    return JsonResponse({'single': 2, 'double': 8}, status=201)
+
+
+@csrf_exempt
 def bookings(request):
 
     single = Room.objects.get(roomtype='S')
@@ -38,6 +58,7 @@ def bookings(request):
                                                    'double': double.rate,
                                                    'triple': triple.rate,
                                                    'quadruple': quadruple.rate})
+
 
 
 def facilities(request):
