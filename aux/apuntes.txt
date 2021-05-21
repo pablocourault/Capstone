@@ -131,10 +131,14 @@ MODELOS
 
 * BOOKINGS (es la reseva, no importa las habitaciones, está bien pensado asi)
  - user
- - check-in-date
- - check-out-date
- - check-out-code (código necesario para hacer el ckeck-out y que cancela los consumos
-                   hipotéticamente se lo entregarían al huésped al momento de hacer el pago)
+ - singles
+ - doubles
+ - triples
+ - quadruples
+ - checkin_date
+ - checkout_date
+ - checkout_code (código necesario para hacer el ckeck-out y que cancela los consumos
+                  hipotéticamente se lo entregarían al huésped al momento de hacer el pago)
                   (la disponibilidad de reserva se hace contando la cantidad reservadas
                    para esa fecha por room-type, menos la quantity que hay en ROOM
                    por room-type.)

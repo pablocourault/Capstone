@@ -21,21 +21,33 @@ document.querySelector('#booking-check-availability-form').addEventListener('sub
  
 function checkavailability()
                                
-    {   fechaInicio = new Date(document.querySelector('#datein').value).getTime();
+    {   // dates to calculate availability
+
+        date_in = document.querySelector('#datein').value;
+        date_out = document.querySelector('#dateout').value
+        
+        // dates to calculate number of nights
+        fechaInicio = new Date(document.querySelector('#datein').value).getTime();
         fechaFin = new Date(document.querySelector('#dateout').value).getTime();
+
+        // calculate number of nights
         diff = fechaFin - fechaInicio;
         nights = diff/(1000*60*60*24);
-
+        
         fetch('/availability', { method: 'POST',
-                                 body: JSON.stringify({checkindate: fechaInicio,
-                                                       checkoutdate: fechaFin })})
-                // save status to variable "estado", to use in the next "then"
+                                 body: JSON.stringify({checkindate: date_in,
+                                                       checkoutdate: date_out })})
         .then(response => {console.log(response.status);
-               return response.json()})
-        .then(data => { console.log(data); })
+                           estado = response.status;
+                           return response.json()})
+        .then(data => {console.log(data);
+                       if (estado == 201)
+                        {
 
-         }
-    
-     event.preventDefault(); 
-                                  
+                        }
+                       })
+        
+        event.preventDefault(); 
+               
+    }
 })
