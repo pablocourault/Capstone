@@ -83,7 +83,7 @@ body { background-color: #FBFBFB !important;
 .autogestion-item input[type="image"] { padding-right: 16px;
                                         height: 32px; }
 
-#user-authenticated { padding-top: 6px;
+#user-authenticated { padding-top: 2px;
                       font-size: large;
                       color: #FF7A80; }
 
@@ -447,6 +447,7 @@ body { background-color: #FBFBFB !important;
 
 #booking-table tbody td:nth-child(2) { border-right: 1px solid royalblue; }
 #booking-table tbody td:nth-child(3) { border-right: 1px solid royalblue; }
+#booking-table tbody td:nth-child(4) { text-align: right; }
 
 /* last row */
 #booking-table tbody tr:last-child {border-bottom: none; }

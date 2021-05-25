@@ -16,38 +16,53 @@ document.querySelector('#datein').addEventListener('input', () =>
                                 { document.getElementById("dateout").setAttribute("min",
                                   document.querySelector('#datein').value ); });
 
-document.querySelector('#booking-check-availability-form').addEventListener('submit', checkavailability);
+                                  date_in = document.querySelector('#datein').value;
+                                  date_out = document.querySelector('#dateout').value;
+                                  
+                                  // dates to calculate number of nights
+                                  fechaInicio = new Date(document.querySelector('#datein').value).getTime();
+                                  fechaFin = new Date(document.querySelector('#dateout').value).getTime();
+                          
+                                  // calculate number of nights
+                                  diff = fechaFin - fechaInicio;
+                                  var nights = diff/(1000*60*60*24);
+
+                                  if (nights > 0) { document.querySelector('#booking-nights').innerHTML = nights; }
+
+                                  if (nights < 0) { window.alert("check-out date is less than check-in date ")}
+
+var singles_selected = 0;
+var doubles_selected = 0;
+var triples_selected = 0;
+var quadruples_selected = 0;
+
+var sr = parseFloat(document.querySelector('#single_rate').innerHTML);
+var dr = parseFloat(document.querySelector('#double_rate').innerHTML);
+var tr = parseFloat(document.querySelector('#triple_rate').innerHTML);
+var qr = parseFloat(document.querySelector('#quadruple_rate').innerHTML);
+
+document.querySelector('#singles-select').onchange = function() { singles_selected = this.value; total_amount(); }
+
+document.querySelector('#doubles-select').onchange = function() { doubles_selected = this.value; total_amount(); }
+
+document.querySelector('#triples-select').onchange = function() { triples_selected = this.value; total_amount(); }
+
+document.querySelector('#quadruples-select').onchange = function() { quadruples_selected = this.value; total_amount(); }
+                                              
+// document.querySelector('#booking-check-availability-form').addEventListener('submit', checkavailability);
 
  
-function checkavailability()
+function total_amount()
                                
-    {   // dates to calculate availability
+    {  
 
-        date_in = document.querySelector('#datein').value;
-        date_out = document.querySelector('#dateout').value
-        
-        // dates to calculate number of nights
-        fechaInicio = new Date(document.querySelector('#datein').value).getTime();
-        fechaFin = new Date(document.querySelector('#dateout').value).getTime();
+      total = (((parseInt(singles_selected) * sr) + 
+              (parseInt(doubles_selected) * dr) + 
+              (parseInt(triples_selected) * tr) + 
+              (parseInt(quadruples_selected) * qr)) * nights).toFixed(2) ;
 
-        // calculate number of nights
-        diff = fechaFin - fechaInicio;
-        nights = diff/(1000*60*60*24);
-        
-        fetch('/availability', { method: 'POST',
-                                 body: JSON.stringify({checkindate: date_in,
-                                                       checkoutdate: date_out })})
-        .then(response => {console.log(response.status);
-                           estado = response.status;
-                           return response.json()})
-        .then(data => {console.log(data);
-                       if (estado == 201)
-                        {
+      document.querySelector('#booking-total').innerHTML = total;
 
-                        }
-                       })
-        
-        event.preventDefault(); 
                
     }
 })

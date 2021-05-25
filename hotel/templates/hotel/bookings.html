@@ -38,19 +38,22 @@
       </div>
       
         <div>
-          <form method="post" id="booking-check-availability-form"class="booking-form">
+          <form action="{% url 'bookings' %}" method="post" id="booking-check-availability-form" class="booking-form">
+          
+          {% csrf_token %}
+
           <div>
           <span class="booking-form-checkin-label">{% translate 'Check In' %}</span>
-          <input type="date" id="datein" name="datein" min="2021-05-14" placeholder="yyyy-mm-dd" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required>
+          <input type="date" id="datein" name="datein" placeholder="yyyy-mm-dd" value="{{ check_in_date }}" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required>
          </div>
 
          <div>
          <span class="booking-form-checkout-label">{% translate 'Check Out' %}</span>
-         <input type="date" id="dateout" name="dateout" min="2021-05-14" max="2022-05-12" placeholder="yyyy-mm-dd" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required>
+         <input type="date" id="dateout" name="dateout" placeholder="yyyy-mm-dd" value="{{ check_out_date }}" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required>
          </div>
 
          <div>
-         <button type="submit" id="booking-btn-check" class="btn btn-primary booking-btn">{% translate 'Check Availability' %}</button>
+          <input type="submit" id="booking-btn-check" class="btn btn-primary booking-btn" value="{% translate 'Check Availability' %}">
          </div>
         </form>
       </div>
@@ -71,8 +74,16 @@
           <tr>
             <td> <i class="material-icons booking-table-icon"> person </i></td>
             <td> {% translate 'Single' %} </td>
-            <td> {{ single }} </td>
-            <td></td>
+            <td id="single_rate"> {{ single_rate }} </td>
+            <td>{{ single_available }} {{ label }}&nbsp;
+            {% if user.is_authenticated %}
+              <select id="singles-select">
+                {% for i in single_range %}
+                <option value='{{ i }}'>{{ i }}</option>
+                {% endfor %}
+                </select>
+            {% endif %}
+            </td>
           </tr>
           <tr>
             <td> <i class="material-icons booking-table-icon"> person </i>
@@ -84,8 +95,16 @@
                 </td>
 
             <td> {% translate 'Double' %} </td>
-            <td> {{ double }} </td>
-            <td></td>
+            <td id="double_rate"> {{ double_rate }} </td>
+            <td>{{ double_available }} {{ label }}&nbsp;
+            {% if user.is_authenticated %} 
+              <select id="doubles-select">
+                {% for i in double_range %}
+                <option value='{{ i }}'>{{ i }}</option>
+                {% endfor %}
+                </select>
+            {% endif %}
+            </td>
           </tr>
           <tr>
             <td> <i class="material-icons booking-table-icon"> person </i> 
@@ -98,8 +117,16 @@
                 </div>
                 </td>
             <td> {% translate 'Triple' %} </td>
-            <td> {{ triple }} </td>
-            <td></td>
+            <td id="triple_rate"> {{ triple_rate }} </td>
+            <td>{{ triple_available }} {{ label }}&nbsp;
+            {% if user.is_authenticated %} 
+              <select id="triples-select">
+                {% for i in triple_range %}
+                <option value='{{ i }}'>{{ i }}</option>
+                {% endfor %}
+                </select>
+            {% endif %}
+            </td>
           </tr>
           <tr>
             <td> <i class="material-icons booking-table-icon"> person </i>
@@ -113,12 +140,20 @@
                 </div> 
                 </td>
             <td> {% translate 'Quadruple' %} </td>
-            <td> {{ quadruple }} </td>
-            <td></td>
+            <td id="quadruple_rate"> {{ quadruple_rate }} </td>
+            <td>{{ quadruple_available }} {{ label }}&nbsp;
+            {% if user.is_authenticated %} 
+              <select id="quadruples-select">
+                {% for i in quadruple_range %}
+                <option value='{{ i }}'>{{ i }}</option>
+                {% endfor %}
+                </select>
+            {% endif %}
+            </td>
           </tr>
 
           <tr>
-            <td colspan="2"> {% translate 'Total for' %} <text>0</text> {% translate 'nights' %}</td>
+            <td colspan="2"> {% translate 'Total for' %} <text id="booking-nights">0</text> {% translate 'nights' %}</td>
             <td id="booking-total"> </td>
             {% if user.is_authenticated %}
             <td> <button type="submit" class="btn btn-primary booking-btn-reserve">{% translate 'Reserve' %} </button></td>
