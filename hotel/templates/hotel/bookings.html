@@ -59,8 +59,9 @@
       </div>
     </div>
 
-    <div class="alert alert-info border border-info ">
+    <div class="alert alert-info border border-info">
 
+      <form action="{% url 'mybookings' %}" method="post" id="booking-reserve-form">
       <table id="booking-table">
         <thead>
           <tr>
@@ -156,15 +157,26 @@
             <td colspan="2"> {% translate 'Total for' %} <text id="booking-nights">0</text> {% translate 'nights' %}</td>
             <td id="booking-total"> </td>
             {% if user.is_authenticated %}
-            <td> <button type="submit" class="btn btn-primary booking-btn-reserve">{% translate 'Reserve' %} </button></td>
+            <td> <input type="submit" id="btn-reserve" class="btn btn-primary booking-btn-reserve" value="{% translate 'Reserve' %}"></td>
             {% else %}
             <td> <text class="booking-terms"><i class="material-icons-outlined booking-table-icon">info</i>&nbsp;login to reserve</text></td>
             {% endif %}
             
           </tr>
-
         </tbody>
       </table>
+
+      <input id="user_booking" name="user_booking" type="hidden" value="">
+      <input id="singles_booking" name="singles_booking" type="hidden" value="">
+      <input id="doubles_booking" name="doubles_booking" type="hidden" value="">
+      <input id="triples_booking" name="triples_booking" type="hidden" value="">
+      <input id="quadruples_booking" name="quadruples_booking" type="hidden" value="">
+      <input id="datein_booking" name="datein_booking" type="hidden" value="">
+      <input id="dateout_booking" name="dateout_booking" type="hidden" value="">
+      <input id="code_booking" name="code_booking" type="hidden" value="">
+      <input id="amount_booking" name="amount_booking" type="hidden" value="">
+
+      </form>
 
     </div>
 
@@ -180,12 +192,6 @@
    </div>
 </div>
 
-  <div class="row">
-    <div class="col-lg-12 col-sm-12"> 
-    
-     
-   
-  </div>
-  </div>
+  {{ request.user.id|json_script:"user_id" }}
 
 {% endblock %}

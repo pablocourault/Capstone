@@ -76,7 +76,7 @@ CONSIDERACIONES   *** REVEER TODO EL TIEMPO Y MANTENERLO LO MÁS SENCILLO POSIBL
   - Para hacer una consulta de disponibilidad para reserva debería indicar:
 	Fecha de entrada
 	Fecha de salida
-	Cantidad de personas (se indica en cada tipo de habitación que se admite un niño gratis")
+	Se indica en cada tipo de habitación que se admite un niño gratis.
   Niños menores a seis años, no se les cobra pero se calcula como ocupación, para la reserva.
 
    - La consulta de reserva devuelve la cantidad disponible de habitaciones por cada tipo.
@@ -100,14 +100,15 @@ PROCESOS
 - Navegar el sitio, ver el hotel (no requiere nada)
 - Registrarse
 - Login / Logout
-* Consultar habitaciones disponibles por rango de fechas (modelos: ROOM, BOOKINGS)
-* Consultar habitaciones disponibles y hacer reserva (modelos: ROOM, BOOKINGS)
+- Consultar habitaciones disponibles por rango de fechas (modelos: ROOM, BOOKINGS)
+- Consultar habitaciones disponibles y hacer reserva (modelos: ROOM, BOOKINGS)
 * Enviar y recibir mensajes de la recepción tipo DM (hacerlo si no se complica, modelo: MENSAJES)
 * Dejar comentarios sobre el servicio del hotel (modelo: COMENTARIOS)
 * Pedir servicios para una habitación (modelo: SERVICIOS, CONSUMOS)
 * Obtener gastos a pagar, marcar como pagados con el código de pago suministrado (modelo: CONSUMOS)
 * Check In: agregar usuario a GUESTS, agregar amount de BOOKINGS en consumos.
 * Check Out: habilitado con código de reserva, eliminar usuario de GUESTS, guardar comentario (si lo deja)
+             borra la reserva correspondiente.
 
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
@@ -164,7 +165,7 @@ MODELOS
  - Descripción
  - Tarifa
 
-* MENSAJES (HACER LO DE MENSAJES SINO SE COMPLICA)
+* MENSAJES (HACER LO DE MENSAJES SI NO SE COMPLICA)
  - Fecha
  - Remitente
  - Destinatario
@@ -202,7 +203,7 @@ PARA EL FINAL
 - Controlar que el diseño responsivo funcione para las páginas en TODO el sitio.
 - Revisar todo el enunciado del trabajo final que no me falte nada.
 - Ver que no arroje errores de javascript.
-- Aclarar en el README todo lo que se puede hacer en la parte de Django Admin
+- Aclarar en el README todo lo que se puede hacer en la parte de Django Admin.
 
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 

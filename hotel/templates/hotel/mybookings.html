@@ -1,0 +1,111 @@
+{% extends "hotel/layout.html" %}
+{% load i18n %}
+
+{% load static %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col-lg-12 col-sm-12 booking-title"> 
+    {% translate 'My Bookings' %}
+    </div>
+</div>
+
+<div class="row">
+   <div class="col-lg-3 col-sm-12">
+   </div>
+
+   
+   <div class="col-lg-6 col-sm-12">
+
+    {% if post %}
+    <div class="alert alert-success border border-success booking-info">
+      <div class="material-icons-outlined booking-info-icon">done</div>
+      <div class="booking-info-strong"> {% translate 'Your booking has been registered' %} </div>
+      <div class="booking-info-normal"> {% translate 'Check In' %}: {{ datein_booking }} 
+                                        {% translate 'Check Out' %}: {{ dateout_booking }} </div>
+
+      <div class="booking-info-normal"> 
+          {% if singles_booking > 0 %}
+          {% translate 'Single' %}: {{ singles_booking }} &nbsp;
+          {% endif %}
+          {% if doubles_booking > 0 %}
+          {% translate 'Double' %}: {{ doubles_booking }} &nbsp;
+          {% endif %}
+          {% if triples_booking > 0 %}
+          {% translate 'Triple' %}: {{ triples_booking }} &nbsp;
+          {% endif %}
+          {% if quadruples_booking > 0 %}
+          {% translate 'Quadruple' %}: {{ quadruples_booking }}
+          {% endif %}
+      </div>
+
+      <div class="booking-info-normal"> 
+        <b>Total: {{ amount_booking }}</b>
+    </div>
+
+    </div>
+
+  {% endif %}
+
+  {% if error %}
+  <div class="alert alert-danger border border-danger booking-terms">
+    <div class="material-icons booking-info-icon">error</div>
+      <div> Booking error: {{ message }} </div>
+  </div>
+  {% endif %}
+
+<div class="alert alert-info border border-info">
+
+  <table id="mybookings-table">
+    <thead>
+      <tr>
+        <th scope="col"> {% translate 'Check In' %} </th>
+        <th scope="col"> {% translate 'Check Out' %} </th>
+        <th scope="col"> {% translate 'Rooms' %} </th>
+        <th scope="col"> {% translate 'Total Amount' %} </th>
+        <th scope="col" colspan="2"> {% translate 'Actions' %}</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      {% for bk in bookings %} 
+      <tr>
+          <td> {{ bk.checkin_date }} </td>
+          <td> {{ bk.checkout_date }} </td>
+          <td> 
+            {% if bk.singles > 0 %}
+               Singles: {{ bk.singles}}
+            {% endif %}
+            {% if bk.doubles > 0 %}
+               Doubles: {{bk.doubles}}
+            {% endif %}
+            {% if bk.triples > 0 %}
+               Triples: {{bk.triples}}
+            {% endif %}
+            {% if bk.quadruples > 0 %}
+               quadruples: {{bk.quadruples}}
+            {% endif %} 
+          </td>
+          <td> {{ bk.amount}} </td>
+          <td>Delete</td>
+          <td>Ckeck-In</td>
+      </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+
+</div>
+
+</div> <!-- Cierre del Col-Lg-6 -->
+
+<div class="col-lg-3 col-sm-12">
+</div>
+</div>
+
+
+
+
+
+{% endblock %}

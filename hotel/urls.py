@@ -17,6 +17,7 @@ urlpatterns = [
     path("register", views.register, name="register"),
     path('i18n/', include('django.conf.urls.i18n')),
     # API Routes
+    path("mybookings", views.mybookings, name="mybookings")
 
 ]
 

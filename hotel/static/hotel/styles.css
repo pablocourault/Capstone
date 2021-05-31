@@ -122,7 +122,13 @@ body { background-color: #FBFBFB !important;
                            padding: 8px 0;
                            cursor: pointer; }
 
-.header-options-col-item:hover { font-weight: bold; }
+.header-options-col-item:hover { color:lightblue }
+
+a.header-bookings-link { color: white; }
+a.header-bookings-link:hover { color:lightblue }
+
+
+
 
 @media only screen and (min-width: 768px)
 
@@ -492,6 +498,32 @@ body { background-color: #FBFBFB !important;
       
 /* Show the tooltip text when you mouse over the tooltip container */
 .booking-tooltip:hover .tooltiptext { visibility: visible; }      
+
+/* Styles for mybookings */
+/* Styles for mybookings */
+
+#mybookings-table { table-layout:auto;		  
+                    border-style: none;
+                    border-collapse: collapse;
+                    width: 100%; }
+
+#mybookings-table thead th { font-family: 'Comfortaa', cursive;
+                             font-size: smaller;
+                             font-weight: normal;
+                             padding: 0.4rem;
+                             border-left: 1px solid royalblue;
+                             text-align: center;
+                             color: white;
+                             background-color:royalblue }
+
+#mybookings-table tbody td { font-family: 'Comfortaa', cursive;
+                             font-size: 0.8rem;
+                             font-weight: normal;
+                             padding: 0.4rem;
+                             text-align: center;
+                             color: #444 }
+
+#mybookings-table tbody tr { border-bottom: 1px solid royalblue; }
 
 
 
