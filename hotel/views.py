@@ -192,7 +192,7 @@ def bookings(request):
 @csrf_exempt
 def mybookings(request):
 
-    bookings = Bookings.objects.filter(user=request.user).order_by('-checkin_date')
+    bookings = Bookings.objects.filter(user=request.user).order_by('checkin_date')
 
     if request.method != "POST":
         post = False

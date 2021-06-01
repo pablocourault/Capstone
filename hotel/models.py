@@ -35,6 +35,7 @@ class Bookings(models.Model):
        checkout_date = models.DateField(blank=False, auto_now=False, auto_now_add=False)
        checkout_code = models.CharField(max_length=6, blank=False)
        amount = models.DecimalField(blank=False, max_digits=8, decimal_places=2)
+       checkin = models.BooleanField(default=False)
        def __str__(self):
          return f"{self.user} - Quantity: {self.checkout_code} -  Rate: {self.amount}"
 

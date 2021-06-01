@@ -55,11 +55,10 @@
   </div>
   {% endif %}
 
-<div class="alert alert-info border border-info">
-
-  <table id="mybookings-table">
-    <thead>
+  <table class="table table-hover" id="mybookings-table">
+    <thead class="thead-light">
       <tr>
+        <th scope="col"> {% translate 'Booking ID' %} </th>
         <th scope="col"> {% translate 'Check In' %} </th>
         <th scope="col"> {% translate 'Check Out' %} </th>
         <th scope="col"> {% translate 'Rooms' %} </th>
@@ -70,7 +69,8 @@
     <tbody>
 
       {% for bk in bookings %} 
-      <tr>
+      <tr id='tr-{{bk.id}}'>
+         <td> {{ bk.id }} </td>
           <td> {{ bk.checkin_date }} </td>
           <td> {{ bk.checkout_date }} </td>
           <td> 
@@ -88,15 +88,18 @@
             {% endif %} 
           </td>
           <td> {{ bk.amount}} </td>
-          <td>Delete</td>
-          <td>Ckeck-In</td>
+          {% if bk.checkin %}
+          <td></td>
+          <td> <button type="button" class="btn btn-outline-primary mybookings-btn btn-checkout" data-checkout_id='{{bk.id}}'> {% translate 'Check Out' %} </button> </td>
+          {% else %}
+          <td><button type="button" class="btn btn-outline-danger mybookings-btn btn-delete" data-delete_id='{{bk.id}}'> {% translate 'Delete' %}  </button></td>
+          <td><button type="button" class="btn btn-outline-success mybookings-btn btn-checkin" data-checkin_id='{{bk.id}}'> {% translate 'Check In' %} </button></td>
+          {% endif %}
       </tr>
       {% endfor %}
 
     </tbody>
   </table>
-
-</div>
 
 </div> <!-- Cierre del Col-Lg-6 -->
 

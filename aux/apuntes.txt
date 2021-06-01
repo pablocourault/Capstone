@@ -43,6 +43,9 @@ CONSIDERACIONES   *** REVEER TODO EL TIEMPO Y MANTENERLO LO MÁS SENCILLO POSIBL
   - Si no tiene reservas, sólo informar que no hay reservas a su nombre.
   - No se debe confundir con "Bookings" que lo lleva a poder hacer una reserva
     o consultar disponibilidad.
+  - OJO el delete de la reserva solo lo puede hacer si no hizo el checkin.
+    Si el checkin es False aparecen las opciones Delete y Check In.
+    Si el checkin es True aparece sólo la opción Check Out.
 
 
 * Opción "Orders" (revisar traducción)
@@ -67,8 +70,7 @@ CONSIDERACIONES   *** REVEER TODO EL TIEMPO Y MANTENERLO LO MÁS SENCILLO POSIBL
   - Si el usuario está logueado y tiene una reserva en fecha debe aparecer el botón "Check In".
   - Al hacer el auto Check In se le genera el primer cargo o consumo que es el de la(s) habitación(es).
   - Si el usuario está logueado, hizo el Check In y está en fecha de salir, debe mostrarse la opción de Check Out.
-  - Al hacer el Check Out se cierren los consumos y se puede descargar el pdf, poner en la boleta
-    por ejemplo un mensaje que diga "pase por recepción a cancelar su deuda".
+  - Al hacer el Check Out se cierren los consumos.
   - Es al momento de hacer el Check Out le avisa que tiene la posibilidad de dejar un comentario o review (estado "out").
 
 
@@ -147,6 +149,7 @@ MODELOS
                  se le "congela" la tarifa porque después puede cambiar,
                  OJO, cuando hace el check-in se le inicializan los consumos con este monto.
                  Este campo se utiliza solo para eso.)
+ - checkin       Boolean, True when Guest make checkin.
 
 
 * CONSUMOS
@@ -155,10 +158,11 @@ MODELOS
  - Servicio
  - date
  - amount
- - Estado (pendiente / cancelado) (El usuario cancelaría todos los consumos correspondientes a un booking.
-                                   al momento de hacer el check-out, con el código de pago que le suministraría
-                                   el administrador o Front End; para el ejercicio se puede dejar un código fijo,
-                                   o no controlar, pero dejar indicado como sería el proceso.)
+ - (El usuario cancelaría todos los consumos correspondientes a un booking.
+    al momento de hacer el check-out, con el código de pago que le suministraría
+    el administrador o Front End; el cual es el campo checkout_code.
+    El monto se va sumando al amount del booking para que aparezca el total completo,
+    en la página mybookings.html y se pueda ver al momento de hacer el check-out.)
 
 
 * SERVICIOS

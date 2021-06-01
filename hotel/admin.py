@@ -5,7 +5,7 @@ class RoomAdmin(admin.ModelAdmin):
     list_display = ("description","rate")
 
 class BookingsAdmin(admin.ModelAdmin):
-    list_display = ("user","singles","doubles","triples","quadruples","checkin_date","checkout_date","checkout_code","amount")
+    list_display = ("user","singles","doubles","triples","quadruples","checkin_date","checkout_date","checkout_code","amount","checkin")
 
 
 # Register your models here.

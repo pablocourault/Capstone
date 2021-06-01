@@ -502,6 +502,8 @@ a.header-bookings-link:hover { color:lightblue }
 /* Styles for mybookings */
 /* Styles for mybookings */
 
+.mybookings-btn { font-size: 0.6rem; }
+
 #mybookings-table { table-layout:auto;		  
                     border-style: none;
                     border-collapse: collapse;
@@ -511,19 +513,16 @@ a.header-bookings-link:hover { color:lightblue }
                              font-size: smaller;
                              font-weight: normal;
                              padding: 0.4rem;
-                             border-left: 1px solid royalblue;
-                             text-align: center;
-                             color: white;
-                             background-color:royalblue }
+                             text-align: center; }
 
 #mybookings-table tbody td { font-family: 'Comfortaa', cursive;
-                             font-size: 0.8rem;
+                             font-size: 0.7rem;
                              font-weight: normal;
                              padding: 0.4rem;
                              text-align: center;
                              color: #444 }
 
-#mybookings-table tbody tr { border-bottom: 1px solid royalblue; }
+
 
 
 
