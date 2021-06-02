@@ -16,12 +16,9 @@ django-admin compilemessages
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
 
-Booking lo hace todo en una sola página con "anclas" a lo largo, puede ser útil para hacerlo más "responsivo"
-
-Aclarar que no se implementan medios de pago (pero se podrían poner logos para que quede lindo)
+Aclarar que no se implementan medios de pago (solo figuran los logos.)
 
 Servicios (para poner en Modelo SERVICIOS)
-Habitación
 Solarium
 Gimnasio
 Sauna
@@ -36,16 +33,19 @@ Restaurante
 CONSIDERACIONES   *** REVEER TODO EL TIEMPO Y MANTENERLO LO MÁS SENCILLO POSIBLE ***
                   *** LO QUE ESTÁ AQUÍ VA A SERVIR PARA EXPLICAR EL PROYECTO EN LA ENTREGA ***
 
-* Debería tener al menos dos idiomas
+* Tiene tres idiomas
+* Diseño responsivo
+* Utiliza ocho modelos (checkear)
 
-* Opción "My Bookings" (Mis reservas) -el usuario debe estar logueado-
+OPCIONES LOGUEADO: 
+* Opción "My Bookings" (Mis reservas)
   - Debe mostrar todas las reservas del usuario y darle la posibilidad de darlas de baja
   - Si no tiene reservas, sólo informar que no hay reservas a su nombre.
   - No se debe confundir con "Bookings" que lo lleva a poder hacer una reserva
     o consultar disponibilidad.
-  - OJO el delete de la reserva solo lo puede hacer si no hizo el checkin.
-    Si el checkin es False aparecen las opciones Delete y Check In.
-    Si el checkin es True aparece sólo la opción Check Out.
+  - OJO el delete de la reserva solo lo puede hacer si no hizo el Check In.
+    Si el Check In es False aparecen las opciones Delete y Check In.
+    Si el Check In es True aparece sólo la opción Check Out.
 
 
 * Opción "Orders" (revisar traducción)
@@ -69,17 +69,16 @@ CONSIDERACIONES   *** REVEER TODO EL TIEMPO Y MANTENERLO LO MÁS SENCILLO POSIBL
 * Opción "Check In / Check Out"
   - Si el usuario está logueado y tiene una reserva en fecha debe aparecer el botón "Check In".
   - Al hacer el auto Check In se le genera el primer cargo o consumo que es el de la(s) habitación(es).
-  - Si el usuario está logueado, hizo el Check In y está en fecha de salir, debe mostrarse la opción de Check Out.
-  - Al hacer el Check Out se cierren los consumos.
-  - Es al momento de hacer el Check Out le avisa que tiene la posibilidad de dejar un comentario o review (estado "out").
+  - Si el usuario está logueado, hizo el Check In, debe mostrarse la opción de Check Out.
+  - Al hacer el Check Out se cierren los consumos, se borra la reserva y se elimina el huésped de Guests.
+  - Es al momento de hacer el Check Out le avisa que tiene la posibilidad de dejar un comentario.
 
 
 * Opción "Booking"
-  - Para hacer una consulta de disponibilidad para reserva debería indicar:
+  - Para hacer una consulta de disponibilidad para reserva debe indicar:
 	Fecha de entrada
 	Fecha de salida
 	Se indica en cada tipo de habitación que se admite un niño gratis.
-  Niños menores a seis años, no se les cobra pero se calcula como ocupación, para la reserva.
 
    - La consulta de reserva devuelve la cantidad disponible de habitaciones por cada tipo.
       Los tipos de habitaciones son Single, Double, Triple y Quadruple.
@@ -87,13 +86,30 @@ CONSIDERACIONES   *** REVEER TODO EL TIEMPO Y MANTENERLO LO MÁS SENCILLO POSIBL
    - Si el usuario está logueado le da la posibilidad de hacer la reserva, sino solo le informa
      de la disponibilidad (un botón que aparezca o desaparezca).
 
+OPCIONES NO LOGUEADO:
+
 * Opción "Guest Reviews"
-   - Cuando un usuario en la lista GUESTS, logueado hace el check-out, se le brinda la posibilidad de dejar un comentario.
+   - Cuando un usuario está en la lista GUESTS, y hace el check-out, se le brindará
+     por única vez la posibilidad de dejar un comentario.
      Si hizo el chek-out, sin dejar un comentario, ya no podrá hacerlo.
    - Muestra los comentarios de los huéspedes, ordenados por más recientes, con un paginador.
    - Los comentarios tendrán un puntaje y un texto.
    - Debería mostrar en un campo al principio el promedio de puntajes otorgados.
    - Se podría poner la opción de ordenar por mejores o peores comentarios primero.
+
+* Opción Info:
+  - Información básica del hotel.
+  - Galería de imágenes.
+  - Enlaces a las redes sociales (simbólicos).
+  - Información de contacto.
+
+* Opción Facilities:
+
+* Opción House Rules:
+
+* Opción Reviews:
+
+* Opción FAQs:
 
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
@@ -111,6 +127,9 @@ PROCESOS
 * Check In: agregar usuario a GUESTS, agregar amount de BOOKINGS en consumos.
 * Check Out: habilitado con código de reserva, eliminar usuario de GUESTS, guardar comentario (si lo deja)
              borra la reserva correspondiente.
+* Borrar reserva: El Delete de la reserva solo lo puede hacer si no hizo el checkin.
+                  Si el Check-In es False aparecen las opciones Delete y Check-In.
+                  Si el Check-In es True aparece sólo la opción Check-Out.
 
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 

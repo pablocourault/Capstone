@@ -16,8 +16,9 @@ urlpatterns = [
     path("logout", views.logout_view, name="logout"),
     path("register", views.register, name="register"),
     path('i18n/', include('django.conf.urls.i18n')),
+    path("mybookings", views.mybookings, name="mybookings"),
     # API Routes
-    path("mybookings", views.mybookings, name="mybookings")
+    path("deletebooking", views.deletebooking, name="deletebooking"),
 
 ]
 

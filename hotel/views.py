@@ -330,6 +330,24 @@ def language(request):
 
     return render(request, "hotel/index.html")
 
+@csrf_exempt
+@login_required
+def deletebooking(request):
+
+    # Delete a Booking
+    if request.method != "POST":
+        return JsonResponse({"error": "POST request required."}, status=400)
+
+    data = json.loads(request.body)
+    booking_to_delete_id = data.get("bookingtodelete","")
+    
+    # VER COMO DEVOLVER EL JSON SEGUN RESULTADO DE ESTA OPERACIIÓN
+    Bookings.objects.filter(id=booking_to_delete_id).delete()
+
+
+
+    pass
+
 
 def login_view(request):
     if request.method == "POST":
