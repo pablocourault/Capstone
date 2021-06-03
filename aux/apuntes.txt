@@ -12,9 +12,7 @@ después ejecutar
 
 django-admin compilemessages
 
-
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
-
 
 Aclarar que no se implementan medios de pago (solo figuran los logos.)
 
@@ -27,7 +25,6 @@ Servicio de Planchado / Ironing facilities
 Heladera (consumos en habitación)
 Restaurante
 
-
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
 CONSIDERACIONES   *** REVEER TODO EL TIEMPO Y MANTENERLO LO MÁS SENCILLO POSIBLE ***
@@ -38,41 +35,37 @@ CONSIDERACIONES   *** REVEER TODO EL TIEMPO Y MANTENERLO LO MÁS SENCILLO POSIBL
 * Utiliza ocho modelos (checkear)
 
 OPCIONES LOGUEADO: 
+
 * Opción "My Bookings" (Mis reservas)
   - Debe mostrar todas las reservas del usuario y darle la posibilidad de darlas de baja
   - Si no tiene reservas, sólo informar que no hay reservas a su nombre.
   - No se debe confundir con "Bookings" que lo lleva a poder hacer una reserva
     o consultar disponibilidad.
-  - OJO el delete de la reserva solo lo puede hacer si no hizo el Check In.
-    Si el Check In es False aparecen las opciones Delete y Check In.
-    Si el Check In es True aparece sólo la opción Check Out.
-
+  - Si tiene una reserva puede hacer el delete de la misma, pero solo si no hizo el Check In.
+  - Si la fecha de Check In de la reserva es igual a la fecha actual, aparece el botón "Check In".
+  - Al hacer el auto Check In se le genera el primer cargo o consumo que es el de la(s) habitación(es).
+  - Si hizo el Check In, se muestra solo la opción de Check Out.
+  - Al hacer el Check In se agrega al usuario a la lista de húespedes del hotel (modelo GUESTS).
+    Se marca la reserva como ingresada con checkin = True en modelo BOOKINGS y se agrega el primer
+    consumo que es el monto de la reserva de habitaciones al modelo CONSUMPTIONS.
+  - Al hacer el Check Out se borran los consumos, se borra la reserva y se elimina el huésped de Guests.
+  - Al hacer el Check Out se da (por única vez) la posibilidad de dejar un comentario.
 
 * Opción "Orders" (revisar traducción)
   - Le muestra al usuario en una parte de la pantalla las cosas que puede pedir y el precio,
-    y en otra parte le da la posibilidad de hacer pedidos (órdenes).
-
+    y en otra parte le da la posibilidad de hacer pedidos (órdenes), utiliza el modelo SERVICES.
+    Solo puede hacer pedidos si está logueado he hizo el Check In (se encuentra en el modelo GUESTS).
+    Se agrega el pedido al modelo CONSUMPTIONS.
 
 * Opción "Invoice" (revisar traducción, se podría buscar como deuda o débitos, lo que sea más usual)
-  - Le muestra al usuario una lista de sus consumos, con fecha, concepto, importe individual
-    y el total acumulado. Estará vacío si no hizo el Check In.
+  - Le muestra al usuario una lista de sus consumos, ordenados por booking y fecha, con su 
+    importe individual y el total acumulado. Estará vacío si no hizo el Check In.
   - Si no tiene consumos, solo le informa eso (similar a cuando no tiene reservas).
-  - Le muestra un botón visualizar todos los consumos de una booking y marcar que los pagó con el código de pago, como condición para hacer el Check Out,
-    (si no es difícil de implementar).
-
+  - Utiliza el modelo CONSUMPTIONS.
 
 * Opción "Messages"
   - Si tiene mensajes sin leer le debe aparecer una notificación al lado, por ej el n° sin leer
   - Debe poder verlos, responder y borrar cada uno de ellos.
-
-
-* Opción "Check In / Check Out"
-  - Si el usuario está logueado y tiene una reserva en fecha debe aparecer el botón "Check In".
-  - Al hacer el auto Check In se le genera el primer cargo o consumo que es el de la(s) habitación(es).
-  - Si el usuario está logueado, hizo el Check In, debe mostrarse la opción de Check Out.
-  - Al hacer el Check Out se cierren los consumos, se borra la reserva y se elimina el huésped de Guests.
-  - Es al momento de hacer el Check Out le avisa que tiene la posibilidad de dejar un comentario.
-
 
 * Opción "Booking"
   - Para hacer una consulta de disponibilidad para reserva debe indicar:
@@ -85,6 +78,7 @@ OPCIONES LOGUEADO:
 
    - Si el usuario está logueado le da la posibilidad de hacer la reserva, sino solo le informa
      de la disponibilidad (un botón que aparezca o desaparezca).
+
 
 OPCIONES NO LOGUEADO:
 
@@ -120,14 +114,17 @@ PROCESOS
 - Login / Logout
 - Consultar habitaciones disponibles por rango de fechas (modelos: ROOM, BOOKINGS)
 - Consultar habitaciones disponibles y hacer reserva (modelos: ROOM, BOOKINGS)
-* Enviar y recibir mensajes de la recepción tipo DM (hacerlo si no se complica, modelo: MENSAJES)
-* Dejar comentarios sobre el servicio del hotel (modelo: COMENTARIOS)
-* Pedir servicios para una habitación (modelo: SERVICIOS, CONSUMOS)
-* Obtener gastos a pagar, marcar como pagados con el código de pago suministrado (modelo: CONSUMOS)
-* Check In: agregar usuario a GUESTS, agregar amount de BOOKINGS en consumos.
-* Check Out: habilitado con código de reserva, eliminar usuario de GUESTS, guardar comentario (si lo deja)
-             borra la reserva correspondiente.
-* Borrar reserva: El Delete de la reserva solo lo puede hacer si no hizo el checkin.
+* Enviar y recibir mensajes de la recepción tipo DM (hacerlo si no se complica, modelo: MESSAGES)
+* Dejar comentarios sobre el servicio del hotel al hacer el Check Out (modelo: COMMENTS)
+* Pedir servicios para una habitación (modelos: SERVICES, CONSUMPTIONS)
+* Obtener gastos a pagar (modelo: CONSUMPTIONS)
+* Check In: agregar usuario a GUESTS, agregar amount de BOOKINGS en consumos y
+            cambia el estado de la reserva a checkin TRUE.
+* Check Out: habilitado con código de reserva, eliminar usuario de GUESTS, 
+             guardar comentario (si lo desea), validará el códigode booking (para demo de 'ABC123').
+             borra la reserva correspondiente y todos los consumos asociados a la misma.
+             Osea que borra al usuario de GUESTS, a la reserva de BOOKINGS y a todos los consumos de CONSUMPTIONS.
+- Borrar reserva: El Delete de la reserva solo lo puede hacer si no hizo el Check-In.
                   Si el Check-In es False aparecen las opciones Delete y Check-In.
                   Si el Check-In es True aparece sólo la opción Check-Out.
 
@@ -141,7 +138,7 @@ MODELOS
   - guest (usuario, si está en este modelo, 
            es porque hizo el check-in -se lo agrega en ese momento-, lo habilita a hacer consumos,
            se borra al hacer el check-out)
-  - booking (tiene una instancia por cada reserva, se borra una instancia por cada check-out)
+  - booking (tiene una instancia por cada reserva, se borra una instancia por cada check-out).
 
 
 * ROOM
@@ -167,39 +164,41 @@ MODELOS
  - amount       (al hacer la reserva, se le guarda el monto total por las habitaciones, es decir:
                  se le "congela" la tarifa porque después puede cambiar,
                  OJO, cuando hace el check-in se le inicializan los consumos con este monto.
-                 Este campo se utiliza solo para eso.)
- - checkin       Boolean, True when Guest make checkin.
+                 Este campo se utiliza para eso y para ir acumulando el total, cuando se van 
+                 incluyendo consumos.)
+ - checkin       Boolean, True when Guest did check in.
 
 
-* CONSUMOS
- - guest
+* CONSUMPTIONS
+ - user
  - booking
- - Servicio
+ - description
  - date
  - amount
- - (El usuario cancelaría todos los consumos correspondientes a un booking.
+   (El usuario cancelaría todos los consumos correspondientes a un booking.
     al momento de hacer el check-out, con el código de pago que le suministraría
     el administrador o Front End; el cual es el campo checkout_code.
+    O sea que cuando hace el check-out de una reserva, hay que borrar todos los consumos.
+    Para los propósitos de uso DEMO el checkout_code podrá ser tambén 'ABC123'.
     El monto se va sumando al amount del booking para que aparezca el total completo,
     en la página mybookings.html y se pueda ver al momento de hacer el check-out.)
 
+* SERVICES
+ - description
+ - rate
 
-* SERVICIOS
- - Descripción
- - Tarifa
+* MESSAGES (HACER LO DE MENSAJES SI NO SE COMPLICA)
+ - user
+ - date
+ - Destinatario (para el usuario el destinatario es siempre la administración del hotel)
+ - message
+ - state (leído / no leído)
 
-* MENSAJES (HACER LO DE MENSAJES SI NO SE COMPLICA)
- - Fecha
- - Remitente
- - Destinatario
- - Texto
- - Estado (leído / no leído)
-
-* COMENTARIOS
- - texto
- - calificación
- - usuario
- - bandera del país de orígen
+* COMMENTS
+ - user
+ - date
+ - comment
+ - score
 
 
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/

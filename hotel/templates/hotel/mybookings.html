@@ -77,9 +77,9 @@
       {% for bk in bookings %} 
       <tr id='tr-{{bk.id}}'>
          <td> {{ bk.id }} </td>
-          <td> {{ bk.checkin_date }} </td>
-          <td> {{ bk.checkout_date }} </td>
-          <td> 
+          <td id='datein-{{bk.id}}'> {{ bk.checkin_date }} </td>
+          <td id='dateout-{{bk.id}}'> {{ bk.checkout_date }} </td>
+          <td id='rooms-{{bk.id}}'> 
             {% if bk.singles > 0 %}
                Singles: {{ bk.singles}}
             {% endif %}
@@ -93,13 +93,17 @@
                quadruples: {{bk.quadruples}}
             {% endif %} 
           </td>
-          <td> {{ bk.amount}} </td>
+          <td id='amount-{{bk.id}}'> {{ bk.amount}} </td>
           {% if bk.checkin %}
           <td></td>
           <td> <button type="button" class="btn btn-outline-primary mybookings-btn btn-checkout" data-checkout_id='{{bk.id}}'> {% translate 'Check Out' %} </button> </td>
           {% else %}
           <td><button type="button" class="btn btn-outline-danger mybookings-btn btn-delete" data-delete_id='{{bk.id}}'> {% translate 'Delete' %}  </button></td>
-          <td><button type="button" class="btn btn-outline-success mybookings-btn btn-checkin" data-checkin_id='{{bk.id}}'> {% translate 'Check In' %} </button></td>
+            {% if bk.checkin_date == today %}
+            <td><button type="button" class="btn btn-outline-success mybookings-btn btn-checkin" data-checkin_id='{{bk.id}}'> {% translate 'Check In' %} </button></td>
+            {% else %}
+            <td></td>
+            {% endif %}
           {% endif %}
       </tr>
       {% endfor %}
@@ -116,14 +120,85 @@
 
   {% endif %}
 
+  <div id="mybookings-checkout-div">
+
+  <div class="col-lg-6 col-sm-12 mybookings-checkout-title"> 
+  {% translate 'You are checking out the booking:' %}
+  </div>
+
+  <table class="table" id="mybookings-checkout">
+    <thead class="thead-light"> 
+
+      <tr>
+        <th scope="col"> {% translate 'Booking ID' %} </th>
+        <th scope="col"> {% translate 'Check In' %} </th>
+        <th scope="col"> {% translate 'Check Out' %} </th>
+        <th scope="col"> {% translate 'Rooms' %} </th>
+        <th scope="col"> {% translate 'Total Amount' %} </th>
+        <th scope="col" colspan="2"> </th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+          <td id='checkout-id'> </td>
+          <td id='checkout-datein'> </td>
+          <td id='checkout-dateout'> </td>
+          <td id='checkout-rooms'> </td>
+          <td id='checkout-amount'> </td>
+          <td></td>
+          <td></td>
+      </tr>
+
+    </tbody>
+  </table>
+  <br>
+
+  <div class="col-lg-8 col-sm-12 mybookings-checkout-title"> 
+  {% translate 'Please, comment and rate your stay at the hotel:' %}
+  </div>
+
+  <div>
+    <textarea class="form-control" rows="4" id="checkout-comment" maxlength="512"> 
+    </textarea>
+  </div> 
+
+  <div class="starrating risingstar d-flex justify-content-center flex-row-reverse">
+    <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 star">5</label>
+    <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 star">4</label>
+    <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 star">3</label>
+    <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 star">2</label>
+    <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star">1</label>
+</div>
+
+<div class="col-lg-12 col-sm-6" id="checkout-controls">
+   
+    <div class="mybookings-checkout-title"> 
+      {% translate 'Check-Out Code' %}
+      <br><text id="checkout-help">(use 'ABC123' in demo)</text>
+    </div>
+
+    <div>
+      <input type="text" class="form-control" id="checkout-code" pattern="[A-Z][0-9]{6}" maxlength="6">
+    </div>
+
+    <div>
+      <button type="button" class="btn btn-outline-success mybookings-btn btn-cancel"> {% translate 'Cancel Check-Out' %} </button>
+    </div>
+    
+    <div>
+      <button type="button" class="btn btn-outline-danger mybookings-btn btn-confirm"> {% translate 'Confirm Check-Out' %} </button>
+    </div>    
+   
+</div>
+
+  </div>
+
 </div> <!-- Cierre del Col-Lg-6 -->
 
 <div class="col-lg-3 col-sm-12">
 </div>
 </div>
-
-
-
 
 
 {% endblock %}

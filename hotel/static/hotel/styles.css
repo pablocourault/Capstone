@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
-
+@import url('https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css');
 
 a:hover { text-decoration:none; }
 
@@ -520,11 +520,67 @@ a.header-bookings-link:hover { color:lightblue }
                              font-weight: normal;
                              padding: 0.4rem;
                              text-align: center;
-                             color: #444 }
+                             color: #444;
+                             vertical-align: middle; }
+
+#mybookings-checkout-div { display: none; }
+
+.mybookings-checkout-title { font-size: 0.8rem;
+                             color: #4300D2; }
+
+#mybookings-checkout { table-layout:auto;		  
+                       border-style: none;
+                       border-collapse: collapse;
+                       width: 100%; }
+
+#mybookings-checkout thead th { font-family: 'Comfortaa', cursive;
+                                font-size: smaller;
+                                font-weight: normal;
+                                padding: 0.4rem;
+                                text-align: center; }
+
+#mybookings-checkout tbody td { font-family: 'Comfortaa', cursive;
+                                font-size: 0.7rem;
+                                font-weight: normal;
+                                padding: 0.4rem;
+                                text-align: center;
+                                color: #444 }
+
+#checkout-comment { resize: none;
+                    font-family: 'Comfortaa', cursive;
+                    font-size: smaller;
+                    font-weight:lighter;
+                    color: #444 }
+
+#checkout-controls { padding-top: 1.2rem;
+                     display: flex;
+                     justify-content: space-between;        
+                     text-align: center;
+                     vertical-align: middle; }
+
+#checkout-code { font-family: 'Comfortaa', cursive;
+                 font-size: smaller;
+                 font-weight:lighter;
+                 width: 4.6rem; }
+
+#checkout-help { font-size: 0.5rem;}
 
 
+.starrating > input {display: none;}  /* Remove radio buttons */
 
-
+.starrating > label:before { content: "\f005"; /* Star */
+                             margin: 2px;
+                             font-size: 1.6em;
+                             font-family: FontAwesome;
+                             display: inline-block; }
+                    
+.starrating > label { color: #DDD5F5; /* Start color when not clicked */ }
+                    
+.starrating > input:checked ~ label { color: #270570; } /* Set color when star checked */
+                    
+.starrating > input:hover ~ label { color: #270570;
+                                    cursor: pointer;  } /* Set color when star hover */
+                    
 
 /* Styles for gallery */
 /* Styles for gallery */
@@ -593,15 +649,3 @@ a.header-bookings-link:hover { color:lightblue }
               position: absolute;
               top: 0; }
       
-      
-
-
-
-
-
-
-
-
-
-
-

@@ -8,10 +8,6 @@ class User(AbstractUser):
        def __str__(self):
         return f"{self.username}"
 
-class Guests(models.Model):
-       guest = models.ForeignKey(User, on_delete=models.CASCADE, blank=False)
-       def __str__(self):
-        return f"{self.guest}"
 
 class Room(models.Model):
        description = models.CharField(max_length=64, blank=False)
@@ -20,6 +16,7 @@ class Room(models.Model):
        rate = models.DecimalField(blank=False, max_digits=4, decimal_places=2)
        def __str__(self):
          return f"{self.description} - Quantity: {self.quantity} -  Rate: {self.rate}"
+
 
 class Bookings(models.Model):
        user = models.ForeignKey(User, on_delete=models.CASCADE, blank=False)
@@ -38,5 +35,56 @@ class Bookings(models.Model):
        checkin = models.BooleanField(default=False)
        def __str__(self):
          return f"{self.user} - Quantity: {self.checkout_code} -  Rate: {self.amount}"
+
+
+class Guests(models.Model):
+       guest = models.ForeignKey(User, on_delete=models.CASCADE, blank=False)
+       booking = models.ForeignKey(Bookings, on_delete=models.CASCADE, blank=False)
+       def __str__(self):
+        return f"Usuario: {self.guest} - Booking: {self.booking}"
+
+
+class Consumptions(models.Model):
+       user = models.ForeignKey(User, on_delete=models.CASCADE, blank=False)
+       booking = models.ForeignKey(Bookings, on_delete=models.CASCADE, blank=False)
+       description = models.CharField(max_length=64, blank=False)
+       date = models.DateField(blank=False, auto_now=False, auto_now_add=False)
+       amount = models.DecimalField(blank=False, max_digits=6, decimal_places=2)
+       def __str__(self):
+        return f"Usuario: {self.user} - Booking: {self.booking} - Description: {self.description} - Date: {self.date} - Amount: {self.amount}"       
+
+
+class Services(models.Model):
+       description = models.CharField(max_length=64, blank=False)
+       rate = models.DecimalField(blank=False, max_digits=6, decimal_places=2)
+       def __str__(self):
+        return f"Service: {self.description} - Rate: {self.rate}"
+
+
+class Comments(models.Model):
+       user = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=False)
+       date = models.DateField(blank=False, auto_now=False, auto_now_add=False)
+       comment = models.CharField(max_length=512, blank=False)
+       score = models.IntegerField(validators=[MinValueValidator(0),
+                                               MaxValueValidator(10)],default=0)
+       def __str__(self):
+        return f"Usuario: {self.user} - Date: {self.date} - Comment: {self.comment}"
+
+
+class Messages(models.Model):
+       user = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=False, related_name='user_from',)
+       date = models.DateField(blank=False, auto_now=False, auto_now_add=False)
+       addressee = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=False, related_name='user_to',)
+       message = models.CharField(max_length=512, blank=False)
+       state = models.CharField(max_length=1, blank=False)
+       def __str__(self):
+        return f"From: {self.user} - Date: {self.date} - To: {self.addressee} - Message: {self.message}"
+
+
+
+
+
+
+
 
 

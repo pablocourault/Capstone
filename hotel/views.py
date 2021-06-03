@@ -1,4 +1,5 @@
-import json 
+import json
+from datetime import date
 from django.utils import translation
 from django.utils.translation import activate
 from django.shortcuts import render
@@ -9,9 +10,8 @@ from django.views.decorators.csrf import csrf_exempt
 from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.http import JsonResponse
-
 from django.db.models import Sum
-from .models import User, Room, Guests, Bookings
+from .models import User, Room, Guests, Bookings, Consumptions, Services, Comments, Messages
 
 # Create your views here.
 
@@ -192,6 +192,8 @@ def bookings(request):
 @csrf_exempt
 def mybookings(request):
 
+    today = date.today()
+
     bookings = Bookings.objects.filter(user=request.user).order_by('checkin_date')
 
     if request.method != "POST":
@@ -199,7 +201,8 @@ def mybookings(request):
         error = False
         return  render(request, "hotel/mybookings.html", { 'post': post, 
                                                            'error': error,
-                                                           'bookings': bookings })
+                                                           'bookings': bookings,
+                                                           'today': today })
 
     if request.method == "POST":
         user_booking_post = request.POST["user_booking"]
@@ -225,7 +228,8 @@ def mybookings(request):
             return render(request, "hotel/mybookings.html", { 'message': 'No rooms selected.',
                                                               'post': post,
                                                               'error': error,
-                                                              'bookings': bookings })
+                                                              'bookings': bookings,
+                                                              'today': today })
 
         if (amount_booking <= 0):
             post = False    
@@ -233,7 +237,8 @@ def mybookings(request):
             return render(request, "hotel/mybookings.html", { 'message': 'Your reservation amount could not be calculated, please try again later.',
                                                               'post': post,
                                                               'error': error,
-                                                              'bookings': bookings })
+                                                              'bookings': bookings,
+                                                              'today': today })
 
         if ( datein_booking is None):
             post = False    
@@ -241,7 +246,8 @@ def mybookings(request):
             return render(request, "hotel/mybookings.html", { 'message': 'Empty Check-In or Check-Out dates.',
                                                               'post': post,
                                                               'error': error,
-                                                              'bookings': bookings })
+                                                              'bookings': bookings,
+                                                              'today': today })
 
         if (code_booking is None):
             post = False    
@@ -249,7 +255,8 @@ def mybookings(request):
             return render(request, "hotel/mybookings.html", { 'message': 'No code of check-out availabe, try again later.',
                                                               'post': post,
                                                               'error': error,
-                                                              'bookings': bookings })
+                                                              'bookings': bookings,
+                                                              'today': today })
 
         user_booking = User.objects.get(id=user_booking_post)
 
@@ -281,7 +288,8 @@ def mybookings(request):
                                                               'amount_booking': amount_booking,
                                                               'post': post,
                                                               'error': error,
-                                                              'bookings': bookings })
+                                                              'bookings': bookings,
+                                                              'today': today })
     
         else:
             post = False
@@ -289,7 +297,8 @@ def mybookings(request):
             return render(request, "hotel/mybookings.html", { 'message': 'Booking has already been saved.',
                                                               'post': post,
                                                               'error': error,
-                                                              'bookings': bookings })
+                                                              'bookings': bookings,
+                                                              'today': today })
 
 
         
@@ -330,23 +339,53 @@ def language(request):
 
     return render(request, "hotel/index.html")
 
+
 @csrf_exempt
 @login_required
 def deletebooking(request):
 
-    # Delete a Booking
     if request.method != "POST":
-        return JsonResponse({"error": "POST request required."}, status=400)
+        return JsonResponse({'message': 'Error: POST request required.'}, status=400)
 
     data = json.loads(request.body)
     booking_to_delete_id = data.get("bookingtodelete","")
     
-    # VER COMO DEVOLVER EL JSON SEGUN RESULTADO DE ESTA OPERACIIÓN
-    Bookings.objects.filter(id=booking_to_delete_id).delete()
+    query = Bookings.objects.filter(id=booking_to_delete_id).delete()
+
+    # test if delete was successful 
+    if query[0] > 0:
+        return JsonResponse({'message': 'Booking deleted.'}, status=201)
+    else:
+        return JsonResponse({'message': 'Error: Booking has already been deleted.'}, status=400)
 
 
+@csrf_exempt
+@login_required
+def checkinbooking(request):
 
-    pass
+    if request.method != "POST":
+        return JsonResponse({'message': 'Error: POST request required.'}, status=400)
+
+    data = json.loads(request.body)
+    booking_to_checkin_id = data.get("bookingtocheckin","")
+    
+    booking_to_checkin = Bookings.objects.get(id=booking_to_checkin_id)
+    booking_to_checkin.checkin = True
+    booking_to_checkin.save()
+
+    guest=Guests(guest=request.user, booking=booking_to_checkin)
+    guest.save()
+
+    first_consumption = Consumptions(user=request.user,
+                                     booking= booking_to_checkin,
+                                     description= "Rooms",
+                                     date = date.today(),
+                                     amount = booking_to_checkin.amount)
+
+    first_consumption.save()
+
+    return JsonResponse({'message': 'Check In Successed.'}, status=201)
+
 
 
 def login_view(request):
@@ -363,7 +402,7 @@ def login_view(request):
             return HttpResponseRedirect(reverse("index"))
         else:
             return render(request, "hotel/login.html", {
-                "message": "Invalid username and/or password."
+                'message': 'Invalid username and/or password.'
             })
     else:
         return render(request, "hotel/login.html")
@@ -393,7 +432,7 @@ def register(request):
             user.save()
         except IntegrityError:
             return render(request, "hotel/register.html", {
-                "message": "Username already taken."
+                'message': 'Username already taken.'
             })
         login(request, user)
         return HttpResponseRedirect(reverse("index"))

@@ -19,6 +19,7 @@ urlpatterns = [
     path("mybookings", views.mybookings, name="mybookings"),
     # API Routes
     path("deletebooking", views.deletebooking, name="deletebooking"),
+    path("checkinbooking", views.checkinbooking, name="checkinbooking"),
 
 ]
 
