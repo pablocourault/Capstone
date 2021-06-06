@@ -45,6 +45,7 @@ OPCIONES LOGUEADO:
   - Si la fecha de Check In de la reserva es igual a la fecha actual, aparece el botón "Check In".
   - Al hacer el auto Check In se le genera el primer cargo o consumo que es el de la(s) habitación(es).
   - Si hizo el Check In, se muestra solo la opción de Check Out.
+  - Se puede hacer el Check In de una reserva por vez (si tiene una reserva como Check In, no puede ingresar en otra).
   - Al hacer el Check In se agrega al usuario a la lista de húespedes del hotel (modelo GUESTS).
     Se marca la reserva como ingresada con checkin = True en modelo BOOKINGS y se agrega el primer
     consumo que es el monto de la reserva de habitaciones al modelo CONSUMPTIONS.
@@ -54,13 +55,14 @@ OPCIONES LOGUEADO:
 * Opción "Orders" (revisar traducción)
   - Le muestra al usuario en una parte de la pantalla las cosas que puede pedir y el precio,
     y en otra parte le da la posibilidad de hacer pedidos (órdenes), utiliza el modelo SERVICES.
-    Solo puede hacer pedidos si está logueado he hizo el Check In (se encuentra en el modelo GUESTS).
-    Se agrega el pedido al modelo CONSUMPTIONS.
+    Solo puede hacer pedidos si está logueado he hizo el Check In (se encuentra en el modelo GUESTS)
+    Se agrega el pedido al modelo CONSUMPTIONS y le deja al usuario un mensaje en su casilla con la
+    confirmación y/o detalles de su pedido.
 
 * Opción "Invoice" (revisar traducción, se podría buscar como deuda o débitos, lo que sea más usual)
   - Le muestra al usuario una lista de sus consumos, ordenados por booking y fecha, con su 
     importe individual y el total acumulado. Estará vacío si no hizo el Check In.
-  - Si no tiene consumos, solo le informa eso (similar a cuando no tiene reservas).
+  - Si no tiene consumos, solo le informa eso (similar a cuando no tiene reservas, ver banner).
   - Utiliza el modelo CONSUMPTIONS.
 
 * Opción "Messages"
@@ -117,11 +119,13 @@ PROCESOS
 * Enviar y recibir mensajes de la recepción tipo DM (hacerlo si no se complica, modelo: MESSAGES)
 * Dejar comentarios sobre el servicio del hotel al hacer el Check Out (modelo: COMMENTS)
 * Pedir servicios para una habitación (modelos: SERVICES, CONSUMPTIONS)
+  (el usuario recibe un mensaje en su casilla luego de hacer el pedido).
 * Obtener gastos a pagar (modelo: CONSUMPTIONS)
 * Check In: agregar usuario a GUESTS, agregar amount de BOOKINGS en consumos y
             cambia el estado de la reserva a checkin TRUE.
+            El usuario solo puede tener una sola reserva como Check-In por vez.
 * Check Out: habilitado con código de reserva, eliminar usuario de GUESTS, 
-             guardar comentario (si lo desea), validará el códigode booking (para demo de 'ABC123').
+             guardar comentario (si lo desea), validará el código de booking (para demo de 'ABC123').
              borra la reserva correspondiente y todos los consumos asociados a la misma.
              Osea que borra al usuario de GUESTS, a la reserva de BOOKINGS y a todos los consumos de CONSUMPTIONS.
 - Borrar reserva: El Delete de la reserva solo lo puede hacer si no hizo el Check-In.
@@ -185,12 +189,13 @@ MODELOS
 
 * SERVICES
  - description
+ - message (el mensaje que recibe el usuario, luego de hacer el pedido del servicio)
  - rate
 
 * MESSAGES (HACER LO DE MENSAJES SI NO SE COMPLICA)
  - user
  - date
- - Destinatario (para el usuario el destinatario es siempre la administración del hotel)
+ - Destinatario (para el usuario el destinatario siempre es la administración del hotel)
  - message
  - state (leído / no leído)
 
@@ -221,7 +226,7 @@ PARA EL FINAL
 - Aclarar en el README de la entrega que los logos de las redes sociales son simbólicos,
   o ponerlo como un mensaje en el código, no es que falta hacer.
 - Revisar todos los mensajes en inglés porque es lo primero que van a ver.
-- PROBAR CON DISTINTOS NAVEGADORES
+- PROBAR CON DISTINTOS NAVEGADORES ¿Probar con el celular?
 - Controlar que el diseño responsivo funcione para las páginas en TODO el sitio.
 - Revisar todo el enunciado del trabajo final que no me falte nada.
 - Ver que no arroje errores de javascript.

@@ -364,10 +364,12 @@ a.header-bookings-link:hover { color:lightblue }
                      display: flex; }
 
 
-/* Styles for bookings */
-/* Styles for bookings */
+/* Styles for bookings, Orders */
+/* Styles for bookings, Orders */
 
-.booking-title { font-family: 'Comfortaa', cursive;
+.booking-title, .orders-title, 
+.invoice-title, .messages-title,
+.reviews-title { font-family: 'Comfortaa', cursive;
                  font-size: large;
                  font-weight: normal;
                  color: #4300D2;
@@ -375,32 +377,34 @@ a.header-bookings-link:hover { color:lightblue }
                  padding-top: 0.8rem;
                  padding-bottom: 1rem; }
 
-.booking-info { font-family: 'Comfortaa', cursive; }    
+.booking-info, .order-info { font-family: 'Comfortaa', cursive; }    
 
-.booking-info-icon {  vertical-align: bottom;
-                      float: left;
-                      padding-right: 0.2rem;}
+.booking-info-icon, .order-info-icon { vertical-align: bottom;
+                                       float: left;
+                                       padding-right: 0.2rem; }
 
-.booking-info-strong { font-weight: bolder;
-                       font-size:small;}
+.booking-info-strong, .order-info-strong { font-weight: bolder;
+                                           font-size:small; }
 
-.booking-info-normal { font-weight:lighter;
-                       font-size: smaller;
-                       padding-top: 0.4rem;
-                       padding-left: 1.4rem;}
+.booking-info-normal, .order-info-normal { font-weight:lighter;
+                                           font-size: smaller;
+                                           padding-top: 0.4rem;
+                                           padding-left: 1.4rem; }
 
-.booking-availability-title { font-family: 'Comfortaa', cursive;
-                              font-size: medium;
-                              font-weight: bold;
-                              color: black;
-                              text-align: left;
-                              padding-top: 0.8rem;
-                              padding-bottom: 0.4rem; }
+.booking-availability-title,
+.orders-rates-title          { font-family: 'Comfortaa', cursive;
+                               font-size: medium;
+                               font-weight: bold;
+                               color: black;
+                               text-align: left;
+                               padding-top: 0.8rem;
+                               padding-bottom: 0.4rem; }
 
 .booking-availability-normal { font-weight:lighter;
                                font-size: small; }
 
 .booking-form { padding-top: 0.1rem;
+                margin: 0;
                 display: inline-flex; }
 
 .booking-form-checkin-label { font-size: small;
@@ -413,8 +417,8 @@ a.header-bookings-link:hover { color:lightblue }
                                color: black;
                                margin-left: 16%; }
 
-.booking-btn { font-size: small;
-               margin-top: 8px; }
+.booking-btn, .orders-btn { font-size: small;
+                            margin-top: 8px; }
 
 .booking-btn-reserve { font-size: smaller;}
 
@@ -470,9 +474,9 @@ a.header-bookings-link:hover { color:lightblue }
 
 #booking-table tbody tr:last-child td:nth-child(3) { border-right: none; }
 
-.booking-terms { color: #dc3545;
-                 font-size: smaller;
-                 text-align: center; }
+.booking-terms, .orders-terms { color: #dc3545;
+                                font-size: smaller;
+                                text-align: center; }
 
 
 /* Tooltip container */
@@ -581,6 +585,54 @@ a.header-bookings-link:hover { color:lightblue }
 .starrating > input:hover ~ label { color: #270570;
                                     cursor: pointer;  } /* Set color when star hover */
                     
+
+/* Styles for Orders */
+/* Styles for Orders */
+
+#orders-icon { vertical-align: middle; }
+
+.orders-grid {display: grid;
+              padding: 4px;
+              grid-column-gap: 0px;
+              grid-row-gap: 4px;
+              grid-template-columns: 50% 50%;
+              align-items: left; } 
+
+.orders-grid-item { font-size: 0.7rem;
+                    padding: 2px;
+                    text-align: left; }
+
+#orders-form { margin: 0 }
+
+#orders-select { font-family: 'Comfortaa', cursive;
+                 font-size: 0.8rem;
+                 font-weight: normal; }
+
+#orders-table { table-layout:auto;		  
+                border-style: none;
+                border-collapse: collapse;
+                width: 80%;
+                margin-left: 10%; }
+       
+#orders-table thead th { font-family: 'Comfortaa', cursive;
+                         font-size: smaller;
+                         font-weight: normal;
+                         padding: 0.4rem;
+                         border-left: 1px solid royalblue;
+                         text-align: center;
+                         color: white;
+                         background-color:royalblue }
+       
+#orders-table tbody td { font-family: 'Comfortaa', cursive;
+                         font-size: small;
+                         font-weight: normal;
+                         padding: 0.4rem;
+                         text-align: center;
+                         color: #444 }
+
+#orders-table tbody td:first-child { text-align: left;                              
+                                     font-size: smaller; }
+
 
 /* Styles for gallery */
 /* Styles for gallery */

@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() { 
 
+   score = 0;
 
     document.querySelectorAll('button.btn-checkout').forEach(function(button) {
                 button.onclick = function() 
@@ -36,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // get the score by star clicked            
     document.querySelectorAll('input').forEach(function(input) {
-                  input.onclick = function() { var score = input.value; } })
+                  input.onclick = function() { score = input.value; } })
 
 
 })
@@ -76,12 +77,17 @@ function checkinBooking(booking)
 
 function checkoutBooking()
          {
-            // obtener ID de la booking
-            // obtener comentario
-            // obtener score
-            // obtener código (si no está un alert para que lo complete, sino seguir)
-            // hacer un alert provisorio para ver que toma todo bien
-            // mandar un fetch con esos datos a views
+            checkout_booking = document.querySelector('#checkout-id').innerHTML;
+            checkout_comment = document.querySelector('#checkout-comment').value;
+            checkout_code = (document.querySelector('#checkout-code').value).toUpperCase();
+            checkout_score = score;
+
+            if (checkout_code !== 'ABC123')
+               { alert("Invalid Code\nCódigo Inválido"); }
+            else { alert("hacer fetch")}
+
+            // mandar un fetch con los datos del id de la reserva, el comentario, el código y el score
             // si pudo hacer el checkout oculta la div mybookings-checkout-div y muestra mensaje boostrap
             // si no puede hacer el checkout oculta la div mybookings-checkout-div y muestra mensaje bootstrap
+        
          }

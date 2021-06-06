@@ -26,6 +26,27 @@ def info(request):
     
     return render(request, "hotel/info.html")
 
+@csrf_exempt
+@login_required
+def orders(request):
+
+    current_services = Services.objects.all()
+    is_guest = Guests.objects.filter(guest=request.user).exists()
+    
+    return render(request, "hotel/orders.html", {'current_services': current_services,
+                                                 'is_guest': is_guest})
+
+@csrf_exempt
+@login_required
+def invoice(request):
+    
+    return render(request, "hotel/invoice.html")
+
+@csrf_exempt
+@login_required
+def messages(request):
+    
+    return render(request, "hotel/messages.html")
 
 @csrf_exempt
 def bookings(request):
@@ -195,6 +216,7 @@ def mybookings(request):
     today = date.today()
 
     bookings = Bookings.objects.filter(user=request.user).order_by('checkin_date')
+    is_guest = Guests.objects.filter(guest=request.user).exists()
 
     if request.method != "POST":
         post = False
@@ -202,7 +224,8 @@ def mybookings(request):
         return  render(request, "hotel/mybookings.html", { 'post': post, 
                                                            'error': error,
                                                            'bookings': bookings,
-                                                           'today': today })
+                                                           'today': today,
+                                                           'is_guest': is_guest })
 
     if request.method == "POST":
         user_booking_post = request.POST["user_booking"]
@@ -229,7 +252,8 @@ def mybookings(request):
                                                               'post': post,
                                                               'error': error,
                                                               'bookings': bookings,
-                                                              'today': today })
+                                                              'today': today,
+                                                              'is_guest': is_guest })
 
         if (amount_booking <= 0):
             post = False    
@@ -238,7 +262,8 @@ def mybookings(request):
                                                               'post': post,
                                                               'error': error,
                                                               'bookings': bookings,
-                                                              'today': today })
+                                                              'today': today,
+                                                              'is_guest': is_guest })
 
         if ( datein_booking is None):
             post = False    
@@ -247,7 +272,8 @@ def mybookings(request):
                                                               'post': post,
                                                               'error': error,
                                                               'bookings': bookings,
-                                                              'today': today })
+                                                              'today': today,
+                                                              'is_guest': is_guest })
 
         if (code_booking is None):
             post = False    
@@ -256,7 +282,8 @@ def mybookings(request):
                                                               'post': post,
                                                               'error': error,
                                                               'bookings': bookings,
-                                                              'today': today })
+                                                              'today': today,
+                                                              'is_guest': is_guest })
 
         user_booking = User.objects.get(id=user_booking_post)
 
@@ -289,7 +316,8 @@ def mybookings(request):
                                                               'post': post,
                                                               'error': error,
                                                               'bookings': bookings,
-                                                              'today': today })
+                                                              'today': today,
+                                                              'is_guest': is_guest })
     
         else:
             post = False
@@ -319,9 +347,9 @@ def finalprint(request):
     return render(request, "hotel/finalprint.html")
 
 
-def guestsreviews(request):
+def reviews(request):
     
-    return render(request, "hotel/guestsreviews.html")
+    return render(request, "hotel/reviews.html")
 
 
 def faqs(request):

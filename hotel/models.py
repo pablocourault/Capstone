@@ -56,6 +56,7 @@ class Consumptions(models.Model):
 
 class Services(models.Model):
        description = models.CharField(max_length=64, blank=False)
+       message = models.CharField(max_length=512, blank=False, default='Service request received')
        rate = models.DecimalField(blank=False, max_digits=6, decimal_places=2)
        def __str__(self):
         return f"Service: {self.description} - Rate: {self.rate}"

@@ -1,0 +1,100 @@
+{% extends "hotel/layout.html" %}
+
+{% load i18n %}
+
+{% load static %}
+
+{% block script %}
+   <!-- <script src="{% static 'hotel/' %}"></script> -->
+{% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col-lg-12 col-sm-12 orders-title"> 
+    {% translate 'Orders' %}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-3 col-sm-12">
+    </div>
+ 
+    <div class="col-lg-6 col-sm-12">
+ 
+     <div class="alert alert-success border border-success orders-info">
+       <div class="orders-info-strong">
+        <i class="material-icons-outlined orders-info-icon" id="orders-icon">room_service</i>
+             {% translate 'Room orders and services' %} </div>
+       <div class="orders-info-normal"> {% translate 'Make here your requests to the room and reservation of services.' %} </div>
+     </div>
+
+     <div class="orders-rates-title"> 
+        {% translate 'Services & Rates' %}
+     </div>
+
+     <div class="alert alert-warning border border-warning booking-info">     
+
+            <div class="orders-grid">
+              {% for service in current_services %}
+              <div class="orders-grid-item">{{ service.description }} $ {{service.rate}}</div>
+              {% endfor %}
+            </div>
+        
+      </div>
+
+      {% if is_guest %}
+
+      <div class="alert alert-info border border-info">
+
+        <form action="{% url 'orders' %}" method="post" id="orders-form">
+        <table id="orders-table">
+          <thead>
+            <tr>
+              <th scope="col">{% translate 'Service' %}</th>
+              <th scope="col">{% translate 'Quantity' %}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> 
+                {% if user.is_authenticated %}
+                 <select id="orders-select">
+                  {% for service in current_services %}
+                    <option value='{{ service.id }}'>{{ service.description }}</option>
+                  {% endfor %}
+                 </select>
+                {% endif %}
+              </td>
+              <td> </td>
+            </tr>
+  
+            <tr>
+              <td> </td>
+              {% if user.is_authenticated %}
+              <td> <input type="submit" id="btn-orders" class="btn btn-primary orders-btn" value="{% translate 'Order' %}"></td>
+              {% endif %}
+            </tr>
+          </tbody>
+        </table>
+  
+        </form>
+  
+      </div>
+
+      {% else %}
+
+      <div class="alert alert-danger border border-danger orders-terms">
+        &bull;&nbsp;{% translate 'You must Check-In in order to use the services.' %}
+      </div>
+
+      {% endif %}
+
+    </div> <!-- Cierre del Col-Lg-6 -->
+
+    <div class="col-lg-3 col-sm-12">
+    </div>
+ </div>
+ 
+
+{% endblock %}

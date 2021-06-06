@@ -100,7 +100,11 @@
           {% else %}
           <td><button type="button" class="btn btn-outline-danger mybookings-btn btn-delete" data-delete_id='{{bk.id}}'> {% translate 'Delete' %}  </button></td>
             {% if bk.checkin_date == today %}
-            <td><button type="button" class="btn btn-outline-success mybookings-btn btn-checkin" data-checkin_id='{{bk.id}}'> {% translate 'Check In' %} </button></td>
+               {% if is_guest %} <!-- Only one reservation can be checked in at a time  -->
+               <td></td>
+               {% else %}
+               <td><button type="button" class="btn btn-outline-success mybookings-btn btn-checkin" data-checkin_id='{{bk.id}}'> {% translate 'Check In' %} </button></td>
+               {% endif %}
             {% else %}
             <td></td>
             {% endif %}
@@ -169,7 +173,7 @@
     <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 star">3</label>
     <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 star">2</label>
     <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star">1</label>
-</div>
+  </div>
 
 <div class="col-lg-12 col-sm-6" id="checkout-controls">
    

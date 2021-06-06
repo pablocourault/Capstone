@@ -138,9 +138,9 @@
             </div>
 
             <div class="col-lg-1 col-sm-3 header-info-col"> 
-                <a href="{% url 'guestsreviews' %}">
+                <a href="{% url 'reviews' %}">
                 <div class="header-info-links">
-                <div class="material-icons-outlined header-info-icons">preview</div>
+                <div class="material-icons-outlined header-info-icons">rate_review</div>
                 <div>{% translate 'Reviews' %}</div>
                 </div>
                 </a>
@@ -167,9 +167,9 @@
 
                 <div class="row">  
                 <div class="col-lg-2 sm-4 header-options-col-item" id="col-item-1"></div>
-                <div class="col-lg-2 sm-4 header-options-col-item" id="col-item-2"><a>{% translate 'Orders' %}</a></div>
-                <div class="col-lg-2 sm-4 header-options-col-item" id="col-item-3">{% translate 'Invoice' %}</div>
-                <div class="col-lg-2 sm-4 header-options-col-item" id="col-item-4">{% translate 'Messages' %}</div>
+                <div class="col-lg-2 sm-4 header-options-col-item" id="col-item-2"><a href="{% url 'orders' %}" class="header-bookings-link">{% translate 'Orders' %}</a></div>
+                <div class="col-lg-2 sm-4 header-options-col-item" id="col-item-3"><a href="{% url 'invoice' %}" class="header-bookings-link">{% translate 'Invoice' %}</a></div>
+                <div class="col-lg-2 sm-4 header-options-col-item" id="col-item-4"><a href="{% url 'messages' %}" class="header-bookings-link">{% translate 'Messages' %}</a></div>
                 <div class="col-lg-2 sm-4 header-options-col-item" id="col-item-5"><a href="{% url 'mybookings' %}" class="header-bookings-link">{% translate 'My Bookings' %}</a></div>
                 <div class="col-lg-2 sm-4 header-options-col-item" id="col-item-6"></div>
                 </div>
