@@ -5,7 +5,7 @@
 {% load static %}
 
 {% block script %}
-   <!-- <script src="{% static 'hotel/' %}"></script> -->
+  <script src="{% static 'hotel/orders.js' %}"></script>
 {% endblock %}
 
 {% block body %}
@@ -45,9 +45,8 @@
 
       {% if is_guest %}
 
-      <div class="alert alert-info border border-info">
+      <div class="alert alert-info border border-info" id="orders-div">
 
-        <form action="{% url 'orders' %}" method="post" id="orders-form">
         <table id="orders-table">
           <thead>
             <tr>
@@ -66,19 +65,25 @@
                  </select>
                 {% endif %}
               </td>
-              <td> </td>
+              <td>
+                <select id="orders-amount">
+                  <option value='1'>1</option>
+                  <option value='2'>2</option>
+                  <option value='3'>3</option>
+                  <option value='4'>4</option>
+                  <option value='5'>5</option>
+                </select>
+            </td>
             </tr>
   
             <tr>
               <td> </td>
               {% if user.is_authenticated %}
-              <td> <input type="submit" id="btn-orders" class="btn btn-primary orders-btn" value="{% translate 'Order' %}"></td>
+              <td> <button type="button" id="btn-orders" class="btn btn-primary btn-orders" > {% translate 'Order' %} </button></td>
               {% endif %}
             </tr>
           </tbody>
         </table>
-  
-        </form>
   
       </div>
 

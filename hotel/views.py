@@ -36,6 +36,41 @@ def orders(request):
     return render(request, "hotel/orders.html", {'current_services': current_services,
                                                  'is_guest': is_guest})
 
+
+@csrf_exempt
+@login_required
+def makeanorder(request):
+
+    data = json.loads(request.body)
+    service_id = data.get("service_id","")
+    order_quantity = data.get("service_quantity","")
+
+    order_service = Services.objects.get(id=service_id)
+    order_guest = Guests.objects.get(guest=request.user)
+
+    order_amount = int(order_quantity) * order_service.rate
+
+    try:
+        order_booking = order_guest.booking
+        order_booking.amunt = order_amount + order_booking
+        order_booking.save()
+
+    except IntegrityError:
+        return JsonResponse({'message': 'Error in update booking amount.'}, status=401)
+
+
+    try:
+        order_consumption = Consumptions(user=request.user,
+                                         booking= order_guest.booking,
+                                         description= order_service.description,
+                                         date = date.today(),
+                                         amount = order_amount)
+        order_consumption.save()
+    except IntegrityError:
+        return JsonResponse({'message': 'Error in save Order.'}, status=401)
+    return JsonResponse({'message': 'Successful Order.'}, status=201)
+
+
 @csrf_exempt
 @login_required
 def invoice(request):

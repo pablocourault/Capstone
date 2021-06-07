@@ -417,7 +417,7 @@ a.header-bookings-link:hover { color:lightblue }
                                color: black;
                                margin-left: 16%; }
 
-.booking-btn, .orders-btn { font-size: small;
+.booking-btn, .btn-orders { font-size: small;
                             margin-top: 8px; }
 
 .booking-btn-reserve { font-size: smaller;}

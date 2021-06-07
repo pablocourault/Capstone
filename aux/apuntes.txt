@@ -51,11 +51,14 @@ OPCIONES LOGUEADO:
     consumo que es el monto de la reserva de habitaciones al modelo CONSUMPTIONS.
   - Al hacer el Check Out se borran los consumos, se borra la reserva y se elimina el huésped de Guests.
   - Al hacer el Check Out se da (por única vez) la posibilidad de dejar un comentario.
+  - Cuando un usuario está en la lista GUESTS, y hace el check-out, se le brindará por única vez la
+    Si hizo el chek-out, sin dejar un comentario, ya no podrá hacerlo.
 
 * Opción "Orders" (revisar traducción)
   - Le muestra al usuario en una parte de la pantalla las cosas que puede pedir y el precio,
     y en otra parte le da la posibilidad de hacer pedidos (órdenes), utiliza el modelo SERVICES.
-    Solo puede hacer pedidos si está logueado he hizo el Check In (se encuentra en el modelo GUESTS)
+    Solo puede hacer pedidos si está logueado he hizo el Check In (es decir, el usuario se encuentra
+    en el modelo GUESTS).
     Se agrega el pedido al modelo CONSUMPTIONS y le deja al usuario un mensaje en su casilla con la
     confirmación y/o detalles de su pedido.
 
@@ -71,9 +74,9 @@ OPCIONES LOGUEADO:
 
 * Opción "Booking"
   - Para hacer una consulta de disponibilidad para reserva debe indicar:
-	Fecha de entrada
-	Fecha de salida
-	Se indica en cada tipo de habitación que se admite un niño gratis.
+	  Fecha de entrada
+	  Fecha de salida
+	  Se indica en cada tipo de habitación que se admite un niño gratis.
 
    - La consulta de reserva devuelve la cantidad disponible de habitaciones por cada tipo.
       Los tipos de habitaciones son Single, Double, Triple y Quadruple.
@@ -85,11 +88,8 @@ OPCIONES LOGUEADO:
 OPCIONES NO LOGUEADO:
 
 * Opción "Guest Reviews"
-   - Cuando un usuario está en la lista GUESTS, y hace el check-out, se le brindará
-     por única vez la posibilidad de dejar un comentario.
-     Si hizo el chek-out, sin dejar un comentario, ya no podrá hacerlo.
    - Muestra los comentarios de los huéspedes, ordenados por más recientes, con un paginador.
-   - Los comentarios tendrán un puntaje y un texto.
+   - Los comentarios tendrán un puntaje y un texto dejado por el huésped.
    - Debería mostrar en un campo al principio el promedio de puntajes otorgados.
    - Se podría poner la opción de ordenar por mejores o peores comentarios primero.
 
