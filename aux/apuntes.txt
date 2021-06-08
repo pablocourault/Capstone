@@ -63,8 +63,8 @@ OPCIONES LOGUEADO:
     confirmación y/o detalles de su pedido.
 
 * Opción "Invoice" (revisar traducción, se podría buscar como deuda o débitos, lo que sea más usual)
-  - Le muestra al usuario una lista de sus consumos, ordenados por booking y fecha, con su 
-    importe individual y el total acumulado. Estará vacío si no hizo el Check In.
+  - Le muestra al usuario una lista de los consumos de su booking actual, ordenados por y fecha, con su 
+    importe individual, en la cabecera el total acumulado. Estará vacío si no hizo el Check In.
   - Si no tiene consumos, solo le informa eso (similar a cuando no tiene reservas, ver banner).
   - Utiliza el modelo CONSUMPTIONS.
 
@@ -120,7 +120,7 @@ PROCESOS
 * Dejar comentarios sobre el servicio del hotel al hacer el Check Out (modelo: COMMENTS)
 * Pedir servicios para una habitación (modelos: SERVICES, CONSUMPTIONS)
   (el usuario recibe un mensaje en su casilla luego de hacer el pedido).
-* Obtener gastos a pagar (modelo: CONSUMPTIONS)
+* Detalle / Obtener gastos a pagar (modelo: CONSUMPTIONS)
 * Check In: agregar usuario a GUESTS, agregar amount de BOOKINGS en consumos y
             cambia el estado de la reserva a checkin TRUE.
             El usuario solo puede tener una sola reserva como Check-In por vez.
@@ -176,8 +176,9 @@ MODELOS
 * CONSUMPTIONS
  - user
  - booking
- - description
+ - service
  - date
+ - quantity
  - amount
    (El usuario cancelaría todos los consumos correspondientes a un booking.
     al momento de hacer el check-out, con el código de pago que le suministraría
@@ -231,6 +232,10 @@ PARA EL FINAL
 - Revisar todo el enunciado del trabajo final que no me falte nada.
 - Ver que no arroje errores de javascript.
 - Aclarar en el README todo lo que se puede hacer en la parte de Django Admin.
+- PROBAR MUY BIEN que funcione todo, si hago un check-in que agregue el primer consumo, 
+  si hago un consumo que actualize el total del booking y el listado de consumptions,
+  si hago el check-out que borre de guest y los consumos y los mensajes, etc, etc, etc.
+  Es decir que haga lo que tiene que hacer.
 
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 

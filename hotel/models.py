@@ -44,22 +44,28 @@ class Guests(models.Model):
         return f"Usuario: {self.guest} - Booking: {self.booking}"
 
 
-class Consumptions(models.Model):
-       user = models.ForeignKey(User, on_delete=models.CASCADE, blank=False)
-       booking = models.ForeignKey(Bookings, on_delete=models.CASCADE, blank=False)
-       description = models.CharField(max_length=64, blank=False)
-       date = models.DateField(blank=False, auto_now=False, auto_now_add=False)
-       amount = models.DecimalField(blank=False, max_digits=6, decimal_places=2)
-       def __str__(self):
-        return f"Usuario: {self.user} - Booking: {self.booking} - Description: {self.description} - Date: {self.date} - Amount: {self.amount}"       
-
-
 class Services(models.Model):
        description = models.CharField(max_length=64, blank=False)
+       description_es = models.CharField(max_length=64, blank=False)
+       description_pt = models.CharField(max_length=64, blank=False)
        message = models.CharField(max_length=512, blank=False, default='Service request received')
+       message_es = models.CharField(max_length=512, blank=False, default='Solicitud recibida')
+       message_pt = models.CharField(max_length=512, blank=False, default='Pedido recebido')
        rate = models.DecimalField(blank=False, max_digits=6, decimal_places=2)
        def __str__(self):
         return f"Service: {self.description} - Rate: {self.rate}"
+
+
+class Consumptions(models.Model):
+       user = models.ForeignKey(User, on_delete=models.CASCADE, blank=False)
+       booking = models.ForeignKey(Bookings, on_delete=models.CASCADE, blank=False)
+       service = models.ForeignKey(Services, on_delete=models.DO_NOTHING, blank=False)
+       date = models.DateField(blank=False, auto_now=False, auto_now_add=False)
+       quantity = models.IntegerField(validators=[MinValueValidator(1),
+                                                  MaxValueValidator(5)],default=1)
+       amount = models.DecimalField(blank=False, max_digits=6, decimal_places=2)
+       def __str__(self):
+        return f"Usuario: {self.user} - Booking: {self.booking.checkout_code} - Description: {self.service.description} - Date: {self.date} - Amount: {self.amount}"       
 
 
 class Comments(models.Model):

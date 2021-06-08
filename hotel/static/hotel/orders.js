@@ -17,7 +17,9 @@ function makeAnOrder()
                return response.json() })
          .then(result => {console.log(result);
                if (estado == 201)
-                  { alert(result.message); } 
+                  { document.querySelector('#orders-successful-div').style.display = 'block';
+                    document.querySelector('#orders-successful-div').style.animationPlayState = 'running';
+                  }
                 else 
                     { alert(result.message); }
                 })

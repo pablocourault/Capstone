@@ -11,6 +11,7 @@ from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.http import JsonResponse
 from django.db.models import Sum
+from django.core.paginator import Paginator
 from .models import User, Room, Guests, Bookings, Consumptions, Services, Comments, Messages
 
 # Create your views here.
@@ -30,7 +31,7 @@ def info(request):
 @login_required
 def orders(request):
 
-    current_services = Services.objects.all()
+    current_services = Services.objects.all().exclude(description='Rooms')
     is_guest = Guests.objects.filter(guest=request.user).exists()
     
     return render(request, "hotel/orders.html", {'current_services': current_services,
@@ -51,8 +52,8 @@ def makeanorder(request):
     order_amount = int(order_quantity) * order_service.rate
 
     try:
-        order_booking = order_guest.booking
-        order_booking.amunt = order_amount + order_booking
+        order_booking = Bookings.objects.get(id=order_guest.booking.id)
+        order_booking.amount = order_amount + order_booking.amount
         order_booking.save()
 
     except IntegrityError:
@@ -62,8 +63,9 @@ def makeanorder(request):
     try:
         order_consumption = Consumptions(user=request.user,
                                          booking= order_guest.booking,
-                                         description= order_service.description,
+                                         service = order_service,
                                          date = date.today(),
+                                         quantity = order_quantity,
                                          amount = order_amount)
         order_consumption.save()
     except IntegrityError:
@@ -75,7 +77,16 @@ def makeanorder(request):
 @login_required
 def invoice(request):
     
-    return render(request, "hotel/invoice.html")
+    guest = Guests.objects.get(guest=request.user)
+    consumptions = Consumptions.objects.filter(user=request.user, booking=guest.booking).order_by('date')
+
+    paginator = Paginator(consumptions, 16) # Show 16 consumptions per page.
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, "hotel/invoice.html", {'page_obj': page_obj})
+
 
 @csrf_exempt
 @login_required
@@ -443,6 +454,7 @@ def checkinbooking(request):
                                      booking= booking_to_checkin,
                                      description= "Rooms",
                                      date = date.today(),
+                                     quantity = 1,
                                      amount = booking_to_checkin.amount)
 
     first_consumption.save()

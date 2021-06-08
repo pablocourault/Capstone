@@ -634,6 +634,39 @@ a.header-bookings-link:hover { color:lightblue }
                                      font-size: smaller; }
 
 
+@keyframes hide {
+        0% { opacity: 1;
+             height: max-content;
+             line-height: 100%;
+             padding: 20px;
+             margin-bottom: 10px; }
+
+        75% { opacity: 0;
+              height: max-content;
+              line-height: 100%;
+              padding: 20px;
+              margin-bottom: 10px; }
+
+        100% { opacity: 0;
+               height: max-content;
+               line-height: 0px;
+               padding: 0px;
+               margin-bottom: 0px; }
+        }
+    
+#orders-successful-div { display: none;
+                         animation-name: hide;
+                         animation-duration: 10s;
+                         animation-fill-mode: forwards;
+                         animation-play-state: paused; }
+                         
+
+/* Styles for Invoice */
+/* Styles for Invoice */
+
+
+
+
 /* Styles for gallery */
 /* Styles for gallery */
 

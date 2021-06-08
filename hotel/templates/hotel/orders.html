@@ -36,11 +36,22 @@
      <div class="alert alert-warning border border-warning booking-info">     
 
             <div class="orders-grid">
+              {% get_current_language as LANGUAGE_CODE %}
               {% for service in current_services %}
-              <div class="orders-grid-item">{{ service.description }} $ {{service.rate}}</div>
+              <div class="orders-grid-item">
+                {% if LANGUAGE_CODE == 'en' %}
+                {{ service.description }} 
+                {% endif %}
+                {% if LANGUAGE_CODE == 'es' %}
+                {{ service.description_es }} 
+                {% endif %}
+                {% if LANGUAGE_CODE == 'pt' %}
+                {{ service.description_pt }} 
+                {% endif %}
+                $ {{service.rate}}</div>
               {% endfor %}
             </div>
-        
+  
       </div>
 
       {% if is_guest %}
@@ -60,7 +71,17 @@
                 {% if user.is_authenticated %}
                  <select id="orders-select">
                   {% for service in current_services %}
-                    <option value='{{ service.id }}'>{{ service.description }}</option>
+                    <option value='{{ service.id }}'>
+                                  {% if LANGUAGE_CODE == 'en' %}
+                                  {{ service.description }} 
+                                  {% endif %}
+                                  {% if LANGUAGE_CODE == 'es' %}
+                                  {{ service.description_es }} 
+                                  {% endif %}
+                                  {% if LANGUAGE_CODE == 'pt' %}
+                                  {{ service.description_pt }} 
+                                  {% endif %}
+                    </option>
                   {% endfor %}
                  </select>
                 {% endif %}
@@ -86,6 +107,11 @@
         </table>
   
       </div>
+      {% if user.is_authenticated %}
+      <div class="alert alert-success border border-success" id="orders-successful-div">
+        <strong>{% translate 'Order Success!' %}</strong>{% translate 'We have registered your order.' %}
+      </div>
+      {% endif %}
 
       {% else %}
 

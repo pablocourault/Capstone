@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-16 20:47-0300\n"
+"POT-Creation-Date: 2021-06-07 19:56-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,109 +18,113 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: templates/hotel/bookings.html:7 templates/hotel/layout.html:117
+#: templates/hotel/bookings.html:14 templates/hotel/layout.html:117
 msgid "Bookings"
 msgstr "Reservaciones"
 
-#: templates/hotel/bookings.html:20
+#: templates/hotel/bookings.html:27
 msgid "Lock in a great price for your upcoming stay"
 msgstr "Hazte con el mejor precio para tu próxima estancia"
 
-#: templates/hotel/bookings.html:21
+#: templates/hotel/bookings.html:28
 msgid "Get instant confirmation with FREE cancellation on most rooms!"
 msgstr ""
 "Recibe confirmación inmediata ¡con cancelación GRATUITA en la mayoría de "
 "habitaciones!"
 
-#: templates/hotel/bookings.html:25
+#: templates/hotel/bookings.html:32
 msgid "Availability"
 msgstr "Disponibilidad"
 
-#: templates/hotel/bookings.html:30
+#: templates/hotel/bookings.html:37
 msgid "When would you like to stay at Hotel Le Monde?"
 msgstr "¿Cuándo quieres alojarte en el Hotel Le Monde?"
 
-#: templates/hotel/bookings.html:36
+#: templates/hotel/bookings.html:46 templates/hotel/mybookings.html:29
+#: templates/hotel/mybookings.html:68 templates/hotel/mybookings.html:106
+#: templates/hotel/mybookings.html:138
 msgid "Check In"
 msgstr "Entrada"
 
-#: templates/hotel/bookings.html:41
+#: templates/hotel/bookings.html:51 templates/hotel/mybookings.html:30
+#: templates/hotel/mybookings.html:69 templates/hotel/mybookings.html:99
+#: templates/hotel/mybookings.html:139
 msgid "Check Out"
 msgstr "Egreso"
 
-#: templates/hotel/bookings.html:46
+#: templates/hotel/bookings.html:56
 msgid "Check Availability"
 msgstr "Ver disponibilidad"
 
-#: templates/hotel/bookings.html:57
+#: templates/hotel/bookings.html:68
 msgid "Sleeps"
 msgstr "Capacidad"
 
-#: templates/hotel/bookings.html:58
+#: templates/hotel/bookings.html:69
 msgid "Room Type"
 msgstr "Tipo de habitación"
 
-#: templates/hotel/bookings.html:59
+#: templates/hotel/bookings.html:70
 msgid "Prices"
 msgstr "Precios"
 
-#: templates/hotel/bookings.html:59
+#: templates/hotel/bookings.html:70
 msgid "for one night"
 msgstr "por una noche"
 
-#: templates/hotel/bookings.html:60
+#: templates/hotel/bookings.html:71
 msgid "Select Rooms"
 msgstr "Elige Habitaciones"
 
-#: templates/hotel/bookings.html:66
+#: templates/hotel/bookings.html:77 templates/hotel/mybookings.html:34
 msgid "Single"
 msgstr "Individual"
 
-#: templates/hotel/bookings.html:75
+#: templates/hotel/bookings.html:94
 msgid "3 guests max, with a maximum of 2 adults."
 msgstr "3 personas en total, 2 adultos como máximo."
 
-#: templates/hotel/bookings.html:79
+#: templates/hotel/bookings.html:98 templates/hotel/mybookings.html:37
 msgid "Double"
 msgstr "Doble"
 
-#: templates/hotel/bookings.html:90
+#: templates/hotel/bookings.html:117
 msgid "4 guests max, with a maximum of 3 adults."
 msgstr "4 personas en total, 3 adultos como máximo."
 
-#: templates/hotel/bookings.html:93
+#: templates/hotel/bookings.html:120 templates/hotel/mybookings.html:40
 msgid "Triple"
 msgstr "Triple"
 
-#: templates/hotel/bookings.html:105
+#: templates/hotel/bookings.html:140
 msgid "5 guests max, with a maximum of 4 adults."
 msgstr "5 personas en total, 4 adultos como máximo."
 
-#: templates/hotel/bookings.html:108
+#: templates/hotel/bookings.html:143 templates/hotel/mybookings.html:43
 msgid "Quadruple"
 msgstr "Cuádruple"
 
-#: templates/hotel/bookings.html:114
+#: templates/hotel/bookings.html:157
 msgid "Total for"
 msgstr "Total por"
 
-#: templates/hotel/bookings.html:114
+#: templates/hotel/bookings.html:157
 msgid "nights"
 msgstr "noches"
 
-#: templates/hotel/bookings.html:115
-msgid "USD"
-msgstr "ARS"
+#: templates/hotel/bookings.html:160
+msgid "Reserve"
+msgstr "Reservar"
 
-#: templates/hotel/bookings.html:125
+#: templates/hotel/bookings.html:184
 msgid "Confirmation is immediate"
 msgstr "Confirmación inmediata"
 
-#: templates/hotel/bookings.html:126
+#: templates/hotel/bookings.html:185
 msgid "Registration required"
 msgstr "Requiere registrarse."
 
-#: templates/hotel/bookings.html:127
+#: templates/hotel/bookings.html:186
 msgid "No booking or credit card fees!"
 msgstr "¡Sin cargos de gestión!"
 
@@ -225,8 +229,6 @@ msgid "Wardrobe or closet"
 msgstr "Armario o ropero"
 
 #: templates/hotel/facilities.html:103
-#, fuzzy
-#| msgid "Facilities"
 msgid "Business facilities"
 msgstr "Instalaciones para negocios"
 
@@ -619,6 +621,10 @@ msgstr ""
 msgid "We speak your language!"
 msgstr "¡Hablamos tu idioma!"
 
+#: templates/hotel/invoice.html:15 templates/hotel/layout.html:171
+msgid "Invoice"
+msgstr "Cuenta"
+
 #: templates/hotel/layout.html:84
 msgid "Logout"
 msgstr "Salir"
@@ -649,19 +655,15 @@ msgstr "Comentarios"
 msgid "FAQs"
 msgstr "Preguntas Frecuentes"
 
-#: templates/hotel/layout.html:170
+#: templates/hotel/layout.html:170 templates/hotel/orders.html:15
 msgid "Orders"
 msgstr "Consumos"
 
-#: templates/hotel/layout.html:171
-msgid "Invoice"
-msgstr "Cuenta"
-
-#: templates/hotel/layout.html:172
+#: templates/hotel/layout.html:172 templates/hotel/messages.html:15
 msgid "Messages"
 msgstr "Mensajes"
 
-#: templates/hotel/layout.html:173
+#: templates/hotel/layout.html:173 templates/hotel/mybookings.html:14
 msgid "My Bookings"
 msgstr "Sus Reservas"
 
@@ -685,6 +687,90 @@ msgstr "¿No tiene una cuenta?"
 msgid "Register here."
 msgstr "Registrarse aquí."
 
+#: templates/hotel/mybookings.html:28
+msgid "Your booking has been registered"
+msgstr "Su reserva ha sido registrada"
+
+#: templates/hotel/mybookings.html:67 templates/hotel/mybookings.html:137
+msgid "Booking ID"
+msgstr "Reserva"
+
+#: templates/hotel/mybookings.html:70 templates/hotel/mybookings.html:140
+msgid "Rooms"
+msgstr "Habitaciones"
+
+#: templates/hotel/mybookings.html:71 templates/hotel/mybookings.html:141
+msgid "Total Amount"
+msgstr "Total"
+
+#: templates/hotel/mybookings.html:72
+msgid "Actions"
+msgstr "Acciones"
+
+#: templates/hotel/mybookings.html:101
+msgid "Delete"
+msgstr "Borrar"
+
+#: templates/hotel/mybookings.html:122
+msgid "You don\\"
+msgstr ""
+
+#: templates/hotel/mybookings.html:130
+msgid "You are checking out the booking:"
+msgstr "Usted está saliendo de la reserva:"
+
+#: templates/hotel/mybookings.html:162
+msgid "Please, comment and rate your stay at the hotel:"
+msgstr "Por favor, comente y califique su estadía en el hotel:"
+
+#: templates/hotel/mybookings.html:181
+msgid "Check-Out Code"
+msgstr "Código de salida"
+
+#: templates/hotel/mybookings.html:190
+msgid "Cancel Check-Out"
+msgstr "Cancelar Salida"
+
+#: templates/hotel/mybookings.html:194
+msgid "Confirm Check-Out"
+msgstr "Confirmar Salida"
+
+#: templates/hotel/orders.html:28
+msgid "Room orders and services"
+msgstr "Pedidos a la habitación y servicios"
+
+#: templates/hotel/orders.html:29
+msgid "Make here your requests to the room and reservation of services."
+msgstr "Haga sus pedidos a la habitación y reservas de servicios."
+
+#: templates/hotel/orders.html:33
+msgid "Services & Rates"
+msgstr "Servicios & Tarifas"
+
+#: templates/hotel/orders.html:54
+msgid "Service"
+msgstr "Servicio"
+
+#: templates/hotel/orders.html:55
+msgid "Quantity"
+msgstr "Cantidad"
+
+#: templates/hotel/orders.html:83
+msgid "Order"
+msgstr "Pedir"
+
+#: templates/hotel/orders.html:92
+msgid "Order Success!"
+msgstr "Pedido exitoso!"
+
+#: templates/hotel/orders.html:92
+msgid "We have registered your order."
+msgstr "Hemos registrado su pedido"
+
+#: templates/hotel/orders.html:99
+msgid "You must Check-In in order to use the services."
+msgstr "Debe hacer el Check-In para poder usar los servicios."
+
 #: templates/hotel/register.html:19
 msgid "Email"
 msgstr "Correo electrónico"
@@ -700,6 +786,19 @@ msgstr "¿Ya tiene una cuenta?"
 #: templates/hotel/register.html:31
 msgid "Log In here."
 msgstr "Entrar aquí"
+
+#: templates/hotel/reviews.html:7
+msgid "Guests Reviews"
+msgstr "Comentarios"
+
+#~ msgid "Break fast in the room (per person) "
+#~ msgstr "Desayuno en el cuarto (x persona) "
+
+#~ msgid "Pedir"
+#~ msgstr "Consumos"
+
+#~ msgid "USD"
+#~ msgstr "ARS"
 
 #~ msgid "The Final Print"
 #~ msgstr "Consideraciones Finales"
