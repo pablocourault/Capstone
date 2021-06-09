@@ -16,28 +16,108 @@
     </div>
 </div>
 
+<div class="row">
+     <div class="col-lg-3 col-sm-12">
+</div>
+
+<div class="col-lg-6 col-sm-12">
+
+{% get_current_language as LANGUAGE_CODE %}
+{% if is_guest %}
+{% if page_obj %}
+
+<div class="col-lg-12 col-sm-12 mybookings-checkout-title"> 
+{% translate 'Your bill is for a total of: $ ' %} {{ guest_booking.amount }} {% translate 'and this is the detail of your consumptions:' %}
+</div>
+
+<table class="table" id="invoice-table">
+
+<thead class="thead-light">
+    <th scope="col"> {% translate 'Date' %} </th>
+    <th scope="col"> {% translate 'Service' %} </th>
+    <th scope="col"> {% translate 'Quantity' %} </th>
+    <th scope="col"> {% translate 'Amount' %} </th>
+</thead>
+
+<tbody>
 {% for consumption in page_obj %}
 
-    {{ consumption.service.description}}<br>
-    
+    {% if LANGUAGE_CODE == 'en' %}
+    <tr>
+        <td>{{ consumption.date }}</td>
+        <td>{{ consumption.service.description }}</td>
+        <td>{{ consumption.quantity }}</td>
+        <td>{{ consumption.amount }}</td>
+    </tr>         
+    {% endif %}
+
+    {% if LANGUAGE_CODE == 'es' %}
+    <tr>
+        <td>{{ consumption.date }}</td>
+        <td>{{ consumption.service.description_es }}</td>
+        <td>{{ consumption.quantity }}</td>
+        <td>{{ consumption.amount }}</td>      
+    </tr>
+    {% endif %}
+
+    {% if LANGUAGE_CODE == 'pt' %}
+    <tr>
+        <td>{{ consumption.date }}</td>
+        <td>{{ consumption.service.description_pt }}</td>
+        <td>{{ consumption.quantity }}</td>
+        <td>{{ consumption.amount }}</td>     
+    </tr>
+    {% endif %}
+
 {% endfor %}
 
-<div class="pagination">
-    <span class="step-links">
-        {% if page_obj.has_previous %}
-            <a href="?page=1">&laquo; first</a>
-            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
-        {% endif %}
+    <tr>
+    <td colspan="4">
+       <div class="pagination">
+            <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; {% translate 'first' %}</a>
+                <a href="?page={{ page_obj.previous_page_number }}">{% translate 'previous' %}</a>
+            {% endif %}
 
-        <span class="current">
-            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            <span class="current">
+                Page {{ page_obj.number }} {% translate 'of' %} {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">{% translate 'next' %}</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">{% translate 'last' %} &raquo;</a>
+            {% endif %}
         </span>
+       </div>
+    </td>
+    </tr>
 
-        {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">next</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
-        {% endif %}
-    </span>
+</tbody>
+</table> 
+
+{% else %} <!-- If there are no consumptions  -->
+
+  <div class="alert alert-warning border border-warning booking-info">
+    <div class="material-icons booking-info-icon">error</div>
+      <div> {% translate 'You don\'t have invoices.' %} </div>
+  </div>
+
+{% endif %}
+
+{% else %} <!-- If user is not in Guests -->
+
+  <div class="alert alert-warning border border-warning booking-info">
+    <div class="material-icons booking-info-icon">error</div>
+      <div> {% translate 'You don\'t have invoices.' %} </div>
+  </div>
+
+{% endif %}
+
+</div> <!-- Cierre del Col-Lg-6 -->
+
+<div class="col-lg-3 col-sm-12">
+</div>
 </div>
 
 {% endblock %}

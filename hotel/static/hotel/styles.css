@@ -5,17 +5,14 @@
 
 a:hover { text-decoration:none; }
 
-
 body { background-color: #FBFBFB !important;
        padding: 0; 
        overflow-x: hidden;
        overflow-y: scroll; } /* el valor scroll me permitió que no se mueva la página en faqs.html */
 
-
 #login-div, #register-div { width: 40%;
                             text-align: center;
                             margin: 64px auto; }
-
 
 #login-div-title, #register-div-title { font-family: 'Comfortaa', cursive;
                                         font-size: xx-large;
@@ -43,8 +40,6 @@ body { background-color: #FBFBFB !important;
         font-weight: bold;
         cursor: pointer;
         color: #4300D2; }
-
-
 
 .icono { vertical-align:text-bottom; }
 
@@ -107,8 +102,7 @@ body { background-color: #FBFBFB !important;
                            color: #4300D2; }
 
 .header-info-icons { font-size: 24px; }
-
-              
+    
 .header-options-col { background-color: #DDD5F5;
                       padding: 12px 128px; }
 
@@ -126,7 +120,6 @@ body { background-color: #FBFBFB !important;
 
 a.header-bookings-link { color: white; }
 a.header-bookings-link:hover { color:lightblue }
-
 
 
 
@@ -163,7 +156,7 @@ a.header-bookings-link:hover { color:lightblue }
 
 @media only screen and (min-width: 768px) {
 .info-text { font-family: 'Comfortaa', cursive;
-             font-size: medium;
+             font-size: 0.9rem;
              font-weight: normal;
              color: dimgray;
              display:inline-flex;
@@ -313,6 +306,41 @@ a.header-bookings-link:hover { color:lightblue }
 
 .creditcard-icon { width: 2.4rem;}
 
+/* Styles for Reviews */
+/* Styles for Reviews */
+
+.reviews-note { font-family: 'Comfortaa', cursive;
+                font-size: 0.8rem;
+                color: #4300D2;
+                text-align: center; } 
+
+#reviews-icon { font-size: 1rem;
+                color: #4300D2;
+                vertical-align: middle; }
+
+#reviews-table thead th { font-family: 'Comfortaa', cursive;
+                          font-size: 0,8rem;
+                          font-weight: normal;
+                          padding: 0.4rem;
+                          text-align: center; }
+
+#reviews-table tbody td { font-family: 'Comfortaa', cursive;
+                          font-size: 0.7rem;
+                          font-weight: normal;
+                          padding: 1rem;
+                          text-align: center;
+                          color: #444 }
+
+#reviews-table tbody td:nth-child(2) { text-align:justify; }
+
+#reviews-author { font-size: 0.8rem; }
+
+#reviews-date { font-size: 0.5rem; }
+
+#reviews-comment { font-size: 0.8rem; }
+
+#reviews-score { font-size: 0.8rem; }
+
 /* Styles for FAQs */
 /* Styles for FAQs */
 
@@ -324,7 +352,6 @@ a.header-bookings-link:hover { color:lightblue }
               padding-top: 0.8rem;
               padding-bottom: 2rem; }
 
-
 .faqs-question { background-color: #EBF3FF;
                  padding: 1rem 0 1rem 1rem;
                  transition: 0.4s;
@@ -333,13 +360,11 @@ a.header-bookings-link:hover { color:lightblue }
 .faqs-question:hover { cursor: pointer;
                        background-color: #C0B5FF;}
 
-
 .faqs-question-label { font-family: 'Comfortaa', cursive;
                        font-size: 1.1rem;
                        font-weight:lighter;
                        color: #4300D2;
                        text-align: left; }
-
 
 .faqs-question-label::after { content: '\002B';
                               color: #4300D2;
@@ -350,7 +375,6 @@ a.header-bookings-link:hover { color:lightblue }
 
 
 .active::after { content: "\2796"; /* Unicode character for "minus" sign (-) */ }
-
 
 .faqs-answer { background-color: #EEE;
                padding: 1rem 0rem 1rem 1rem;
@@ -499,7 +523,6 @@ a.header-bookings-link:hover { color:lightblue }
                                 z-index: 1; }
 
                                
-      
 /* Show the tooltip text when you mouse over the tooltip container */
 .booking-tooltip:hover .tooltiptext { visibility: visible; }      
 
@@ -613,7 +636,7 @@ a.header-bookings-link:hover { color:lightblue }
                 border-collapse: collapse;
                 width: 80%;
                 margin-left: 10%; }
-       
+
 #orders-table thead th { font-family: 'Comfortaa', cursive;
                          font-size: smaller;
                          font-weight: normal;
@@ -664,6 +687,23 @@ a.header-bookings-link:hover { color:lightblue }
 /* Styles for Invoice */
 /* Styles for Invoice */
 
+
+#invoice-table thead th { font-family: 'Comfortaa', cursive;
+                          font-size: 0,8rem;
+                          font-weight: normal;
+                          padding: 0.4rem;
+                          text-align: center; }
+
+#invoice-table  tbody td { font-family: 'Comfortaa', cursive;
+                           font-size: 0.7rem;
+                           font-weight: normal;
+                           padding: 0.4rem;
+                           text-align: center;
+                           color: #444 }
+    
+#invoice-table tbody td:nth-child(2) { text-align: left; }
+
+#invoice-table tbody td:last-child { text-align: right; }
 
 
 

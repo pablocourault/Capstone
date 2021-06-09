@@ -76,16 +76,26 @@ def makeanorder(request):
 @csrf_exempt
 @login_required
 def invoice(request):
-    
-    guest = Guests.objects.get(guest=request.user)
-    consumptions = Consumptions.objects.filter(user=request.user, booking=guest.booking).order_by('date')
 
-    paginator = Paginator(consumptions, 16) # Show 16 consumptions per page.
+    # check if the user made the entry (check-in)
+    is_guest = Guests.objects.filter(guest=request.user).exists()
 
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
+    if is_guest:
 
-    return render(request, "hotel/invoice.html", {'page_obj': page_obj})
+        guest = Guests.objects.get(guest=request.user)
+        guest_booking = guest.booking
+        consumptions = Consumptions.objects.filter(user=request.user, booking=guest.booking).order_by('date')
+
+        paginator = Paginator(consumptions, 16) # Show 16 consumptions per page.
+
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+
+        return render(request, "hotel/invoice.html", {'page_obj': page_obj, 'is_guest': is_guest, 'guest_booking': guest_booking})
+
+    else:
+
+        return render(request, "hotel/invoice.html", {'is_guest': is_guest})
 
 
 @csrf_exempt
@@ -394,8 +404,15 @@ def finalprint(request):
 
 
 def reviews(request):
-    
-    return render(request, "hotel/reviews.html")
+
+        comments = Comments.objects.all().order_by('-date')
+
+        paginator = Paginator(comments, 8) # Show 8 comments per page.
+
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+
+        return render(request, "hotel/reviews.html", { 'page_obj': page_obj })
 
 
 def faqs(request):
@@ -450,9 +467,11 @@ def checkinbooking(request):
     guest=Guests(guest=request.user, booking=booking_to_checkin)
     guest.save()
 
+    rooms_service = Services.objects.get(description='Rooms')
+
     first_consumption = Consumptions(user=request.user,
                                      booking= booking_to_checkin,
-                                     description= "Rooms",
+                                     service= rooms_service,
                                      date = date.today(),
                                      quantity = 1,
                                      amount = booking_to_checkin.amount)
