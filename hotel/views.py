@@ -10,9 +10,10 @@ from django.views.decorators.csrf import csrf_exempt
 from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.http import JsonResponse
-from django.db.models import Sum
+from django.db.models import Sum, Avg
 from django.core.paginator import Paginator
 from .models import User, Room, Guests, Bookings, Consumptions, Services, Comments, Messages
+
 
 # Create your views here.
 
@@ -405,14 +406,26 @@ def finalprint(request):
 
 def reviews(request):
 
+        name_color = ['Red','Blue','Green','Orange','BlueViolet','Brown',
+                      'Chocolate','Coral','DarkOliveGreen','DarkSalmon',
+                      'FireBrick','DodgerBlue','GoldenRod','OrangeRed']
+
         comments = Comments.objects.all().order_by('-date')
+
+        average_calc = Comments.objects.aggregate(Avg('score'))
+        average = round(average_calc['score__avg'], 1)
+        reviews = Comments.objects.all().count()
+
 
         paginator = Paginator(comments, 8) # Show 8 comments per page.
 
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
 
-        return render(request, "hotel/reviews.html", { 'page_obj': page_obj })
+        return render(request, "hotel/reviews.html", { 'page_obj': page_obj, 
+                                                       'name_color': name_color,
+                                                       'average': average,
+                                                       'reviews': reviews })
 
 
 def faqs(request):

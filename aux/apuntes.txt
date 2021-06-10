@@ -17,13 +17,16 @@ django-admin compilemessages
 Aclarar que no se implementan medios de pago (solo figuran los logos.)
 
 Servicios (para poner en Modelo SERVICIOS)
-Solarium
+
+Planchado
+Masajes
+Aperitivos
+Botanas
 Gimnasio
 Sauna
 Lavandería
-Servicio de Planchado / Ironing facilities
-Heladera (consumos en habitación)
-Restaurante
+Desayuno
+Cena
 
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
@@ -91,7 +94,6 @@ OPCIONES NO LOGUEADO:
    - Muestra los comentarios de los huéspedes, ordenados por más recientes, con un paginador.
    - Los comentarios tendrán un puntaje y un texto dejado por el huésped.
    - Debería mostrar en un campo al principio el promedio de puntajes otorgados.
-   - Se podría poner la opción de ordenar por mejores o peores comentarios primero.
 
 * Opción Info:
   - Información básica del hotel.
@@ -214,10 +216,11 @@ IDEAS DE ESTILOS
 Cuando selecciona un header-label que cambien a color lila el header-label y el header-icon"
 o sea quedan marcados como seleccionados" ¿sería tipo clase "active" de faqs?
 
-¿ Poner un "Dark Theme" con una medialuna que se corra ?
-
 OJO: mirar y prestarle mucha atención a esto: https://www.w3schools.com/bootstrap/default.asp
 OJO: Bootstrap también tiene un conjunto de íconos.
+
+Mejorar la galería de imágenes con esto y con lo que trae bootstrap como galería propia
+https://www.w3schools.com/bootstrap/bootstrap_images.asp
 
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
@@ -229,7 +232,7 @@ PARA EL FINAL
 - Revisar todos los mensajes en inglés porque es lo primero que van a ver.
 - PROBAR CON DISTINTOS NAVEGADORES ¿Probar con el celular?
 - Controlar que el diseño responsivo funcione para las páginas en TODO el sitio.
-- Revisar todo el enunciado del trabajo final que no me falte nada.
+- IMPORTANTE: Revisar todo el enunciado del trabajo final que no me falte nada.
 - Ver que no arroje errores de javascript.
 - Aclarar en el README todo lo que se puede hacer en la parte de Django Admin.
 - PROBAR MUY BIEN que funcione todo, si hago un check-in que agregue el primer consumo, 
