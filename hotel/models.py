@@ -83,7 +83,7 @@ class Messages(models.Model):
        date = models.DateField(blank=False, auto_now=False, auto_now_add=False)
        addressee = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=False, related_name='user_to',)
        message = models.CharField(max_length=512, blank=False)
-       state = models.CharField(max_length=1, blank=False)
+       state = models.CharField(max_length=1, blank=False, default="u")
        def __str__(self):
         return f"From: {self.user} - Date: {self.date} - To: {self.addressee} - Message: {self.message}"
 

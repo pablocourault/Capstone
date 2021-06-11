@@ -16,4 +16,94 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="col-lg-3 col-sm-12">
+</div>
+
+<div class="col-lg-6 col-sm-12">
+
+{% get_current_language as LANGUAGE_CODE %}
+
+{% if is_guest %}
+{% if page_obj %}
+
+<table class="table" id="messages-table">
+    
+    <tbody>
+
+{% for message in page_obj %}
+   
+   <tr>
+       {% if message.user == request.user %}
+       <td><text class="messages-guests">{{ message.user }}</text>  
+       {% else %}
+       <td><text class="messages-hotel">{{ message.user }}</text>
+       {% endif %}
+       <br>
+           <text class="messages-date">{{ message.date }}</text></td></td>
+       <td><text class="messages-comment">{{ message.message }}</text></td>
+       <td><span class="material-icons-outlined">delete</span></td>
+   </tr>         
+
+{% endfor %}
+
+   <tr>
+   <td colspan="4">
+     <nav>
+      <ul class="pagination">
+           
+           {% if page_obj.has_previous %}
+              <li class="page-item">
+               <a class="page-link" href="?page=1">&laquo; {% translate 'first' %}</a>
+              </li> 
+              <li class="page-item"> 
+               <a class="page-link" href="?page={{ page_obj.previous_page_number }}">{% translate 'previous' %}</a>
+              </li>
+               {% endif %}
+
+              <li class="page-item">
+                <a class="page-link reviews-active" href=""> Page {{ page_obj.number }} {% translate 'of' %} {{ page_obj.paginator.num_pages }}.</a>
+              </li>
+           
+           {% if page_obj.has_next %}
+               <li class="page-item">
+               <a class="page-link" href="?page={{ page_obj.next_page_number }}">{% translate 'next' %}</a>
+              </li>
+               <li class="page-item">
+               <a class="page-link"href="?page={{ page_obj.paginator.num_pages }}">{% translate 'last' %} &raquo;</a>
+              </li>
+           {% endif %}
+          
+      </ul>
+    </nav>
+   </td>
+   </tr>
+
+</tbody>
+</table> 
+
+{% else %} <!-- If there are no messages  -->
+
+ <div class="alert alert-warning border border-warning booking-info">
+   <div class="material-icons booking-info-icon">error</div>
+     <div> {% translate 'You don\'t have messages.' %} </div>
+ </div>
+
+{% endif %}
+
+{% else %} <!-- If user is not in Guests -->
+
+ <div class="alert alert-warning border border-warning booking-info">
+   <div class="material-icons booking-info-icon">error</div>
+     <div> {% translate 'You don\'t have messages.' %} </div>
+ </div>
+
+{% endif %}
+
+</div> <!-- Cierre del Col-Lg-6 -->
+
+<div class="col-lg-3 col-sm-12">
+</div>
+</div>
+
 {% endblock %}

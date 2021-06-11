@@ -27,7 +27,8 @@
         <i class="material-icons-outlined orders-info-icon" id="orders-icon">room_service</i>
              {% translate 'Room orders and services' %} </div>
        <div class="orders-info-normal"> {% translate 'Make here your requests to the room and reservation of services.' %} </div>
-     </div>
+       <div class="orders-info-normal"> {% translate 'All rates are in US dollars.' %} </div>
+      </div>
 
      <div class="orders-rates-title"> 
         {% translate 'Services & Rates' %}
@@ -56,7 +57,7 @@
 
       {% if is_guest %}
 
-      <div class="alert alert-info border border-info" id="orders-div">
+      <div class="alert border" id="orders-div">
 
         <table id="orders-table">
           <thead>
@@ -66,6 +67,7 @@
             </tr>
           </thead>
           <tbody>
+            <tr><td></td><td></td></tr>
             <tr>
               <td> 
                 {% if user.is_authenticated %}

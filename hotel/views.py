@@ -85,7 +85,7 @@ def invoice(request):
 
         guest = Guests.objects.get(guest=request.user)
         guest_booking = guest.booking
-        consumptions = Consumptions.objects.filter(user=request.user, booking=guest.booking).order_by('date')
+        consumptions = Consumptions.objects.filter(user=request.user, booking=guest.booking).order_by('-date')
 
         paginator = Paginator(consumptions, 16) # Show 16 consumptions per page.
 
@@ -102,8 +102,24 @@ def invoice(request):
 @csrf_exempt
 @login_required
 def messages(request):
+
+    # check if the user made the entry (check-in)
+    is_guest = Guests.objects.filter(guest=request.user).exists()
+
+    if is_guest:
+
+        messages = Messages.objects.filter(user=request.user).order_by('-date')
+
+        paginator = Paginator(messages, 10) # Show 10 messages per page.
+
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+
+        return render(request, "hotel/messages.html", {'page_obj': page_obj, 'is_guest': is_guest})
+
+    else:
     
-    return render(request, "hotel/messages.html")
+        return render(request, "hotel/messages.html", {'is_guest': is_guest})
 
 @csrf_exempt
 def bookings(request):
@@ -249,8 +265,7 @@ def bookings(request):
         triple_range = range(0, triple_available + 1)
         quadruple_range = range(0, quadruple_available + 1)
 
-        return render(request, "hotel/bookings.html", { 'label': 'availables',
-                                                        'check_in_date': checkInDate,
+        return render(request, "hotel/bookings.html", { 'check_in_date': checkInDate,
                                                         'check_out_date': checkOutDate,
                                                         'single_range': single_range,
                                                         'double_range': double_range,

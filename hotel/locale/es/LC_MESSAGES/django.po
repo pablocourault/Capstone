@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-08 19:16-0300\n"
+"POT-Creation-Date: 2021-06-10 21:14-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,99 +32,112 @@ msgstr ""
 "Recibe confirmación inmediata ¡con cancelación GRATUITA en la mayoría de "
 "habitaciones!"
 
-#: templates/hotel/bookings.html:32
+#: templates/hotel/bookings.html:29 templates/hotel/orders.html:30
+msgid "All rates are in US dollars."
+msgstr "Todas las tarifas son en dólares estadounidenses."
+
+#: templates/hotel/bookings.html:33
 msgid "Availability"
 msgstr "Disponibilidad"
 
-#: templates/hotel/bookings.html:37
+#: templates/hotel/bookings.html:38
 msgid "When would you like to stay at Hotel Le Monde?"
 msgstr "¿Cuándo quieres alojarte en el Hotel Le Monde?"
 
-#: templates/hotel/bookings.html:46 templates/hotel/mybookings.html:29
+#: templates/hotel/bookings.html:47 templates/hotel/mybookings.html:29
 #: templates/hotel/mybookings.html:68 templates/hotel/mybookings.html:106
 #: templates/hotel/mybookings.html:138
 msgid "Check In"
 msgstr "Entrada"
 
-#: templates/hotel/bookings.html:51 templates/hotel/mybookings.html:30
+#: templates/hotel/bookings.html:52 templates/hotel/mybookings.html:30
 #: templates/hotel/mybookings.html:69 templates/hotel/mybookings.html:99
 #: templates/hotel/mybookings.html:139
 msgid "Check Out"
 msgstr "Egreso"
 
-#: templates/hotel/bookings.html:56
+#: templates/hotel/bookings.html:57
 msgid "Check Availability"
 msgstr "Ver disponibilidad"
 
-#: templates/hotel/bookings.html:68
+#: templates/hotel/bookings.html:69
 msgid "Sleeps"
 msgstr "Capacidad"
 
-#: templates/hotel/bookings.html:69
+#: templates/hotel/bookings.html:70
 msgid "Room Type"
 msgstr "Tipo de habitación"
 
-#: templates/hotel/bookings.html:70
+#: templates/hotel/bookings.html:71
 msgid "Prices"
 msgstr "Precios"
 
-#: templates/hotel/bookings.html:70
+#: templates/hotel/bookings.html:71
 msgid "for one night"
 msgstr "por una noche"
 
-#: templates/hotel/bookings.html:71
+#: templates/hotel/bookings.html:72
 msgid "Select Rooms"
 msgstr "Elige Habitaciones"
 
-#: templates/hotel/bookings.html:77 templates/hotel/mybookings.html:34
+#: templates/hotel/bookings.html:78 templates/hotel/mybookings.html:34
+#: templates/hotel/mybookings.html:84
 msgid "Single"
 msgstr "Individual"
 
-#: templates/hotel/bookings.html:94
+#: templates/hotel/bookings.html:80 templates/hotel/bookings.html:101
+#: templates/hotel/bookings.html:123 templates/hotel/bookings.html:146
+msgid "availables"
+msgstr "disponibles"
+
+#: templates/hotel/bookings.html:95
 msgid "3 guests max, with a maximum of 2 adults."
 msgstr "3 personas en total, 2 adultos como máximo."
 
-#: templates/hotel/bookings.html:98 templates/hotel/mybookings.html:37
+#: templates/hotel/bookings.html:99 templates/hotel/mybookings.html:37
+#: templates/hotel/mybookings.html:87
 msgid "Double"
 msgstr "Doble"
 
-#: templates/hotel/bookings.html:117
+#: templates/hotel/bookings.html:118
 msgid "4 guests max, with a maximum of 3 adults."
 msgstr "4 personas en total, 3 adultos como máximo."
 
-#: templates/hotel/bookings.html:120 templates/hotel/mybookings.html:40
+#: templates/hotel/bookings.html:121 templates/hotel/mybookings.html:40
+#: templates/hotel/mybookings.html:90
 msgid "Triple"
 msgstr "Triple"
 
-#: templates/hotel/bookings.html:140
+#: templates/hotel/bookings.html:141
 msgid "5 guests max, with a maximum of 4 adults."
 msgstr "5 personas en total, 4 adultos como máximo."
 
-#: templates/hotel/bookings.html:143 templates/hotel/mybookings.html:43
+#: templates/hotel/bookings.html:144 templates/hotel/mybookings.html:43
+#: templates/hotel/mybookings.html:93
 msgid "Quadruple"
 msgstr "Cuádruple"
 
-#: templates/hotel/bookings.html:157
+#: templates/hotel/bookings.html:158
 msgid "Total for"
 msgstr "Total por"
 
-#: templates/hotel/bookings.html:157
+#: templates/hotel/bookings.html:158
 msgid "nights"
 msgstr "noches"
 
-#: templates/hotel/bookings.html:160
+#: templates/hotel/bookings.html:161
 msgid "Reserve"
 msgstr "Reservar"
 
-#: templates/hotel/bookings.html:184
+#: templates/hotel/bookings.html:185
 msgid "Confirmation is immediate"
 msgstr "Confirmación inmediata"
 
-#: templates/hotel/bookings.html:185
+#: templates/hotel/bookings.html:186
 msgid "Registration required"
 msgstr "Requiere registrarse."
 
-#: templates/hotel/bookings.html:186
+#: templates/hotel/bookings.html:187
 msgid "No booking or credit card fees!"
 msgstr "¡Sin cargos de gestión!"
 
@@ -621,55 +634,56 @@ msgstr ""
 msgid "We speak your language!"
 msgstr "¡Hablamos tu idioma!"
 
-#: templates/hotel/invoice.html:15 templates/hotel/layout.html:171
+#: templates/hotel/invoice.html:11 templates/hotel/layout.html:171
 msgid "Invoice"
 msgstr "Cuenta"
 
-#: templates/hotel/invoice.html:30
+#: templates/hotel/invoice.html:26
 msgid "Your bill is for a total of: $ "
 msgstr "Su cuenta es por un total de: $ "
 
-#: templates/hotel/invoice.html:30
+#: templates/hotel/invoice.html:26
 msgid "and this is the detail of your consumptions:"
 msgstr "y este es el detalle de sus consumos:"
 
-#: templates/hotel/invoice.html:36
+#: templates/hotel/invoice.html:32
 msgid "Date"
 msgstr "Fecha"
 
-#: templates/hotel/invoice.html:37 templates/hotel/orders.html:64
+#: templates/hotel/invoice.html:33 templates/hotel/orders.html:65
 msgid "Service"
 msgstr "Servicio"
 
-#: templates/hotel/invoice.html:38 templates/hotel/orders.html:65
+#: templates/hotel/invoice.html:34 templates/hotel/orders.html:66
 msgid "Quantity"
 msgstr "Cantidad"
 
-#: templates/hotel/invoice.html:39
+#: templates/hotel/invoice.html:35
 msgid "Amount"
 msgstr "Total"
 
-#: templates/hotel/invoice.html:79
+#: templates/hotel/invoice.html:77 templates/hotel/reviews.html:56
 msgid "first"
 msgstr "primera"
 
-#: templates/hotel/invoice.html:80
+#: templates/hotel/invoice.html:80 templates/hotel/reviews.html:59
 msgid "previous"
 msgstr "anterior"
 
-#: templates/hotel/invoice.html:84
+#: templates/hotel/invoice.html:85 templates/hotel/reviews.html:64
 msgid "of"
 msgstr "de"
 
-#: templates/hotel/invoice.html:88
+#: templates/hotel/invoice.html:90 templates/hotel/reviews.html:69
 msgid "next"
 msgstr "siguiente"
 
-#: templates/hotel/invoice.html:89
+#: templates/hotel/invoice.html:93 templates/hotel/reviews.html:72
 msgid "last"
 msgstr "última"
 
-#: templates/hotel/invoice.html:103 templates/hotel/invoice.html:112
+#: templates/hotel/invoice.html:109 templates/hotel/invoice.html:118
+#: templates/hotel/messages.html:37 templates/hotel/messages.html:46
 #: templates/hotel/mybookings.html:122
 msgid "You don\\"
 msgstr ""
@@ -788,23 +802,23 @@ msgstr "Pedidos a la habitación y servicios"
 msgid "Make here your requests to the room and reservation of services."
 msgstr "Haga sus pedidos a la habitación y reservas de servicios."
 
-#: templates/hotel/orders.html:33
+#: templates/hotel/orders.html:34
 msgid "Services & Rates"
 msgstr "Servicios & Tarifas"
 
-#: templates/hotel/orders.html:103
+#: templates/hotel/orders.html:105
 msgid "Order"
 msgstr "Pedir"
 
-#: templates/hotel/orders.html:112
+#: templates/hotel/orders.html:114
 msgid "Order Success!"
 msgstr "Pedido exitoso!"
 
-#: templates/hotel/orders.html:112
+#: templates/hotel/orders.html:114
 msgid "We have registered your order."
 msgstr "Hemos registrado su pedido"
 
-#: templates/hotel/orders.html:119
+#: templates/hotel/orders.html:121
 msgid "You must Check-In in order to use the services."
 msgstr "Debe hacer el Check-In para poder usar los servicios."
 
@@ -828,14 +842,64 @@ msgstr "Entrar aquí"
 msgid "Guests Reviews"
 msgstr "Comentarios"
 
+#: templates/hotel/reviews.html:15
+msgid "total average score"
+msgstr "Puntuación total promedio"
+
+#: templates/hotel/reviews.html:16
+msgid "on a scale of 1 to 5,"
+msgstr "en una escala del 1 al 5"
+
+#: templates/hotel/reviews.html:17
+msgid "based on"
+msgstr "basada en"
+
+#: templates/hotel/reviews.html:17
+msgid "reviews."
+msgstr "comentarios"
+
+#: templates/hotel/reviews.html:25
+#, python-format
+msgid "100%% real guest experiences."
+msgstr "experiencias 100%% reales"
+
+#: templates/hotel/reviews.html:31
+msgid "Guest"
+msgstr "Huésped"
+
+#: templates/hotel/reviews.html:32
+msgid "Review"
+msgstr "Comentario"
+
+#: templates/hotel/reviews.html:33
+msgid "Score"
+msgstr "Puntaje"
+
+#, fuzzy
+#~| msgid "Single"
+#~ msgid "Singles"
+#~ msgstr "Individual"
+
+#, fuzzy
+#~| msgid "Double"
+#~ msgid "Doubles"
+#~ msgstr "Doble"
+
+#, fuzzy
+#~| msgid "Triple"
+#~ msgid "Triples"
+#~ msgstr "Triple"
+
+#, fuzzy
+#~| msgid "Quadruple"
+#~ msgid "Quadruples"
+#~ msgstr "Cuádruple"
+
 #~ msgid "Break fast in the room (per person) "
 #~ msgstr "Desayuno en el cuarto (x persona) "
 
 #~ msgid "Pedir"
 #~ msgstr "Consumos"
-
-#~ msgid "USD"
-#~ msgstr "ARS"
 
 #~ msgid "The Final Print"
 #~ msgstr "Consideraciones Finales"

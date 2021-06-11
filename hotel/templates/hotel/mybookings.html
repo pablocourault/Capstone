@@ -81,16 +81,16 @@
           <td id='dateout-{{bk.id}}'> {{ bk.checkout_date }} </td>
           <td id='rooms-{{bk.id}}'> 
             {% if bk.singles > 0 %}
-               Singles: {{ bk.singles}}
+              {% translate 'Single' %}: {{ bk.singles}}
             {% endif %}
             {% if bk.doubles > 0 %}
-               Doubles: {{bk.doubles}}
+              {% translate 'Double' %}: {{bk.doubles}}
             {% endif %}
             {% if bk.triples > 0 %}
-               Triples: {{bk.triples}}
+              {% translate 'Triple' %}: {{bk.triples}}
             {% endif %}
             {% if bk.quadruples > 0 %}
-               quadruples: {{bk.quadruples}}
+              {% translate 'Quadruple' %}: {{bk.quadruples}}
             {% endif %} 
           </td>
           <td id='amount-{{bk.id}}'> {{ bk.amount}} </td>

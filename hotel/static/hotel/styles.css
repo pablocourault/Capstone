@@ -332,16 +332,16 @@ a.header-bookings-link:hover { color:lightblue }
 
 #reviews-table tbody td:nth-child(2) { text-align:justify; }
 
-#reviews-author { font-size: 0.8rem;
+.reviews-author { font-size: 0.8rem;
                   font-weight: 900; }
 
-#reviews-date { font-size: 0.5rem;
+.reviews-date { font-size: 0.5rem;
                 color: #444 }
 
-#reviews-comment { font-size: 0.7rem;
+.reviews-comment { font-size: 0.7rem;
                    color: #444 }
 
-#reviews-score { font-size: 0.8rem;
+.reviews-score { font-size: 0.8rem;
                  background: #BAACE3;
                  color: white;
                  padding: 0.4rem 0.5rem;
@@ -423,16 +423,16 @@ a.header-bookings-link:hover { color:lightblue }
                  padding-top: 0.8rem;
                  padding-bottom: 1rem; }
 
-.booking-info, .order-info { font-family: 'Comfortaa', cursive; }    
+.booking-info, .orders-info { font-family: 'Comfortaa', cursive; }    
 
 .booking-info-icon, .order-info-icon { vertical-align: bottom;
                                        float: left;
                                        padding-right: 0.2rem; }
 
-.booking-info-strong, .order-info-strong { font-weight: bolder;
+.booking-info-strong, .orders-info-strong { font-weight: bolder;
                                            font-size:small; }
 
-.booking-info-normal, .order-info-normal { font-weight:lighter;
+.booking-info-normal, .orders-info-normal { font-weight:lighter;
                                            font-size: smaller;
                                            padding-top: 0.4rem;
                                            padding-left: 1.4rem; }
@@ -451,7 +451,9 @@ a.header-bookings-link:hover { color:lightblue }
 
 .booking-form { padding-top: 0.1rem;
                 margin: 0;
-                display: inline-flex; }
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap; }
 
 .booking-form-checkin-label { font-size: small;
                               font-weight: bold;
@@ -463,7 +465,7 @@ a.header-bookings-link:hover { color:lightblue }
                                color: black;
                                margin-left: 16%; }
 
-.booking-btn, .btn-orders { font-size: small;
+.booking-btn, .btn-orders { font-size: smaller;
                             margin-top: 8px; }
 
 .booking-btn-reserve { font-size: smaller;}
@@ -472,6 +474,8 @@ a.header-bookings-link:hover { color:lightblue }
                       font-size: 20px; }
 
 .booking-table-leyend { font-size: 0.6rem;}
+
+.booking-table-div { padding: 0.2rem 0 0 0; }
 
 #booking-table { table-layout:auto;		  
                  border-style: none;
@@ -482,10 +486,10 @@ a.header-bookings-link:hover { color:lightblue }
                           font-size: smaller;
                           font-weight: normal;
                           padding: 0.4rem;
-                          border-left: 1px solid royalblue;
+                          border-left: 1px solid lightgray;
                           text-align: center;
                           color: white;
-                          background-color:royalblue }
+                          background-color: gray }
 
 #booking-table tbody td { font-family: 'Comfortaa', cursive;
                           font-size: small;
@@ -494,34 +498,34 @@ a.header-bookings-link:hover { color:lightblue }
                           text-align: center;
                           color: #444 }
 
-#booking-table tbody tr { border-bottom: 1px solid royalblue; }
+#booking-table tbody tr { border-bottom: 1px solid lightgray; }
 
-#booking-table tbody td:first-child { border-right: 1px solid royalblue;
+#booking-table tbody td:first-child { border-right: 1px solid lightgray;
                                       text-align: left;
                                       font-size: smaller;
                                       padding-right: 0; }
 
-#booking-table tbody td:nth-child(2) { border-right: 1px solid royalblue; }
-#booking-table tbody td:nth-child(3) { border-right: 1px solid royalblue; }
+#booking-table tbody td:nth-child(2) { border-right: 1px solid lightgray; }
+#booking-table tbody td:nth-child(3) { border-right: 1px solid lightgray; }
 #booking-table tbody td:nth-child(4) { text-align: right; }
 
 /* last row */
 #booking-table tbody tr:last-child {border-bottom: none; }
 
-#booking-table tbody tr:last-child td:nth-child(1) { border-right: 1px solid royalblue;
-                                                     color: royalblue;
+#booking-table tbody tr:last-child td:nth-child(1) { border-right: 1px solid lightgray;
+                                                     color: gray;
                                                      font-size:small;
                                                      font-weight: bold;
                                                      padding-top: 0.6rem;
                                                      padding-right: 0.8rem; ;
                                                      text-align: right; }
 
-#booking-table tbody tr:last-child td:nth-child(2) { border-right: 1px solid royalblue; }
+#booking-table tbody tr:last-child td:nth-child(2) { border-right: 1px solid lightgray; }
 
-#booking-table tbody tr:last-child td:nth-child(3) { border-right: none; }
+#booking-table tbody tr:last-child td:nth-child(3) { border-right: none;
+                                                     color: red }
 
-.booking-terms, .orders-terms { color: #dc3545;
-                                font-size: smaller;
+.booking-terms, .orders-terms { font-size: smaller;
                                 text-align: center; }
 
 
@@ -647,6 +651,8 @@ a.header-bookings-link:hover { color:lightblue }
                     padding: 2px;
                     text-align: left; }
 
+#orders-div { background: #F8F8F8; }
+
 #orders-form { margin: 0 }
 
 #orders-select { font-family: 'Comfortaa', cursive;
@@ -663,10 +669,9 @@ a.header-bookings-link:hover { color:lightblue }
                          font-size: smaller;
                          font-weight: normal;
                          padding: 0.4rem;
-                         border-left: 1px solid royalblue;
                          text-align: center;
                          color: white;
-                         background-color:royalblue }
+                         background-color: grey }
        
 #orders-table tbody td { font-family: 'Comfortaa', cursive;
                          font-size: small;
@@ -726,6 +731,31 @@ a.header-bookings-link:hover { color:lightblue }
 #invoice-table tbody td:nth-child(2) { text-align: left; }
 
 #invoice-table tbody td:last-child { text-align: right; }
+
+/* Styles for Messages */
+/* Styles for Messages */
+
+#messages-table  tbody td { font-family: 'Comfortaa', cursive;
+                            padding: 0.4rem;
+                            text-align: center; }
+
+.messages-guests { font-size: 0.8rem;
+                   font-weight: 900; }
+
+.messages-hotel { font-size: 0.8rem;
+                  font-weight: 900; }
+
+.messages-date { font-size: 0.5rem;
+                 color: #444 }
+
+.messages-comment { font-size: 0.7rem;
+         color: #444 }
+
+.messages-icon { font-size: 0.8rem;
+       background: #BAACE3;
+       color: white;
+       padding: 0.4rem 0.5rem;
+       border-radius: 0.4rem; }
 
 
 

@@ -26,6 +26,7 @@
       <div class="booking-info-strong">
             {% translate 'Lock in a great price for your upcoming stay' %} </div>
       <div class="booking-info-normal"> {% translate 'Get instant confirmation with FREE cancellation on most rooms!' %} </div>
+      <div class="booking-info-normal"> {% translate 'All rates are in US dollars.' %} </div>
     </div>
 
     <div class="booking-availability-title"> 
@@ -59,7 +60,7 @@
       </div>
     </div>
 
-    <div class="alert alert-info border border-info">
+    <div class="alert alert-light booking-table-div">
 
       <form action="{% url 'mybookings' %}" method="post" id="booking-reserve-form">
       <table id="booking-table">
@@ -76,7 +77,7 @@
             <td> <i class="material-icons booking-table-icon"> person </i></td>
             <td> {% translate 'Single' %} </td>
             <td id="single_rate"> {{ single_rate }} </td>
-            <td>{{ single_available }} {{ label }}&nbsp;
+            <td>{{ single_available }} {% translate 'availables' %}&nbsp;
             {% if user.is_authenticated %}
               <select id="singles-select">
                 {% for i in single_range %}
@@ -97,7 +98,7 @@
 
             <td> {% translate 'Double' %} </td>
             <td id="double_rate"> {{ double_rate }} </td>
-            <td>{{ double_available }} {{ label }}&nbsp;
+            <td>{{ double_available }} {% translate 'availables' %}&nbsp;
             {% if user.is_authenticated %} 
               <select id="doubles-select">
                 {% for i in double_range %}
@@ -119,7 +120,7 @@
                 </td>
             <td> {% translate 'Triple' %} </td>
             <td id="triple_rate"> {{ triple_rate }} </td>
-            <td>{{ triple_available }} {{ label }}&nbsp;
+            <td>{{ triple_available }} {% translate 'availables' %}&nbsp;
             {% if user.is_authenticated %} 
               <select id="triples-select">
                 {% for i in triple_range %}
@@ -142,7 +143,7 @@
                 </td>
             <td> {% translate 'Quadruple' %} </td>
             <td id="quadruple_rate"> {{ quadruple_rate }} </td>
-            <td>{{ quadruple_available }} {{ label }}&nbsp;
+            <td>{{ quadruple_available }} {% translate 'availables' %}&nbsp;
             {% if user.is_authenticated %} 
               <select id="quadruples-select">
                 {% for i in quadruple_range %}
@@ -180,7 +181,7 @@
 
     </div>
 
-    <div class="alert alert-danger border border-danger booking-terms">
+    <div class="alert alert-info booking-terms">
       &bull;&nbsp;{% translate 'Confirmation is immediate' %}
       &nbsp;&bull;&nbsp;{% translate 'Registration required' %}
       &nbsp;&bull;&nbsp;{% translate 'No booking or credit card fees!' %}

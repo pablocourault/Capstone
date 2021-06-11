@@ -12,8 +12,8 @@
     <div class="col-lg-3 col-sm-12">
       <div id="reviews-average-div">
       <div id="reviews-score-div">{{ average }}</div> <br> 
-                                                      {% translate 'total average score' %} <br>
-                                                      {% translate 'on a scale of 1 to 5,' %} <br>
+                                                      {% translate 'total average score' %}
+                                                      {% translate 'on a scale of 1 to 5,' %}
                                                       {% translate 'based on' %} {{ reviews }} {% translate 'reviews.' %} 
                                                       
     </div>
@@ -38,10 +38,10 @@
 {% for comment in page_obj %}
    
    <tr>
-       <td><text id="reviews-author" style="color:{{ name_color|random }}">{{ comment.user }}</text> <br> 
-           <text id="reviews-date">{{ comment.date }}</text></td>
-       <td><text id="reviews-comment">{{ comment.comment }}</text></td>
-       <td><text id="reviews-score">{{ comment.score }}</text></td>
+       <td><text class="reviews-author" style="color:{{ name_color|random }}">{{ comment.user }}</text> <br> 
+           <text class="reviews-date">{{ comment.date }}</text></td>
+       <td><text class="reviews-comment">{{ comment.comment }}</text></td>
+       <td><text class="reviews-score">{{ comment.score }}</text></td>
    </tr>         
 
 {% endfor %}
