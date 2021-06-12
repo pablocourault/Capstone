@@ -735,28 +735,62 @@ a.header-bookings-link:hover { color:lightblue }
 /* Styles for Messages */
 /* Styles for Messages */
 
+#messages-table { margin-top: 3.2rem; }
+
+#messages-table thead th { font-family: 'Comfortaa', cursive;
+                           font-size: 0,8rem;
+                           font-weight: normal;
+                           padding: 0.4rem;
+                           text-align: center; }
+
 #messages-table  tbody td { font-family: 'Comfortaa', cursive;
+                            font-size: 0.7rem;
                             padding: 0.4rem;
                             text-align: center; }
 
-.messages-guests { font-size: 0.8rem;
-                   font-weight: 900; }
+#messages-table  tbody td:nth-child(2) { font-weight: lighter; 
+                                         text-align: left; }
 
-.messages-hotel { font-size: 0.8rem;
-                  font-weight: 900; }
+.messages-guests { font-size: 0.9rem;
+                   font-weight: 900;
+                   color: darkred; }
+
+.messages-hotel { font-size: 0.9rem;
+                  font-weight: 900;
+                  color: mediumslateblue }
 
 .messages-date { font-size: 0.5rem;
                  color: #444 }
 
-.messages-comment { font-size: 0.7rem;
-         color: #444 }
+.messages-comment { font-size: 0.8rem;
+                    font-style: italic;    
+                    color: #444 }
 
-.messages-icon { font-size: 0.8rem;
-       background: #BAACE3;
-       color: white;
-       padding: 0.4rem 0.5rem;
-       border-radius: 0.4rem; }
+.messages-comment-hotel { font-size: 0.8rem;
+                          font-style: normal;
+                          color: #444 }
 
+.messages-delete { font-size: 1.6rem;
+                   color: indianred;
+                   cursor: pointer; }
+
+.messages-delete:hover { color:lightsalmon;}
+
+.messages-textarea-title { font-size: 0.8rem;
+                           color: #4300D2; }
+
+#messages-forms { padding: 0.4rem;
+                  justify-content: space-around; }
+
+#messages-textarea { resize: none;
+                    font-family: 'Comfortaa', cursive;
+                    font-size: smaller;
+                    font-weight:lighter;
+                    color: #444 }
+
+.messages-btn { font-size: 0.6rem;
+                float: right;
+                margin: 0.5rem }
 
 
 /* Styles for gallery */

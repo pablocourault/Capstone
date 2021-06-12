@@ -23,7 +23,8 @@ urlpatterns = [
     # API Routes
     path("deletebooking", views.deletebooking, name="deletebooking"),
     path("checkinbooking", views.checkinbooking, name="checkinbooking"),
-    path("makeanorder", views.makeanorder, name="makeanorder")
+    path("makeanorder", views.makeanorder, name="makeanorder"),
+    path("deletemessage", views.deletemessage, name="deletemessage"),
 
 ]
 

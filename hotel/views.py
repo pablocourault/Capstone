@@ -10,7 +10,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.http import JsonResponse
-from django.db.models import Sum, Avg
+from django.db.models import Sum, Avg, Q
 from django.core.paginator import Paginator
 from .models import User, Room, Guests, Bookings, Consumptions, Services, Comments, Messages
 
@@ -103,23 +103,33 @@ def invoice(request):
 @login_required
 def messages(request):
 
-    # check if the user made the entry (check-in)
-    is_guest = Guests.objects.filter(guest=request.user).exists()
-
-    if is_guest:
-
-        messages = Messages.objects.filter(user=request.user).order_by('-date')
-
+        messages = Messages.objects.filter(Q(user=request.user) | Q(addressee=request.user)).order_by('-date')
         paginator = Paginator(messages, 10) # Show 10 messages per page.
 
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
 
-        return render(request, "hotel/messages.html", {'page_obj': page_obj, 'is_guest': is_guest})
+        return render(request, "hotel/messages.html", {'page_obj': page_obj})
 
+
+
+@csrf_exempt
+@login_required
+def deletemessage(request):
+
+    data = json.loads(request.body)
+    message_id = data.get("message_id","")
+ 
+    query = Messages.objects.filter(id=message_id).delete()
+
+    # test if delete was successful 
+    if query[0] > 0:
+        return JsonResponse({'message': 'Message deleted.'}, status=201)
     else:
-    
-        return render(request, "hotel/messages.html", {'is_guest': is_guest})
+        return JsonResponse({'message': 'Error: Message has already been deleted.'}, status=400)
+
+
+
 
 @csrf_exempt
 def bookings(request):
