@@ -112,6 +112,24 @@ def messages(request):
         return render(request, "hotel/messages.html", {'page_obj': page_obj})
 
 
+@csrf_exempt
+@login_required
+def sendmessage(request):
+
+    data = json.loads(request.body)
+    message_content = data.get("message_content","")
+    # all messages are for the hotel management 
+    addressee = User.objects.get(username='adminhotel')
+
+    try:
+        new_message = Messages(user=request.user,
+                               addressee = addressee,
+                               message = message_content)
+        new_message.save()
+    except IntegrityError:
+        return JsonResponse({'message': 'Error in send message.'}, status=401)
+    return JsonResponse({'message': 'Successful message.'}, status=201)
+
 
 @csrf_exempt
 @login_required
@@ -129,7 +147,14 @@ def deletemessage(request):
         return JsonResponse({'message': 'Error: Message has already been deleted.'}, status=400)
 
 
+@csrf_exempt
+@login_required
+def unreadmessages(request):
 
+    adminhotel = User.objects.get(username='adminhotel')
+    unreaded = Messages.objects.filter(user=adminhotel).filter(state='u').count()
+
+    return JsonResponse({'unreaded': unreaded})
 
 @csrf_exempt
 def bookings(request):

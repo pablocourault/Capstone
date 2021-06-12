@@ -1,5 +1,14 @@
 {% extends "hotel/layout.html" %}
 {% load i18n %}
+
+{% load static %}
+
+{% block script %}
+    {% if user.is_authenticated %}
+    <script src="{% static 'hotel/common.js' %}"></script>
+    {% endif %}
+{% endblock %}
+
 {% block body %}
 
   <div class="row">

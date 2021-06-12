@@ -235,6 +235,7 @@ PARA EL FINAL
 - IMPORTANTE: Revisar todo el enunciado del trabajo final que no me falte nada.
 - Ver que no arroje errores de javascript.
 - Aclarar en el README todo lo que se puede hacer en la parte de Django Admin.
+  Y que el usuario admin es adminhotel password abc123.
 - PROBAR MUY BIEN que funcione todo, si hago un check-in que agregue el primer consumo, 
   si hago un consumo que actualize el total del booking y el listado de consumptions,
   si hago el check-out que borre de guest y los consumos y los mensajes, etc, etc, etc.

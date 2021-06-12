@@ -24,7 +24,9 @@ urlpatterns = [
     path("deletebooking", views.deletebooking, name="deletebooking"),
     path("checkinbooking", views.checkinbooking, name="checkinbooking"),
     path("makeanorder", views.makeanorder, name="makeanorder"),
+    path("sendmessage", views.sendmessage, name="sendmessage"),
     path("deletemessage", views.deletemessage, name="deletemessage"),
+    path("unreadmessages", views.unreadmessages, name="unreadmessages"),
 
 ]
 

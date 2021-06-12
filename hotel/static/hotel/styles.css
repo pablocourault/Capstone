@@ -783,15 +783,18 @@ a.header-bookings-link:hover { color:lightblue }
                   justify-content: space-around; }
 
 #messages-textarea { resize: none;
-                    font-family: 'Comfortaa', cursive;
-                    font-size: smaller;
-                    font-weight:lighter;
-                    color: #444 }
+                     font-family: 'Comfortaa', cursive;
+                     font-size: smaller;
+                     font-weight:lighter;
+                     color: #444 }
 
 .messages-btn { font-size: 0.6rem;
                 float: right;
                 margin: 0.5rem }
 
+#messages-unreaded { font-family: 'Comfortaa', cursive;
+                     font-size: smaller;
+                     color:#ff5050 }
 
 /* Styles for gallery */
 /* Styles for gallery */

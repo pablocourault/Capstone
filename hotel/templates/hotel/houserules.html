@@ -2,6 +2,15 @@
 {% load i18n %}
 {% block body %}
 
+{% load static %}
+
+{% block script %}
+    {% if user.is_authenticated %}
+    <script src="{% static 'hotel/common.js' %}"></script>
+    {% endif %}
+{% endblock %}
+
+
    <div class="row">
        <div class="col-lg-12 col-sm-12 house-rules-title"> 
        {% translate 'House Rules' %}
