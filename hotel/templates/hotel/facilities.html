@@ -1,7 +1,5 @@
 {% extends "hotel/layout.html" %}
 {% load i18n %}
-{% block body %}
-
 {% load static %}
 
 {% block script %}
@@ -9,6 +7,8 @@
     <script src="{% static 'hotel/common.js' %}"></script>
     {% endif %}
 {% endblock %}
+
+{% block body %}
 
   <div class="row">
     <div class="col-lg-12 col-sm-12 facilities-title"> 
@@ -221,8 +221,6 @@
     <div class="col-lg-3 col-sm-12 facilities-others">
     </div>
   </div>
-
- 
 
 
 {% endblock %}

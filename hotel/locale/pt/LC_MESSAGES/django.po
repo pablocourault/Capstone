@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-10 21:14-0300\n"
+"POT-Creation-Date: 2021-06-13 11:43-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,406 +18,406 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: templates/hotel/bookings.html:14 templates/hotel/layout.html:117
+#: templates/hotel/bookings.html:17 templates/hotel/layout.html:114
 msgid "Bookings"
 msgstr "Reservaciones"
 
-#: templates/hotel/bookings.html:27
+#: templates/hotel/bookings.html:30
 msgid "Lock in a great price for your upcoming stay"
 msgstr "Garanta um ótimo preço para sua próxima estadia"
 
-#: templates/hotel/bookings.html:28
+#: templates/hotel/bookings.html:31
 msgid "Get instant confirmation with FREE cancellation on most rooms!"
 msgstr ""
 "Confirmação na hora e cancelamento GRATUITO para a maioria dos quartos!"
 
-#: templates/hotel/bookings.html:29 templates/hotel/orders.html:30
+#: templates/hotel/bookings.html:32 templates/hotel/orders.html:31
 msgid "All rates are in US dollars."
 msgstr "Todas as taxas estão em dólares americanos."
 
-#: templates/hotel/bookings.html:33
+#: templates/hotel/bookings.html:36
 msgid "Availability"
 msgstr "Disponibilidade"
 
-#: templates/hotel/bookings.html:38
+#: templates/hotel/bookings.html:41
 msgid "When would you like to stay at Hotel Le Monde?"
 msgstr "Quando você quer se hospedar no(a) Hotel Le Monde?"
 
-#: templates/hotel/bookings.html:47 templates/hotel/mybookings.html:29
+#: templates/hotel/bookings.html:50 templates/hotel/mybookings.html:29
 #: templates/hotel/mybookings.html:68 templates/hotel/mybookings.html:106
 #: templates/hotel/mybookings.html:138
 msgid "Check In"
 msgstr "Entrada"
 
-#: templates/hotel/bookings.html:52 templates/hotel/mybookings.html:30
+#: templates/hotel/bookings.html:55 templates/hotel/mybookings.html:30
 #: templates/hotel/mybookings.html:69 templates/hotel/mybookings.html:99
 #: templates/hotel/mybookings.html:139
 msgid "Check Out"
 msgstr "Saída"
 
-#: templates/hotel/bookings.html:57
+#: templates/hotel/bookings.html:60
 msgid "Check Availability"
 msgstr "Verificar disponibilidade"
 
-#: templates/hotel/bookings.html:69
+#: templates/hotel/bookings.html:72
 msgid "Sleeps"
 msgstr "Acomoda"
 
-#: templates/hotel/bookings.html:70
+#: templates/hotel/bookings.html:73
 msgid "Room Type"
 msgstr "Tipo de quarto"
 
-#: templates/hotel/bookings.html:71
+#: templates/hotel/bookings.html:74
 msgid "Prices"
 msgstr "Preços"
 
-#: templates/hotel/bookings.html:71
+#: templates/hotel/bookings.html:74
 msgid "for one night"
 msgstr "por uma noite"
 
-#: templates/hotel/bookings.html:72
+#: templates/hotel/bookings.html:75
 msgid "Select Rooms"
 msgstr "Selecione Quarto"
 
-#: templates/hotel/bookings.html:78 templates/hotel/mybookings.html:34
+#: templates/hotel/bookings.html:81 templates/hotel/mybookings.html:34
 #: templates/hotel/mybookings.html:84
 msgid "Single"
 msgstr "Individual"
 
-#: templates/hotel/bookings.html:80 templates/hotel/bookings.html:101
-#: templates/hotel/bookings.html:123 templates/hotel/bookings.html:146
+#: templates/hotel/bookings.html:83 templates/hotel/bookings.html:104
+#: templates/hotel/bookings.html:126 templates/hotel/bookings.html:149
 msgid "availables"
 msgstr "disponível"
 
-#: templates/hotel/bookings.html:95
+#: templates/hotel/bookings.html:98
 msgid "3 guests max, with a maximum of 2 adults."
 msgstr "3 hóspedes en total, 2 adultos no máximo."
 
-#: templates/hotel/bookings.html:99 templates/hotel/mybookings.html:37
+#: templates/hotel/bookings.html:102 templates/hotel/mybookings.html:37
 #: templates/hotel/mybookings.html:87
 msgid "Double"
 msgstr "Duplo"
 
-#: templates/hotel/bookings.html:118
+#: templates/hotel/bookings.html:121
 msgid "4 guests max, with a maximum of 3 adults."
 msgstr "4 hóspedes en total, 3 adultos no máximo."
 
-#: templates/hotel/bookings.html:121 templates/hotel/mybookings.html:40
+#: templates/hotel/bookings.html:124 templates/hotel/mybookings.html:40
 #: templates/hotel/mybookings.html:90
 msgid "Triple"
 msgstr "Triplo"
 
-#: templates/hotel/bookings.html:141
+#: templates/hotel/bookings.html:144
 msgid "5 guests max, with a maximum of 4 adults."
 msgstr "5 hóspedes en total, 4 adultos no máximo."
 
-#: templates/hotel/bookings.html:144 templates/hotel/mybookings.html:43
+#: templates/hotel/bookings.html:147 templates/hotel/mybookings.html:43
 #: templates/hotel/mybookings.html:93
 msgid "Quadruple"
 msgstr "Quádruplo"
 
-#: templates/hotel/bookings.html:158
+#: templates/hotel/bookings.html:161
 msgid "Total for"
 msgstr "Total por"
 
-#: templates/hotel/bookings.html:158
+#: templates/hotel/bookings.html:161
 msgid "nights"
 msgstr "noites"
 
-#: templates/hotel/bookings.html:161
+#: templates/hotel/bookings.html:164
 msgid "Reserve"
 msgstr "Reserva"
 
-#: templates/hotel/bookings.html:185
+#: templates/hotel/bookings.html:188
 msgid "Confirmation is immediate"
 msgstr "Confirmação imediata"
 
-#: templates/hotel/bookings.html:186
+#: templates/hotel/bookings.html:189
 msgid "Registration required"
 msgstr "É necessário ter conta"
 
-#: templates/hotel/bookings.html:187
+#: templates/hotel/bookings.html:190
 msgid "No booking or credit card fees!"
 msgstr "Sem taxas de reserva!"
 
-#: templates/hotel/facilities.html:7
+#: templates/hotel/facilities.html:15
 msgid "Most Popular Facilities And Services"
 msgstr "Principais instalações e comodidades"
 
-#: templates/hotel/facilities.html:16
+#: templates/hotel/facilities.html:24
 msgid "WiFi available in all areas"
 msgstr "Acesso Wi-Fi disponível em todas as áreas"
 
-#: templates/hotel/facilities.html:20
+#: templates/hotel/facilities.html:28
 msgid "Non-smoking rooms"
 msgstr "Quartos para não fumantes"
 
-#: templates/hotel/facilities.html:24
+#: templates/hotel/facilities.html:32
 msgid "Private bathroom"
 msgstr "Banheiro privado"
 
-#: templates/hotel/facilities.html:28
+#: templates/hotel/facilities.html:36
 msgid "Breakfast included"
 msgstr "Café da manhã incluso"
 
-#: templates/hotel/facilities.html:40
+#: templates/hotel/facilities.html:48
 msgid "Currency exchange"
 msgstr "Câmbio monetário"
 
-#: templates/hotel/facilities.html:44
+#: templates/hotel/facilities.html:52
 msgid "Family rooms"
 msgstr "Quartos para famílias"
 
-#: templates/hotel/facilities.html:48
+#: templates/hotel/facilities.html:56
 msgid "Airport shuttle (additional charge)"
 msgstr "Transfer para o aeroporto (Custo adicional)"
 
-#: templates/hotel/facilities.html:52
+#: templates/hotel/facilities.html:60
 msgid "Parking garage"
 msgstr "Garagem de Estacionamento"
 
-#: templates/hotel/facilities.html:66
+#: templates/hotel/facilities.html:74
 msgid "Accessibility"
 msgstr "Acessibilidade"
 
-#: templates/hotel/facilities.html:70
+#: templates/hotel/facilities.html:78
 msgid "Bathroom emergency cord"
 msgstr "Cordão de emergência no banheiro"
 
-#: templates/hotel/facilities.html:71
+#: templates/hotel/facilities.html:79
 msgid "Elevator"
 msgstr "Elevador"
 
-#: templates/hotel/facilities.html:72
+#: templates/hotel/facilities.html:80
 msgid "Entire unit wheelchair accessible"
 msgstr "Acessível para cadeiras de rodas"
 
-#: templates/hotel/facilities.html:77
+#: templates/hotel/facilities.html:85
 msgid "Bathroom"
 msgstr "Banheiro"
 
-#: templates/hotel/facilities.html:81
+#: templates/hotel/facilities.html:89
 msgid "Bath"
 msgstr "Banheiro"
 
-#: templates/hotel/facilities.html:82
+#: templates/hotel/facilities.html:90
 msgid "Bidet"
 msgstr "Bidê"
 
-#: templates/hotel/facilities.html:83
+#: templates/hotel/facilities.html:91
 msgid "Free toiletries"
 msgstr "Produtos de higiene gratuitos"
 
-#: templates/hotel/facilities.html:84
+#: templates/hotel/facilities.html:92
 msgid "Hand Sanitiser"
 msgstr "Álcool em gel disponível"
 
-#: templates/hotel/facilities.html:85
+#: templates/hotel/facilities.html:93
 msgid "Shower"
 msgstr "Chuveiro"
 
-#: templates/hotel/facilities.html:86
+#: templates/hotel/facilities.html:94
 msgid "Toilet paper"
 msgstr "Papel higiênico"
 
-#: templates/hotel/facilities.html:87
+#: templates/hotel/facilities.html:95
 msgid "Towels/Sheets"
 msgstr "Toalhas e lençóis"
 
-#: templates/hotel/facilities.html:92
+#: templates/hotel/facilities.html:100
 msgid "Bedroom"
 msgstr "Dormitório"
 
-#: templates/hotel/facilities.html:96
+#: templates/hotel/facilities.html:104
 msgid "Baby cribs"
 msgstr "Berços"
 
-#: templates/hotel/facilities.html:97
+#: templates/hotel/facilities.html:105
 msgid "Socket near the bed"
 msgstr "Plugue perto da cama"
 
-#: templates/hotel/facilities.html:98
+#: templates/hotel/facilities.html:106
 msgid "Wardrobe or closet"
 msgstr "Guarda-roupa ou armário"
 
-#: templates/hotel/facilities.html:103
+#: templates/hotel/facilities.html:111
 msgid "Business facilities"
 msgstr "Instalações para negócios"
 
-#: templates/hotel/facilities.html:107
+#: templates/hotel/facilities.html:115
 msgid "Fax/Photocopying"
 msgstr "Fax/Fotocópia"
 
-#: templates/hotel/facilities.html:108
+#: templates/hotel/facilities.html:116
 msgid "Interpreter"
 msgstr "Intérprete"
 
-#: templates/hotel/facilities.html:109
+#: templates/hotel/facilities.html:117
 msgid "Meeting room"
 msgstr "Comodidades para reuniões"
 
-#: templates/hotel/facilities.html:109 templates/hotel/facilities.html:123
-#: templates/hotel/facilities.html:124
+#: templates/hotel/facilities.html:117 templates/hotel/facilities.html:131
+#: templates/hotel/facilities.html:132
 msgid "(additional charge)"
 msgstr "(Custo adicional)"
 
-#: templates/hotel/facilities.html:118
+#: templates/hotel/facilities.html:126
 msgid "Cleaning Services"
 msgstr "Serviços de limpeza"
 
-#: templates/hotel/facilities.html:122
+#: templates/hotel/facilities.html:130
 msgid "Daily housekeeping"
 msgstr "Serviço de limpeza diário"
 
-#: templates/hotel/facilities.html:123
+#: templates/hotel/facilities.html:131
 msgid "Ironing service"
 msgstr "Engomadoria"
 
-#: templates/hotel/facilities.html:124
+#: templates/hotel/facilities.html:132
 msgid "Laundry"
 msgstr "Lavanderia"
 
-#: templates/hotel/facilities.html:130
+#: templates/hotel/facilities.html:138
 msgid "Kitchen"
 msgstr "Cozinha"
 
-#: templates/hotel/facilities.html:134
+#: templates/hotel/facilities.html:142
 msgid "Dining table"
 msgstr "Mesa de café da manhã"
 
-#: templates/hotel/facilities.html:135
+#: templates/hotel/facilities.html:143
 msgid "Microwave"
 msgstr "Microondas"
 
-#: templates/hotel/facilities.html:136
+#: templates/hotel/facilities.html:144
 msgid "Minibar"
 msgstr "Minibar"
 
-#: templates/hotel/facilities.html:141
+#: templates/hotel/facilities.html:149
 msgid "Languages Spoken"
 msgstr "Idiomas falados"
 
-#: templates/hotel/facilities.html:145
+#: templates/hotel/facilities.html:153
 msgid "English"
 msgstr "Inglês"
 
-#: templates/hotel/facilities.html:146
+#: templates/hotel/facilities.html:154
 msgid "Spanish"
 msgstr "Espanhol"
 
-#: templates/hotel/facilities.html:147
+#: templates/hotel/facilities.html:155
 msgid "Portuguese"
 msgstr "Português"
 
-#: templates/hotel/facilities.html:152
+#: templates/hotel/facilities.html:160
 msgid "Parking"
 msgstr "Estacionamento"
 
-#: templates/hotel/facilities.html:156
+#: templates/hotel/facilities.html:164
 msgid "Free Parking"
 msgstr "Estacionamento próprio"
 
-#: templates/hotel/facilities.html:161 templates/hotel/houserules.html:125
+#: templates/hotel/facilities.html:169 templates/hotel/houserules.html:134
 msgid "Pets"
 msgstr "Animais de estimação"
 
-#: templates/hotel/facilities.html:165
+#: templates/hotel/facilities.html:173
 msgid "Pets are not allowed"
 msgstr "Não são permitidos animais"
 
-#: templates/hotel/facilities.html:174
+#: templates/hotel/facilities.html:182
 msgid "Front desk services"
 msgstr "Recepção"
 
-#: templates/hotel/facilities.html:178
+#: templates/hotel/facilities.html:186
 msgid "24-hour front desk"
 msgstr "Recepção 24 horas"
 
-#: templates/hotel/facilities.html:179
+#: templates/hotel/facilities.html:187
 msgid "Luggage storage"
 msgstr "Depósito de bagagens"
 
-#: templates/hotel/facilities.html:180
+#: templates/hotel/facilities.html:188
 msgid "Wake up service"
 msgstr "Serviço de Alarme"
 
-#: templates/hotel/facilities.html:185
+#: templates/hotel/facilities.html:193
 msgid "Room Amenities"
 msgstr "Quartos"
 
-#: templates/hotel/facilities.html:189
+#: templates/hotel/facilities.html:197
 msgid "Air conditioning"
 msgstr "Ar condicionado"
 
-#: templates/hotel/facilities.html:190
+#: templates/hotel/facilities.html:198
 msgid "Cable channels"
 msgstr "TV a cabo"
 
-#: templates/hotel/facilities.html:191
+#: templates/hotel/facilities.html:199
 msgid "Heating"
 msgstr "Aquecimento"
 
-#: templates/hotel/facilities.html:192
+#: templates/hotel/facilities.html:200
 msgid "Soundproofing"
 msgstr "Insonorização"
 
-#: templates/hotel/facilities.html:193
+#: templates/hotel/facilities.html:201
 msgid "Streaming service"
 msgstr "Transmissão sob demanda"
 
-#: templates/hotel/facilities.html:193
+#: templates/hotel/facilities.html:201
 msgid "(like Netflix)"
 msgstr "(como Netflix)"
 
-#: templates/hotel/facilities.html:194
+#: templates/hotel/facilities.html:202
 msgid "Telephone"
 msgstr "Telefone"
 
-#: templates/hotel/facilities.html:201
+#: templates/hotel/facilities.html:209
 msgid "Safety & Security"
 msgstr "Segurança"
 
-#: templates/hotel/facilities.html:205
+#: templates/hotel/facilities.html:213
 msgid "24-hour security"
 msgstr "Segurança 24 horas"
 
-#: templates/hotel/facilities.html:206
+#: templates/hotel/facilities.html:214
 msgid "CCTV in commons areas"
 msgstr "CCTV nas áreas comuns"
 
-#: templates/hotel/facilities.html:207
+#: templates/hotel/facilities.html:215
 msgid "Safety deposit box"
 msgstr "Caixa de segurança"
 
-#: templates/hotel/facilities.html:208
+#: templates/hotel/facilities.html:216
 msgid "Smoke alarms"
 msgstr "Detector de fumaça"
 
-#: templates/hotel/faqs.html:14
+#: templates/hotel/faqs.html:16
 msgid "Frequently Asked Questions"
 msgstr "Perguntas frequentes"
 
-#: templates/hotel/faqs.html:25
+#: templates/hotel/faqs.html:27
 msgid "Can i park a car at Hotel Le Monde?"
 msgstr "Posso estacionar o carro em Hotel Le Monde?"
 
-#: templates/hotel/faqs.html:29
+#: templates/hotel/faqs.html:31
 msgid "Yes (subject to availability), book in advance."
 msgstr "Sim (sujeitas a disponibilidade), reserve com antecedência."
 
-#: templates/hotel/faqs.html:33
+#: templates/hotel/faqs.html:35
 msgid "What kind of breakfast is served at Hotel Le Monde?"
 msgstr "Que tipo de café da manhã é servido em Hotel Le Monde?"
 
-#: templates/hotel/faqs.html:38
+#: templates/hotel/faqs.html:40
 msgid "Breakfast option(s) include: Gluten-free, American and Buffet."
 msgstr "Tipo(s) de café da manhã: Glúten-free, Americano, Buffet."
 
-#: templates/hotel/faqs.html:42
+#: templates/hotel/faqs.html:44
 msgid "What type of room can i book at Hotel Le Monde"
 msgstr "Que tipo de quarto eu posso reservar em Hotel Le Monde?"
 
-#: templates/hotel/faqs.html:47
+#: templates/hotel/faqs.html:49
 msgid ""
 "Room options at Hotel Le Monde include: Twin/Double, Triple, Quad, Single, "
 "Family"
@@ -425,11 +425,11 @@ msgstr ""
 "As opções de quarto em Hotel Le Monde são: Twin/Duplo, Triplo, Quádruplo, "
 "Individual, Familiar."
 
-#: templates/hotel/faqs.html:51
+#: templates/hotel/faqs.html:53
 msgid "How much does it cost to stay at Hotel Le Monde?"
 msgstr "Quanto custa ficar em Hotel Le Monde?"
 
-#: templates/hotel/faqs.html:56
+#: templates/hotel/faqs.html:58
 msgid ""
 "The prices at Hotel Le Monde may vary depending on your stay (e.g. dates, "
 "hotel&#39;s policy etc.). To see prices, enter your dates."
@@ -437,90 +437,90 @@ msgstr ""
 "Os preços em Hotel Le Monde podem variar dependendo da sua estadia (ex: suas "
 "datas, políticas do hotel etc.). Insira as datas para ver os preços."
 
-#: templates/hotel/faqs.html:60
+#: templates/hotel/faqs.html:62
 msgid "How far is Hotel Le Monde from the center of the City?"
 msgstr "O centro de cidade fica a que distância de Hotel Le Monde?"
 
-#: templates/hotel/faqs.html:65
+#: templates/hotel/faqs.html:67
 msgid "Hotel Le Monde is 700 meters from the city center."
 msgstr "Hotel Le Monde fica a 700 metros do centro da cidade."
 
-#: templates/hotel/faqs.html:69
+#: templates/hotel/faqs.html:71
 msgid "How do I get to Hotel Le Monde from the nearest airport?"
 msgstr ""
 "Como posso chegar em Hotel Le Monde a partir do aeroporto mais próximo?"
 
-#: templates/hotel/faqs.html:74
+#: templates/hotel/faqs.html:76
 msgid "From the nearest airport, you can get to Hotel Le Monde by:"
 msgstr ""
 "A partir do aeroporto mais próximo, você pode chegar em Hotel Le Monde de:"
 
-#: templates/hotel/faqs.html:74
+#: templates/hotel/faqs.html:76
 msgid "Taxi (40 min), Metro (15 min), Bus (60 min)"
 msgstr "Taxi (40 min), Metro (15 min), Bus (60 min)"
 
-#: templates/hotel/faqs.html:78
+#: templates/hotel/faqs.html:80
 msgid "What are the check-in and check-out times at Hotel Le Monde?"
 msgstr "Quais são os horários de check-in e check-out em Hotel Le Monde?"
 
-#: templates/hotel/faqs.html:83
+#: templates/hotel/faqs.html:85
 msgid ""
 "Check-in at Hotel Le Monde is from 3:00 PM, and check-out is until 12:00 PM."
 msgstr ""
 "O check-in em Hotel Le Monde é a partir das 15:00. O check-out é até as "
 "12:00."
 
-#: templates/hotel/faqs.html:87
+#: templates/hotel/faqs.html:89
 msgid "Does Hotel Le Monde have a restaurant on site?"
 msgstr "Hotel Le Monde tem um restaurante no local?"
 
-#: templates/hotel/faqs.html:92
+#: templates/hotel/faqs.html:94
 msgid "Hotel Le Monde has 1 restaurant: OVIDIO"
 msgstr "Hotel Le Monde tem 1 restaurant: OVIDIO"
 
-#: templates/hotel/houserules.html:7 templates/hotel/layout.html:135
+#: templates/hotel/houserules.html:16 templates/hotel/layout.html:132
 msgid "House Rules"
 msgstr "Regras da casa"
 
-#: templates/hotel/houserules.html:17
+#: templates/hotel/houserules.html:26
 msgid "Check-in"
 msgstr "Entrada"
 
-#: templates/hotel/houserules.html:32
+#: templates/hotel/houserules.html:41
 msgid "Guests are required to show a photo ID and credit card at check-in."
 msgstr ""
 "Você deve apresentar um documento de identidade e um cartão de crédito no "
 "momento do check-in."
 
-#: templates/hotel/houserules.html:45
+#: templates/hotel/houserules.html:54
 msgid "Check-out"
 msgstr "Saída"
 
-#: templates/hotel/houserules.html:71
+#: templates/hotel/houserules.html:80
 msgid "Cancellation"
 msgstr "Cancelamento"
 
-#: templates/hotel/houserules.html:75
+#: templates/hotel/houserules.html:84
 msgid ""
 "Cancellation and prepayment policies vary according to accommodations type."
 msgstr ""
 "As políticas de cancelamento e pré-pagamento variam de acordo com o tipo de "
 "acomodação."
 
-#: templates/hotel/houserules.html:88
+#: templates/hotel/houserules.html:97
 msgid "Children & Beds"
 msgstr "Crianças & Camas"
 
-#: templates/hotel/houserules.html:92
+#: templates/hotel/houserules.html:101
 msgid "Children of all ages are welcome."
 msgstr "Crianças de todas as idades são bem vindas."
 
-#: templates/hotel/houserules.html:93
+#: templates/hotel/houserules.html:102
 msgid "Children 6 and above are considered adults at this property."
 msgstr ""
 "Nesta propriedade, as crianças de 6 anos ou mais são consideradas adultos."
 
-#: templates/hotel/houserules.html:94
+#: templates/hotel/houserules.html:103
 msgid ""
 "To see correct prices and occupancy info, add the number and ages of "
 "children in your group to your search."
@@ -528,7 +528,7 @@ msgstr ""
 "Para ver os preços corretos e informações de ocupação, adicione o número e "
 "as idades das crianças do seu grupo à sua pesquisa."
 
-#: templates/hotel/houserules.html:95
+#: templates/hotel/houserules.html:104
 msgid ""
 "The maximum number of cribs allowed depends on the room you choose. Double-"
 "check the maximum capacity for the room you selected."
@@ -536,23 +536,23 @@ msgstr ""
 "O número máximo de berços permitidos depende do quarto que você escolher. "
 "Verifique a capacidade máxima da sala que você selecionou."
 
-#: templates/hotel/houserules.html:108
+#: templates/hotel/houserules.html:117
 msgid "Age restriction"
 msgstr "Restrição de idade"
 
-#: templates/hotel/houserules.html:112
+#: templates/hotel/houserules.html:121
 msgid "The minimum age for check-in is 18."
 msgstr "A idade mínima para o check-in é 18 anos."
 
-#: templates/hotel/houserules.html:129
+#: templates/hotel/houserules.html:138
 msgid "Pets are not allowed."
 msgstr "Não são permitidos animais"
 
-#: templates/hotel/houserules.html:142
+#: templates/hotel/houserules.html:151
 msgid "Groups"
 msgstr "Grupos"
 
-#: templates/hotel/houserules.html:146
+#: templates/hotel/houserules.html:155
 msgid ""
 "When booking more than 6 rooms, different policies and additional "
 "supplements may apply."
@@ -560,11 +560,11 @@ msgstr ""
 "Ao reservar mais de 6 quartos, diferentes políticas e custos adicionais "
 "poderão ser aplicados."
 
-#: templates/hotel/houserules.html:159
+#: templates/hotel/houserules.html:168
 msgid "Cards accepted"
 msgstr "Cartões aceitos"
 
-#: templates/hotel/houserules.html:172
+#: templates/hotel/houserules.html:181
 msgid ""
 "Hotel Le Monde accepts these cards and reserves the right to temporarily "
 "hold an amount prior to arrival."
@@ -572,7 +572,7 @@ msgstr ""
 "O Hotel Le Monde aceita estes cartões e reserva-se o direito de reter "
 "temporariamente um montante antes da chegada."
 
-#: templates/hotel/index.html:24
+#: templates/hotel/index.html:27
 msgid ""
 "Le Monde offers contemporary orange and white rooms in downtown Buenos "
 "Aires, 2-blocks from 9 de Julho Avenue."
@@ -580,13 +580,13 @@ msgstr ""
 "O Hotel Le Monde oferece quartos modernos, com decoração em laranja e branco "
 "no centro de Buenos Aires, a 2 quadras da Avenida 9 de Julho."
 
-#: templates/hotel/index.html:30
+#: templates/hotel/index.html:33
 msgid ""
 "Surrounded by restaurants and boutiques, it is 1 km from the Colon Theatre."
 msgstr ""
 "Além de estar rodeado por restaurantes e lojas, fica a 1 km do Teatro Colón."
 
-#: templates/hotel/index.html:36
+#: templates/hotel/index.html:39
 msgid ""
 "Rooms at Hotel Le Monde have air conditioning and private balconies with "
 "city views. All are equipped with cable TV, free Wi-Fi and a work desk."
@@ -595,7 +595,7 @@ msgstr ""
 "privativas com vista para a cidade.Todos estão equipados com TV a cabo, "
 "acesso gratuito à internet sem fio (Wi-Fi) e mesa de trabalho."
 
-#: templates/hotel/index.html:43
+#: templates/hotel/index.html:46
 msgid ""
 "A breakfast buffet with seasonal fruits, natural juices and fresh pastries "
 "is served daily. Due to its central location, guests can enjoy a variety of "
@@ -606,7 +606,7 @@ msgstr ""
 "desfrutar de uma grande variedade de restaurantes típicos, bares e outras "
 "opções de lazer."
 
-#: templates/hotel/index.html:50
+#: templates/hotel/index.html:53
 msgid ""
 "Hotel Le Monde is 200 m from Lima Subway Station, and 400 m from Avenida 9 "
 "de Julio. It is also 6-blocks from the iconic Obelisk."
@@ -615,7 +615,7 @@ msgstr ""
 "metros da Avenida 9 de Julho e a 6 quadras do emblemático Obelisco de Buenos "
 "Aires."
 
-#: templates/hotel/index.html:57
+#: templates/hotel/index.html:60
 msgid ""
 "This is our guests' favourite part of Buenos Aires, according to independent "
 "reviews."
@@ -623,7 +623,7 @@ msgstr ""
 "Esta é a parte de Buenos Aires de que os nossos hóspedes mais gostam, de "
 "acordo com avaliações independentes."
 
-#: templates/hotel/index.html:63
+#: templates/hotel/index.html:66
 msgid ""
 "Couples particularly like the location — they rated it 9.0 for a two-person "
 "trip."
@@ -631,107 +631,116 @@ msgstr ""
 "Casais particularmente gostam da localização — eles deram nota 9,0 para "
 "viagem a dois."
 
-#: templates/hotel/index.html:69
+#: templates/hotel/index.html:72
 msgid "We speak your language!"
 msgstr "Nós falamos a sua língua!"
 
-#: templates/hotel/invoice.html:11 templates/hotel/layout.html:171
+#: templates/hotel/invoice.html:15 templates/hotel/layout.html:168
 msgid "Invoice"
 msgstr "Fatura"
 
-#: templates/hotel/invoice.html:26
+#: templates/hotel/invoice.html:30
 msgid "Your bill is for a total of: $ "
 msgstr "Sua conta é para um total de: $ "
 
-#: templates/hotel/invoice.html:26
+#: templates/hotel/invoice.html:30
 msgid "and this is the detail of your consumptions:"
 msgstr "e este é o detalhe de seus consumos:"
 
-#: templates/hotel/invoice.html:32
+#: templates/hotel/invoice.html:36
 msgid "Date"
 msgstr "Data"
 
-#: templates/hotel/invoice.html:33 templates/hotel/orders.html:65
+#: templates/hotel/invoice.html:37 templates/hotel/orders.html:66
 msgid "Service"
 msgstr "Serviço"
 
-#: templates/hotel/invoice.html:34 templates/hotel/orders.html:66
+#: templates/hotel/invoice.html:38 templates/hotel/orders.html:67
 msgid "Quantity"
 msgstr "Quantidade"
 
-#: templates/hotel/invoice.html:35
+#: templates/hotel/invoice.html:39
 msgid "Amount"
 msgstr "Total"
 
-#: templates/hotel/invoice.html:77 templates/hotel/reviews.html:56
+#: templates/hotel/invoice.html:81 templates/hotel/messages.html:85
+#: templates/hotel/reviews.html:65
 msgid "first"
 msgstr "primeira"
 
-#: templates/hotel/invoice.html:80 templates/hotel/reviews.html:59
+#: templates/hotel/invoice.html:84 templates/hotel/messages.html:88
+#: templates/hotel/reviews.html:68
 msgid "previous"
 msgstr "anterior"
 
-#: templates/hotel/invoice.html:85 templates/hotel/reviews.html:64
+#: templates/hotel/invoice.html:89 templates/hotel/messages.html:93
+#: templates/hotel/reviews.html:73
+msgid "Page"
+msgstr "Página"
+
+#: templates/hotel/invoice.html:89 templates/hotel/messages.html:93
+#: templates/hotel/reviews.html:73
 msgid "of"
 msgstr "de"
 
-#: templates/hotel/invoice.html:90 templates/hotel/reviews.html:69
+#: templates/hotel/invoice.html:94 templates/hotel/messages.html:98
+#: templates/hotel/reviews.html:78
 msgid "next"
 msgstr "seguindo"
 
-#: templates/hotel/invoice.html:93 templates/hotel/reviews.html:72
+#: templates/hotel/invoice.html:97 templates/hotel/messages.html:101
+#: templates/hotel/reviews.html:81
 msgid "last"
 msgstr "última"
 
-#: templates/hotel/invoice.html:109 templates/hotel/invoice.html:118
-#: templates/hotel/messages.html:37 templates/hotel/messages.html:46
-#: templates/hotel/mybookings.html:122
+#: templates/hotel/invoice.html:113 templates/hotel/invoice.html:122
+#: templates/hotel/messages.html:117 templates/hotel/mybookings.html:122
 msgid "You don\\"
 msgstr ""
 
-#: templates/hotel/layout.html:84
+#: templates/hotel/layout.html:81
 msgid "Logout"
 msgstr "Sair"
 
-#: templates/hotel/layout.html:89 templates/hotel/login.html:7
+#: templates/hotel/layout.html:86 templates/hotel/login.html:7
 #: templates/hotel/login.html:21
 msgid "Login"
 msgstr "Entrar"
 
-#: templates/hotel/layout.html:93 templates/hotel/register.html:7
+#: templates/hotel/layout.html:90 templates/hotel/register.html:7
 #: templates/hotel/register.html:27
 msgid "Register"
 msgstr "Registrarse"
 
-#: templates/hotel/layout.html:107
+#: templates/hotel/layout.html:104
 msgid "Info"
 msgstr "Info"
 
-#: templates/hotel/layout.html:126
+#: templates/hotel/layout.html:123
 msgid "Facilities"
 msgstr "Instalações"
 
-#: templates/hotel/layout.html:144
+#: templates/hotel/layout.html:141
 msgid "Reviews"
 msgstr "Comentários"
 
-#: templates/hotel/layout.html:153
+#: templates/hotel/layout.html:150
 msgid "FAQs"
 msgstr "Perguntas Frequentes"
 
-#: templates/hotel/layout.html:170 templates/hotel/orders.html:15
+#: templates/hotel/layout.html:167 templates/hotel/orders.html:16
 msgid "Orders"
 msgstr "Consumos"
 
-#: templates/hotel/layout.html:172 templates/hotel/messages.html:15
+#: templates/hotel/layout.html:169 templates/hotel/messages.html:15
 msgid "Messages"
 msgstr "Mensagens"
 
-#: templates/hotel/layout.html:173 templates/hotel/mybookings.html:14
+#: templates/hotel/layout.html:170 templates/hotel/mybookings.html:15
 msgid "My Bookings"
 msgstr "Suas Reservas "
 
-#: templates/hotel/layout.html:181
+#: templates/hotel/layout.html:178
 msgid "Make Your Booking Here"
 msgstr "Faça sua reserva aqui"
 
@@ -750,6 +759,32 @@ msgstr "Você já tem uma conta?"
 #: templates/hotel/login.html:25
 msgid "Register here."
 msgstr "Registrarse"
+
+#: templates/hotel/messages.html:28
+msgid "Write a message to front desk:"
+msgstr "Escreva uma mensagem para a recepção:"
+
+#: templates/hotel/messages.html:36
+msgid "Send"
+msgstr "Mandar"
+
+#: templates/hotel/messages.html:46
+msgid "From"
+msgstr "De"
+
+#: templates/hotel/messages.html:47
+msgid "Content"
+msgstr "Conteúdo"
+
+#: templates/hotel/messages.html:48 templates/hotel/mybookings.html:101
+msgid "Delete"
+msgstr "Excluir"
+
+#: templates/hotel/messages.html:71
+#, fuzzy
+#| msgid "Delete"
+msgid "Delete message"
+msgstr "Excluir"
 
 #: templates/hotel/mybookings.html:28
 msgid "Your booking has been registered"
@@ -771,10 +806,6 @@ msgstr "Total"
 msgid "Actions"
 msgstr "Ações"
 
-#: templates/hotel/mybookings.html:101
-msgid "Delete"
-msgstr "Excluir"
-
 #: templates/hotel/mybookings.html:130
 msgid "You are checking out the booking:"
 msgstr "Você está saindo da reserva:"
@@ -795,31 +826,31 @@ msgstr "Cancelar Saída"
 msgid "Confirm Check-Out"
 msgstr "Confirme Saída"
 
-#: templates/hotel/orders.html:28
+#: templates/hotel/orders.html:29
 msgid "Room orders and services"
 msgstr "Pedidos de quartos e serviços"
 
-#: templates/hotel/orders.html:29
+#: templates/hotel/orders.html:30
 msgid "Make here your requests to the room and reservation of services."
 msgstr "Faça seus pedidos para o quarto e reserva de serviços."
 
-#: templates/hotel/orders.html:34
+#: templates/hotel/orders.html:35
 msgid "Services & Rates"
 msgstr "Serviços & Taxas"
 
-#: templates/hotel/orders.html:105
+#: templates/hotel/orders.html:106
 msgid "Order"
 msgstr "Ordenar"
 
-#: templates/hotel/orders.html:114
+#: templates/hotel/orders.html:115
 msgid "Order Success!"
 msgstr "Pedido bem sucedido"
 
-#: templates/hotel/orders.html:114
+#: templates/hotel/orders.html:115
 msgid "We have registered your order."
 msgstr "Registramos seu pedido."
 
-#: templates/hotel/orders.html:121
+#: templates/hotel/orders.html:122
 msgid "You must Check-In in order to use the services."
 msgstr "Você deve fazer o check-in para usar os serviços."
 
@@ -839,40 +870,40 @@ msgstr "Você já tem uma conta?"
 msgid "Log In here."
 msgstr "Entra aquí"
 
-#: templates/hotel/reviews.html:7
+#: templates/hotel/reviews.html:16
 msgid "Guests Reviews"
 msgstr "Comentários"
 
-#: templates/hotel/reviews.html:15
+#: templates/hotel/reviews.html:24
 msgid "total average score"
 msgstr "pontuação média total"
 
-#: templates/hotel/reviews.html:16
+#: templates/hotel/reviews.html:25
 msgid "on a scale of 1 to 5,"
 msgstr "numa escala de 1 a 5"
 
-#: templates/hotel/reviews.html:17
+#: templates/hotel/reviews.html:26
 msgid "based on"
 msgstr "baseado em"
 
-#: templates/hotel/reviews.html:17
+#: templates/hotel/reviews.html:26
 msgid "reviews."
 msgstr "comentários"
 
-#: templates/hotel/reviews.html:25
+#: templates/hotel/reviews.html:34
 #, python-format
 msgid "100%% real guest experiences."
 msgstr "100%% experiências reais "
 
-#: templates/hotel/reviews.html:31
+#: templates/hotel/reviews.html:40
 msgid "Guest"
 msgstr "Hóspede"
 
-#: templates/hotel/reviews.html:32
+#: templates/hotel/reviews.html:41
 msgid "Review"
 msgstr "Comentário"
 
-#: templates/hotel/reviews.html:33
+#: templates/hotel/reviews.html:42
 msgid "Score"
 msgstr "Pontuação"
 

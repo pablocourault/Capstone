@@ -60,6 +60,26 @@ def makeanorder(request):
     except IntegrityError:
         return JsonResponse({'message': 'Error in update booking amount.'}, status=401)
 
+    try:
+
+        lenguaje = request.LANGUAGE_CODE
+        
+        if lenguaje == 'en':
+            message_content = order_service.message
+        if lenguaje == 'es':
+            message_content = order_service.message_es
+        if lenguaje == 'pt':
+            message_content = order_service.message_pt
+
+        adminhotel = User.objects.get(username='adminhotel')
+
+        new_message = Messages(user= adminhotel,
+                               addressee = request.user,
+                               message = message_content)
+        new_message.save()
+        
+    except IntegrityError:
+        return JsonResponse({'message': 'Error in send order instructions.'}, status=401)
 
     try:
         order_consumption = Consumptions(user=request.user,
@@ -103,13 +123,17 @@ def invoice(request):
 @login_required
 def messages(request):
 
-        messages = Messages.objects.filter(Q(user=request.user) | Q(addressee=request.user)).order_by('-date')
-        paginator = Paginator(messages, 10) # Show 10 messages per page.
+    # when user visit messages, mark unreaded messages as readed
+    adminhotel = User.objects.get(username='adminhotel')
+    Messages.objects.filter(user=adminhotel, addressee=request.user).filter(state='u').update(state='r')
 
-        page_number = request.GET.get('page')
-        page_obj = paginator.get_page(page_number)
+    messages = Messages.objects.filter(Q(user=request.user) | Q(addressee=request.user)).order_by('-date')
+    paginator = Paginator(messages, 10) # Show 10 messages per page.
 
-        return render(request, "hotel/messages.html", {'page_obj': page_obj})
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, "hotel/messages.html", {'page_obj': page_obj})
 
 
 @csrf_exempt
@@ -152,7 +176,7 @@ def deletemessage(request):
 def unreadmessages(request):
 
     adminhotel = User.objects.get(username='adminhotel')
-    unreaded = Messages.objects.filter(user=adminhotel).filter(state='u').count()
+    unreaded = Messages.objects.filter(user=adminhotel, addressee=request.user).filter(state='u').count()
 
     return JsonResponse({'unreaded': unreaded})
 

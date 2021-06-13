@@ -19,6 +19,20 @@ function makeAnOrder()
                if (estado == 201)
                   { document.querySelector('#orders-successful-div').style.display = 'block';
                     document.querySelector('#orders-successful-div').style.animationPlayState = 'running';
+
+                      fetch('unreadmessages')
+                      .then(response => response.json())
+                      .then(data  => {
+        
+                        cantidad= data.unreaded;
+        
+                        if (cantidad > 0) 
+                            { document.querySelector('#messages-unreaded').innerHTML = cantidad }
+                        else
+                            { document.querySelector('#messages-unreaded').innerHTML = '' }
+                  
+        
+                      });   
                   }
                 else 
                     { alert(result.message); }

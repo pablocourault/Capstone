@@ -70,7 +70,7 @@
                {% endif %}
 
               <li class="page-item">
-                <a class="page-link reviews-active" href=""> Page {{ page_obj.number }} {% translate 'of' %} {{ page_obj.paginator.num_pages }}.</a>
+                <a class="page-link reviews-active" href=""> {% translate 'Page' %} {{ page_obj.number }} {% translate 'of' %} {{ page_obj.paginator.num_pages }}.</a>
               </li>
            
            {% if page_obj.has_next %}
