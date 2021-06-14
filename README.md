@@ -37,7 +37,7 @@
     + [sendmessage](#sendmessage)
     + [deletemessage](#deletemessage)
     + [unreadmessages](#unreadmessages)
--[Files](#files)
+    + [Files](#files)
 - [Screenshots](#screenshots)
 
 
@@ -102,13 +102,13 @@ The system was tested with Django 3.1.5 and Django 3.2
 Contains: Django Abstract User
 
 ### Guests
-Contains: the list of Users who have checked-in. 
+Contains: the list of Users who have checked-in.  
 Fields:
 * guest (user)
 * booking (reservation)
 
 ### Room
-Contains: the description of the room (single, double, etc.), the type code, the amount the hotel has of them, and the rate per night.
+Contains: the description of the room (single, double, etc.), the type code, the amount the hotel has of them, and the rate per night.  
 Fields:
 * description
 * roomtype
@@ -116,7 +116,7 @@ Fields:
 * rate
 
 ### Bookings
-Contains: the user who made it, the number of rooms reserved for each type, the dates of entry and exit, the total amount of consumption and and the status of checkin (true when guest did check in).
+Contains: the user who made it, the number of rooms reserved for each type, the dates of entry and exit, the total amount of consumption and and the status of checkin (true when guest did check in).  
 Fields:
 * user
 * singles
@@ -130,7 +130,7 @@ Fields:
 * checkin
 
 ### Services
-Contains: the description of the service, the confirmation message, or instructions received by the guest and the service fee.
+Contains: the description of the service, the confirmation message, or instructions received by the guest and the service fee.  
 Fields:
 * description
 * description_es
@@ -142,7 +142,7 @@ Fields:
 
 ### Consumptions
 Contains: saves each consumption of products or services that the guest makes.
-Fields:
+Fields:  
 * user
 * booking
 * service (description)
@@ -150,7 +150,7 @@ Fields:
 * quantity
 
 ### Comments
-Contains: the guest, date, review, and the score.
+Contains: the guest, date, review, and the score.  
 Fields:
 * user
 * date
@@ -158,7 +158,7 @@ Fields:
 * score (1 to 5)
 
 ### Messages
-Contains: the sender, the date and and time, the recipient, content and state (read or unread).
+Contains: the sender, the date and and time, the recipient, content and state (read or unread).  
 Fields: 
 * user
 * date
