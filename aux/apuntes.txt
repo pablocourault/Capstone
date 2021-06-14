@@ -1,32 +1,10 @@
-COSAS QUE TUVE QUE INSTALAR Y HAY QUE AVISAR EN EL README O REQUEST
-
-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
 gettext
 apt install gettext
-parado en "/capstone/hotel" hay que correr el comando
-django-admin makemessages -l es
-y crea un archivo para cada idioma
-
-después ejecutar
-
-django-admin compilemessages
 
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
 Aclarar que no se implementan medios de pago (solo figuran los logos.)
-
-Servicios (para poner en Modelo SERVICIOS)
-
-Planchado
-Masajes
-Aperitivos
-Botanas
-Gimnasio
-Sauna
-Lavandería
-Desayuno
-Cena
 
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
@@ -35,7 +13,7 @@ CONSIDERACIONES   *** REVEER TODO EL TIEMPO Y MANTENERLO LO MÁS SENCILLO POSIBL
 
 * Tiene tres idiomas
 * Diseño responsivo
-* Utiliza ocho modelos (checkear)
+* Utiliza ocho modelos
 
 OPCIONES LOGUEADO: 
 
@@ -195,7 +173,7 @@ MODELOS
  - message (el mensaje que recibe el usuario, luego de hacer el pedido del servicio)
  - rate
 
-* MESSAGES (HACER LO DE MENSAJES SI NO SE COMPLICA)
+* MESSAGES
  - user
  - date
  - Destinatario (para el usuario el destinatario siempre es la administración del hotel)
@@ -226,20 +204,12 @@ https://www.w3schools.com/bootstrap/bootstrap_images.asp
 
 PARA EL FINAL
 
-- Ver de factorizar el css con SCSS.
-- Aclarar en el README de la entrega que los logos de las redes sociales son simbólicos,
-  o ponerlo como un mensaje en el código, no es que falta hacer.
 - Revisar todos los mensajes en inglés porque es lo primero que van a ver.
 - PROBAR CON DISTINTOS NAVEGADORES ¿Probar con el celular?
 - Controlar que el diseño responsivo funcione para las páginas en TODO el sitio.
 - IMPORTANTE: Revisar todo el enunciado del trabajo final que no me falte nada.
 - Ver que no arroje errores de javascript.
 - Aclarar en el README todo lo que se puede hacer en la parte de Django Admin.
-  Y que el usuario admin es adminhotel password abc123.
-- PROBAR MUY BIEN que funcione todo, si hago un check-in que agregue el primer consumo, 
-  si hago un consumo que actualize el total del booking y el listado de consumptions,
-  si hago el check-out que borre de guest y los consumos y los mensajes, etc, etc, etc.
-  Es decir que haga lo que tiene que hacer.
 
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
