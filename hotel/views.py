@@ -239,6 +239,9 @@ def bookings(request):
             single_available = single_quantity - single_reserved
         else:
             single_available = single_quantity
+
+        if (single_available < 0):
+            single_available = 0
         
         # count quantity of type double room reserved in the request interval
         # each query evaluates a possible overlap, and counts the reservations
@@ -267,6 +270,9 @@ def bookings(request):
         else:
             double_available = double_quantity
 
+        if (double_available < 0):
+            double_available = 0
+
 
         # count quantity of type triple room reserved in the request interval
         # each query evaluates a possible overlap, and counts the reservations
@@ -294,6 +300,9 @@ def bookings(request):
         else:
             triple_available = triple_quantity
 
+        if (triple_available < 0):
+            triple_available = 0
+
         quadruple_reserved_query1 = Bookings.objects.filter(checkin_date__gte=checkInDate).filter(checkout_date__gte=checkOutDate, checkin_date__lte=checkOutDate).aggregate(Sum('quadruples'))
         quadruple_reserved_query2 = Bookings.objects.filter(checkin_date__lte=checkInDate).filter(checkout_date__gte=checkOutDate).aggregate(Sum('quadruples'))
         quadruple_reserved_query3 = Bookings.objects.filter(checkin_date__lte=checkInDate).filter(checkout_date__lte=checkOutDate, checkout_date__gte=checkInDate).aggregate(Sum('quadruples'))
@@ -317,6 +326,9 @@ def bookings(request):
             quadruple_available = quadruple_quantity - quadruple_reserved
         else:
             quadruple_available = quadruple_quantity
+
+        if (quadruple_available < 0):
+            quadruple_available = 0
 
         # ranges of rooms availables by type to pass to the selects in booking.html
         single_range = range(0, single_available + 1)
@@ -595,7 +607,6 @@ def checkoutbooking(request):
     score = int(data.get("score",""))
 
     booking_checkout = Bookings.objects.get(id=booking_to_checkout)
-
     # To facilitate testing, code verification was bypassed
     # but the script for its validation is as follows
     

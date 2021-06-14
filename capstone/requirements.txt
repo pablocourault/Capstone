@@ -1,0 +1,6 @@
+
+gettext==0.19.8.1
+
+# gettext-base
+
+# See: https://docs.python.org/3/library/gettext.html

@@ -106,18 +106,22 @@ function checkoutBooking()
                                 estado = response.status;
                                 return response.json() })
 
-            .then(result => {console.log(result);
-                              if (estado == 201)
+            .then(data => {   if (estado == 201)
                                  {
                                   document.querySelector('#mybookings-checkout-div').style.display = 'none';
-                                 // document.querySelector('#mybookings-table').style.display = 'block'; 
-                                 //  location.reload(); 
-                                 } })
-              
+                                  document.querySelector('#mybookings-table').style.display = 'block'; 
+                                  location.reload();
+                                  document.querySelector('#checkout-successful-div').style.display = 'block'; 
+                                  document.querySelector('#checkout-successful-div').style.animationPlayState = 'running'; 
+                                 } 
 
-            // si pudo hacer el checkout oculta la div mybookings-checkout-div y muestra mensaje boostrap
-            // si no puede hacer el checkout oculta la div mybookings-checkout-div y muestra mensaje bootstrap
-            // los mensajes que muestra tienen que ser los que devuelve el json del fecth.
-            // falta hacer los banner como en orders o messages cuando no hay.
+                              else { 
+                                    document.querySelector('#mybookings-checkout-div').style.display = 'none';
+                                    message = data.message;
+                                    document.querySelector('#checkout-error-div').style.display = 'none';
+                                    document.querySelector('#checkout-error-div').style.animationPlayState = 'running';       
+                                   }
+
+                           })
         
          }

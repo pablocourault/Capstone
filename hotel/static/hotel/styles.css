@@ -3,6 +3,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 @import url('https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css');
 
+@keyframes hide {
+        0% { opacity: 1;
+             height: max-content;
+             line-height: 100%;
+             padding: 20px;
+             margin-bottom: 10px; }
+
+        75% { opacity: 0;
+              height: max-content;
+              line-height: 100%;
+              padding: 20px;
+              margin-bottom: 10px; }
+
+        100% { opacity: 0;
+               height: max-content;
+               line-height: 0px;
+               padding: 0px;
+               margin-bottom: 0px; }
+        }
+
 a:hover { text-decoration:none; }
 
 body { background-color: #FBFBFB !important;
@@ -618,6 +638,12 @@ a.header-bookings-link:hover { color:lightblue }
 
 #checkout-help { font-size: 0.8rem;}
 
+#checkout-successful-div,
+#checkout-error-div  { display: none;
+                       animation-name: hide;
+                       animation-duration: 10s;
+                       animation-fill-mode: forwards;
+                       animation-play-state: paused; }
 
 .starrating > input {display: none;}  /* Remove radio buttons */
 
@@ -682,27 +708,6 @@ a.header-bookings-link:hover { color:lightblue }
 
 #orders-table tbody td:first-child { text-align: left;                              
                                      font-size: smaller; }
-
-
-@keyframes hide {
-        0% { opacity: 1;
-             height: max-content;
-             line-height: 100%;
-             padding: 20px;
-             margin-bottom: 10px; }
-
-        75% { opacity: 0;
-              height: max-content;
-              line-height: 100%;
-              padding: 20px;
-              margin-bottom: 10px; }
-
-        100% { opacity: 0;
-               height: max-content;
-               line-height: 0px;
-               padding: 0px;
-               margin-bottom: 0px; }
-        }
     
 #orders-successful-div { display: none;
                          animation-name: hide;
