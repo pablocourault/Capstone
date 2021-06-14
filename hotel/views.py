@@ -482,11 +482,6 @@ def houserules(request):
     return render(request, "hotel/houserules.html")
 
 
-def finalprint(request):
-    
-    return render(request, "hotel/finalprint.html")
-
-
 def reviews(request):
 
         name_color = ['Red','Blue','Green','Orange','BlueViolet','Brown',

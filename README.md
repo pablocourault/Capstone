@@ -17,7 +17,6 @@
     + [bookings](#bookings)
     + [facilities](#facilities)
     + [faqs](#faqs)
-    + [finalprint](#finalprint)
     + [houserules](#houserules)
     + [info](#info)
     + [invoice](#invoice)
@@ -89,7 +88,8 @@ To set up this project on your computer:
     1. Download the project
     2. Install all Python packages listed in requirements.txt
         a. apt install gettext (for linux system)
-    3. Be sure to use the supplied database, as it contains information necessary for the correct operation of the system.
+    3. Be sure to use the supplied database, as it contains information necessary for the correct  
+     operation of the system.
 
 The system was tested with Django 3.1.5 and Django 3.2
 
@@ -141,8 +141,8 @@ Fields:
 * rate
 
 ### Consumptions
-Contains: saves each consumption of products or services that the guest makes.
-Fields:  
+Contains: saves each consumption of products or services that the guest makes.  
+Fields:
 * user
 * booking
 * service (description)
@@ -159,7 +159,7 @@ Fields:
 
 ### Messages
 Contains: the sender, the date and and time, the recipient, content and state (read or unread).  
-Fields: 
+Fields:
 * user
 * date
 * addressee
@@ -167,6 +167,38 @@ Fields:
 * state
 
 ## Views
+
+### Bookings  
+
+It allows you to check the availability of rooms, for this you must indicate the desired arrival and departure dates, the query returns the number of rooms available for each type, for the indicated dates. The room types are Single, Double, Triple and Quadruple.  
+
+If the user is logged in, he can make the reservation, otherwise he can only see the availability of rooms. The system informs the number of nights chosen, and the cost; which changes as the rooms are chosen.  
+
+At the booking, the total amount for the rooms is saved, since room rates may vary.
+
+Uses User, Bookings and Room models. Works in conjunction with the code contained in bookings.js.
+
+
+### Facilities  
+
+It is a static page, which informs which are the main facilities and services of the hotel.
+
+
+### FAQs  
+
+It is a static page, which answers the most frequent questions from users. Works in conjunction with the code contained in faqs.js.  
+
+
+### Houserules
+
+Is a static page that contains important information about the hotel's rules about check-in or check-out times, pets, accepted cards, etc.  
+
+
+### Info
+
+Contains the hotel presentation and a photo gallery. Works in conjunction with the code contained in slideshow.js.
+
+
 
 
 

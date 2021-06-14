@@ -8,12 +8,6 @@ Aclarar que no se implementan medios de pago (solo figuran los logos.)
 
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
-CONSIDERACIONES   *** REVEER TODO EL TIEMPO Y MANTENERLO LO MÁS SENCILLO POSIBLE ***
-                  *** LO QUE ESTÁ AQUÍ VA A SERVIR PARA EXPLICAR EL PROYECTO EN LA ENTREGA ***
-
-* Tiene tres idiomas
-* Diseño responsivo
-* Utiliza ocho modelos
 
 OPCIONES LOGUEADO: 
 
@@ -53,19 +47,6 @@ OPCIONES LOGUEADO:
   - Si tiene mensajes sin leer le debe aparecer una notificación al lado, por ej el n° sin leer
   - Debe poder verlos, responder y borrar cada uno de ellos.
 
-* Opción "Booking"
-  - Para hacer una consulta de disponibilidad para reserva debe indicar:
-	  Fecha de entrada
-	  Fecha de salida
-	  Se indica en cada tipo de habitación que se admite un niño gratis.
-
-   - La consulta de reserva devuelve la cantidad disponible de habitaciones por cada tipo.
-      Los tipos de habitaciones son Single, Double, Triple y Quadruple.
-
-   - Si el usuario está logueado le da la posibilidad de hacer la reserva, sino solo le informa
-     de la disponibilidad (un botón que aparezca o desaparezca).
-
-
 OPCIONES NO LOGUEADO:
 
 * Opción "Guest Reviews"
@@ -94,8 +75,7 @@ PROCESOS
 - Navegar el sitio, ver el hotel (no requiere nada)
 - Registrarse
 - Login / Logout
-- Consultar habitaciones disponibles por rango de fechas (modelos: ROOM, BOOKINGS)
-- Consultar habitaciones disponibles y hacer reserva (modelos: ROOM, BOOKINGS)
+
 * Enviar y recibir mensajes de la recepción tipo DM (hacerlo si no se complica, modelo: MESSAGES)
 * Dejar comentarios sobre el servicio del hotel al hacer el Check Out (modelo: COMMENTS)
 * Pedir servicios para una habitación (modelos: SERVICES, CONSUMPTIONS)
@@ -114,9 +94,6 @@ PROCESOS
 
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
-MODELOS
-
-* USERS
 
 * GUESTS
   - guest (usuario, si está en este modelo, 
@@ -125,28 +102,15 @@ MODELOS
   - booking (tiene una instancia por cada reserva, se borra una instancia por cada check-out).
 
 
-* ROOM
- - description
- - room-type
- - quantity
- - rate
 
+* BOOKINGS 
 
-* BOOKINGS (es la reseva, no importa las habitaciones, está bien pensado asi)
- - user
- - singles
- - doubles
- - triples
- - quadruples
- - checkin_date
- - checkout_date
  - checkout_code (código necesario para hacer el ckeck-out y que cancela los consumos
                   hipotéticamente se lo entregarían al huésped al momento de hacer el pago)
                   (la disponibilidad de reserva se hace contando la cantidad reservadas
                    para esa fecha por room-type, menos la quantity que hay en ROOM
                    por room-type.)
- - amount       (al hacer la reserva, se le guarda el monto total por las habitaciones, es decir:
-                 se le "congela" la tarifa porque después puede cambiar,
+    
                  OJO, cuando hace el check-in se le inicializan los consumos con este monto.
                  Este campo se utiliza para eso y para ir acumulando el total, cuando se van 
                  incluyendo consumos.)
@@ -154,12 +118,7 @@ MODELOS
 
 
 * CONSUMPTIONS
- - user
- - booking
- - service
- - date
- - quantity
- - amount
+
    (El usuario cancelaría todos los consumos correspondientes a un booking.
     al momento de hacer el check-out, con el código de pago que le suministraría
     el administrador o Front End; el cual es el campo checkout_code.
@@ -180,11 +139,6 @@ MODELOS
  - message
  - state (leído / no leído)
 
-* COMMENTS
- - user
- - date
- - comment
- - score
 
 
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
@@ -222,20 +176,3 @@ PENDIENTES
 - Buscar un conjunto de fotos alternativas de derechos libres
 
 
-
-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
-
-
-Algoritmo Reservas: 
-
-OJO EL SISTEMA NO DECIDE NADA, SOLO MUESTRA DISPONIBILIDADES
-SEGÚN LAS FECHAS QUE EL USUARIO INDICA,Y ES ÉL QUIEN ELIJE
-
-
-1) Elige las fechas
-2) Se buscan las habitaciones disponibles (ver explicación de cómo en modelo BOOKINGS)
-3) Se muestran las habitaciones disponibles (cantidad por cada tipo)
-4) El usuario indica la cantidad de habitaciones que necesita por cada tipo (en base a la disponibilidad del punto anterior)
-5) Se le muestra antes de confirmar: el total de habitaciones por tipo, cuántas personas puede alojar y el monto total.
-5b) Indicar en el punto anterior la cantidad de niños que puede alojar.
-5c) El punto 5 debería ir a otra página, pero con la posibilidad de volver atrás y modificar.
