@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
    document.querySelector('button.btn-confirm').onclick = function() { checkoutBooking() }
 
     // get the score by star clicked            
-    document.querySelectorAll('input').forEach(function(input) {
+   document.querySelectorAll('input').forEach(function(input) {
                   input.onclick = function() { score = input.value; } })
 
 
@@ -71,7 +71,8 @@ function checkinBooking(booking)
                            if (estado == 201)
                            {
                             alert(result.message);
-                            location.reload(); } })
+                            location.reload(); 
+                           } })
          }
 
 
@@ -82,12 +83,41 @@ function checkoutBooking()
             checkout_code = (document.querySelector('#checkout-code').value).toUpperCase();
             checkout_score = score;
 
-            if (checkout_code !== 'ABC123')
-               { alert("Invalid Code\nCódigo Inválido"); }
-            else { alert("hacer fetch")}
+            if ((checkout_comment.length > 0)&&(score==0)) 
+            
+               { alert("Please rate your stay.\n" + 
+                       "Por favor califique su estadía.\n" + 
+                       "Por favor, avalie a sua estadia.\n" )}
 
-            // mandar un fetch con los datos del id de la reserva, el comentario, el código y el score
+            if ((checkout_comment.length == 0)&&(score>0)) 
+            
+               { alert("Please comment your stay.\n" + 
+                       "Por favor comente su estadía.\n" + 
+                       "Por favor, comente a sua estadia.\n" )}
+         
+            
+            fetch('checkoutbooking', { method: 'POST',
+                                         body: JSON.stringify({bookingid: checkout_booking,
+                                                               comment: checkout_comment,
+                                                               code: checkout_code,
+                                                               score: checkout_score })
+                                     })
+            .then(response => { console.log(response.status);
+                                estado = response.status;
+                                return response.json() })
+
+            .then(result => {console.log(result);
+                              if (estado == 201)
+                                 {
+                                  document.querySelector('#mybookings-checkout-div').style.display = 'none';
+                                 // document.querySelector('#mybookings-table').style.display = 'block'; 
+                                 //  location.reload(); 
+                                 } })
+              
+
             // si pudo hacer el checkout oculta la div mybookings-checkout-div y muestra mensaje boostrap
             // si no puede hacer el checkout oculta la div mybookings-checkout-div y muestra mensaje bootstrap
+            // los mensajes que muestra tienen que ser los que devuelve el json del fecth.
+            // falta hacer los banner como en orders o messages cuando no hay.
         
          }

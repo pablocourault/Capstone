@@ -460,9 +460,6 @@ def mybookings(request):
                                                               'today': today })
 
 
-        
-
-
 def facilities(request):
     
     return render(request, "hotel/facilities.html")
@@ -544,29 +541,102 @@ def checkinbooking(request):
     if request.method != "POST":
         return JsonResponse({'message': 'Error: POST request required.'}, status=400)
 
-    data = json.loads(request.body)
-    booking_to_checkin_id = data.get("bookingtocheckin","")
+    try: 
+        data = json.loads(request.body)
+        booking_to_checkin_id = data.get("bookingtocheckin","")
     
-    booking_to_checkin = Bookings.objects.get(id=booking_to_checkin_id)
-    booking_to_checkin.checkin = True
-    booking_to_checkin.save()
+        booking_to_checkin = Bookings.objects.get(id=booking_to_checkin_id)
+        booking_to_checkin.checkin = True
+        booking_to_checkin.save()
 
-    guest=Guests(guest=request.user, booking=booking_to_checkin)
-    guest.save()
+        guest=Guests(guest=request.user, booking=booking_to_checkin)
+        guest.save()
 
-    rooms_service = Services.objects.get(description='Rooms')
+        rooms_service = Services.objects.get(description='Rooms')
 
-    first_consumption = Consumptions(user=request.user,
-                                     booking= booking_to_checkin,
-                                     service= rooms_service,
-                                     date = date.today(),
-                                     quantity = 1,
-                                     amount = booking_to_checkin.amount)
+        first_consumption = Consumptions(user=request.user,
+                                         booking= booking_to_checkin,
+                                         service= rooms_service,
+                                         date = date.today(),
+                                         quantity = 1,
+                                         amount = booking_to_checkin.amount)
+        first_consumption.save()
 
-    first_consumption.save()
+    except IntegrityError:
+        return JsonResponse({'message': 'Error: the check in process could not be done.'}, status=401)    
 
+    lenguaje = request.LANGUAGE_CODE
+        
+    if lenguaje == 'en':
+         message_content = 'Welcome to the hotel Le Monde, thank you for choosing us.'
+    if lenguaje == 'es':
+        message_content = 'Bienvenido al hotel Le Monde, gracias por elegirnos.'
+    if lenguaje == 'pt':
+        message_content = 'Bem vindo ao hotel Le Monde, obrigado por nos escolher.'
+
+    adminhotel = User.objects.get(username='adminhotel')
+
+    new_message = Messages(user= adminhotel,
+                           addressee = request.user,
+                           message = message_content)
+    new_message.save()
+        
     return JsonResponse({'message': 'Check In Successed.'}, status=201)
 
+
+@csrf_exempt
+@login_required
+def checkoutbooking(request):
+
+    data = json.loads(request.body)
+    booking_to_checkout = data.get("bookingid","")
+    # code_of_checkout = data.get("code","")
+    comment = data.get("comment","")
+    score = int(data.get("score",""))
+
+    booking_checkout = Bookings.objects.get(id=booking_to_checkout)
+
+    # To facilitate testing, code verification was bypassed
+    # but the script for its validation is as follows
+    
+    # if (booking_checkout.checkout_code != code_of_checkout):
+    #    return JsonResponse({'message': 'Error: checkout code invalid.'}, status=401)
+   
+
+    # remove user from Guests
+    try:
+        Guests.objects.filter(guest=request.user).filter(booking=booking_checkout).delete()
+
+    except IntegrityError:
+        return JsonResponse({'message': 'Error in delete user from Guests.'}, status=401)
+
+
+    # remove consumptions from Consumptions (assumed that they are paid, that is validated with the exit code)
+    try:
+        Consumptions.objects.filter(user=request.user).filter(booking=booking_checkout).delete()
+    except IntegrityError:
+        return JsonResponse({'message': 'Error: in delete consumptions from Consumtions.'}, status=401)
+
+    if ((len(comment) > 0) and (score > 0)):
+         try:
+            new_comment = Comments(user = request.user,
+                                   date = date.today(),
+                                   comment = comment,
+                                   score = score)
+
+            new_comment.save()
+
+         except IntegrityError:
+             return JsonResponse({'message': 'Error: in save your review in Comments.'}, status=401)
+
+
+    # delete booking
+    try:
+        booking_checkout.delete()
+    except IntegrityError:
+        return JsonResponse({'message': 'Error: the booking could not be deleted.'}, status=401)
+
+    return JsonResponse({'message': 'Successful Checkout.'}, status=201)
 
 
 def login_view(request):

@@ -616,7 +616,7 @@ a.header-bookings-link:hover { color:lightblue }
                  font-weight:lighter;
                  width: 4.6rem; }
 
-#checkout-help { font-size: 0.5rem;}
+#checkout-help { font-size: 0.8rem;}
 
 
 .starrating > input {display: none;}  /* Remove radio buttons */

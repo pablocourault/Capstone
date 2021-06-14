@@ -36,9 +36,8 @@
        <button type="button" class="btn btn-outline-success messages-btn btn-checkin"> {% translate 'Send' %} </button>
     </div>
   </div>
+
 {% if page_obj %}
-
-
 
 <table class="table" id="messages-table">
 
@@ -111,7 +110,7 @@
 </table> 
 
 {% else %} <!-- If there are no messages  -->
-
+ <br><br>
  <div class="alert alert-warning border border-warning booking-info">
    <div class="material-icons booking-info-icon">error</div>
      <div> {% translate 'You don\'t have messages.' %} </div>

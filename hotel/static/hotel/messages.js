@@ -37,7 +37,7 @@ function sendMessage()
               else
                  {
                   fetch('sendmessage', { method: 'POST',
-                                          body: JSON.stringify({message_content: message,}) })
+                                          body: JSON.stringify({message_content: message}) })
                   .then(response => { console.log(response.status);
                                       estado = response.status;
                                       return response.json() })

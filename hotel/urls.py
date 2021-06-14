@@ -27,6 +27,7 @@ urlpatterns = [
     path("sendmessage", views.sendmessage, name="sendmessage"),
     path("deletemessage", views.deletemessage, name="deletemessage"),
     path("unreadmessages", views.unreadmessages, name="unreadmessages"),
-
-]
+    path("checkoutbooking", views.checkoutbooking, name="checkoutbooking") 
+    
+    ]
 
