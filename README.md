@@ -46,7 +46,7 @@
 A web application was developed for a fictitious Hotel. In this application the hotel provides information
 about its characteristics and services. The user can check for available rooms, specifying a range of dates,
 and make the corresponding reservation (to do this, the user must first register).
-The user can self-manage their check-in and check-out.
+The user can self-manage their Check-in and Check-out.
 
 During the stay at the hotel, the user can place orders at the hotel reception, and exchange messages.
 The amount of the user's reservation, and the consumptions made, are added to an expense invoice, 
@@ -102,7 +102,7 @@ The system was tested with Django 3.1.5 and Django 3.2
 Contains: Django Abstract User
 
 ### Guests
-Contains: the list of Users who have checked-in.  
+Contains: the list of Users who have Checked-in.  
 Fields:
 * guest (user)
 * booking (reservation)
@@ -116,7 +116,7 @@ Fields:
 * rate
 
 ### Bookings
-Contains: the user who made it, the number of rooms reserved for each type, the dates of entry and exit, the total amount of consumption and and the status of checkin (true when guest did check in).  
+Contains: the user who made it, the number of rooms reserved for each type, the dates of entry and exit, the total amount of consumption and and the status of checkin (true when guest did Check-in).  
 Fields:
 * user
 * singles
@@ -176,7 +176,7 @@ If the user is logged in, he can make the reservation, otherwise he can only see
 
 At the booking, the total amount for the rooms is saved, since room rates may vary.
 
-Uses User, Bookings and Room models. Works in conjunction with the code contained in bookings.js.
+Uses USER, BOOKINGS and ROOM models. Works in conjunction with the code contained in bookings.js.
 
 
 ### Facilities  
@@ -189,14 +189,103 @@ It is a static page, which informs which are the main facilities and services of
 It is a static page, which answers the most frequent questions from users. Works in conjunction with the code contained in faqs.js.  
 
 
-### Houserules
+### Houserules  
 
-Is a static page that contains important information about the hotel's rules about check-in or check-out times, pets, accepted cards, etc.  
+Is a static page that contains important information about the hotel's rules about Check-in or Check-out times, pets, accepted cards, etc.  
 
 
-### Info
+### Info  
 
-Contains the hotel presentation and a photo gallery. Works in conjunction with the code contained in slideshow.js.
+Contains the hotel presentation and a photo gallery. Works in conjunction with the code contained in slideshow.js.  
+
+
+### Invoice  
+
+Available if the user is logged in. It shows the user a list of the consumptions of their current booking and the total amount owed. 
+It will be without information if the user did not Check-in. Use the CONSUMPTIONS model.
+
+
+### Language  
+
+Supervises the language chosen by the user.  
+
+
+### Loguinview  
+
+Manage user login. Use the USER model.
+
+
+### Logoutview  
+
+Manage user logout. Use the USER model.  
+
+
+### Messages  
+
+Available if the user is logged in. It shows the user his message history with the hotel administration. Also, can reply and delete them. A notification appears if there are unread messages. Works in conjunction with the code contained in messages.js. Use the MESSAGES model.  
+
+
+### Mybookings  
+
+Available if the user is logged in. Shows all bookings user, or reports that it has none. Works in conjunction with the code contained in mybookings.js.   
+
+It should not be confused with the "Bookings" view, which is for making a reservation or inquiring about room availability.  
+
+If the user has a reservation, he can do three things:
+
+    1. Delete it (enabled only if the Check-in was not done).
+    2. Check-in (it is enabled when the system date coincides with the reservation date).
+    3. Check-out.  
+
+When the Check-in is done:
+  * The first charge or consumption is generated, which is that of the rooms (CONSUMPTIONS model).  
+  * Only the option to do the Check-out is available.  
+  * The user is added to the hotel's guest list (GUESTS model).  
+  * The booking status is marked as entered (checkin = true) in BOOKINGS model.  
+
+Only one reservation at a time can be in Check-in status.
+
+When the Check-out is done:  
+
+  * Consumptions are erased (CONSUMPTIONS model).
+  * The user is removed from the guests list (GUESTS model).
+  * The booking is deleted (BOOKINGS model).
+  * the guest can leave a comment -only chance- (COMMENTS model).
+
+To check out, a code that the hotel administration would provide to the guest at the time of making the payment of their consumptions is necessary. This feature is stopped, in order to facilitate the use and demonstration of the system. It is implemented, but its code is commented.  
+
+
+### Orders  
+
+Available if the user is logged. Here are the services that the guest has at their disposal and the price (SERVICES model). He can request them (if he did the Check-in), and the amount of the consumption is added to his account (CONSUMPTIONS model); and to the total in his booking (BOOKINGS model).   
+
+For each request made by the guest, a message is left in their mailbox, with instructions or additional information.
+
+Works in conjunction with the code contained in orders.js  
+
+
+### Register  
+
+Manages user registration. Use the USER model.  
+
+
+### Reviews  
+
+This section shows the hotel reviews (COMMENTS model), comments also have a score which is averaged and displayed at the top of the page.  
+
+
+### API-Views  
+
+
+
+
+
+
+
+
+
+
+
 
 
 
