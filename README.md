@@ -3,6 +3,7 @@
 - [Introduction](#introduction)
   * [Description](#description)
   * [Installation](#installation)
+  * [Usage-tips](#use)
 - [Implementation](#implementation)
   * [Models](#models)
     + [User](#user)
@@ -36,7 +37,7 @@
     + [sendmessage](#sendmessage)
     + [deletemessage](#deletemessage)
     + [unreadmessages](#unreadmessages)
-    + [Files](#files)
+  * [Files](#files)
 - [Screenshots](#screenshots)
 
 
@@ -92,6 +93,11 @@ To set up this project on your computer:
      operation of the system.
 
 The system was tested with Django 3.1.5 and Django 3.2
+
+
+## Usage tips  
+
+For test like admin or front-desk user, use 'adminhotel' as username and 'abc123' as password.  
 
 
 # Implememtation
@@ -274,11 +280,100 @@ Manages user registration. Use the USER model.
 This section shows the hotel reviews (COMMENTS model), comments also have a score which is averaged and displayed at the top of the page.  
 
 
-### API-Views  
+## API-Views  
+
+### Deletebooking  
+
+Receives the identification of the booking to be deleted, performs the operation (BOOKINGS model), and returns the result.  
 
 
+### Checkinbooking   
+
+Receives the identification of the booking that makes the entry, adds the user to the guest list (GUESTS model), and the amount of the rooms to consumption (CONSUMPTIONS model).
 
 
+### Checkoutbooking  
+
+Receives the identification of the booking that makes the Check-out, deletes the user from the guest list (GUESTS model), delete the consumptions corresponding to that reservation (CONSUMPTIONS model), delete the booking (BOOKINGS model); if the user leaves a review, it is saved (COMMENTS model).  
+
+
+### Makeanorder  
+
+Receives the order ID and the requested quantity, add the amount of consumption to the total of the booking (BOOKINGS model), the administration sends the guest a message confirming receipt of the order and a message with the order details is sent to the hotel administration (MESSAGES model), finally, add the consumption to the bill (CONSUMPTIONS model).  
+
+
+### Sendmessage
+
+Receives the content to be sent in a message to the hotel front-desk and processes it (MESSAGES model).  
+
+
+### Deletemessage  
+
+Receives the ID of the message to be deleted and proceeds (MESSAGES model).  
+
+
+### Unreadmessages  
+
+Monitor the amount of unread messages the current user has (MESSAGES model).  
+
+
+## Files  
+
+  * /locale/es/django.po (Spanish translations).
+  * /locale/pt/django.po (Portuguese translations).
+  * /static/hotel/bookings.js (JavaScript code for the bookings.html page).
+  * /static/hotel/common.js (JavaScript code for all pages).
+  * /static/hotel/faqs.js (JavaScript code for faqs.html page).
+  * /static/hotel/messages.js (JavaScript code for messages.html page).
+  * /static/hotel/mybookings.js (JavaScript code for mybookings.html page).
+  * /static/hotel/orders.js (JavaScript code for orders.html page).
+  * /static/hotel/slideshow.js (JavaScript for image gallery in index.html page).
+  * /static/hotel/styles.css (CSS styles).
+  * /static/hotel/icons (icons for index.html and houserules.html pages).
+  * /static/hotel/images (images for gallery in index.html).
+  * /static/hotel/screenshots (screenshots of the app).
+  * /templates/hotel/bookings.html (implements Bookings view).
+  * /templates/hotel/facilities.html (implements Facilities view).
+  * /templates/hotel/faqs.html (implements Faqs view).
+  * /templates/hotel/houserules.html (implements Houserules view).
+  * /templates/hotel/index.html (implements Info view).
+  * /templates/hotel/invoice.html (implements Invoice view).
+  * /templates/hotel/layout.html (layout template for all html pages).
+  * /templates/hotel/login.html (implements Login view).
+  * /templates/hotel/messages.html (implements Messages view).
+  * /templates/hotel/mybookings.html (implements Mybookings view).
+  * /templates/hotel/orders.html (implementes Orders view).
+  * /templates/hotel/register.html (implements Register view).
+  * /templates/hotel/reviews.html (implements Reviews view).
+  * /hotel/models.py (contains the definition of all data models).
+  * /hotel/views.py (contains all views).
+  * /hotel/db.sqlite3 (database).
+  * /hotel/README.md (this file).
+  * /hotel/requirements.txt (list of packages that need to be installed).  
+
+
+# Screenshots
+ 
+
+![alt text](https://github.com/me50/pablocourault/blob/web50/projects/2020/x/capstone/hotel/static/screenshots/hotel01.png?raw=true)
+
+![alt text](https://github.com/me50/pablocourault/blob/web50/projects/2020/x/capstone/hotel/static/screenshots/hotel02.png?raw=true)
+
+![alt text](https://github.com/me50/pablocourault/blob/web50/projects/2020/x/capstone/hotel/static/screenshots/hotel03.png?raw=true)
+
+![alt text](https://github.com/me50/pablocourault/blob/web50/projects/2020/x/capstone/hotel/static/screenshots/hotel04.png?raw=true)
+
+![alt text](https://github.com/me50/pablocourault/blob/web50/projects/2020/x/capstone/hotel/static/screenshots/hotel05.png?raw=true)
+
+![alt text](https://github.com/me50/pablocourault/blob/web50/projects/2020/x/capstone/hotel/static/screenshots/hotel06.png?raw=true)
+
+![alt text](https://github.com/me50/pablocourault/blob/web50/projects/2020/x/capstone/hotel/static/screenshots/hotel07.png?raw=true)
+
+![alt text](https://github.com/me50/pablocourault/blob/web50/projects/2020/x/capstone/hotel/static/screenshots/hotel08.png?raw=true)
+
+![alt text](https://github.com/me50/pablocourault/blob/web50/projects/2020/x/capstone/hotel/static/screenshots/hotel09.png?raw=true)
+
+![alt text](https://github.com/me50/pablocourault/blob/web50/projects/2020/x/capstone/hotel/static/screenshots/hotel10.png?raw=true)
 
 
 

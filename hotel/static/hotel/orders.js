@@ -19,7 +19,7 @@ function makeAnOrder()
                if (estado == 201)
                   { document.querySelector('#orders-successful-div').style.display = 'block';
                     document.querySelector('#orders-successful-div').style.animationPlayState = 'running';
-
+                    location.reload();
                       fetch('unreadmessages')
                       .then(response => response.json())
                       .then(data  => {

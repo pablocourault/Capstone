@@ -73,13 +73,25 @@ def makeanorder(request):
 
         adminhotel = User.objects.get(username='adminhotel')
 
-        new_message = Messages(user= adminhotel,
+        new_message = Messages(user = adminhotel,
                                addressee = request.user,
                                message = message_content)
         new_message.save()
         
     except IntegrityError:
         return JsonResponse({'message': 'Error in send order instructions.'}, status=401)
+
+
+    try:
+        message_to_admin = Messages(user = adminhotel,
+                                    addressee = adminhotel,
+                                    message = str(request.user) + ' ' + str(order_service.description) + ', quantity: ' + str(order_quantity))
+
+        message_to_admin.save()
+
+    except IntegrityError:
+        return JsonResponse({'message': 'Error in send order to front-desk.'}, status=401)
+
 
     try:
         order_consumption = Consumptions(user=request.user,
@@ -91,6 +103,7 @@ def makeanorder(request):
         order_consumption.save()
     except IntegrityError:
         return JsonResponse({'message': 'Error in save Order.'}, status=401)
+
     return JsonResponse({'message': 'Successful Order.'}, status=201)
 
 
@@ -371,105 +384,105 @@ def mybookings(request):
                                                            'is_guest': is_guest })
 
     if request.method == "POST":
-        user_booking_post = request.POST["user_booking"]
-        singles_booking = int(request.POST["singles_booking"])
-        doubles_booking = int(request.POST["doubles_booking"])
-        triples_booking = int(request.POST["triples_booking"])
-        quadruples_booking = int(request.POST["quadruples_booking"])
-        datein_booking = request.POST["datein_booking"]
-        dateout_booking = request.POST["dateout_booking"]
-        code_booking = request.POST["code_booking"]
-        amount_booking_prov = request.POST["amount_booking"]
+       user_booking_post = request.POST["user_booking"]
+       singles_booking = int(request.POST["singles_booking"])
+       doubles_booking = int(request.POST["doubles_booking"])
+       triples_booking = int(request.POST["triples_booking"])
+       quadruples_booking = int(request.POST["quadruples_booking"])
+       datein_booking = request.POST["datein_booking"]
+       dateout_booking = request.POST["dateout_booking"]
+       code_booking = request.POST["code_booking"]
+       amount_booking_prov = request.POST["amount_booking"]
 
-        if (amount_booking_prov != None):
-            amount_booking = float(amount_booking_prov)
-        else:
-            amount_booking = 0
+       if (amount_booking_prov != None):
+           amount_booking = float(amount_booking_prov)
+       else:
+           amount_booking = 0
     
-        empty_rooms = singles_booking + doubles_booking + triples_booking + quadruples_booking
+       empty_rooms = singles_booking + doubles_booking + triples_booking + quadruples_booking
 
-        if (empty_rooms < 1):
-            post = False    
-            error = True
-            return render(request, "hotel/mybookings.html", { 'message': 'No rooms selected.',
-                                                              'post': post,
-                                                              'error': error,
-                                                              'bookings': bookings,
-                                                              'today': today,
-                                                              'is_guest': is_guest })
+       if (empty_rooms < 1):
+           post = False    
+           error = True
+           return render(request, "hotel/mybookings.html", { 'message': 'No rooms selected.',
+                                                             'post': post,
+                                                             'error': error,
+                                                             'bookings': bookings,
+                                                             'today': today,
+                                                             'is_guest': is_guest })
 
-        if (amount_booking <= 0):
-            post = False    
-            error = True
-            return render(request, "hotel/mybookings.html", { 'message': 'Your reservation amount could not be calculated, please try again later.',
-                                                              'post': post,
-                                                              'error': error,
-                                                              'bookings': bookings,
-                                                              'today': today,
-                                                              'is_guest': is_guest })
+       if (amount_booking <= 0):
+           post = False    
+           error = True
+           return render(request, "hotel/mybookings.html", { 'message': 'Your reservation amount could not be calculated, please try again later.',
+                                                             'post': post,
+                                                             'error': error,
+                                                             'bookings': bookings,
+                                                             'today': today,
+                                                             'is_guest': is_guest })
 
-        if ( datein_booking is None):
-            post = False    
-            error = True
-            return render(request, "hotel/mybookings.html", { 'message': 'Empty Check-In or Check-Out dates.',
-                                                              'post': post,
-                                                              'error': error,
-                                                              'bookings': bookings,
-                                                              'today': today,
-                                                              'is_guest': is_guest })
+       if ( datein_booking is None):
+           post = False    
+           error = True
+           return render(request, "hotel/mybookings.html", { 'message': 'Empty Check-In or Check-Out dates.',
+                                                             'post': post,
+                                                             'error': error,
+                                                             'bookings': bookings,
+                                                             'today': today,
+                                                             'is_guest': is_guest })
 
-        if (code_booking is None):
-            post = False    
-            error = True
-            return render(request, "hotel/mybookings.html", { 'message': 'No code of check-out availabe, try again later.',
-                                                              'post': post,
-                                                              'error': error,
-                                                              'bookings': bookings,
-                                                              'today': today,
-                                                              'is_guest': is_guest })
+       if (code_booking is None):
+           post = False    
+           error = True
+           return render(request, "hotel/mybookings.html", { 'message': 'No code of check-out availabe, try again later.',
+                                                             'post': post,
+                                                             'error': error,
+                                                             'bookings': bookings,
+                                                             'today': today,
+                                                             'is_guest': is_guest })
 
-        user_booking = User.objects.get(id=user_booking_post)
+       user_booking = User.objects.get(id=user_booking_post)
 
-        # Prevent Duplicate Post
-        duplicate = Bookings.objects.filter(checkout_code=code_booking).exists()
+       # Prevent Duplicate Post
+       duplicate = Bookings.objects.filter(checkout_code=code_booking).exists()
 
-        if (duplicate == False):
-        # Create & Save Booking
-            booking = Bookings( user= user_booking,
-                                singles= singles_booking,
-                                doubles= doubles_booking,
-                                triples= triples_booking,
-                                quadruples= quadruples_booking,
-                                checkin_date= datein_booking,
-                                checkout_date= dateout_booking,
-                                checkout_code= code_booking,
-                                amount= amount_booking_prov )
+       if (duplicate == False):
+       # Create & Save Booking
+           booking = Bookings( user= user_booking,
+                               singles= singles_booking,
+                               doubles= doubles_booking,
+                               triples= triples_booking,
+                               quadruples= quadruples_booking,
+                               checkin_date= datein_booking,
+                               checkout_date= dateout_booking,
+                               checkout_code= code_booking,
+                               amount= amount_booking_prov )
 
-            booking.save()
+           booking.save()
         
-            post = True
-            error = False
-            return render(request, "hotel/mybookings.html", { 'singles_booking': singles_booking,
-                                                              'doubles_booking': doubles_booking,
-                                                              'triples_booking': triples_booking,
-                                                              'quadruples_booking': quadruples_booking,
-                                                              'datein_booking': datein_booking,
-                                                              'dateout_booking': dateout_booking,
-                                                              'amount_booking': amount_booking,
-                                                              'post': post,
-                                                              'error': error,
-                                                              'bookings': bookings,
-                                                              'today': today,
-                                                              'is_guest': is_guest })
+           post = True
+           error = False
+           return render(request, "hotel/mybookings.html", { 'singles_booking': singles_booking,
+                                                             'doubles_booking': doubles_booking,
+                                                             'triples_booking': triples_booking,
+                                                             'quadruples_booking': quadruples_booking,
+                                                             'datein_booking': datein_booking,
+                                                             'dateout_booking': dateout_booking,
+                                                             'amount_booking': amount_booking,
+                                                             'post': post,
+                                                             'error': error,
+                                                             'bookings': bookings,
+                                                             'today': today,
+                                                             'is_guest': is_guest })
     
-        else:
-            post = False
-            error = True
-            return render(request, "hotel/mybookings.html", { 'message': 'Booking has already been saved.',
-                                                              'post': post,
-                                                              'error': error,
-                                                              'bookings': bookings,
-                                                              'today': today })
+       else:
+           post = False
+           error = True
+           return render(request, "hotel/mybookings.html", { 'message': 'Booking has already been saved.',
+                                                             'post': post,
+                                                             'error': error,
+                                                             'bookings': bookings,
+                                                             'today': today })
 
 
 def facilities(request):
