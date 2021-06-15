@@ -37,7 +37,7 @@
     + [sendmessage](#sendmessage)
     + [deletemessage](#deletemessage)
     + [unreadmessages](#unreadmessages)
-  * [Files](#files)
+  * [Files-list](#files list)
 - [Screenshots](#screenshots)  
 
 
@@ -317,7 +317,7 @@ Receives the ID of the message to be deleted and proceeds (MESSAGES model).
 Monitor the amount of unread messages the current user has (MESSAGES model).  
 
 
-## Files  
+## Files list  
 
   * /locale/es/django.po (Spanish translations).
   * /locale/pt/django.po (Portuguese translations).
