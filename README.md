@@ -2,8 +2,9 @@
 ## Table of contents
 - [Introduction](#introduction)
   * [Description](#description)
+  * [Distinctiveness and Complexity](#distinctiveness-and-complexity)
   * [Installation](#installation)
-  * [Usage-tips](#use)
+  * [Usage-tips](#usage-tips)
 - [Implementation](#implementation)
   * [Models](#models)
     + [User](#user)
@@ -37,7 +38,7 @@
     + [sendmessage](#sendmessage)
     + [deletemessage](#deletemessage)
     + [unreadmessages](#unreadmessages)
-  * [Files-list](#files list)
+  * [Files-list](#files-list)
 - [Screenshots](#screenshots)  
 
 
