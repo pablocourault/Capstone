@@ -356,7 +356,7 @@ Monitor the amount of unread messages the current user has (MESSAGES model).
 # Screenshots
  
 
-![alt text](https://github.com/pablocourault/Capstone/hotel/static/screenshots/hotel01.png?raw=true)
+![alt text](https://github.com/pablocourault/Capstone/blob/main/hotel/static/screenshots/hotel01.png?raw=true)
 
 ![alt text](https://github.com/pablocourault/Capstone/hotel/static/screenshots/hotel02.png?raw=true)
 
