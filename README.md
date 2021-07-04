@@ -358,23 +358,23 @@ Monitor the amount of unread messages the current user has (MESSAGES model).
 
 ![alt text](https://github.com/pablocourault/Capstone/blob/main/hotel/static/screenshots/hotel01.png?raw=true)
 
-![alt text](https://github.com/pablocourault/Capstone/hotel/static/screenshots/hotel02.png?raw=true)
+![alt text](https://github.com/pablocourault/Capstone/blob/main/hotel/static/screenshots/hotel02.png?raw=true)
 
-![alt text](https://github.com/pablocourault/Capstone/hotel/static/screenshots/hotel03.png?raw=true)
+![alt text](https://github.com/pablocourault/Capstone/blob/main/hotel/static/screenshots/hotel03.png?raw=true)
 
-![alt text](https://github.com/pablocourault/Capstone/hotel/static/screenshots/hotel04.png?raw=true)
+![alt text](https://github.com/pablocourault/Capstone/blob/main/hotel/static/screenshots/hotel04.png?raw=true)
 
-![alt text](https://github.com/pablocourault/Capstone/hotel/static/screenshots/hotel05.png?raw=true)
+![alt text](https://github.com/pablocourault/Capstone/blob/main/hotel/static/screenshots/hotel05.png?raw=true)
 
-![alt text](https://github.com/pablocourault/Capstone/hotel/static/screenshots/hotel06.png?raw=true)
+![alt text](https://github.com/pablocourault/Capstone/blob/main/hotel/static/screenshots/hotel06.png?raw=true)
 
-![alt text](https://github.com/pablocourault/Capstone/hotel/static/screenshots/hotel07.png?raw=true)
+![alt text](https://github.com/pablocourault/Capstone/blob/main/hotel/static/screenshots/hotel07.png?raw=true)
 
-![alt text](https://github.com/pablocourault/Capstone/hotel/static/screenshots/hotel08.png?raw=true)
+![alt text](https://github.com/pablocourault/Capstone/blob/main/hotel/static/screenshots/hotel08.png?raw=true)
 
-![alt text](https://github.com/pablocourault/Capstone/hotel/static/screenshots/hotel09.png?raw=true)
+![alt text](https://github.com/pablocourault/Capstone/blob/main/hotel/static/screenshots/hotel09.png?raw=true)
 
-![alt text](https://github.com/pablocourault/Capstone/hotel/static/screenshots/hotel10.png?raw=true)
+![alt text](https://github.com/pablocourault/Capstone/blob/main/hotel/static/screenshots/hotel10.png?raw=true)
 
 
 
